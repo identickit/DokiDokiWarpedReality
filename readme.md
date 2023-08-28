@@ -6,7 +6,7 @@ Installation
 
 2. Download DDWR files from GitHub by clicking on the green Code dropdown and clicking Download ZIP.
 
-3. Download the Ren'Py Launcher to launch the dev build of the mod.
+3. Download and unZIP/extract the Ren'Py Launcher to launch the dev build of the mod.
 
 4. UnZIP/Extract the DDWR ZIP and place the "DokiDokiWarpedReality-main" folder into the Ren'Py projects folder which is located in the Documents folder by default. (\Documents\Ren'py\Projects)
 
