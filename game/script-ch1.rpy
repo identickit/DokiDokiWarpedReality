@@ -1,4 +1,4 @@
-label ch1:
+label ch1_p1:
     $ m_name = "Monika"
     stop music fadeout 1.0
     pause 3.0
@@ -206,7 +206,7 @@ label ch1:
     hide yuri
     with wipeleft
     "The girls have a few desks arranged to form a table."
-    show monika 2a at f11 zorder 2
+    show monika lean at f11 zorder 2
     m "Here, [player]. You can sit next to me."
     m "I'm sure we have a lot of catching up to do."
     show monika 2a at t11 zorder 2
@@ -272,87 +272,251 @@ label ch1:
     show monika lean at t11 zorder 2
     m "I always appreciate a friendly checkup!"
     "Wait... Did she just respond to the thought running through my mind {i}after{/i} I asked if she's--{nw}"
-    show monika forward happ om ce at f11 zorder 2
+    show monika forward happ om ce lpoint at f32 zorder 2
+    show natsuki 1a at t33 zorder 2
+    show yuri turned happ cm oe at t31 zorder 2
     m "Okay, everyone! I had an idea for a club activity and wanted to share it with you all."
     m "I may or may not have stumbled across a poem that belongs to someone here..."
-    show monika cm at t22 zorder 2
-    show natsuki 5t at f21 zorder 2
+    show monika cm ldown at t32 zorder 2
+    show natsuki 5t at f33 zorder 2
     n "Heh... I wonder who that could be."
     "Natsuki says unconvincingly."
-    show natsuki at thide zorder 1
-    hide natsuki
-    show monika om oe at f11 zorder 2
+    show natsuki turned neut cm e1b n4 at t33 zorder 2
+    show monika om ce at f32 zorder 2
     m "... So I thought it would be fun for us all to write a poem of our own!"
-    show monika lpoint at f11
+    show monika lpoint ce at f32
     m "Then tomorrow, we can all share poems with each other!"
-    show monika mi ldown at f11
+    show monika nerv ce om ldown at f32
+    show yuri turned flus cm oe at t31 zorder 2
+    show natsuki turned me n2 b1c e1a at t33 zorder 2
     m "And before anyone makes any hasty arguments, let me explain why I want us to do this."
-    show monika forward neut cm at t11
+    show monika forward neut oe cm at t32
     "Monika looks over at Yuri, who apparently had been ready to interject as soon as the words 'share poems' were said."
-    show monika ce om at f11
+    show monika ce om at f32
     "She takes a deep breath and nods to herself."
-    show monika rhip om oe at f11
+    show monika rhip om oe at f32
     m "I don't want to put anyone on the spot or embarrass my club members."
+    show monika lpoint forward happ om oe at f32
     m "In fact, my reasoning is sort of the opposite."
-    show monika lpoint forward happ om oe at f11
+    show monika ce at f32
     m "Sharing something as personal as a poem written by yourself might help you feel more confident in your writing!"
-    show monika forward happ om ce at f11
+    show monika forward happ om ce at f32
     m "After all, this club is a safe space for expressing creativity."
     m "A place to help others who have all of these interesting ideas and passions grow!"
-    show monika oe at f11
+    show monika oe at f32
     m "Now then... what do you all think?"
-    show monika cm ldown rdown at t11
+    show monika cm ldown rdown at t32
+    show yuri e1d mj at t31
     "I expect Yuri to be the first to speak up, but surprisingly, an awkward silence fills the room."
     "Several minutes seem to pass before Sayori breaks the silence."
-    show monika cm ce at t22
-    show sayori turned happ om oe at f21 zorder 2
+    show monika cm ce at t43
+    show yuri b1a at t42
+    show natsuki lsur e1a at t44
+    show sayori turned neut mi oe b1d at f41 zorder 2
     s "I agree with Monika! We should be helping each other feel more confident in their writing!"
-    show sayori ce rup at f21
+    $ sref()
+    show sayori turned happ om oe rup at f41 zorder 2
     s "Plus, poems can be super fun!"
-    show monika oe at t33
-    show sayori oe cm rdown at t32
-    show natsuki turned neut mh e1b b1d n3 at t31
+    show monika oe at t43
+    show sayori turned happ oe cm rdown at t41
+    show natsuki turned neut mh e1b b1d n3 at f44
     n "Well, s-sure, but..."
-    show natsuki md at t31
+    show natsuki md at t44
     "Natsuki sounds as if she wants to debate the subject, but apparently can't come up with a strong point."
-    show natsuki cross ml e4a b3b at t31
+    show natsuki cross ml e4a b3b at f44
     n "F-Fine! I'll do it."
     $ nref()
-    show natsuki cross happ cm oe at t42
-    show sayori at t43
-    show monika at t44
+    show yuri 2q at f42
+    show natsuki turned happ cm oe at t44
+    show sayori at t41
+    show monika at t43
     y "I guess I will as well."
     y "It would look bad if I were the only member not participating."
+    show yuri 1u at t42 zorder 2
+    show natsuki turned neut om oe at f44
     n "Wait, what about [player]?"
     n "He hasn't agreed to do this, either, you know!"
+    show natsuki cm at t44
+    show monika forward happ om ce at f43 zorder 3
     m "I'm sure they won't mind something like this. Right, [player]?"
+    show monika cm at t43
     mc "Wait... I never said I would {i}join{/i} this club!"
     mc "Sayori may have convinced me to stop by, but I still have other clubs to look at, and... um..."
+    show monika 1g at t43
+    show sayori 1g at t41
+    show natsuki 4g at t44
+    show yuri 2e at t42
     "I lose my train of thought."
     "All four girls stare at me with dejected eyes."
-    m "B-But..."
-    y "I'm sorry, I thought...."
-    n "Hmph."
-    s "[player]..."
+    show monika at s43
+    m 1p "B-But..."
+    show yuri at s42
+    y 2v "I'm sorry, I thought...."
+    show natsuki at s44
+    n 5s "Hmph."
+    show sayori at s41
+    s 1k "[player]..."
     mc "Y-You all..."
     mc "...Right."
     mc "Okay, I've decided, then."
     mc "I'll join the Literature Club."
+    show monika 1e at t43 zorder 2
+    show yuri 1m at t42 zorder 2
+    show natsuki 5q at t44 zorder 2
+    show sayori 4b at t41 zorder 2
     "One by one, the girls' eyes light up."
-    s "Yesss! I'm so happyyy~"
+    show sayori at h41
+    s 4r "Yesss! I'm so happyyy~"
+    show yuri at thide zorder 1
+    show natsuki at thide zorder 1
+    show sayori at thide zorder 1
+    show monika forward happ om oe lpoint at f11 zorder 2
+    hide yuri
+    hide natsuki
+    hide sayori
+
     "Monika stands in front of me."
     m "Then that makes it official!"
     m "Welcome to the Literature Club!"
+    show monika cm ldown at t11
     mc "Ah... thanks, I guess."
+    show monika om at f11
     m "Okay, everyone!"
     m "I think with that, we can officially end today's meeting on a good note."
+    show monika ce at f11
     m "Everyone remember tonight's assignment:"
     m "Write a poem to bring to the next meeting, so we can all share!"
+    $ mref()
+    show monika lean at f11 zorder 2
     "Monika looks at me once more."
     m "[player], I look forward to seeing how you express--"
+    show sayori turned neut om oe at t41 zorder 2
+    show yuri turned neut mg oe at t42 zorder 2
+    show monika forward neut om oe at t43 zorder 3
+    show natsuki turned lsur om e1a at t44 zorder 2
     "But she goes silent."
     "It's almost immediately clear why:"
     "The classroom door just opened."
     "Everyone looks over to the door, where a {i}fifth{/i} girl now stands."
-    
-    pause
+    show monika at thide zorder 1
+    show yuri at thide zorder 1
+    show natsuki at thide zorder 1
+    show sayori at thide zorder 1
+    hide monika
+    hide yuri
+    hide natsuki
+    hide sayori
+    r "Excuse me, is this the room for the Literature Club?"
+    show monika forward nerv mb ce at f22 zorder 2
+    m "O-Oh! I wasn't expecting you to come by, Rikka!"
+    m "But yes, you're in the right place."
+    $ r_name = "Rikka"
+    show monika cm at t22 zorder 2
+    r "Oh, hey Monika!"
+    show monika mb at f22 
+    m "Everyone, t-this is Rikka! She's on the track team."
+    show monika cm at t22
+
+    r "Sorry that I'm so late!"
+    r "I went to the wrong room at first... so I tried asking someone in the office for the room number."
+    r "The only administrator up there was busy talking to someone about a few trade students."
+    show monika at t33 zorder 2
+    show sayori turned lsur om oe lup rup at f31 zorder 2
+    s "Wait, this school has foreign relations?"
+    show sayori turned happ om ce at f31
+    s "That's so cool! I didn't know that!"
+    show sayori cm at t31
+
+    r "Me either, to be honest."
+    r "Anyways, after they {i}finally{/i} got off the phone, I was able to get directions here."
+    show monika mb lpoint n2 at f33
+    m "Well, I'm glad you could make it!"
+    show monika cm ldown at t33
+    show sayori at thide zorder 1
+    hide sayori
+    show yuri turned laug mh oe n2 at f31 zorder 2
+    y "I-It's nice to meet you, Rikka."
+    show yuri at thide zorder 1
+    hide yuri
+    show natsuki turned neut om oe at f31  
+    n "Wait a minute!"
+    n "If she's on the track team, how's she gonna be in the Literature Club?"
+    show natsuki cm at t31
+    show monika mb lpoint at f33 
+    m "I hear the coach is pretty lenient as long as members don't miss {i}too{/i} many track meetings."
+    show monika cm at t33
+
+    r "Pretty much. He'll be fine with me only doing track twice a week."
+    show monika mb at f33
+    m "Perfect! Welcome to the Literature Club, Rikka."
+    show monika cm ldown at t33
+    "I can't help but sense some uncertainty in these words."
+    "Which is saying a lot, especially since Monika is the one speaking."
+    show natsuki at thide zorder 1
+    hide natsuki
+    show sayori turned lsur om oe at f31 zorder 2
+    s "Wow, two new members in one day!"
+    show sayori turned happ om ce lup rup at h31
+    s "This is sooo amaziiing~!"
+    show sayori cm ldown rdown at t31
+    show monika forward happ cm oe at f33
+    m "I hate to break up the happy moment, but we should probably start leaving."
+    m "We technically have to be out of this room in..."
+    show monika forward neut om oe at f33 zorder 2
+    "Monika checks her phone for the time."
+    show monika cm at f33
+    m "...two minutes ago."
+    show monika at thide zorder 1
+    show sayori at thide zorder 1
+    hide monika
+    hide sayori
+    "And with this, the other members scramble to gather their belongings."
+
+    "Rikka and I stand close to the door, both of us already carrying our backpacks."
+    mc "So... track team, eh?"
+
+    r "Mhm. I'd ask if you're in any athletic teams, but you look like the kind of guy who stays inside playing games all day."
+    r "Talk about being blunt."
+    mc "I'm gonna ignore that last bit."
+    mc "But no, I'm not a part of any athletic clubs or organizations."
+
+    r "Guess I was right after all?"
+    "I'm spared from having to answer this question by Sayori."
+    "She walks up to me, her backpack over her shoulders and a bright smile planted on her face."
+    show sayori turned happ cm oe at f21 zorder 2
+    s "You ready?"
+    show sayori at t21
+    mc "Ready for what, exactly?"
+    show sayori sedu cm ce at f21
+    s "Oh, duh... Sorry, I probably should've started with that."
+    show sayori 1q at f21
+    s "Since we're both here, I thought we could walk home together!"
+    show sayori at t21
+    mc "Sure, I don't see why not."
+    show sayori 4r at f21
+    s "Yaaay!"
+    show sayori at thide zorder 1
+    hide sayori
+    mc "It was nice meeting you, Rikka."
+
+    r "You too, uh..."
+    mc "[player]."
+    "I hold my hand out in front of me."
+    "Rikka firmly grasps it and shakes my hand."
+
+    r "Nice to meet you too, [player]."
+    r "See you tomorrow!"
+    "Sayori and I exit the room, waving at the other members."
+    scene bg residential_day
+    with wipeleft
+    "The walk home goes by surprisingly fast. Sayori and I reach the part of the sidewalk that branches off to both ends of our street."
+    "I say goodbye to Sayori and head towards my house."
+    "I take this time to reflect--{nw}"
+    scene black
+    with dissolve
+    stop music fadeout 1.0
+    m "I won't bore you with this short monologue."
+    m "Enjoy your first poem minigame."
+    m "I know I won't."
+
+    return

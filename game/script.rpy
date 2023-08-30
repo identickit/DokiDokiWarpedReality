@@ -12,7 +12,7 @@ label start:
     $ anticheat = persistent.anticheat
 
     # This variable sets the chapter number to 0 to use in the mod.
-    $ chapter = 1
+    $ chapter = 0
 
     # This variable controls whether the player can dismiss a pause in-game.
     $ _dismiss_pause = config.developer
@@ -26,6 +26,7 @@ label start:
     $ m_name = "Girl 3"
     $ n_name = "Girl 2"
     $ y_name = "Girl 1"
+    $ r_name = "???"
 
     # This variable controls whether the quick menu in the textbox is enabled.
     $ quick_menu = True
@@ -48,7 +49,10 @@ label start:
 
 
     if persistent.playthrough ==0:
-        call ch1
+
+        call ch1_p1
+
+        call poem
     ## Example on calling scripts from DDLC.
     # if persistent.playthrough == 0:
     #     # This variable sets the chapter number to X depending on the chapter

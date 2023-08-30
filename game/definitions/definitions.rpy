@@ -1441,6 +1441,7 @@ define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suff
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define r = DynamicCharacter('r_name', image='rikka', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 # This variable determines whether to allow the player to dismiss pauses.
 # By default this is set by config.developer which is normally set to false
@@ -1515,6 +1516,7 @@ default s_name = "Sayori"
 default m_name = "Monika"
 default n_name = "Natsuki"
 default y_name = "Yuri"
+default r_name = "Rikka"
 
 # Poem Variables
 # This section records how much each character likes your poem in-game.
