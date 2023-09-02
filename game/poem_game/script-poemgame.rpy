@@ -9,11 +9,12 @@ init python:
 
     # This class holds a word, and point values for each of the four heroines
     class PoemWord:
-        def __init__(self, s, n, y, glitch=False):
+        def __init__(self, s, n, y, r, glitch=False):
             self.sPoint = s
             self.nPoint = n
             self.yPoint = y
             self.glitch = glitch
+            self.rPoint = r
     
     with renpy.file("poem_game/poemwords.txt") as pf:
         for line in pf:
@@ -22,13 +23,12 @@ init python:
             # Ignore lines beginning with '#' and empty lines
             if line == '' or '#' in line: continue
 
-            # File format: word,sPoint,nPoint,yPoint
+            # File format: word,sPoint,nPoint,yPoint,rPoint
             x = line.split(',')
 
-            full_wordlist[x[0]] = PoemWord(int(x[1]), int(x[2]), int(x[3]))
+            full_wordlist[x[0]] = PoemWord(int(x[1]), int(x[2]), int(x[3]), int(x[4]))
 
     # For use with Act 2-3 words
-    glitch_word = PoemWord(0, 0, 0, True)
     monika_word = PoemWord(0, 0, 0, False)
                 
     # This class handles Chibi Movement in a better way
@@ -112,6 +112,7 @@ init python:
     chibi_n = Chibi('natsuki')
     chibi_m = ChibiTrans()
     chibi_y = Chibi('yuri')
+    chibi_r = Chibi('rikka')
 
     # Start of the poem game in python
     def poem_game_start():
@@ -148,42 +149,25 @@ init python:
                     t = monika_word
 
             # If we are not in a bugged poem game state, do normal stuff, else do buggy stuff
-            if not poemgame_glitch:
-                if t.glitch: #This conditional controls what happens when the glitch word is selected.
-                    poemgame_glitch = True
-                    renpy.music.play(audio.t4g)
-                    renpy.show("white")
-                    renpy.show("y_sticker glitch", at_list=[sticker_glitch], zorder=10)
-                elif persistent.playthrough != 3:
-                    renpy.play(gui.activate_sound)
-                    # Act 1
-                    if persistent.playthrough == 0:
-                        if t.sPoint >= 3:
-                            renpy.show("s_sticker hop")
-                        if t.nPoint >= 3:
-                            renpy.show("n_sticker hop")
-                        if t.yPoint >= 3:
-                            renpy.show("y_sticker hop")
-                    else:
-                        # Act 2
-                        if persistent.playthrough == 2 and chapter == 2 and random.randint(0,10) == 0: renpy.show("m_sticker hop") #1/10 chance for Monika's sticker to show.
-                        elif t.nPoint > t.yPoint: renpy.show("n_sticker hop") #Since there's just Yuri and Natsuki in Act 2, whoever has the higher value for the word hops.
-                        elif persistent.playthrough == 2 and not persistent.seen_sticker and random.randint(0,100) == 0:
-                            renpy.show("y_sticker hopg") #"y_sticker_2g.png". 1/100 chance to see it, if we haven't seen it already.
-                            persistent.seen_sticker = True
-                        elif persistent.playthrough == 2 and chapter == 2: renpy.show("y_sticker_cut hop") #Yuri's cut arms sticker.
-                        else: renpy.show("y_sticker hop")
-            else:
-                r = random.randint(0, 10) #1/10 chance to hear "baa", one time.
-                if r == 0 and not played_baa:
-                    renpy.play("gui/sfx/baa.ogg")
-                    played_baa = True
-                elif r <= 5: renpy.play(gui.activate_sound_glitch)
+            
+            if persistent.playthrough != 3:
+                renpy.play(gui.activate_sound)
+                # Act 1
+                if persistent.playthrough == 0:
+                    if t.sPoint >= 3:
+                        renpy.show("s_sticker hop")
+                    if t.nPoint >= 3:
+                        renpy.show("n_sticker hop")
+                    if t.yPoint >= 3:
+                        renpy.show("y_sticker hop")
+                    if t.rPoint >= 3:
+                        renpy.show("r_sticker hop")
 
             # Adds points to the characters and progress by 1.
             chibi_s.charPointTotal += t.sPoint
             chibi_n.charPointTotal += t.nPoint
             chibi_y.charPointTotal += t.yPoint
+            chibi_r.charPointTotal += t.rPoint
             progress += 1
     
     # End of the game
@@ -207,6 +191,7 @@ init python:
         s_poemappeal[chapter] = chibi_s.calculate_appeal()
         n_poemappeal[chapter] = chibi_n.calculate_appeal()
         y_poemappeal[chapter] = chibi_y.calculate_appeal()
+        r_poemappeal[chapter] = chibi_r.calculate_appeal()
 
         # Poem winner always has appeal 1 (loves poem)
         exec(poemwinner[chapter][0] + "_poemappeal[chapter] = 1") in globals()
@@ -292,9 +277,7 @@ screen poem_test(words, progress, poemgame_glitch):
 label poem(transition=True):
     stop music fadeout 2.0
 
-    if persistent.playthrough == 3: #Takes us to the glitched notebook if we're in Just Monika Mode.
-        scene bg notebook-glitch
-    else:
+    if persistent.playthrough == 0: #Takes us to the glitched notebook if we're in Just Monika Mode.
         scene bg notebook
     
     if persistent.playthrough == 3: 
@@ -303,6 +286,7 @@ label poem(transition=True):
         if persistent.playthrough == 0:
             show s_sticker at sticker_left #Only show Sayori's sticker in Act 1.
         show n_sticker at sticker_mid #Natsuki's sticker
+        show r_sticker at sticker_mright
         if persistent.playthrough == 2 and chapter == 2:
             show y_sticker_cut at sticker_right #Replace Yuri's sticker with the "cut arms" sticker..
         else:
@@ -313,9 +297,7 @@ label poem(transition=True):
     if transition:
         with dissolve_scene_full
 
-    if persistent.playthrough == 3:
-        play music ghostmenu #Change the music in Just Monika.
-    else:
+    if persistent.playthrough == 0:
         play music t4
 
     $ config.allow_skipping = False
@@ -436,12 +418,30 @@ image m_sticker:
             function chibi_m.randomMoveTime
         repeat
 
+image r_sticker:
+    "mod_assets/r_sticker_1.png"
+    xoffset chibi_r.charOffset xzoom chibi_r.charZoom
+    block:
+        function chibi_r.randomPauseTime
+        parallel:
+            sticker_move_n
+        parallel:
+            function chibi_r.randomMoveTime
+        repeat
+
 image s_sticker hop:
     "gui/poemgame/s_sticker_2.png"
     xoffset chibi_s.charOffset xzoom chibi_s.charZoom
     sticker_hop
     xoffset 0 xzoom 1
     "s_sticker"
+
+image r_sticker hop:
+    "mod_assets/r_sticker_2.png"
+    xoffset chibi_r.charOffset xzoom chibi_r.charZoom
+    sticker_hop
+    xoffset 0 xzoom 1
+    "r_sticker"
 
 image n_sticker hop:
     "gui/poemgame/n_sticker_2.png"
@@ -497,6 +497,9 @@ transform sticker_mid:
 
 transform sticker_right:
     xcenter 340 yalign 0.9 subpixel True
+
+transform sticker_mright:
+    xcenter 160 yalign 0.5 subpixel True
 
 transform sticker_glitch:
     xcenter 50 yalign 1.8 subpixel True
