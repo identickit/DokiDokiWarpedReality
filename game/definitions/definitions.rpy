@@ -10,7 +10,7 @@ define persistent.demo = False
 define persistent.steam = ("steamapps" in config.basedir.lower())
 
 # This variable declares whether Developer Mode is on or off in the mod.
-define config.developer = False
+define config.developer = True
 
 # This python statement starts singleton to make sure only one copy of the mod
 # is running.
@@ -1177,6 +1177,155 @@ image yuri 4bc = im.Composite((960, 960), (0, 0), "yuri/c2.png", (0, 0), "yuri/3
 image yuri 4bd = im.Composite((960, 960), (0, 0), "yuri/d2.png", (0, 0), "yuri/3b.png")
 image yuri 4be = im.Composite((960, 960), (0, 0), "yuri/e2.png", (0, 0), "yuri/3b.png")
 
+#rikka neutral poses
+image rikka 1 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/a.png")
+image rikka 2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/a.png")
+image rikka 3 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/a.png")
+image rikka 4 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/a.png")
+
+#neither arm up
+image rikka 1a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/a.png")
+image rikka 1aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
+image rikka 1b = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/b.png")
+image rikka 1c = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/c.png")
+image rikka 1d = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/d.png")
+image rikka 1e = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/e.png")
+image rikka 1f = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/f.png")
+image rikka 1g = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/g.png")
+image rikka 1h = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/h.png")
+image rikka 1i = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/i.png")
+image rikka 1j = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/j.png")
+image rikka 1k = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/k.png")
+image rikka 1l = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/l.png")
+image rikka 1m = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/m.png")
+image rikka 1n = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/n.png")
+image rikka 1o = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/o.png")
+image rikka 1p = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/p.png")
+image rikka 1q = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/q.png")
+image rikka 1r = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/r.png")
+image rikka 1s = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/s.png")
+image rikka 1t = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/t.png")
+image rikka 1u = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/u.png")
+image rikka 1v = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/v.png")
+image rikka 1w = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/w.png")
+image rikka 1x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/x.png")
+image rikka 1y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/y.png")
+image rikka 1z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/z.png")
+#right arm up
+image rikka 2a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/a.png")
+image rikka 2aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
+image rikka 2b = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/b.png")
+image rikka 2c = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/c.png")
+image rikka 2d = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/d.png")
+image rikka 2e = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/e.png")
+image rikka 2f = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/f.png")
+image rikka 2g = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/g.png")
+image rikka 2h = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/h.png")
+image rikka 2i = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/i.png")
+image rikka 2j = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/j.png")
+image rikka 2k = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/k.png")
+image rikka 2l = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/l.png")
+image rikka 2m = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/m.png")
+image rikka 2n = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/n.png")
+image rikka 2o = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/o.png")
+image rikka 2p = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/p.png")
+image rikka 2q = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/q.png")
+image rikka 2r = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/r.png")
+image rikka 2s = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/s.png")
+image rikka 2t = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/t.png")
+image rikka 2u = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/u.png")
+image rikka 2v = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/v.png")
+image rikka 2w = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/w.png")
+image rikka 2x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/x.png")
+image rikka 2y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/y.png")
+image rikka 2z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/z.png")
+#left arm up
+image rikka 3a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/a.png")
+image rikka 3aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
+image rikka 3b = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/b.png")
+image rikka 3c = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/c.png")
+image rikka 3d = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/d.png")
+image rikka 3e = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/e.png")
+image rikka 3f = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/f.png")
+image rikka 3g = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/g.png")
+image rikka 3h = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/h.png")
+image rikka 3i = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/i.png")
+image rikka 3j = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/j.png")
+image rikka 3k = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/k.png")
+image rikka 3l = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/l.png")
+image rikka 3m = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/m.png")
+image rikka 3n = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/n.png")
+image rikka 3o = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/o.png")
+image rikka 3p = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/p.png")
+image rikka 3q = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/q.png")
+image rikka 3r = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/r.png")
+image rikka 3s = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/s.png")
+image rikka 3t = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/t.png")
+image rikka 3u = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/u.png")
+image rikka 3v = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/v.png")
+image rikka 3w = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/w.png")
+image rikka 3x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/x.png")
+image rikka 3y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/y.png")
+image rikka 3z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/z.png")
+#both arms up
+image rikka 4a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/a.png")
+image rikka 4aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
+image rikka 4b = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/b.png")
+image rikka 4c = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/c.png")
+image rikka 4d = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/d.png")
+image rikka 4e = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/e.png")
+image rikka 4f = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/f.png")
+image rikka 4g = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/g.png")
+image rikka 4h = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/h.png")
+image rikka 4i = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/i.png")
+image rikka 4j = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/j.png")
+image rikka 4k = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/k.png")
+image rikka 4l = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/l.png")
+image rikka 4m = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/m.png")
+image rikka 4n = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/n.png")
+image rikka 4o = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/o.png")
+image rikka 4p = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/p.png")
+image rikka 4q = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/q.png")
+image rikka 4r = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/r.png")
+image rikka 4s = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/s.png")
+image rikka 4t = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/t.png")
+image rikka 4u = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/u.png")
+image rikka 4v = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/v.png")
+image rikka 4w = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/w.png")
+image rikka 4x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/x.png")
+image rikka 4y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/y.png")
+image rikka 4z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/z.png")
+
+#arms crossed
+image rikka 5a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/a.png")
+image rikka 5aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png", (0, 0), "mod_assets/rikka_assets/aa.png")
+image rikka 5b = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/b.png")
+image rikka 5c = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/c.png")
+image rikka 5d = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/d.png")
+image rikka 5e = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/e.png")
+image rikka 5f = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/f.png")
+image rikka 5g = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/g.png")
+image rikka 5h = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/h.png")
+image rikka 5i = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/i.png")
+image rikka 5j = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/j.png")
+image rikka 5k = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/k.png")
+image rikka 5l = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/l.png")
+image rikka 5m = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/m.png")
+image rikka 5n = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/n.png")
+image rikka 5o = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/o.png")
+image rikka 5p = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/p.png")
+image rikka 5q = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/q.png")
+image rikka 5r = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/r.png")
+image rikka 5s = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/s.png")
+image rikka 5t = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/t.png")
+image rikka 5u = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/u.png")
+image rikka 5v = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/v.png")
+image rikka 5w = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/w.png")
+image rikka 5x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/x.png")
+image rikka 5y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/y.png")
+image rikka 5z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/z.png")
+
+
 # This image shows the looping Yuri glitched head in Act 2.
 image y_glitch_head:
     "images/yuri/za.png"
@@ -1531,6 +1680,7 @@ default n_poemappeal = [0, 0, 0]
 default s_poemappeal = [0, 0, 0]
 default y_poemappeal = [0, 0, 0]
 default m_poemappeal = [0, 0, 0]
+default r_poemappeal = [0, 0, 0]
 
 # This variable keeps tracks on which person won the poem session after each day.
 default poemwinner = ['sayori', 'sayori', 'sayori']
@@ -1540,6 +1690,7 @@ default s_readpoem = False
 default n_readpoem = False
 default y_readpoem = False
 default m_readpoem = False
+default r_readpoem = False
 
 # This variable keeps track on how many people have read your poem.
 default poemsread = 0
@@ -1549,6 +1700,7 @@ default n_appeal = 0
 default s_appeal = 0
 default y_appeal = 0
 default m_appeal = 0
+default r_appeal = 0
 
 # These variables control if we have seen Natsuki's or Yuri's exclusive scenes
 default n_exclusivewatched = False

@@ -1,4 +1,4 @@
-label ch1_p1:
+label ch0_p1:
     $ m_name = "Monika"
     stop music fadeout 1.0
     pause 3.0
@@ -406,29 +406,37 @@ label ch1_p1:
     hide yuri
     hide natsuki
     hide sayori
+    show rikka 1b at f11 zorder 2
     r "Excuse me, is this the room for the Literature Club?"
+    show rikka 1a at t21 zorder 2
     show monika forward nerv mb ce at f22 zorder 2
     m "O-Oh! I wasn't expecting you to come by, Rikka!"
     m "But yes, you're in the right place."
     $ r_name = "Rikka"
     show monika cm at t22 zorder 2
+    show rikka 1h at f21 zorder 2
     r "Oh, hey Monika!"
+    show rikka 1h at t21 zorder 2
     show monika mb at f22 
     m "Everyone, t-this is Rikka! She's on the track team."
     show monika cm at t22
-
+    show rikka 1b at f21
     r "Sorry that I'm so late!"
     r "I went to the wrong room at first... so I tried asking someone in the office for the room number."
+    show rikka 1d at f21
     r "The only administrator up there was busy talking to someone about a few trade students."
+    show rikka 1d at t32 zorder 2
     show monika at t33 zorder 2
     show sayori turned lsur om oe lup rup at f31 zorder 2
     s "Wait, this school has foreign relations?"
     show sayori turned happ om ce at f31
     s "That's so cool! I didn't know that!"
     show sayori cm at t31
-
+    show rikka 1b at f32
     r "Me either, to be honest."
+    show rikka 1d at f32
     r "Anyways, after they {i}finally{/i} got off the phone, I was able to get directions here."
+    show rikka 1a at t32
     show monika mb lpoint n2 at f33
     m "Well, I'm glad you could make it!"
     show monika cm ldown at t33
@@ -445,8 +453,9 @@ label ch1_p1:
     show monika mb lpoint at f33 
     m "I hear the coach is pretty lenient as long as members don't miss {i}too{/i} many track meetings."
     show monika cm at t33
-
+    show rikka 1b at f32
     r "Pretty much. He'll be fine with me only doing track twice a week."
+    show rikka 1a at t32
     show monika mb at f33
     m "Perfect! Welcome to the Literature Club, Rikka."
     show monika cm ldown at t33
@@ -468,44 +477,55 @@ label ch1_p1:
     m "...two minutes ago."
     show monika at thide zorder 1
     show sayori at thide zorder 1
+    show rikka at thide zorder 1
+    hide rikka
     hide monika
     hide sayori
-    "And with this, the other members scramble to gather their belongings."
 
+    "And with this, the other members scramble to gather their belongings."
+    show rikka 1a at t11 zorder 2
     "Rikka and I stand close to the door, both of us already carrying our backpacks."
     mc "So... track team, eh?"
-
+    show rikka 1a at f11
     r "Mhm. I'd ask if you're in any athletic teams, but you look like the kind of guy who stays inside playing games all day."
-    r "Talk about being blunt."
+    show rikka at t11
+    "Talk about being blunt."
     mc "I'm gonna ignore that last bit."
     mc "But no, I'm not a part of any athletic clubs or organizations."
-
+    show rikka 1f at f11
     r "Guess I was right after all?"
+    show rikka 1u at t11
     "I'm spared from having to answer this question by Sayori."
     "She walks up to me, her backpack over her shoulders and a bright smile planted on her face."
-    show sayori turned happ cm oe at f21 zorder 2
+    show rikka at thide zorder 1
+    hide rikka
+    show sayori turned happ cm oe at f11 zorder 2
     s "You ready?"
-    show sayori at t21
+    show sayori at t11
     mc "Ready for what, exactly?"
-    show sayori sedu cm ce at f21
+    show sayori sedu cm ce at f11
     s "Oh, duh... Sorry, I probably should've started with that."
-    show sayori 1q at f21
+    show sayori 1q at f11
     s "Since we're both here, I thought we could walk home together!"
-    show sayori at t21
+    show sayori at t11
     mc "Sure, I don't see why not."
-    show sayori 4r at f21
+    show sayori 4r at f11
     s "Yaaay!"
     show sayori at thide zorder 1
     hide sayori
+    show rikka 1a at t11 zorder 2
     mc "It was nice meeting you, Rikka."
-
+    show rikka 1i at f11 zorder 2
     r "You too, uh..."
+    show rikka at t11
     mc "[player]."
     "I hold my hand out in front of me."
     "Rikka firmly grasps it and shakes my hand."
-
+    show rikka 1a at f11 zorder 2
     r "Nice to meet you too, [player]."
     r "See you tomorrow!"
+    show rikka at thide zorder 1
+    hide rikka
     "Sayori and I exit the room, waving at the other members."
     scene bg residential_day
     with wipeleft
@@ -520,3 +540,62 @@ label ch1_p1:
     m "I know I won't."
 
     return
+
+label ch0_p2:
+    scene bg club_day
+    with wipeleft
+    play music t3
+    show monika lean at f11 zorder 2
+    m "Hello again, [player]."
+    m "I'm glad to see you didn't run off on us."
+    show monika forward neut om oe at f11
+    m "... Yeah, you get the drill by now."
+    m "Go hang out with the girl you've chosen."
+    show monika ce at f11
+    m "I'll leave you be."
+    show monika at thide zorder 1
+    hide monika
+
+    "Now that everyone's settled in, I expected Monika to kick off some scheduled activities for the club."
+    "But that doesn't seem to be the case."
+    "Sayori and Monika are having a cheery conversation in the corner."
+    "Yuri's face is already buried in a book."
+    "I can't help but notice her intense expression, like she was waiting for this chance."
+    "Meanwhile, Natsuki is rummaging around in the closet."
+
+    $ nextscene = poemwinner[0] + "_exclusive_" + str(eval(poemwinner[0][0] + "_appeal"))
+    call expression nextscene
+
+    hide sayori
+    hide natsuki
+    hide yuri
+    hide rikka
+    hide monika 
+    with wipeleft
+
+    show bg club_day
+    play music t3
+    "Poems."
+    "I can't believe I agreed to do something so embarrassing."
+    "I couldn't really find much inspiration, since I've never really done this before."
+    show monika 1 zorder 2 at f11
+    m "Well, now that everyone's ready, why don't you find someone to share with?"
+    show monika zorder 1 at thide
+    hide monika
+    "Sayori and Monika enthusiastically pull out their poems."
+    "Sayori's is on a wrinkled sheet of loose leaf torn from a spiral notebook."
+    "On the other hand, Monika wrote hers in a composition notebook."
+    "I can already see Monika's pristine handwriting from where I sit."
+    "Natsuki and Yuri reluctantly comply as well, reaching into their bags."
+    "I do the same, myself."
+
+    return
+
+label ch0_end:
+    scene bg club_day
+    with wipeleft
+    play music t3
+    show monika forward neut om oe at f11 zorder 2
+    m "Okay, everyone!"
+    m "I'm sure you're all eager to get home, so I'll make my announcement quick."
+    pause
