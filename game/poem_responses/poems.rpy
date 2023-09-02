@@ -26,7 +26,6 @@ init 1 python:
     author_m = Author("monika", music=audio.tmonika)
     author_n = Author("natsuki", music=audio.tnatsuki)
     author_y = Author("yuri", music=audio.tyuri)
-    author_r = Author("rikka", music=audio.tsayori)
 
     class Poem(renpy.text.text.Text):
         """
@@ -724,18 +723,6 @@ In a world of infinite choices, behold this special day.
 
 After all,
 Not all good times must come to an end."""))
-
-    poem_r1 = Poem(
-        author_r, title=_("Firsts"),
-        text=_("""\
-Any sort of first can be scary,
-Even if the activities vary.
-
-Just think of it like you're running a race:
-You can't go all-in from the start,
-So start slow, then pick up the pace.
-
-You'll ease into it before long."""))
 
 screen poem(poem):
     style_prefix "poem"

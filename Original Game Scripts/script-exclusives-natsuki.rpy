@@ -1,4 +1,4 @@
-label natsuki_exclusive_0:
+label natsuki_exclusive_1:
     scene bg club_day
     with wipeleft_scene
     n "Ugh...!"
@@ -274,7 +274,7 @@ label natsuki_exclusive_0:
     return
 
 
-label natsuki_exclusive_1:
+label natsuki_exclusive_2:
     $ n_exclusivewatched = True
     play music t6 fadeout 1
     scene bg club_day
@@ -284,7 +284,7 @@ label natsuki_exclusive_1:
     "It's not long before Natsuki comes up to me expectantly."
     mc "Yeah, yeah."
     mc "Don't worry, I kept my promise."
-label natsuki_exclusive_1_ch3:
+label natsuki_exclusive_2_ch3:
     "I pull the first volume of Parfait Girls out from my bag."
     "Natsuki takes it from my hands, then quickly turns it over, presumably to check for wrinkles."
     mc "Hey, I'm not that careless..."

@@ -93,12 +93,6 @@ label poemresponse_start:
                     "Yesterday she seemed eager to read my poem, and I want her to know I'm putting in effort."
                 call poemresponse_monika
 
-            "Rikka" if not r_readpoem:
-                $ r_readpoem = True
-                if chapter == 1 and poemsread == 0:
-                    "I think starting with Rikka might be the best option, especially after the talk we just had."
-                call poemresponse_rikka
-
         # This variable increases the poems read by 1.
         $ poemsread += 1
         
@@ -112,7 +106,6 @@ label poemresponse_start:
     $ n_readpoem = False
     $ y_readpoem = False
     $ m_readpoem = False
-    $ r_readpoem = False
     $ poemsread = 0
     return
 
@@ -127,9 +120,9 @@ label poemresponse_sayori:
     
     # This if/elif statement checks if Sayori's opinion of your poem was bad
     # or good.
-    if s_poemappeal[chapter] < 0:
+    if s_poemappeal[chapter - 1] < 0:
         $ poemopinion = "bad"
-    elif s_poemappeal[chapter] > 0:
+    elif s_poemappeal[chapter - 1] > 0:
         $ poemopinion = "good"
     
     # These variables sets the next scene chapter to be called based off the
@@ -153,9 +146,9 @@ label poemresponse_natsuki:
     
     # This if/elif statement checks if Natsuki's opinion of your poem was bad
     # or good.
-    if n_poemappeal[chapter] < 0:
+    if n_poemappeal[chapter - 1] < 0:
         $ poemopinion = "bad"
-    elif n_poemappeal[chapter] > 0:
+    elif n_poemappeal[chapter - 1] > 0:
         $ poemopinion = "good"
 
     # These variables sets the next scene chapter to be called based off the
@@ -170,32 +163,6 @@ label poemresponse_natsuki:
         call expression nextscene
     return
 
-label poemresponse_rikka:
-    scene bg club_day
-    show rikka 1a zorder 2 at t11
-    with wipeleft_scene
-    # This variable sets the default opinion to OK.
-    $ poemopinion = "med"
-    
-    # This if/elif statement checks if Rikka's opinion of your poem was bad
-    # or good.
-    if r_poemappeal[chapter] < 0:
-        $ poemopinion = "bad"
-    elif r_poemappeal[chapter] > 0:
-        $ poemopinion = "good"
-
-    # These variables sets the next scene chapter to be called based off the
-    # chapter and poem opinion and calls it.
-    $ nextscene = "ch" + pt + str(chapter) + "_r_" + poemopinion
-    call expression nextscene
-
-    # This if statement checks if we are not skipping the poems to call the
-    # end of the poem responses for Rikka depending on the chapter.
-    if not skip_poem:
-        $ nextscene = "ch" + pt + str(chapter) + "_r_end_" + poemopinion
-        call expression nextscene
-    return
-
 label poemresponse_yuri:
     scene bg club_day
     show yuri 1a zorder 2 at t11
@@ -203,9 +170,9 @@ label poemresponse_yuri:
 
     $ poemopinion = "med"
     
-    if y_poemappeal[chapter] < 0:
+    if y_poemappeal[chapter - 1] < 0:
         $ poemopinion = "bad"
-    elif y_poemappeal[chapter] > 0:
+    elif y_poemappeal[chapter - 1] > 0:
         $ poemopinion = "good"
 
     $ nextscene = "ch" + pt + str(chapter) + "_y_" + poemopinion
@@ -223,9 +190,9 @@ label poemresponse_monika:
     show monika 1a zorder 2 at t11
     with wipeleft_scene
 
-    if m_poemappeal[chapter] < 0:
+    if m_poemappeal[chapter - 1] < 0:
         $ poemopinion = "bad"
-    elif m_poemappeal[chapter] > 0:
+    elif m_poemappeal[chapter - 1] > 0:
         $ poemopinion = "good"
 
     $ nextscene = "ch" + pt + str(chapter) + "_m_start"
@@ -238,7 +205,7 @@ label poemresponse_monika:
 
 ## Poem End Labels 
 # These labels define the end result of the poem sharing mini-game with the girls.
-label ch0_y_end:
+label ch1_y_end:
     $ show_poem (poem_y1)
     y 3t "..."
     y "I...I'm sorry I have such terrible handwriting!"
@@ -467,7 +434,7 @@ label ch3_y_end_special:
     "With that, Yuri timidly smiles at me, and I return to my seat so I can put her poem away."
     return
 
-label ch0_n_end:
+label ch1_n_end:
     $ show_poem (poem_n1)
     n 2q "Yeah..."
     n "I told you that you weren't gonna like it."
@@ -666,7 +633,7 @@ label ch3_n_end_special:
     "With that, I return to my seat so that I can put away Natsuki's poem."
     return
 
-label ch0_s_end:
+label ch1_s_end:
     $ show_poem (poem_s1)
     mc "Sayori..."
     mc "This is just a guess, but..."
@@ -737,10 +704,10 @@ label ch2_s_end:
 label ch3_s_end:
     return
 
-label ch0_m_end:
+label ch1_m_end:
     $ show_poem (poem_m1)
 
-label ch0_m_end2:
+label ch1_m_end2:
     m 1a "So...what do you think?"
     mc "Hmm...it's very...freeform, if that's what you call it."
     mc "Sorry, I'm not really the right person to ask for feedback..."
@@ -837,9 +804,49 @@ label ch3_m_end:
 ## Poem Opinion Responses
 # This is where the characters will react to how they liked your poem from
 # good to OK to bad.
-label ch0_n_bad:
+label ch1_n_bad:
     n "..."
     mc "...?"
+    # This if statement checks if we are in Act 2 and if a random number from 0-2
+    # is 0 to trigger a special Act 2 screen.
+    if persistent.playthrough == 2 and renpy.random.randint(0, 2) == 0:
+        $ currentpos = get_pos()
+        stop music
+        $ pause(2.0)
+        play sound "sfx/stab.ogg"
+        show n_blackeyes zorder 3 at i11
+        show n_eye zorder 3:
+            subpixel True
+            pos (660,250) xanchor 0.5 yanchor 0.5 zoom 0.8
+            parallel:
+                linear 2.0 rotate 720
+            parallel:
+                linear 2.0 xpos 1680
+            parallel:
+                easein 0.25 ypos 180
+                easeout 1.0 ypos 1280
+        show n_eye as n_eye2 zorder 3:
+            subpixel True
+            pos (580,260) xanchor 0.5 yanchor 0.5 zoom 0.8 rotate 180
+            parallel:
+                linear 2.0 rotate -560
+            parallel:
+                linear 2.0 xpos -440
+            parallel:
+                easein 0.10 ypos 240
+                easeout 1.0 ypos 1280
+        show blood zorder 3:
+            pos (645,255)
+        show blood as blood2 zorder 3:
+            pos (575,260)
+        $ pause(0.75)
+        hide n_blackeyes
+        hide n_eye
+        hide n_eye2
+        hide blood
+        hide blood2
+        stop sound
+        play music "<from " + str(currentpos) + " loop 4.444>bgm/5.ogg"
     n 2b "[player], if you're not going to take this club seriously then go home."
     mc "W-What??"
     mc "Harsh..."
@@ -862,7 +869,7 @@ label ch0_n_bad:
     n "Knowing you, you'll probably think it's stupid."
     return
 
-label ch0_n_med:
+label ch1_n_med:
     n "..."
     mc "...?"
     n 2k "...Well, it's about what I expected from someone like you."
@@ -878,7 +885,7 @@ label ch0_n_med:
     n 4q "Not that you'll like it."
     return
 
-label ch0_n_good:
+label ch1_n_good:
     n "..."
     mc "...?"
     n 1t "...Okay, well let's start with the things I don't like!"
@@ -1405,7 +1412,7 @@ label ch3_n_good:
         n "Anyway, here's the one I wrote."
         return
 
-label ch0_s_bad:
+label ch1_s_bad:
     s 1b "..."
     s "...Wow!"
     s "[player]..."
@@ -1415,7 +1422,7 @@ label ch0_s_bad:
     s 4a "It's fine, it's fine~"
     s "It's your first time."
     s "Besides..."
-    label ch0_s_shared:
+    label ch1_s_shared:
         s 1a "I'm really happy just that you wrote one."
         s "It just reminds me of how you're really a part of the club now~"
         "(Not to mention the fact that I'm standing in front of you in the clubroom...?)"
@@ -1442,7 +1449,7 @@ label ch0_s_bad:
         mc "We'll see about that."
         return
 
-label ch0_s_med:
+label ch1_s_med:
     s "..."
     s 2x "This is a good poem, [player]!"
     s "Are you sure it's your first time?"
@@ -1454,9 +1461,9 @@ label ch0_s_med:
     s 1d "Well, to be honest..."
     s "I was afraid that you wouldn't do it seriously..."
     s "Or that you wouldn't write one at all."
-    jump ch0_s_shared
+    jump ch1_s_shared
 
-label ch0_s_good:
+label ch1_s_good:
     s 1n "..."
     s "...Oh my goodness!"
     s 4b "This is sooooo good, [player]!"
@@ -1490,7 +1497,7 @@ label ch0_s_good:
     "Sayori hugs the sheet against her chest."
     mc "You're so weird, Sayori..."
     s "Ehehe..."
-    jump ch0_s_shared
+    jump ch1_s_shared
 
 
 label ch2_s_bad:
@@ -1850,7 +1857,7 @@ label ch3_s_good:
     $ skip_poem = True
     return
 
-label ch0_y_bad:
+label ch1_y_bad:
     y 1g "..."
     y "Mm..."
     y "..."
@@ -1881,7 +1888,7 @@ label ch0_y_bad:
     mc "It's fine, I really didn't notice."
     mc "What were you saying?"
     y 2u "Right...um..."
-    label ch0_y_shared:
+    label ch1_y_shared:
         y 1a "It's just that there are specific writing habits that are usually typical of new writers."
         y "And having been through that myself, I kind of learned to pick up on them."
         y 1i "I think the most noticeable thing I recognize in new writers is that they try to make their style very deliberate."
@@ -1911,10 +1918,10 @@ label ch0_y_bad:
         "...After all, isn't this supposed to be a literature club?"
         return
 
-label ch0_y_med:
-    jump ch0_y_bad
+label ch1_y_med:
+    jump ch1_y_bad
 
-label ch0_y_good:
+label ch1_y_good:
     y 1e "..."
     "As Yuri reads the poem, I notice her eyes lighten."
     y 2f "...Exceptional."
@@ -1950,7 +1957,7 @@ label ch0_y_good:
     y 2l "...Yeah."
     y "Okay."
     y "This is the reason I was able to tell."
-    jump ch0_y_shared
+    jump ch1_y_shared
 
 label ch2_y_bad:
     if y_poemappeal[0] < 0:
@@ -2399,7 +2406,7 @@ label ch3_y_good:
         y "Well..."
         jump ch3_y_good_shared
 
-label ch0_m_start:
+label ch1_m_start:
     m 1b "Hi, [player]!"
     m "Having a good time so far?"
     mc "Ah...yeah."
@@ -2514,7 +2521,7 @@ label ch3_m_start:
 ## Monika Character Poem Responses
 # These labels contain Monika's responses to each character you wrote your poem to
 # and the chapter of the mod.
-label m_natsuki_0:
+label m_natsuki_1:
     m 2b "I like it, [player]!"
     mc "Really...?"
     m 2e "It's a lot cuter than I expected."
@@ -2544,7 +2551,7 @@ label m_natsuki_0:
     m 2b "So I can see why it would be your kind of poem to explore!"
     return
 
-label m_sayori_0:
+label m_sayori_1:
     m 2a "I like this one!"
     m "It makes me think of something Sayori would like."
     mc "Is that so?"
@@ -2571,32 +2578,7 @@ label m_sayori_0:
     m 2a "And you shouldn't be afraid to experiment a little bit, either."
     return
 
-label m_yuri_0:
-    m 1a "Great job, [player]!"
-    m "I was going 'Ooh' in my head while reading it."
-    m 1j "It's really metaphorical!"
-    m 1a "I'm not sure why, but I didn't expect you to go for something so deep."
-    m 3b "I guess I underestimated you!"
-    mc "It's easiest for me to keep everyone's expectations low."
-    mc "That way, it always counts when I put in some effort."
-    m 5a "Ahaha! That's not very fair!"
-    m "Well, I guess it worked, anyway."
-    m 2a "You know that Yuri likes this kind of writing, right?"
-    m "Writing that's full of imagery and symbolism."
-    m 2d "Unlike Sayori, who likes using simple and direct words to describe happiness and sadness..."
-    m "Yuri likes it when readers are left to derive their own meaning out of it."
-    m 4d "It's very challenging to write like that effectively."
-    m "Both allowing people to get something out of it just by feel..."
-    m "Or letting them deeply analyze all of the nuances."
-    m "It can take years of practice, which I'm assuming Yuri has at this point."
-    m 1e "I never really asked, though..."
-    mc "I'm sure I'm nowhere near her level yet."
-    m 2b "Don't worry so much about that!"
-    m "You do your own thing."
-    m "Just keep exploring, and learn by trying new things!"
-    return
-
-label m_rikka_0:
+label m_yuri_1:
     m 1a "Great job, [player]!"
     m "I was going 'Ooh' in my head while reading it."
     m 1j "It's really metaphorical!"
@@ -2801,77 +2783,4 @@ label m_yuri_3:
     mc "You say that like I'm going to hurt her..."
     m 1l "Sorry, I didn't really mean that~"
     m "If anything, she might accidentally hurt herself."
-    return
-
-label ch0_r_good:
-    mc "So, you ready to share your first poem?"
-    show rikka 1e at f11 zorder 2
-    r "I... don't think I'll ever be ready."
-    r 1p "But I trust what you told me, [player]."
-    r 1x "I'm honestly really glad you're the first person reading it."
-    r "At least I know the reader won't judge what I wrote."
-    show rikka at t11
-    mc "I'm glad I could help you feel that way."
-    show rikka 1g at f11
-    r "Well, here it is."
-    return
-
-label ch0_r_med:
-    jump ch0_r_bad
-
-label ch0_r_bad:
-    mc "So, I'm assuming it's your first time writing like this as well?"
-    show rikka 1a at f11
-    r "What gave it away?"
-    show rikka at t11
-    mc "Dang, there goes my whole point, then."
-    show rikka 1f at t11
-    "Rikka laughs a little before handing me her poem."
-    show rikka 1h at f11
-    r "I guess we're in this together."
-    return
-
-label ch0_r_end_good:
-    $ show_poem (poem_r1)
-    show rikka 1g at f11
-    r "Sorry that this poem is incredibly short."
-    r "I... may or may not have started completely over after you calmed me down."
-    r "Not to mention this is allot different than the kind of stuff I'm used to."
-    r 1a "But I promise in the end I'll write something to make everyone in the club proud!"
-    show rikka at t11
-    mc "To be fair, I typically don't do anything like this, either."
-    mc "... As you could probably tell."
-    mc "Just taking this first step is worth being proud of."
-    show rikka 1k at f11
-    r "I can't believe such a good example of your advice seriously came up just now, but I'm glad it did."
-    r 1v "And I'm proud of you, too, [player]. We'll both get the hang of this eventually."
-    show rikka at t11
-    "I definitely wasn't expecting my own advice to be handed back to me."
-    "And I wasn't expecting it to be so encouraging, either."
-    "I give Rikka a small grin and hand the poem back to her."
-    mc "Yeah. We will."
-    return
-
-label ch0_r_end_med:
-    jump ch0_r_end_bad
-    return
-
-label ch0_r_end_bad:
-    $ show_poem (poem_r1)
-    show rikka 1g at f11
-    r "Sorry that this poem is incredibly short."
-    r "It's a lot different than the stuff I usually do, so I'm taking my own advice and easing into it."
-    r 1h "But I promise in the end I'll write something to make everyone in the club proud!"
-    show rikka at t11
-    mc "To be fair, I typically don't do anything like this, either."
-    mc "So just taking this first step is something worth being proud of. Well, at least, {i}I{/i} think it is."
-    show rikka 1v at f11
-    r "[player]... Heh, you sound just like my uncle."
-    r 1u "You know what... I agree. I'm proud of you for doing this as well."
-    r 1a "We'll both get the hang of this eventually!"
-    show rikka at t11
-    "I expected Rikka to be pretty encouraging, especially since she's on the track team and probably prioritizes positivity."
-    "But her words still hit me hard."
-    "I give Rikka a small grin and hand the poem back."
-    mc "Yeah. We will."
     return

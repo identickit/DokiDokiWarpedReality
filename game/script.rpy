@@ -50,14 +50,9 @@ label start:
 
     if persistent.playthrough ==0:
 
-        call ch0_p1
+        call ch1_p1
 
         call poem
-
-        call ch0_p2
-        call poemresponse_start
-        call ch0_end
-
     ## Example on calling scripts from DDLC.
     # if persistent.playthrough == 0:
     #     # This variable sets the chapter number to X depending on the chapter
