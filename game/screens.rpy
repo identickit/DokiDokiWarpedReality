@@ -225,6 +225,22 @@ style window:
 
     background Transform("gui/textbox.png", xalign=0.5, yalign=1.0)
 
+style window_mg:
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+
+    background Transform("mod_assets/textboxmg.png", xalign=0.5, yalign=1.0)
+
+style window_p2:
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+
+    background Transform("mod_assets/textboxp2.png", xalign=0.5, yalign=1.0)
+
 style window_monika is window:
     background Transform("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
 

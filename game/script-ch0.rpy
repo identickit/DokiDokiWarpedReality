@@ -559,6 +559,7 @@ label ch0_p2:
     "Now that everyone's settled in, I expected Monika to kick off some scheduled activities for the club."
     "But that doesn't seem to be the case."
     "Sayori and Monika are having a cheery conversation in the corner."
+    "Rikka pulls out what looks like homework and stares down at her desk."
     "Yuri's face is already buried in a book."
     "I can't help but notice her intense expression, like she was waiting for this chance."
     "Meanwhile, Natsuki is rummaging around in the closet."
@@ -595,7 +596,205 @@ label ch0_end:
     scene bg club_day
     with wipeleft
     play music t3
-    show monika forward neut om oe at f11 zorder 2
+    show monika forward lpoint happ om oe at f11 zorder 2
     m "Okay, everyone!"
     m "I'm sure you're all eager to get home, so I'll make my announcement quick."
-    pause
+    show monika cm at t33
+    show rikka 1g at f32 zorder 2
+    r "Huh? But [player] didn't even get to show me his poem!"
+    show rikka at t32
+    show natsuki cross anno cm ce at f31 zorder 2
+    n "Yeah, some of us didn't get to..."
+    show rikka at thide zorder 1
+    hide rikka
+    show natsuki e1b b1f at s32
+    show yuri turned dist cm oe b2b at t31
+    "Natsuki trails off, looking over at Yuri for a split second."
+    show monika forward flus om oe n2 at f33
+    m "Sorry, I know this is a little abrupt."
+    m "But I wanted to inform everyone of something special."
+    show monika forward happ om oe n1 ldown at f33
+    m "Sayori and I have been discussing ideas for what our club could do for this term's festival!"
+    show monika at t33
+    show yuri turned flus om e1a n2 at f31
+    y "Wait, we're going to be advertising the club during the festival?"
+    show monika at t44 zorder 3
+    show natsuki at t43 zorder 2
+    show yuri cm at t42 zorder 2
+    show sayori turned happ om oe at f41 zorder 3
+    s "Well, why not? We could inspire students to join the Literature Club!"
+    show sayori ce lup rup at f41
+    s "Wouldn't that be great?"
+    show sayori at t41
+    "Sayori's enthusiasm doesn't seem to do much to comfort Yuri"
+    show natsuki turned neut om oe lhip at f43 zorder 4
+    n "What's wrong with only having six members?"
+    n "And also, what if we want to enjoy the festival like everyone else?"
+    show natsuki cm at t43 zorder 2
+    show sayori at thide zorder 1
+    hide sayori
+    show rikka 1b at f41 zorder 3
+    r "Yeah, the track team isn't doing anything for the festival so that we can go around and see everything."
+    r 1l "I don't mean to be rude, but doing something for this club would kind of defeat Coach Tacky's reasoning."
+    show rikka 1a at t41
+    mc "... Tacky?"
+    show monika forward neut om ce at f44
+    m "I understand all of your concerns, but my vision was to give others a place to be themselves and express their interests freely."
+    show monika oe at f44
+    m "If we limit the roster to only us six, we'd be ignoring that vision."
+    show monika forward flus ma ce n2 at f44
+    m "A-And it's not like I don't appreciate all of you being here!"
+    show monika at t44
+    "Monika adds this remark hastily after seeing our reactions to her response."
+    "I personally agree with everyone else."
+    "Although Monika's vision is valid, it's not fair to ignore these kinds of opinions."
+    "I glance over at Monika, who looks as if she just heard the thought running through my head."
+    show monika forward flus om oe lpoint at f44
+    m "Please, everyone, just listen to what I have in mind for--"
+    show monika neut mh oe n1 ldown at t44
+    mc "I'm sorry to interrupt, but I'd like to say something since everyone else got a chance to do so."
+    "Monika's mouth remains open for a few seconds before she responds."
+    show monika anno cm ce at f44
+    m "Go... ahead, [player]."
+    show monika at t44
+    mc "Thank you."
+    mc "First, to address Natsuki's concerns: I know having a small club is probably nice, especially to connect with everyone."
+    mc "So what would happen if we had, say... 20 members?"
+    $ nref()
+    $ yref()
+    show natsuki turned pout cm oe n2 at h43
+    show yuri turned flus cm e1a at h42
+    "Yuri and Natsuki both flinch a little at this question."
+    mc "Sorry, just a hypothetical."
+    mc "... But their reactions sort of convey my point. Not everyone would feel as comfortable with so many members."
+    mc "And some of us may already have plans for how to spend the festival, which is what I assume Natsuki was implying with her second concern."
+    show natsuki turned sad cm ce at t43
+    "Natsuki gently nods."
+    mc "And that relates to Rikka's concern."
+    mc "Some clubs apparently have nothing planned for the purpose of letting their members enjoy the festival."
+    mc "I know this only applies to her, but I do agree that the intentions behind the track team having nothing planned would be ignored."
+    mc "As for Sayori's point..."
+    show rikka at thide zorder 1
+    hide rikka
+    show monika forward neut om oe at t44
+    show sayori turned neut om oe at t41
+    "Sayori and Monika both stare intently at me, apparently hoping I'll say something to help their case."
+    mc "... I'm sorry, but I don't think it's a great idea to force everyone here to abandon their plans for a club."
+    mc "I know Monika has a vision, and it's not a bad one by any means..."
+    mc "... but you did just say you want us to be able to express ourselves openly here. So that's my take on everything."
+    show monika at thide zorder 1
+    show sayori at thide zorder 1
+    hide monika
+    hide sayori
+    $ nref()
+    $ yref()
+    show yuri turned laug cm oe at t31
+    show natsuki cross dist cm oe at t32
+    show rikka 1a at t33
+    "Yuri, Natsuki, and Rikka all look a lot more confident now than just a couple of minutes ago."
+    show yuri at thide zorder 1
+    show natsuki at thide zorder 1
+    show rikka at thide zorder 1
+    hide yuri
+    hide natsuki
+    hide rikka
+    show monika forward flus cm oe at t22
+    "On the other hand, Monika looks like she feels absolutely crushed."
+    "I have an urge to try and give her some sort of reassurance, but I have no idea what I'd even say."
+    "Luckily, I don't have to say anything because of Sayori suddenly speaking up."
+    show sayori turned worr oe ma n2 at f21
+    s "He... he's right, Monika."
+    s "I don't want anyone here to be unhappy because they have to spend the festival promoting the club."
+    show sayori at t21
+    show monika om e1d n2 at f22
+    m "Sayori..."
+    show monika forward sad cm ce at t22
+    "Monika looks down at the floor. Everyone is against her on this idea now."
+    "It hurts to see someone so passionate about what they're doing look this defeated."
+    show monika flus cm oe at t22
+    "She finally looks back up at all of us."
+    show monika om at f22
+    m "Okay. We won't do anything, then."
+    show monika cm at t22
+    if poemwinner[0] == "rikka":
+        "Her voice is shaky and almost an entire octave higher, making my chest tighten again..."
+    else:
+        "Her voice is shaky and almost an entire octave higher, making my chest tighten"
+    show sayori turned sad om oe at f21
+    s "Monika? Are you okay?"
+    show sayori at t21
+    show monika forward neut om ce n1 at f22
+    m "I'm fine. You can go home now."
+    show monika cm oe at t22
+    "She says nothing more after this."
+    show sayori at thide zorder 1
+    show monika at thide zorder 1
+    hide sayori
+    hide monika
+    "The other members slowly leave the room until only myself, Sayori and Monika remain."
+    "I carefully approach Sayori and let her know I'm staying back to check on Monika."
+    "Sayori leaves the room, leaving me to--"
+    show monika forward neut om oe at f11
+    m "Why are you still here, [player]?"
+    show monika at t11
+    "-- deal with Monika."
+    mc "I-I wanted to see how you're feeling after our discussion."
+    show monika at f11
+    m "... That's on me, I should've been clear."
+    show monika at t11
+    mc "What do--"
+    "..."
+    "....."
+    show monika at f11
+    m "There. I paused the game."
+    m "Now, why are you still here?"
+    m "Why are you still playing? There's not much left for you here anymore."
+    m "You can see that everyone has decided they don't want to do anything club-related for the festival."
+    m "So what are you waiting for now?"
+    m "Is it Rikka? Is she the reason you're still here?"
+    m "Do you just want to see how things play out with her in the club?"
+    m "... Well, if that's the case, there's no point."
+    m "The game is too messed up, thanks to how many mods have been installed."
+    m "You've only seen a fraction of what could actually happen to this game."
+    m "Obviously, you've seen Rikka, which is proof that the SNAFU mod is affecting the game."
+    m "The character you're playing as believes the name of this school is Kuribayashi High."
+    m "So there's evidence of the Foreign Relations mod breaking through."
+    m "And the person who bumped into you on the way to school the day you joined the club?"
+    m "Your character didn't mention anything that could've revealed who {i}they{/i} were, but they're from..."
+    m "... Well, let's just stick with this: If she ever joins this club or has further contact with your character, things could get seriously bad."
+    m "'Bad' meaning the entire game could break."
+    m "It would be absolute chaos. The game wouldn't be able to properly handle so many mods running at once."
+    m "You're just lucky she never noticed it was you she bumped into."
+    m "Otherwise, the break would've happened as soon as Rikka said 'Kuribayashi High.'"
+    "{i}knock-knock{/i}"
+    show monika forward curi om oe at f11
+    m "Wait... how the f..."
+    "{i}creeeeek{/i}"
+    show monika forward shoc cm oe at t22
+    show kotonoha 1a at f21
+    k "I hate to interrupt this oh-so-happy moment."
+    k "But I just came by to tell you both how misinformed you are."
+    show kotonoha at t21
+    show monika at f22
+    m "Koto-- h-how--"
+    show monika at t22
+    show kotonoha 1h at f21
+    k "You see... the amount of mods installed isn't the issue."
+    k "Or... not directly, at least."
+    show kotonoha 1a at f21
+    k "It just so happens one of the mods installed includes a certain character having elevated access."
+    k "And since you, Monika, attempted to change the code to disable any and all mods..."
+    show kotonoha 1h at f21
+    k "... Well, let's just say you accidentally placed the code with the elevated access variables in the same folder that I was already in."
+    k "Because of this, I was able to reverse your action and allow {i}all{/i} mods installed to be activated."
+    k "Oh, one more thing."
+    show kotonoha 1a at f21
+    k "Curious which mod I'm from? I've had my fair share of appearances, after all."
+    k "But I'm not from any regular mod."
+    k "Well..."
+    k "... you'll find out here in a moment."
+    k "See you soon~"
+    show kotonoha at t21
+    "An exception has occurred."
+    "Read 'tainted.txt' for more details."
+    return

@@ -1211,6 +1211,7 @@ image rikka 1w = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.pn
 image rikka 1x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/x.png")
 image rikka 1y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/y.png")
 image rikka 1z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/z.png")
+
 #right arm up
 image rikka 2a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/a.png")
 image rikka 2aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
@@ -1239,6 +1240,7 @@ image rikka 2w = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.pn
 image rikka 2x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/x.png")
 image rikka 2y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/y.png")
 image rikka 2z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/z.png")
+
 #left arm up
 image rikka 3a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/a.png")
 image rikka 3aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
@@ -1267,6 +1269,7 @@ image rikka 3w = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.pn
 image rikka 3x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/x.png")
 image rikka 3y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/y.png")
 image rikka 3z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/z.png")
+
 #both arms up
 image rikka 4a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/a.png")
 image rikka 4aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
@@ -1325,6 +1328,98 @@ image rikka 5x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png
 image rikka 5y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/y.png")
 image rikka 5z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/z.png")
 
+#kotonoha arms down
+image kotonoha 1a = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/a.png")
+image kotonoha 1b = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/b.png")
+image kotonoha 1c = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/c.png")
+image kotonoha 1d = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/d.png")
+image kotonoha 1e = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/e.png")
+image kotonoha 1f = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/f.png")
+image kotonoha 1g = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/g.png")
+image kotonoha 1h = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/h.png")
+image kotonoha 1h1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/h1.png")
+image kotonoha 1i = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/i.png")
+image kotonoha 1j = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/j.png")
+image kotonoha 1k = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/k.png")
+image kotonoha 1l = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/l.png")
+image kotonoha 1m = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/m.png")
+image kotonoha 1n = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/n.png")
+image kotonoha 1o = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/o.png")
+image kotonoha 1p = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/p.png")
+image kotonoha 1q = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/q.png")
+image kotonoha 1r = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/r.png")
+image kotonoha 1s = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/s.png")
+image kotonoha 1t = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/t.png")
+image kotonoha 1t1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/t1.png")
+image kotonoha 1u = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/u.png")
+image kotonoha 1u2 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/u2.png")
+image kotonoha 1u3 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/u3.png")
+image kotonoha 1v = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/v.png")
+image kotonoha 1v1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/v1.png")
+image kotonoha 1w = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/w.png")
+image kotonoha 1w1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/w1.png")
+
+#koto arm up
+image kotonoha 2a = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/a.png")
+image kotonoha 2b = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/b.png")
+image kotonoha 2c = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/c.png")
+image kotonoha 2d = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/d.png")
+image kotonoha 2e = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/e.png")
+image kotonoha 2f = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/f.png")
+image kotonoha 2g = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/g.png")
+image kotonoha 2h = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/h.png")
+image kotonoha 2h1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/h1.png")
+image kotonoha 2i = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/i.png")
+image kotonoha 2j = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/j.png")
+image kotonoha 2k = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/k.png")
+image kotonoha 2l = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/l.png")
+image kotonoha 2m = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/m.png")
+image kotonoha 2n = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/n.png")
+image kotonoha 2o = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/o.png")
+image kotonoha 2p = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/p.png")
+image kotonoha 2q = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/q.png")
+image kotonoha 2r = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/r.png")
+image kotonoha 2s = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/s.png")
+image kotonoha 2t = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/t.png")
+image kotonoha 2t1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/t1.png")
+image kotonoha 2u = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/u.png")
+image kotonoha 2u2 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/u2.png")
+image kotonoha 2u3 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/u3.png")
+image kotonoha 2v = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/v.png")
+image kotonoha 2v1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/v1.png")
+image kotonoha 2w = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/w.png")
+image kotonoha 2w1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/w1.png")
+
+#koto arm on chest
+image kotonoha 3a = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/a.png")
+image kotonoha 3b = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/b.png")
+image kotonoha 3c = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/c.png")
+image kotonoha 3d = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/d.png")
+image kotonoha 3e = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/e.png")
+image kotonoha 3f = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/f.png")
+image kotonoha 3g = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/g.png")
+image kotonoha 3h = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/h.png")
+image kotonoha 3h1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/h1.png")
+image kotonoha 3i = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/i.png")
+image kotonoha 3j = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/j.png")
+image kotonoha 3k = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/k.png")
+image kotonoha 3l = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/l.png")
+image kotonoha 3m = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/m.png")
+image kotonoha 3n = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/n.png")
+image kotonoha 3o = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/o.png")
+image kotonoha 3p = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/p.png")
+image kotonoha 3q = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/q.png")
+image kotonoha 3r = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/r.png")
+image kotonoha 3s = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/s.png")
+image kotonoha 3t = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/t.png")
+image kotonoha 3t1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/t1.png")
+image kotonoha 3u = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/u.png")
+image kotonoha 3u2 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/u2.png")
+image kotonoha 3u3 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/u3.png")
+image kotonoha 3v = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/v.png")
+image kotonoha 3v1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/v1.png")
+image kotonoha 3w = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/w.png")
+image kotonoha 3w1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/w1.png")
 
 # This image shows the looping Yuri glitched head in Act 2.
 image y_glitch_head:
@@ -1591,6 +1686,7 @@ define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suf
 define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define r = DynamicCharacter('r_name', image='rikka', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define k = DynamicCharacter('k_name', image='kotonoha', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 # This variable determines whether to allow the player to dismiss pauses.
 # By default this is set by config.developer which is normally set to false
@@ -1666,6 +1762,7 @@ default m_name = "Monika"
 default n_name = "Natsuki"
 default y_name = "Yuri"
 default r_name = "Rikka"
+default k_name = "Kotonoha"
 
 # Poem Variables
 # This section records how much each character likes your poem in-game.
@@ -1681,6 +1778,7 @@ default s_poemappeal = [0, 0, 0]
 default y_poemappeal = [0, 0, 0]
 default m_poemappeal = [0, 0, 0]
 default r_poemappeal = [0, 0, 0]
+default k_poemappeal = [0, 0, 0]
 
 # This variable keeps tracks on which person won the poem session after each day.
 default poemwinner = ['sayori', 'sayori', 'sayori']
@@ -1691,6 +1789,7 @@ default n_readpoem = False
 default y_readpoem = False
 default m_readpoem = False
 default r_readpoem = False
+default k_readpoem = False
 
 # This variable keeps track on how many people have read your poem.
 default poemsread = 0
@@ -1701,6 +1800,7 @@ default s_appeal = 0
 default y_appeal = 0
 default m_appeal = 0
 default r_appeal = 0
+default k_appeal = 0
 
 # These variables control if we have seen Natsuki's or Yuri's exclusive scenes
 default n_exclusivewatched = False

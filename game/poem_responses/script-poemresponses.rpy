@@ -62,7 +62,7 @@ label poemresponse_start:
             "Sayori" if not s_readpoem and persistent.playthrough == 0:
                 # This variable sets that you have read Sayori's poem.
                 $ s_readpoem = True
-                if chapter == 1 and poemsread == 0:
+                if chapter == 0 and poemsread == 0:
                     "I'm definitely most comfortable sharing it with Sayori first."
                     "She's my good friend, after all."
                 # This call statement calls Sayori's poem response script.
@@ -72,7 +72,7 @@ label poemresponse_start:
             # poem to her.
             "Natsuki" if not n_readpoem:
                 $ n_readpoem = True
-                if chapter == 1 and poemsread == 0:
+                if chapter == 0 and poemsread == 0:
                     "I told Natsuki I was interested in her poems yesterday."
                     "It's probably only fair if I shared mine with her first."
                 call poemresponse_natsuki
@@ -81,21 +81,21 @@ label poemresponse_start:
             # poem to her and she didn't run away from you in Act 2.
             "Yuri" if not y_readpoem and not y_ranaway:
                 $ y_readpoem = True
-                if chapter == 1 and poemsread == 0:
+                if chapter == 0 and poemsread == 0:
                     "Yuri seems the most experienced, so I should start with her."
                     "I can trust her opinion to be fair."
                 call poemresponse_yuri
 
             "Monika" if not m_readpoem:
                 $ m_readpoem = True
-                if chapter == 1 and poemsread == 0:
+                if chapter == 0 and poemsread == 0:
                     "I should start with Monika."
                     "Yesterday she seemed eager to read my poem, and I want her to know I'm putting in effort."
                 call poemresponse_monika
 
             "Rikka" if not r_readpoem:
                 $ r_readpoem = True
-                if chapter == 1 and poemsread == 0:
+                if chapter == 0 and poemsread == 0:
                     "I think starting with Rikka might be the best option, especially after the talk we just had."
                 call poemresponse_rikka
 
@@ -103,8 +103,8 @@ label poemresponse_start:
         $ poemsread += 1
         
         # This if/else statement checks if we have not yet read 3 poems for Act 2 
-        # or if we are in Act 1 and haven't read 4 poems.
-        if poemsread < 3 or (persistent.playthrough == 0 and poemsread < 4):
+        # or if we are in Act 1 and haven't read 5 poems.
+        if poemsread < 3 or (persistent.playthrough == 0 and poemsread < 5):
             jump poemresponse_loop
 
     # These variables resets the read poem variables back to normal.
@@ -738,8 +738,10 @@ label ch3_s_end:
     return
 
 label ch0_m_end:
-    $ show_poem (poem_m1)
-
+    if poemwinner[0] == "rikka":
+        return
+    else:
+        $ show_poem (poem_m1)
 label ch0_m_end2:
     m 1a "So...what do you think?"
     mc "Hmm...it's very...freeform, if that's what you call it."
@@ -2427,26 +2429,29 @@ label ch0_m_start:
     $ nextscene = "m_" + poemwinner[0] + "_" + str(eval(poemwinner[0][0] + "_appeal"))
     call expression nextscene
 
-    mc "I'm sure I'll end up trying different things a lot."
-    mc "It could take a while before I feel comfortable doing this."
-    m 1k "That's okay!"
-    m 1b "I'd love to see you try new things."
-    m "That's the best way to find the kind of style that suits you."
-    m 3e "Everyone else might be a little bit biased toward their own kinds of styles..."
-    m 3a "But I'll always help you find what suits you the most!"
-    m "So don't force yourself to write the way everyone else wants you to write."
-    m "It's not like you have to worry about impressing them or anything."
-    m 5 "Ahaha!"
-    mc "Ahaha..."
-    m 1a "Anyway, do you want to read my poem now?"
-    m 1e "Don't worry, I'm not very good..."
-    mc "You sound pretty confident for someone who claims to not be very good."
-    m 1j "Well...that's 'cause I have to sound confident."
-    m 1b "That doesn't mean I always feel that way, you know?"
-    show monika 1a
-    mc "I see..."
-    mc "Well, let's read it, then."
-    return
+    if poemwinner[0] == "rikka":
+        return
+    else:
+        mc "I'm sure I'll end up trying different things a lot."
+        mc "It could take a while before I feel comfortable doing this."
+        m 1k "That's okay!"
+        m 1b "I'd love to see you try new things."
+        m "That's the best way to find the kind of style that suits you."
+        m 3e "Everyone else might be a little bit biased toward their own kinds of styles..."
+        m 3a "But I'll always help you find what suits you the most!"
+        m "So don't force yourself to write the way everyone else wants you to write."
+        m "It's not like you have to worry about impressing them or anything."
+        m 5 "Ahaha!"
+        mc "Ahaha..."
+        m 1a "Anyway, do you want to read my poem now?"
+        m 1e "Don't worry, I'm not very good..."
+        mc "You sound pretty confident for someone who claims to not be very good."
+        m 1j "Well...that's 'cause I have to sound confident."
+        m 1b "That doesn't mean I always feel that way, you know?"
+        show monika 1a
+        mc "I see..."
+        mc "Well, let's read it, then."
+        return
 
 label ch2_m_start:
     m 1b "Hi again, [player]!"
@@ -2597,28 +2602,37 @@ label m_yuri_0:
     return
 
 label m_rikka_0:
-    m 1a "Great job, [player]!"
-    m "I was going 'Ooh' in my head while reading it."
-    m 1j "It's really metaphorical!"
-    m 1a "I'm not sure why, but I didn't expect you to go for something so deep."
-    m 3b "I guess I underestimated you!"
-    mc "It's easiest for me to keep everyone's expectations low."
-    mc "That way, it always counts when I put in some effort."
-    m 5a "Ahaha! That's not very fair!"
-    m "Well, I guess it worked, anyway."
-    m 2a "You know that Yuri likes this kind of writing, right?"
-    m "Writing that's full of imagery and symbolism."
-    m 2d "Unlike Sayori, who likes using simple and direct words to describe happiness and sadness..."
-    m "Yuri likes it when readers are left to derive their own meaning out of it."
-    m 4d "It's very challenging to write like that effectively."
-    m "Both allowing people to get something out of it just by feel..."
-    m "Or letting them deeply analyze all of the nuances."
-    m "It can take years of practice, which I'm assuming Yuri has at this point."
-    m 1e "I never really asked, though..."
-    mc "I'm sure I'm nowhere near her level yet."
-    m 2b "Don't worry so much about that!"
-    m "You do your own thing."
-    m "Just keep exploring, and learn by trying new things!"
+    show monika forward nerv cm ce at f11 zorder 2
+    m "This is really good!"
+    m "Y'know, it's kind of funny, actually…"
+    show monika e1a at f11
+    m "I was expecting this sort of poem from Rikka."
+    show monika forward neut e1b at f11
+    m "(... Well, no I wasn't, but it's clear that you'd rather try to impress someone who doesn't even belong here.)"
+    show monika at t11
+    mc "What was that? I couldn't make out what you said just now."
+    $ mref()
+    show monika lean at f11
+    m "Nothing! I was just talking to myself, that's all."
+    show monika at t11
+    mc "... Okay, then?"
+    show monika forward happ om oe lpoint at f11
+    m "Anyways, here's Monika's Writing Tip of the Day!"
+    show monika neut om oe ldown at f11
+    m "Stay away from her."
+    m "Just stay away from her."
+    m "She's ruining everything."
+    m "... But you don't care, do you?"
+    m "You just want a new experience."
+    m "You're tired of spending time with me."
+    m "With Sayori… Yuri… Natsuki…"
+    m "But why does it matter how much it hurts me?"
+    m "As long as you can enjoy a new version of the game… As long as you're happy."
+    m "{i}That's{/i} all that matters to you."
+    show monika ce cm at f11
+    m "..."
+    show monika cm oe at f11
+    m "You know I'm right."
     return
 
 label m_natsuki_2:
