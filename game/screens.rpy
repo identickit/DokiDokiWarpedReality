@@ -231,7 +231,15 @@ style window_mg:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Transform("mod_assets/textboxmg.png", xalign=0.5, yalign=1.0)
+    background Transform("mod_assets/gui/textboxmg.png", xalign=0.5, yalign=1.0)
+
+style window_mg2:
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+
+    background Transform("mod_assets/gui/textboxmg2.png", xalign=0.5, yalign=1.0)
 
 style window_p2:
     xalign 0.5
@@ -239,7 +247,7 @@ style window_p2:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Transform("mod_assets/textboxp2.png", xalign=0.5, yalign=1.0)
+    background Transform("mod_assets/gui/textboxp2.png", xalign=0.5, yalign=1.0)
 
 style window_monika is window:
     background Transform("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
@@ -252,6 +260,36 @@ style namebox:
     ysize gui.namebox_height
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    padding gui.namebox_borders.padding
+
+style nameboxd:
+    xpos gui.name_xpos
+    xanchor gui.name_xalign
+    xsize gui.namebox_width
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    padding gui.namebox_borders.padding
+
+style namebox_mg:
+    xpos gui.name_xpos
+    xanchor gui.name_xalign
+    xsize gui.namebox_width
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("mod_assets/gui/nameboxmg.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    padding gui.namebox_borders.padding
+    
+style namebox_mg2:
+    xpos gui.name_xpos
+    xanchor gui.name_xalign
+    xsize gui.namebox_width
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("mod_assets/gui/nameboxmg2.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:

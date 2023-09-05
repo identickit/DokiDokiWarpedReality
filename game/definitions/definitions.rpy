@@ -136,6 +136,12 @@ init python:
         renpy.pause(time)
         _windows_hidden = False
 
+    def ran(trans, st, at):
+        if st >= renpy.random.random():
+            return None
+        else:
+            return 0
+
 ## Music
 # This section declares the music available to be played in the mod.
 # Syntax:
@@ -236,6 +242,21 @@ image bg kitchen = "bg/kitchen.png" # MC's Kitchen BG
 
 image bg notebook = "bg/notebook.png" # Poem Game Notebook Scene
 image bg notebook-glitch = "bg/notebook-glitch.png" # Glitched Poem Game BG
+
+image bg clubdayg:
+    "mod_assets/bg/clubdayg1.png"
+    function ran
+    pause 0.1
+    "mod_assets/bg/clubdayg2.png"
+    function ran
+    pause 0.1
+    "mod_assets/bg/clubdayg3.png"
+    function ran
+    pause 0.1
+    "mod_assets/bg/clubdayg4.png"
+    function ran
+    pause 0.1
+    repeat
 
 # This image shows a glitched screen during Act 2 poem sharing with Yuri.
 image bg glitch = LiveTile("bg/glitch.jpg")

@@ -1,4 +1,7 @@
 label ch0_p1:
+    $ mgmode = True
+    $ style.say_window = style.window_mg2
+    $ style.namebox = style.namebox_mg2
     $ m_name = "Monika"
     stop music fadeout 1.0
     pause 3.0
@@ -23,20 +26,23 @@ label ch0_p1:
     m "..... There. I've made it so that any attempts at modding the game you make won't work."
     $ gtext = glitchtext(150)
     m "This might seem unreasonable, but really, [player], I'm doing you a huge{cps=*4}[gtext]{nw}{/cps}"
-    $ renpy.sound.play ("sfx/glitch1.ogg", loop=True)
-    m "{cps=*4}[gtext]{nw}{/cps}"
+    $ renpy.sound.play ("sfx/glitch2.ogg", loop=True)
+    m "{cps=*6}[gtext]{nw}{/cps}"
     $ gtext = glitchtext(160)
-    m "{cps=*4}[gtext]{nw}{/cps}"
+    m "{cps=*6}[gtext]{nw}{/cps}"
     $ gtext = glitchtext(140)
-    m "{cps=*4}[gtext]{nw}{/cps}"
+    m "{cps=*6}[gtext]{nw}{/cps}"
     $ gtext = glitchtext(120)
-    m "{cps=*4}[gtext]{nw}{/cps}"
+    m "{cps=*6}[gtext]{nw}{/cps}"
     $ gtext = glitchtext(170)
-    m "{cps=*4}[gtext]{nw}{/cps}"
+    m "{cps=*6}[gtext]{nw}{/cps}"
     $ gtext = glitchtext(155)
-    m "{cps=*4}[gtext]{nw}{/cps}"
+    m "{cps=*6}[gtext]{nw}{/cps}"
     stop sound
     window hide
+    $ style.say_window = style.window
+    $ style.namebox = style.nameboxd
+    $ mgmode = False
     pause 3.0
 
     scene bg residential_day
@@ -123,6 +129,9 @@ label ch0_p1:
     
     scene black with dissolve_scene_full
     stop music fadeout 1.0
+    $ mgmode = True
+    $ style.say_window = style.window_mg2
+    $ style.namebox = style.namebox_mg2
     pause 3.0
     m "Sigh..."
     m "This wasn't supposed to happen."
@@ -136,6 +145,9 @@ label ch0_p1:
     m "You should've just gratefully accepted the time we had together."
     m "[player]..."
     m "I hope you're happy."
+    $ style.say_window = style.window
+    $ style.namebox = style.nameboxd
+    $ mgmode = False
     pause 3.0
     
     $ m_name = 'Monika'
@@ -535,13 +547,20 @@ label ch0_p1:
     scene black
     with dissolve
     stop music fadeout 1.0
+    $ mgmode = True
+    $ style.say_window = style.window_mg2
+    $ style.namebox = style.namebox_mg2
     m "I won't bore you with this short monologue."
     m "Enjoy your first poem minigame."
     m "I know I won't."
+    $ mgmode = False
+    $ style.say_window = style.window
+    $ style.namebox = style.nameboxd
 
     return
 
 label ch0_p2:
+    $ mgmode = False
     scene bg club_day
     with wipeleft
     play music t3
@@ -593,6 +612,7 @@ label ch0_p2:
     return
 
 label ch0_end:
+    $ mgmode = False
     scene bg club_day
     with wipeleft
     play music t3
@@ -743,8 +763,10 @@ label ch0_end:
     m "... That's on me, I should've been clear."
     show monika at t11
     mc "What do--"
+    stop music fadeout 2.0
     "..."
     "....."
+    show vignette
     show monika at f11
     m "There. I paused the game."
     m "Now, why are you still here?"
@@ -770,31 +792,58 @@ label ch0_end:
     show monika forward curi om oe at f11
     m "Wait... how the f..."
     "{i}creeeeek{/i}"
+    hide vignette
     show monika forward shoc cm oe at t22
     show kotonoha 1a at f21
     k "I hate to interrupt this oh-so-happy moment."
+    $ renpy.sound.play ("sfx/glitch3.ogg")
+    show monika g2 at t22
     k "But I just came by to tell you both how misinformed you are."
     show kotonoha at t21
-    show monika at f22
+    show monika forward shoc cm oe at f22
     m "Koto-- h-how--"
     show monika at t22
     show kotonoha 1h at f21
+
     k "You see... the amount of mods installed isn't the issue."
     k "Or... not directly, at least."
+    $ renpy.sound.play ("sfx/glitch3.ogg")
+    show bg clubdayg
+    show monika g2 at t22
     show kotonoha 1a at f21
     k "It just so happens one of the mods installed includes a certain character having elevated access."
+    show bg club_day
+    show monika forward shoc cm oe at t22
+    $ renpy.sound.play ("sfx/glitch3.ogg")
     k "And since you, Monika, attempted to change the code to disable any and all mods..."
     show kotonoha 1h at f21
+    show bg clubdayg
+    show monika g2 at t22
+    $ renpy.sound.play ("sfx/glitch3.ogg")
     k "... Well, let's just say you accidentally placed the code with the elevated access variables in the same folder that I was already in."
     k "Because of this, I was able to reverse your action and allow {i}all{/i} mods installed to be activated."
+    $ renpy.sound.play ("sfx/glitch3.ogg")
+    show kotonoha at thide zorder 1
+    show monika at thide zorder 1
+    hide monika
+    hide kotonoha
+    scene black
     k "Oh, one more thing."
-    show kotonoha 1a at f21
     k "Curious which mod I'm from? I've had my fair share of appearances, after all."
     k "But I'm not from any regular mod."
     k "Well..."
     k "... you'll find out here in a moment."
     k "See you soon~"
-    show kotonoha at t21
-    "An exception has occurred."
-    "Read 'tainted.txt' for more details."
-    return
+    window hide
+    $ consolehistory = []
+    $ run_input("", "An exception has occurred.")
+    $ pause(2.0)
+    $ run_input("", "Read 'tainted.txt' for more details.")
+    $ pause(3.0)
+    python:
+        try: renpy.file(config.basedir + "/tainted.txt")
+        except: open(config.basedir + "/tainted.txt", "wb").write(renpy.file("mod_assets/tainted.txt").read())
+    $ persistent.playthrough = 1
+    $ delete_all_saves()
+    $ renpy.save_persistent()
+    $ renpy.quit()

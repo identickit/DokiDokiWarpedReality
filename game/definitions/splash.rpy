@@ -579,6 +579,12 @@ label after_load:
     $ _dismiss_pause = config.developer
     $ persistent.ghost_menu = False
     $ style.say_dialogue = style.normal
+    if mgmode == True:
+        $ style.say_window = style.window_mg2
+        $ style.namebox = style.namebox_mg2
+    else:
+        $ style.say_window = style.window
+        $ style.namebox = style.nameboxd
 
     ## This 'if' statement makes sure if we are in Yuri's death CG in
     ## Act 2 to bring us back to the scene at a given time.

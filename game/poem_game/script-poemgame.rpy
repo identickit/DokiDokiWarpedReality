@@ -419,7 +419,7 @@ image m_sticker:
         repeat
 
 image r_sticker:
-    "mod_assets/r_sticker_1.png"
+    "mod_assets/rikka_assets/r_sticker_1.png"
     xoffset chibi_r.charOffset xzoom chibi_r.charZoom
     block:
         function chibi_r.randomPauseTime
@@ -437,7 +437,7 @@ image s_sticker hop:
     "s_sticker"
 
 image r_sticker hop:
-    "mod_assets/r_sticker_2.png"
+    "mod_assets/rikka_assets/r_sticker_2.png"
     xoffset chibi_r.charOffset xzoom chibi_r.charZoom
     sticker_hop
     xoffset 0 xzoom 1
