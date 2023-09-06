@@ -165,11 +165,13 @@ define audio.t3m = "<loop 4.618>bgm/3.ogg"
 define audio.t4 = "<loop 19.451>bgm/4.ogg" # Dreams of Love and Literature - Poem Game Theme
 define audio.t4g = "<loop 1.000>bgm/4g.ogg"
 define audio.t5 = "<loop 4.444>bgm/5.ogg" # Okay Everyone! - Sharing Poems Theme
+define audio.tb = "mod_assets/bgm/warpednewfour.ogg" # The Break
 
 define audio.tmonika = "<loop 4.444>bgm/5_monika.ogg" # Okay Everyone! (Monika)
 define audio.tsayori = "<loop 4.444>bgm/5_sayori.ogg" # Okay Everyone! (Sayori)
 define audio.tnatsuki = "<loop 4.444>bgm/5_natsuki.ogg" # Okay Everyone! (Natsuki)
 define audio.tyuri = "<loop 4.444>bgm/5_yuri.ogg" # Okay Everyone! (Yuri)
+define audio.trikka = "<loop 3.888>mod_assets/bgm/club_orange.ogg" # Okay Everyone! (Rikka)
 
 define audio.t5b = "<loop 4.444>bgm/5.ogg"
 define audio.t5c = "<loop 4.444>bgm/5.ogg"

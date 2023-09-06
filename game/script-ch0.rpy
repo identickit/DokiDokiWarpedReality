@@ -806,6 +806,7 @@ label ch0_end:
     "{i}creeeeek{/i}"
     hide vignette
     with dissolve
+    play music tb fadein 0.5
     show monika forward shoc cm oe at t22
     show kotonoha 1a at f21
     k "I hate to interrupt this oh-so-happy moment."
@@ -845,6 +846,7 @@ label ch0_end:
     $ gtext = glitchtext(7)
     $ k_name = "K[gtext]"
     scene black
+    stop music fadeout 0.5
     k "Oh, one more thing."
     k "Curious which mod I'm from? I've had my fair share of appearances, after all."
     k "But I'm not from any regular mod."

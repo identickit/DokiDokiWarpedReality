@@ -26,7 +26,7 @@ init 1 python:
     author_m = Author("monika", music=audio.tmonika)
     author_n = Author("natsuki", music=audio.tnatsuki)
     author_y = Author("yuri", music=audio.tyuri)
-    author_r = Author("rikka", music=audio.tsayori)
+    author_r = Author("rikka", music=audio.trikka)
 
     class Poem(renpy.text.text.Text):
         """
@@ -821,6 +821,13 @@ style monika_text:
     size 46
     color "#000"
     outlines []
+
+style rikka_text:
+    font "mod_assets/font/r1.ttf"
+    size 32
+    color "#000"
+    outlines []
+
 
 default poem_last_author = None
 
