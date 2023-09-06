@@ -199,6 +199,7 @@ define audio.closet_open = "sfx/closet-open.ogg"
 define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
+define audio.do1 = "mod_assets/sounds/do1.mp3"
 
 ## Backgrounds
 # This section declares the backgrounds available to be shown in the mod.

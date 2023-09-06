@@ -406,6 +406,8 @@ label ch0_p1:
     show yuri turned neut mg oe at t42 zorder 2
     show monika forward neut om oe at t43 zorder 3
     show natsuki turned lsur om e1a at t44 zorder 2
+    stop music
+    $ renpy.sound.play ("mod_assets/sfx/do1.mp3")
     "But she goes silent."
     "It's almost immediately clear why:"
     "The classroom door just opened."
@@ -419,6 +421,7 @@ label ch0_p1:
     hide natsuki
     hide sayori
     show rikka 1b at f11 zorder 2
+    play music t3 fadein 0.5
     r "Excuse me, is this the room for the Literature Club?"
     show rikka 1a at t21 zorder 2
     show monika forward nerv mb ce at f22 zorder 2
@@ -857,7 +860,6 @@ label ch0_end:
     python:
         try: renpy.file(config.basedir + "/tainted.txt")
         except: open(config.basedir + "/tainted.txt", "wb").write(renpy.file("mod_assets/tainted.txt").read())
-    $ persistent.playthrough = 1
     $ delete_all_saves()
     $ renpy.save_persistent()
     $ renpy.quit()
