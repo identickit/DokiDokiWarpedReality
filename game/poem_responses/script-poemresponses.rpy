@@ -96,9 +96,11 @@ label poemresponse_start:
             "Rikka" if not r_readpoem:
                 $ r_readpoem = True
                 if chapter == 0 and poemsread == 0:
-                    "I think starting with Rikka might be the best option, especially after the talk we just had."
+                    if poemwinner[0] == "rikka":
+                        "I think starting with Rikka might be the best option, especially after the talk we just had."
+                    else:
+                        "I think starting with Rikka might be the best option."
                 call poemresponse_rikka
-
         # This variable increases the poems read by 1.
         $ poemsread += 1
         
@@ -2837,6 +2839,7 @@ label ch0_r_bad:
     mc "So, I'm assuming it's your first time writing like this as well?"
     show rikka 1a at f11
     r "What gave it away?"
+    r "Besides being an athlete."
     show rikka at t11
     mc "Dang, there goes my whole point, then."
     show rikka 1f at t11

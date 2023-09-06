@@ -602,6 +602,7 @@ label ch0_p2:
     m "Well, now that everyone's ready, why don't you find someone to share with?"
     show monika zorder 1 at thide
     hide monika
+    "Rikka already has her poem out on her desk by the time I glance over at her."
     "Sayori and Monika enthusiastically pull out their poems."
     "Sayori's is on a wrinkled sheet of loose leaf torn from a spiral notebook."
     "On the other hand, Monika wrote hers in a composition notebook."
@@ -767,6 +768,7 @@ label ch0_end:
     "..."
     "....."
     show vignette
+    with dissolve
     show monika at f11
     m "There. I paused the game."
     m "Now, why are you still here?"
@@ -779,7 +781,10 @@ label ch0_end:
     m "The game is too messed up, thanks to how many mods have been installed."
     m "You've only seen a fraction of what could actually happen to this game."
     m "Obviously, you've seen Rikka, which is proof that the SNAFU mod is affecting the game."
-    m "The character you're playing as believes the name of this school is Kuribayashi High."
+    if poemwinner[0] == "rikka":
+        m "The character you're playing as believes the name of this school is Kuribayashi High."
+    else:
+        m "The character you're playing as believes that the school has foreign relations."
     m "So there's evidence of the Foreign Relations mod breaking through."
     m "And the person who bumped into you on the way to school the day you joined the club?"
     m "Your character didn't mention anything that could've revealed who {i}they{/i} were, but they're from..."
@@ -787,12 +792,17 @@ label ch0_end:
     m "'Bad' meaning the entire game could break."
     m "It would be absolute chaos. The game wouldn't be able to properly handle so many mods running at once."
     m "You're just lucky she never noticed it was you she bumped into."
-    m "Otherwise, the break would've happened as soon as Rikka said 'Kuribayashi High.'"
+    if poemwinner[0] == "rikka":
+        m "Otherwise, the break would've happened as soon as Rikka said 'Kuribayashi High.'"
+    else:
+        m "Otherwise, the break would've happened as soon as Sayori mentioned 'foreign relations.'"
+    
     "{i}knock-knock{/i}"
     show monika forward curi om oe at f11
     m "Wait... how the f..."
     "{i}creeeeek{/i}"
     hide vignette
+    with dissolve
     show monika forward shoc cm oe at t22
     show kotonoha 1a at f21
     k "I hate to interrupt this oh-so-happy moment."
@@ -802,10 +812,11 @@ label ch0_end:
     show kotonoha at t21
     show monika forward shoc cm oe at f22
     m "Koto-- h-how--"
+    $ renpy.sound.play ("sfx/glitch3.ogg")
     show monika at t22
-    show kotonoha 1h at f21
-
+    show kotonoha kg at t21
     k "You see... the amount of mods installed isn't the issue."
+    show kotonoha 1h at f21
     k "Or... not directly, at least."
     $ renpy.sound.play ("sfx/glitch3.ogg")
     show bg clubdayg
@@ -813,10 +824,11 @@ label ch0_end:
     show kotonoha 1a at f21
     k "It just so happens one of the mods installed includes a certain character having elevated access."
     show bg club_day
+    show kotonoha kg at t21
     show monika forward shoc cm oe at t22
     $ renpy.sound.play ("sfx/glitch3.ogg")
     k "And since you, Monika, attempted to change the code to disable any and all mods..."
-    show kotonoha 1h at f21
+    show kotonoha kg at t21
     show bg clubdayg
     show monika g2 at t22
     $ renpy.sound.play ("sfx/glitch3.ogg")
@@ -827,6 +839,8 @@ label ch0_end:
     show monika at thide zorder 1
     hide monika
     hide kotonoha
+    $ gtext = glitchtext(7)
+    $ k_name = "K[gtext]"
     scene black
     k "Oh, one more thing."
     k "Curious which mod I'm from? I've had my fair share of appearances, after all."

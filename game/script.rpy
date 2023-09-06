@@ -40,3 +40,7 @@ label start:
         call ch0_p2
         call poemresponse_start
         call ch0_end
+    
+    if persistent.playthrough == 1:
+        pause 1.0
+        call splashscreen

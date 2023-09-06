@@ -1442,6 +1442,25 @@ image kotonoha 3v1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_asset
 image kotonoha 3w = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/w.png")
 image kotonoha 3w1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/w1.png")
 
+image kotonoha kg:
+    block:
+        choice:
+            "mod_assets/kotonoha_assets/kg1.png"
+        choice:
+            "mod_assets/kotonoha_assets/kg2.png"
+        choice:
+            "mod_assets/kotonoha_assets/kg3.png"
+    block:
+        choice:
+            pause 0.05
+        choice:
+            pause 0.1
+        choice:
+            pause 0.15
+        choice:
+            pause 0.2
+    repeat
+
 # This image shows the looping Yuri glitched head in Act 2.
 image y_glitch_head:
     "images/yuri/za.png"

@@ -546,7 +546,7 @@ screen navigation():
             if main_menu:
 
                 if persistent.playthrough == 1:
-                    textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
+                    textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
                 else:
                     textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
 
@@ -643,7 +643,7 @@ screen main_menu():
         add "menu_art_m_ghost"
     else:
         if persistent.playthrough == 1 or persistent.playthrough == 2:
-            add "menu_art_s_glitch"
+            add "menu_art_s"
         else:
             add "menu_art_s"
         add "menu_particles"
