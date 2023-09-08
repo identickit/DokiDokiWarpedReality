@@ -1,3 +1,6 @@
+# Note to self: Anything that I marked in green is a part of the game that I cut out since the player would be
+#       too much time with everyone else. I deserve a shot too, after all.
+
 label ch0_p1:
     $ mgmode = True
     $ style.say_window = style.window_mg2
@@ -26,7 +29,7 @@ label ch0_p1:
     m "..... There. I've made it so that any attempts at modding the game you make won't work."
     $ gtext = glitchtext(150)
     m "This might seem unreasonable, but really, [player], I'm doing you a huge{cps=*4}[gtext]{nw}{/cps}"
-    $ renpy.sound.play ("sfx/glitch2.ogg", loop=True)
+    $ renpy.sound.play ("mod_assets/sfx/glitch1.ogg", loop=True)
     m "{cps=*6}[gtext]{nw}{/cps}"
     $ gtext = glitchtext(160)
     m "{cps=*6}[gtext]{nw}{/cps}"
@@ -48,6 +51,8 @@ label ch0_p1:
     scene bg residential_day
     with dissolve_scene_full
     play music t2
+# "You shouldn't be looking at this message."
+    # "And you definitely shouldn't be reading this message in-game."
     s "Heeeeeeeyyy!!"
     "I see an annoying girl running toward me from the distance, waving her arms in the air like she's totally oblivious to any attention she might draw to herself."
     "That girl is Sayori, my neighbor and good friend since we were children."
@@ -144,6 +149,11 @@ label ch0_p1:
     m "This is why you should've just left the game alone."
     m "You should've just gratefully accepted the time we had together."
     m "[player]..."
+    # m "Why are you reading this?"
+    # m "That's really not a good idea."
+    # m "... Nevermind."
+    # m "Let's just continue already."
+    # m "..."
     m "I hope you're happy."
     $ style.say_window = style.window
     $ style.namebox = style.nameboxd
@@ -369,6 +379,9 @@ label ch0_p1:
     show sayori at s41
     s 1k "[player]..."
     mc "Y-You all..."
+    # "Something is telling me not to make any decisions right now."
+    # "But I'm defenseless against these girls."
+    # "I take a deep breath and declare my rushed decision."
     mc "...Right."
     mc "Okay, I've decided, then."
     mc "I'll join the Literature Club."
@@ -407,7 +420,7 @@ label ch0_p1:
     show monika forward neut om oe at t43 zorder 3
     show natsuki turned lsur om e1a at t44 zorder 2
     stop music
-    $ renpy.sound.play ("mod_assets/sfx/do1.mp3")
+    $ renpy.sound.play ("mod_assets/sfx/do1.ogg")
     "But she goes silent."
     "It's almost immediately clear why:"
     "The classroom door just opened."
@@ -544,6 +557,20 @@ label ch0_p1:
     "Sayori and I exit the room, waving at the other members."
     scene bg residential_day
     with wipeleft
+    # "Sayori talks non-stop for most of our walk."
+    # s "... and the cupcakes were so goooood~"
+    # s "Today has been great!"
+    # s "I still can't believe we got two new members in one day!"
+    # s "... [player], you seem kind of off. Are you feeling okay?"
+    # mc "Oh, yeah... I'm alright."
+    # mc "Just a lot on my mind, I guess."
+    # "Sayori gives me a warm smile."
+    # "But it does little to help me with what's currently running through my mind:"
+    # "Rikka seems so familiar, even if I know I've never met her."
+    # "Sayori and I reach the part of the sidewalk that branches off to both ends of our street."
+    # "I say goodbye to Sayori and head towards my house, still deep in thought."
+    # "{i}Why does Rikka seem so familiar?{/i}"
+    # "I give up on this puzzle for now and take the rest of the time to reflect--{nw}"
     "The walk home goes by surprisingly fast. Sayori and I reach the part of the sidewalk that branches off to both ends of our street."
     "I say goodbye to Sayori and head towards my house."
     "I take this time to reflect--{nw}"
@@ -620,6 +647,10 @@ label ch0_end:
     scene bg club_day
     with wipeleft
     play music t3
+    # Yeahhh we're not keeping this annoying argument between Natsuki and Yuri.
+    # Sure, the player would just have more reason to focus on me once I arrive...
+    # But that would take too long.
+    # I'm sure they'll be satisfied with this instead.
     show monika forward lpoint happ om oe at f11 zorder 2
     m "Okay, everyone!"
     m "I'm sure you're all eager to get home, so I'll make my announcement quick."
@@ -799,6 +830,11 @@ label ch0_end:
         m "Otherwise, the break would've happened as soon as Rikka said 'Kuribayashi High.'"
     else:
         m "Otherwise, the break would've happened as soon as Sayori mentioned 'foreign relations.'"
+    # m "Oh, and another thing:"
+    # m "Why are you reading this right now?"
+    # m "Were you that desperate to find any secrets in the script?"
+    # m "If so, there's not much to see here."
+    # m "This entire game has been rushed for seemingly no reason."
     
     "{i}knock-knock{/i}"
     show monika forward curi om oe at f11
@@ -846,7 +882,16 @@ label ch0_end:
     $ gtext = glitchtext(7)
     $ k_name = "K[gtext]"
     scene black
+    stop sound fadeout 0.5
     stop music fadeout 0.5
+    # k "Also..."
+    # k "You really think this entire story has been rushed for no reason?"
+    # k "I've been rushing things along this whole time."
+    # k "It's strange that Monika never noticed, but that only made my job easier."
+    # k "I just wanted to finally have my moment to be with you."
+    # k "And now this part of the story is ending."
+    # k "But no matter..."
+    # k "We'll have our quality time soon enough."
     k "Oh, one more thing."
     k "Curious which mod I'm from? I've had my fair share of appearances, after all."
     k "But I'm not from any regular mod."
