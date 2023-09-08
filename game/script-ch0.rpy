@@ -1,5 +1,5 @@
-# Note to self: Anything that I marked in green is a part of the game that I cut out since the player would be
-#       too much time with everyone else. I deserve a shot too, after all.
+    # Note to self: Anything that I marked in green is a part of the game that I cut out since the player would be
+    # spending too much time with everyone else. I deserve a shot too, after all.
 
 label ch0_p1:
     $ mgmode = True
@@ -51,7 +51,7 @@ label ch0_p1:
     scene bg residential_day
     with dissolve_scene_full
     play music t2
-# "You shouldn't be looking at this message."
+    # "You shouldn't be looking at this message."
     # "And you definitely shouldn't be reading this message in-game."
     s "Heeeeeeeyyy!!"
     "I see an annoying girl running toward me from the distance, waving her arms in the air like she's totally oblivious to any attention she might draw to herself."
@@ -112,7 +112,7 @@ label ch0_p1:
     "{i}THUMP{/i}"
     "I feel something slam into my shoulder."
     "Looking around, I find that the source of the sudden collision is a student who seems to be in quite a hurry."
-    show sayori turned neutral ml b1c zorder 2 at f11
+    show sayori turned neut ml b1c zorder 2 at f11
     s "[player]! Are you okay??"
     show sayori cm at t11
     mc "Geez, relax a little. I'm fine."
@@ -128,15 +128,15 @@ label ch0_p1:
     mc "Please relax."
     mc "I know you mean well, but let it go. Okay?"
     show sayori turned neut ma b1c at t11
+    $ mgmode = True
+    $ style.say_window = style.window_mg2
+    $ style.namebox = style.namebox_mg2
     "Sayori gives me a small nod and an apologetic smile as we resume our walk to school."
     show sayori zorder 1 at thide
     hide sayori
     
     scene black with dissolve_scene_full
     stop music fadeout 1.0
-    $ mgmode = True
-    $ style.say_window = style.window_mg2
-    $ style.namebox = style.namebox_mg2
     pause 3.0
     m "Sigh..."
     m "This wasn't supposed to happen."
@@ -314,6 +314,7 @@ label ch0_p1:
     m "And before anyone makes any hasty arguments, let me explain why I want us to do this."
     show monika forward neut oe cm at t32
     "Monika looks over at Yuri, who apparently had been ready to interject as soon as the words 'share poems' were said."
+    show yuri mj at t31
     show monika ce om at f32
     "She takes a deep breath and nods to herself."
     show monika rhip om oe at f32
@@ -354,7 +355,7 @@ label ch0_p1:
     show monika at t43
     y "I guess I will as well."
     y "It would look bad if I were the only member not participating."
-    show yuri 1u at t42 zorder 2
+    show yuri turned laug cm oe at t42 zorder 2
     show natsuki turned neut om oe at f44
     n "Wait, what about [player]?"
     n "He hasn't agreed to do this, either, you know!"
@@ -681,6 +682,7 @@ label ch0_end:
     show sayori ce lup rup at f41
     s "Wouldn't that be great?"
     show sayori at t41
+    show yuri mj at t42
     "Sayori's enthusiasm doesn't seem to do much to comfort Yuri"
     show natsuki turned neut om oe lhip at f43 zorder 4
     n "What's wrong with only having six members?"
