@@ -246,6 +246,16 @@ image bg kitchen = "bg/kitchen.png" # MC's Kitchen BG
 image bg notebook = "bg/notebook.png" # Poem Game Notebook Scene
 image bg notebook-glitch = "bg/notebook-glitch.png" # Glitched Poem Game BG
 
+image bg clubdayg1 = "mod_assets/bg/clubdayg1.png"
+image bg clubdayg2 = "mod_assets/bg/clubdayg2.png"
+image bg clubdayg3 = "mod_assets/bg/clubdayg3.png"
+image bg clubdayg4 = "mod_assets/bg/clubdayg4.png"
+image bg qgclubday:
+    "mod_assets/bg/clubdayg4.png"
+    pause 0.1
+    "mod_assets/bg/clubdayg3.png"
+    pause 0.1
+    "bg/club.png"
 image bg clubdayg:
     "mod_assets/bg/clubdayg1.png"
     function ran
@@ -1728,8 +1738,9 @@ define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suff
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define r = DynamicCharacter('r_name', image='rikka', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define r = DynamicCharacter('aq14563s2s5345s55name', image='rikka', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define k = DynamicCharacter('k_name', image='kotonoha', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define w = DynamicCharacter('w_name', image='white', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 # This variable determines whether to allow the player to dismiss pauses.
 # By default this is set by config.developer which is normally set to false
@@ -1806,6 +1817,7 @@ default n_name = "Natsuki"
 default y_name = "Yuri"
 default r_name = "Rikka"
 default k_name = "Kotonoha"
+default w_name = "White"
 
 # Poem Variables
 # This section records how much each character likes your poem in-game.
@@ -1822,6 +1834,7 @@ default y_poemappeal = [0, 0, 0]
 default m_poemappeal = [0, 0, 0]
 default r_poemappeal = [0, 0, 0]
 default k_poemappeal = [0, 0, 0]
+default w_poemappeal = [0, 0, 0]
 
 # This variable keeps tracks on which person won the poem session after each day.
 default poemwinner = ['sayori', 'sayori', 'sayori']
@@ -1833,6 +1846,7 @@ default y_readpoem = False
 default m_readpoem = False
 default r_readpoem = False
 default k_readpoem = False
+default w_readpoem = False
 
 # This variable keeps track on how many people have read your poem.
 default poemsread = 0
@@ -1844,6 +1858,7 @@ default y_appeal = 0
 default m_appeal = 0
 default r_appeal = 0
 default k_appeal = 0
+default w_appeal = 0
 
 # These variables control if we have seen Natsuki's or Yuri's exclusive scenes
 default n_exclusivewatched = False
