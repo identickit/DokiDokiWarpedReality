@@ -166,12 +166,17 @@ define audio.t4 = "<loop 19.451>bgm/4.ogg" # Dreams of Love and Literature - Poe
 define audio.t4g = "<loop 1.000>bgm/4g.ogg"
 define audio.t5 = "<loop 4.444>bgm/5.ogg" # Okay Everyone! - Sharing Poems Theme
 define audio.tb = "mod_assets/bgm/warpednewfour.ogg" # The Break
+define audio.wn6 = "mod_assets/bgm/warpednewsix.ogg" # 
+define audio.wn7 = "mod_assets/bgm/warpednewseven.ogg" # Her Theme (Variant)
+define audio.wn8 = "mod_assets/bgm/warpedneweight.ogg" #
+define audio.wn9 = "mod_assets/bgm/warpednewnine.ogg" # 
 
 define audio.tmonika = "<loop 4.444>bgm/5_monika.ogg" # Okay Everyone! (Monika)
 define audio.tsayori = "<loop 4.444>bgm/5_sayori.ogg" # Okay Everyone! (Sayori)
 define audio.tnatsuki = "<loop 4.444>bgm/5_natsuki.ogg" # Okay Everyone! (Natsuki)
 define audio.tyuri = "<loop 4.444>bgm/5_yuri.ogg" # Okay Everyone! (Yuri)
 define audio.trikka = "<loop 11.1515>mod_assets/bgm/club_orange.ogg" # Okay Everyone! (Rikka)
+define audio.twhite = "mod_assets/bgm/club_white.ogg" # Okay Everyone! (White) 
 
 define audio.t5b = "<loop 4.444>bgm/5.ogg"
 define audio.t5c = "<loop 4.444>bgm/5.ogg"
@@ -201,7 +206,7 @@ define audio.closet_open = "sfx/closet-open.ogg"
 define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
-define audio.do1 = "mod_assets/sounds/do1.mp3"
+define audio.do1 = "mod_assets/sfx/do1.mp3"
 
 ## Backgrounds
 # This section declares the backgrounds available to be shown in the mod.
@@ -223,6 +228,7 @@ image bg residential_day = "bg/residential.png" # Start of DDLC BG
 image bg class_day = "bg/class.png" # The classroom BG
 image bg corridor = "bg/corridor.png" # The hallway BG
 image bg club_day = "bg/club.png" # The club BG
+image bg club_night = "mod_assets/bg/clubnight.png"
 image bg club_day2: # Glitched Club BG
     choice:
         "bg club_day"
@@ -252,9 +258,9 @@ image bg clubdayg3 = "mod_assets/bg/clubdayg3.png"
 image bg clubdayg4 = "mod_assets/bg/clubdayg4.png"
 image bg qgclubday:
     "mod_assets/bg/clubdayg4.png"
-    pause 0.1
+    pause 0.12
     "mod_assets/bg/clubdayg3.png"
-    pause 0.1
+    pause 0.12
     "bg/club.png"
 image bg clubdayg:
     "mod_assets/bg/clubdayg1.png"
@@ -1362,6 +1368,25 @@ image rikka 5x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png
 image rikka 5y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/y.png")
 image rikka 5z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/z.png")
 
+#image rikka rg:
+#    block:
+#        choice:
+#            "mod_assets/rikka_assets/rg1.png"
+#        choice:
+#            "mod_assets/rikka_assets/rg2.png"
+#        choice:
+#            "mod_assets/rikka_assets/rg3.png"
+#    block:
+#        choice:
+#            pause 0.05
+#        choice:
+#            pause 0.1
+#        choice:
+#            pause 0.15
+#        choice:
+#            pause 0.2
+#    repeat
+
 #kotonoha arms down
 image kotonoha 1a = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/a.png")
 image kotonoha 1b = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/b.png")
@@ -1463,6 +1488,43 @@ image kotonoha kg:
             "mod_assets/kotonoha_assets/kg2.png"
         choice:
             "mod_assets/kotonoha_assets/kg3.png"
+    block:
+        choice:
+            pause 0.05
+        choice:
+            pause 0.1
+        choice:
+            pause 0.15
+        choice:
+            pause 0.2
+    repeat
+
+image kotonoha kg2:
+    block:
+        choice:
+            "mod_assets/kotonoha_assets/kg1.png"
+        choice:
+            "mod_assets/kotonoha_assets/kg2.png"
+        choice:
+            "mod_assets/kotonoha_assets/kg3.png"
+    block:
+        choice:
+            pause 0.05
+        choice:
+            pause 0.1
+        choice:
+            pause 0.15
+        choice:
+            pause 0.2
+
+image kotonoha kmg:
+    block:
+        choice:
+            "mod_assets/kotonoha_assets/kmg1.png"
+        choice:
+            "mod_assets/kotonoha_assets/kmg2.png"
+        choice:
+            "mod_assets/kotonoha_assets/kmg3.png"
     block:
         choice:
             pause 0.05
@@ -1738,7 +1800,7 @@ define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suff
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define r = DynamicCharacter('aq14563s2s5345s55name', image='rikka', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define r = DynamicCharacter('r_name', image='rikka', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define k = DynamicCharacter('k_name', image='kotonoha', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define w = DynamicCharacter('w_name', image='white', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 

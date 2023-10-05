@@ -112,12 +112,12 @@ label ch0_p1:
     "{i}THUMP{/i}"
     "I feel something slam into my shoulder."
     "Looking around, I find that the source of the sudden collision is a student who seems to be in quite a hurry."
-    show sayori turned neut ml b1c zorder 2 at f11
+    show sayori turned neut ml b1c zorder 2 at t11
     s "[player]! Are you okay??"
     show sayori cm at t11
     mc "Geez, relax a little. I'm fine."
     "They only bumped into me. It's not like they were trying--"
-    show sayori turned pout oe ml lup rup b1d at f11
+    show sayori turned pout oe ml lup rup b1d at t11
     s "Heeeeyy!"
     show sayori cm at t11
     "Sayori has her hands cupped around her mouth and tries to yell to get the student's attention."
@@ -228,7 +228,7 @@ label ch0_p1:
     hide yuri
     with wipeleft
     "The girls have a few desks arranged to form a table."
-    show monika lean at f11 zorder 2
+    show monika lean at t11 zorder 2
     m "Here, [player]. You can sit next to me."
     m "I'm sure we have a lot of catching up to do."
     show monika 2a at t11 zorder 2
@@ -288,7 +288,7 @@ label ch0_p1:
     show monika forward neut cm ce at t11 zorder 2
     mc "Everything okay, Monika?"
     "I ask this before realizing it's not my place to get into her personal business."
-    show monika forward happ om ce at f11 zorder 2
+    show monika forward happ om ce at t11 zorder 2
     m "Oh, don't worry about it, [player]."
     $ mref()
     show monika lean at t11 zorder 2
@@ -396,7 +396,7 @@ label ch0_p1:
     show yuri at thide zorder 1
     show natsuki at thide zorder 1
     show sayori at thide zorder 1
-    show monika forward happ om oe lpoint at f11 zorder 2
+    show monika forward happ om oe lpoint at t11 zorder 2
     hide yuri
     hide natsuki
     hide sayori
@@ -406,14 +406,14 @@ label ch0_p1:
     m "Welcome to the Literature Club!"
     show monika cm ldown at t11
     mc "Ah... thanks, I guess."
-    show monika om at f11
+    show monika om at t11
     m "Okay, everyone!"
     m "I think with that, we can officially end today's meeting on a good note."
-    show monika ce at f11
+    show monika ce at t11
     m "Everyone remember tonight's assignment:"
     m "Write a poem to bring to the next meeting, so we can all share!"
     $ mref()
-    show monika lean at f11 zorder 2
+    show monika lean at t11 zorder 2
     "Monika looks at me once more."
     m "[player], I look forward to seeing how you express--"
     show sayori turned neut om oe at t41 zorder 2
@@ -434,7 +434,7 @@ label ch0_p1:
     hide yuri
     hide natsuki
     hide sayori
-    show rikka 1b at f11 zorder 2
+    show rikka 1b at t11 zorder 2
     play music t3 fadein 0.5
     r "Excuse me, is this the room for the Literature Club?"
     show rikka 1a at t21 zorder 2
@@ -515,42 +515,42 @@ label ch0_p1:
     show rikka 1a at t11 zorder 2
     "Rikka and I stand close to the door, both of us already carrying our backpacks."
     mc "So... track team, eh?"
-    show rikka 1a at f11
+    show rikka 1a at t11
     r "Mhm. I'd ask if you're in any athletic teams, but you look like the kind of guy who stays inside playing games all day."
     show rikka at t11
     "Talk about being blunt."
     mc "I'm gonna ignore that last bit."
     mc "But no, I'm not a part of any athletic clubs or organizations."
-    show rikka 1f at f11
+    show rikka 1f at t11
     r "Guess I was right after all?"
     show rikka 1u at t11
     "I'm spared from having to answer this question by Sayori."
     "She walks up to me, her backpack over her shoulders and a bright smile planted on her face."
     show rikka at thide zorder 1
     hide rikka
-    show sayori turned happ cm oe at f11 zorder 2
+    show sayori turned happ cm oe at t11 zorder 2
     s "You ready?"
     show sayori at t11
     mc "Ready for what, exactly?"
-    show sayori sedu cm ce at f11
+    show sayori sedu cm ce at t11
     s "Oh, duh... Sorry, I probably should've started with that."
-    show sayori 1q at f11
+    show sayori 1q at t11
     s "Since we're both here, I thought we could walk home together!"
     show sayori at t11
     mc "Sure, I don't see why not."
-    show sayori 4r at f11
+    show sayori 4r at t11
     s "Yaaay!"
     show sayori at thide zorder 1
     hide sayori
     show rikka 1a at t11 zorder 2
     mc "It was nice meeting you, Rikka."
-    show rikka 1i at f11 zorder 2
+    show rikka 1i at t11 zorder 2
     r "You too, uh..."
     show rikka at t11
     mc "[player]."
     "I hold my hand out in front of me."
     "Rikka firmly grasps it and shakes my hand."
-    show rikka 1a at f11 zorder 2
+    show rikka 1a at t11 zorder 2
     r "Nice to meet you too, [player]."
     r "See you tomorrow!"
     show rikka at thide zorder 1
@@ -595,13 +595,13 @@ label ch0_p2:
     scene bg club_day
     with wipeleft
     play music t3
-    show monika lean at f11 zorder 2
+    show monika lean at t11 zorder 2
     m "Hello again, [player]."
     m "I'm glad to see you didn't run off on us."
-    show monika forward neut om oe at f11
+    show monika forward neut om oe at t11
     m "... Yeah, you get the drill by now."
     m "Go hang out with the girl you've chosen."
-    show monika ce at f11
+    show monika ce at t11
     m "I'll leave you be."
     show monika at thide zorder 1
     hide monika
@@ -629,7 +629,7 @@ label ch0_p2:
     "Poems."
     "I can't believe I agreed to do something so embarrassing."
     "I couldn't really find much inspiration, since I've never really done this before."
-    show monika 1 zorder 2 at f11
+    show monika 1 zorder 2 at t11
     m "Well, now that everyone's ready, why don't you find someone to share with?"
     show monika zorder 1 at thide
     hide monika
@@ -652,7 +652,7 @@ label ch0_end:
     # Sure, the player would just have more reason to focus on me once I arrive...
     # But that would take too long.
     # I'm sure they'll be satisfied with this instead.
-    show monika forward lpoint happ om oe at f11 zorder 2
+    show monika forward lpoint happ om oe at t11 zorder 2
     m "Okay, everyone!"
     m "I'm sure you're all eager to get home, so I'll make my announcement quick."
     show monika cm at t33
@@ -791,12 +791,12 @@ label ch0_end:
     "The other members slowly leave the room until only myself, Sayori and Monika remain."
     "I carefully approach Sayori and let her know I'm staying back to check on Monika."
     "Sayori leaves the room, leaving me to--"
-    show monika forward neut om oe at f11
+    show monika forward neut om oe at t11
     m "Why are you still here, [player]?"
     show monika at t11
     "-- deal with Monika."
     mc "I-I wanted to see how you're feeling after our discussion."
-    show monika at f11
+    show monika at t11
     m "... That's on me, I should've been clear."
     show monika at t11
     mc "What do--"
@@ -805,7 +805,7 @@ label ch0_end:
     "....."
     show vignette
     with dissolve
-    show monika at f11
+    show monika at t11
     m "There. I paused the game."
     m "Now, why are you still here?"
     m "Why are you still playing? There's not much left for you here anymore."
@@ -839,7 +839,7 @@ label ch0_end:
     # m "This entire game has been rushed for seemingly no reason."
     
     "{i}knock-knock{/i}"
-    show monika forward curi om oe at f11
+    show monika forward curi om oe at t11
     m "Wait... how the f..."
     "{i}creeeeek{/i}"
     hide vignette

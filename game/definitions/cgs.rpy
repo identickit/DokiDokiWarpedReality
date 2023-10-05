@@ -363,7 +363,7 @@ image s_kill_zoom:
     contains:
         "s_kill"
         truecenter
-        zoom 2.0 xalign 0.5 yalign 0.05
+        zoom 1.5 xalign 0.5 yalign 0.1
     dizzy(1, 1.0)
 
 # This image transform zooms in on the glitched background in Sayori's hanging
@@ -393,7 +393,7 @@ image s_kill2_zoom:
     contains:
         "s_kill2"
         truecenter
-        zoom 2.0 xalign 0.5 yalign 0.05
+        zoom 1.5 xalign 0.5 yalign 0.05
     parallel:
         dizzy(1, 1.0)
     parallel:
