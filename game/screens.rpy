@@ -523,13 +523,19 @@ style quick_button_text:
 ## to other menus, and to start the game.
 
 init python:
-    def FinishEnterName(launchGame=True):
+    def FinishEnterName():
         if not player: return
         persistent.playername = player
         renpy.save_persistent()
         renpy.hide_screen("name_input")
-        if launchGame:
-            renpy.jump_out_of_context("start")
+        renpy.show_screen("white_name_input", message="... Y'know what, enter a second name.", ok_action=Function(RealFinishEnterName))
+
+    def RealFinishEnterName():
+        if not w_name: return
+        persistent.whitename = w_name
+        renpy.save_persistent()
+        renpy.hide_screen("white_name_input")
+        renpy.jump_out_of_context("start")
 
 screen navigation():
 
@@ -549,7 +555,6 @@ screen navigation():
                     textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
                 else:
                     textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
-
             else:
 
                 textbutton _("History") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
@@ -927,16 +932,15 @@ screen load():
 
     use file_slots(_("Load"))
 
-#init python:
-#    def FileActionMod(name, page=None, **kwargs):
-#        if persistent.playthrough == 1 and not persistent.deleted_saves and renpy.current_screen().screen_name[0] == "load" and FileLoadable(name):
-#            return Show(screen="dialog", message="File error: \"characters/sayori.chr\"\n\nThe file is missing or corrupt.",
-#                ok_action=Show(screen="dialog", message="The save file is corrupt. Starting a new game.", ok_action=Function(renpy.full_restart, label="start")))
-#        elif persistent.playthrough == 3 and renpy.current_screen().screen_name[0] == "save":
-#            return Show(screen="dialog", message="There's no point in saving anymore.\nDon't worry, I'm not going anywhere.", ok_action=Hide("dialog"))
-#        else:
-#            return FileAction(name)
-
+init python:
+    def FileActionMod(name, page=None, **kwargs):
+        if persistent.playthrough == 1 and not persistent.deleted_saves and renpy.current_screen().screen_name[0] == "load" and FileLoadable(name):
+            return Show(screen="dialog", message="File error: \"characters/sayori.chr\"\n\nThe file is missing or corrupt.",
+                ok_action=Show(screen="dialog", message="The save file is corrupt. Starting a new game.", ok_action=Function(renpy.full_restart, label="start")))
+        elif persistent.playthrough == 3 and renpy.current_screen().screen_name[0] == "save":
+            return Show(screen="dialog", message="There's no point in saving anymore.\nDon't worry, I'm not going anywhere.", ok_action=Hide("dialog"))
+        else:
+            return FileAction(name)
 
 screen file_slots(title):
 
@@ -1740,7 +1744,7 @@ style history_label_text:
 
 screen name_input(message, ok_action):
 
-    ## Ensure other screens do not get input while this screen is displayed.
+
     modal True
 
     zorder 200
@@ -1752,22 +1756,53 @@ screen name_input(message, ok_action):
 
     frame:
 
-        vbox:
+        has vbox:
             xalign .5
             yalign .5
             spacing 30
 
-            label _(message):
-                style "confirm_prompt"
-                xalign 0.5
+        label _(message):
+            style "confirm_prompt"
+            xalign 0.5
 
-            input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-            hbox:
-                xalign 0.5
-                spacing 100
+        hbox:
+            xalign 0.5
+            spacing 100
 
-                textbutton _("OK") action ok_action
+            textbutton _("OK") action ok_action
+
+init -501 screen white_name_input(message, ok_action):
+
+
+    modal True
+
+    zorder 200
+
+    style_prefix "confirm"
+
+    add "gui/overlay/confirm.png"
+    key "K_RETURN" action [Play("sound", gui.activate_sound), ok_action]
+
+    frame:
+
+        has vbox:
+            xalign .5
+            yalign .5
+            spacing 30
+
+        label _(message):
+            style "confirm_prompt"
+            xalign 0.5
+
+        input default "" value VariableInputValue("w_name") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
+        hbox:
+            xalign 0.5
+            spacing 100
+
+            textbutton _("OK") action ok_action
 
 screen dialog(message, ok_action):
 

@@ -276,6 +276,14 @@ image bg clubdayg:
     function ran
     pause 0.1
     repeat
+#image bg residential_dayg1 = "mod_assets/bg/residentialg1.png"
+#image bg residential_dayg1 = "mod_assets/bg/residentialg2.png"
+#image bg qgresidential_day:
+    #"mod_assets/bg/residentialg1.png"
+    #pause 0.12
+    #"mod_assets/bg/residentialg2.png"
+    #pause 0.12
+    #"bg/residential.png"
 
 # This image shows a glitched screen during Act 2 poem sharing with Yuri.
 image bg glitch = LiveTile("bg/glitch.jpg")
@@ -1842,6 +1850,8 @@ default persistent.lets_play = False
 
 default persistent.playername = ""
 default player = persistent.playername
+default persistent.whitename = ""
+default w_name = persistent.whitename
 default persistent.playthrough = 0
 default persistent.yuri_kill = 0
 default persistent.seen_eyes = None
@@ -1879,7 +1889,6 @@ default n_name = "Natsuki"
 default y_name = "Yuri"
 default r_name = "Rikka"
 default k_name = "Kotonoha"
-default w_name = "White"
 
 # Poem Variables
 # This section records how much each character likes your poem in-game.

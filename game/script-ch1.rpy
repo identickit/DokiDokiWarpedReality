@@ -1,10 +1,80 @@
 label ch1:
-    #scene 4
+    #scene 1
     $ mgmode = False
     stop music fadeout .5
-    play music wn6
-    scene bg club_day
+    scene bg residential_day
     with dissolve_scene_full
+    play music t2
+    k "Hey there, [player]!"
+    show kotonoha kg zorder 2 at t11
+    k 1a "Glad to see you finally decided to get up."
+    "I just sigh to myself. Kotonoha always nags me for small things like this."
+    "Anytime I take a while to get ready for school, for instance, she'll start joking like this."
+    "But I know she doesn't mean any harm in doing stuff like that."
+    #show bg qgresedential_day
+    "The two of us begin our daily commute to school."
+    k "Anyway, have you considered joining any clubs yet?"
+    mc "Huh? I thought I already said I'm not interested in joining-{nw}"
+    
+    mc "Huh? I thought I already said I'm interested in possibly joining your club?"
+    k 1h "Ah, how could I forget?"
+    show kotonoha 1a at t11
+    "Kotonoha smiles and doesn't say anything else the rest of the way to school."
+    "We've always walked to school together like this..."
+    #show bg qgresedential_day
+    "... But she's usually not this silent."
+    "My train of thought is broken by an overly-energetic girl approaching us."
+    show kotonoha 1e zorder 2 at t21
+    show sayori turned happ om oe zorder 2 at f22
+    s "Hey, Kotonoha!"
+    show sayori cm at t22
+    show kotonoha at f21
+    k 1d "Good morning, Sayori."
+    k 1a "How's the Literature Club's very own Vice President holding up this morning?"
+    show kotonoha at t21
+    show sayori laug om ce at f22
+    s "Hungry."
+    show sayori cm at t22
+    mc "As usual."
+    "Sayori giggles and joins us on our walk."
+    show sayori at thide
+    show kotonoha at thide
+    hide sayori
+    hide kotonoha
+    "I haven't known Sayori very long, but she always seems to be full of positivity."
+    "Being entirely honest with myself, I wouldn't have imagined being friends with someone like her had she not been friends with Kotonoha."
+    "But when you get to know her, Sayori is a pretty fun person to be around."
+    "We reach the front door of the school-{nw}"
+    stop music
+    show screen tear(8, 1, 10)
+    pause(1)
+    hide screen tear
+
+    #scene 2
+    $ m_name = "Monika"
+    scene bg club_day
+    show monika lean happ om oe zorder 2 at t11
+    m "Then that makes it official!"
+    m "Welcome to the Literature Club!"
+    show monika forward happ oe cm at t11
+    mc "Ah... thanks, I guess."
+    show monika om lpoint at t11
+    m "Okay, everyone!"
+    m "I think with that, we can officially end today's meeting on a good note."
+    show monika ce at t11
+    m "Everyone remember tonight's assignment:"
+    m "Write a poem to bring to the next meeting, so we can all share!"
+    $ mref()
+    show monika lean at t11 zorder 2
+    "Monika looks at me once more."
+    m "[player], I look forward to seeing how you express yourself."
+
+
+
+
+    #scene 4
+    stop music fadeout .5
+    play music wn6
     "The door opens."
     "Everyone looks up to see who just entered the room."
     scene bg qgclubday
@@ -22,7 +92,7 @@ label ch1:
     "Instantly, I recognize Sayori, who looks genuinely ecstatic."
     $ s_name = "Sayori"
     "I glance at-{nw}"
-    show sayori turned lsur om oe at t11
+    show sayori turned lsur om oe zorder 2 at t11
     s "Oh my gosh!"
     show sayori turned happ om ce lup rup zorder 2 at h11
     s "Oh my gosh!!!"
@@ -35,7 +105,7 @@ label ch1:
     show monika at t22
     "Sayori lets go but doesn't look very sorry."
     show sayori happ om oe ldown rdown at f21
-    s "I knew you would join, White!"
+    s "I knew you would join, [w_name]!"
     show sayori at t21
     w "Hey, wait a minute!"
     show sayori neut cm oe at t21
@@ -147,4 +217,4 @@ label ch1:
     scene bg club_day
     with dissolve_scene_half
     play music wn9
-    "After we all greet White, everyone returns to their regular activities."
+    "After we all greet [w_name], everyone returns to their regular activities."

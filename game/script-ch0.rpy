@@ -1,6 +1,8 @@
     # Note to self: Anything that I marked in green is a part of the game that I cut out since the player would be
     # spending too much time with everyone else. I deserve a shot too, after all.
 
+show screen name_input("Please enter a name.", "<player>")
+
 label ch0_p1:
     $ mgmode = True
     $ style.say_window = style.window_mg2
@@ -201,7 +203,7 @@ label ch0_p1:
     show sayori at t31 zorder 2
     show monika 2a at f32 zorder 3
     m "That's right."
-    m "It's great to see you again, [player]."
+    m "It's good to see you again, [player]."
     show monika 5a at hop
     "Monika smiles sweetly."
     "We do know each other - well, we rarely talked, but we were in the same class last year."
