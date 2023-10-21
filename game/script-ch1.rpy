@@ -68,6 +68,16 @@ label ch1:
     show monika lean at t11 zorder 2
     "Monika looks at me once more."
     m "[player], I look forward to seeing how you express yourself."
+    show monika lean zorder 2 at t21
+    show kotonoha kg zorder 2 at f22
+    k "Monika, we aren't already picking favorites, are we?"
+    show monika forward anno cm oe at t11
+    "Monika straightens up almost immediately, a serious expression now replacing the happy one that was there seconds ago."
+    m "Kotonoha, I think we already agreed that you being this club’s senior member doesn’t mean you can critique every little thing I do."
+    k 1h "Oh, don’t worry, Miss President. I know my place quite well."
+    k "(... even if {i}somebody{/i} thinks she can control everything.)"
+    m "You know I can hear you."
+    k "Yes. Yes I do."
 
 
 
@@ -178,12 +188,12 @@ label ch1:
     $ style.say_dialogue = style.edited
     stop music fadeout 0.5
     pause .5
-    play music td
+    play music wn8
     scene bg club_night
     show vignette
     show s_kill_zoom zorder 3
     s "Please, [player]."
-    s "you'll have the chance to save me this time."
+    s "You'll have the chance to save me this time."
     s "You're my salvation... remember?"
     s "Please..."
     s "I can't get out of the rain..."
