@@ -9,3 +9,4 @@ log.txt
 tainted.txt
 traceback.txt
 *.save
+game/.vscode/launch.json
