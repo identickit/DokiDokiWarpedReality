@@ -42,7 +42,11 @@ label start:
         call ch0_end
         
     if persistent.playthrough == 1:
+        $ chapter = 1 
+        call ch1_p1
 
-        call ch1
+        call poem
+
+        call ch1_p2
 
     

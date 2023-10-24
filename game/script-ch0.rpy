@@ -908,6 +908,9 @@ label ch0_end:
     $ pause(2.0)
     $ run_input("", "Read 'tainted.txt' for more details.")
     $ pause(3.0)
+    show screen tear(8, 1, 10)
+    pause(1)
+    hide screen tear
     python:
         try: renpy.file(config.basedir + "/tainted.txt")
         except: open(config.basedir + "/tainted.txt", "wb").write(renpy.file("mod_assets/tainted.txt").read())

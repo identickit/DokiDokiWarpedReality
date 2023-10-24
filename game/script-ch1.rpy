@@ -1,4 +1,4 @@
-label ch1:
+label ch1_p1:
     #scene 1
     $ mgmode = False
     stop music fadeout .5
@@ -11,18 +11,17 @@ label ch1:
     "I just sigh to myself. Kotonoha always nags me for small things like this."
     "Anytime I take a while to get ready for school, for instance, she'll start joking like this."
     "But I know she doesn't mean any harm in doing stuff like that."
-    #show bg qgresedential_day
+    show bg qgresidential_day
     "The two of us begin our daily commute to school."
     k "Anyway, have you considered joining any clubs yet?"
     mc "Huh? I thought I already said I'm not interested in joining-{nw}"
-    
     mc "Huh? I thought I already said I'm interested in possibly joining your club?"
     k 1h "Ah, how could I forget?"
     show kotonoha 1a at t11
     "Kotonoha smiles and doesn't say anything else the rest of the way to school."
     "We've always walked to school together like this..."
-    #show bg qgresedential_day
-    "... But she's usually not this silent."
+    show bg qgresidential_day
+    "...But she's usually not this silent."
     "My train of thought is broken by an overly-energetic girl approaching us."
     show kotonoha 1e zorder 2 at t21
     show sayori turned happ om oe zorder 2 at f22
@@ -46,9 +45,7 @@ label ch1:
     "But when you get to know her, Sayori is a pretty fun person to be around."
     "We reach the front door of the school-{nw}"
     stop music
-    show screen tear(8, 1, 10)
-    pause(1)
-    hide screen tear
+    show bg qgresidential_day
 
     #scene 2
     $ m_name = "Monika"
@@ -65,16 +62,143 @@ label ch1:
     m "Everyone remember tonight's assignment:"
     m "Write a poem to bring to the next meeting, so we can all share!"
     $ mref()
-    show monika lean at t11 zorder 2
+    show monika lean at t11 
     "Monika looks at me once more."
     m "[player], I look forward to seeing how you express yourself."
+    show monika zorder 2 at t21
+    show kotonoha 1a zorder 2 at t22 
+    k "Monika, we aren't already picking favorites are we?"
+    show monika forward anno cm oe zorder 2 at t21
+    "Monika straightens up almost immediately, a serious expression now replacing the happy one that was there seconds ago."
+    show monika at f21
+    m "Kotonoha, I think we already agreed that you being this club's senior member doesn't mean you can correct every little thing I do."
+    show monika at t21
+    show kotonoha at f22
+    k 1h "Oh, don't worry, Miss President. I know my place quite well."
+    k "(... even if {i}somebody{/i} thinks she can control everything.)"
+    show kotonoha at t22
+    show monika forward angr cm oe at f21
+    m "You know I can hear you."
+    show monika at t21
+    stop music fadeout 1.0
+    show kotonoha 1f at f22
+    k "Yes. Yes I do."
+    k "Just like you know I can see what you're doing."
+    show kotonoha at t22
+    show bg clubdaypause
+    pause 0.5
+    show bg clubdayg4
+    with Dissolve(1.0)
+    show monika at f21
+    m "You really just came out and said something like that in front of the entire club?"
+    show monika at t21
+    show kotonoha 1h at f22
+    k "Do you have a problem with this?"
+    show kotonoha at t22
+    show monika at f21
+    m "Kotonoha."
+    show kotonoha 1a at f22
+    show monika at t21
+    k "Monika."
+    show kotonoha at t22
+    show monika at f21
+    m "Just because you have some control over the game doesn't mean you get to tell everyone about the reality of this world."
+    m "If they knew what happens behind closed doors..."
+    show monika ce at f21
+    m "... Take Sayori for example."
+    m "If she knew about everything this early, she literally wouldn't be able to handle it."
+    m "The game would immediately be over."
+    show monika oe at f21
+    m "End."
+    show monika at t21
+    show kotonoha 1e at f22
+    k "..."
+    k "... Fine."
+    k "But that doesn't give you any right to try and keep [player] all to yourself."
+    show kotonoha at t22
+    show monika at f21
+    m "That's funny to hear coming from you."
+    m "Didn't you just abruptly insert yourself into the beginning of the story and then force everything to skip to the next time you're around?"
+    show monika at t21
+    show kotonoha 1u3 at f22
+    k "I have a right to spend a little extra time with [player]!"
+    k "You've always been in control, always inevitably trapping him and making him spend time with you."
+    k "Have you ever considered the fact that I might want the sort of opportunity?"
+    show kotonoha 1u at t22
+    show monika forward neut cm ce at f21
+    m "..."
+    m "... Alright Kotonoha."
+    m "How about this:"
+    m "If you promise to be fair and rational about trying to spend time with [player]..."
+    m "... Then I guess it's fine."
+    show monika at t21
+    show kotonoha 1a at f22
+    k "Funny how you think-{nw}"
+    show kotonoha at t22
+    show monika oe at f21
+    m "I'm not finished."
+    m "You have to give me a route as well."
+    m "And you have to give one to everyone in this club."
+    m "Even Rikka and whoever else isn't officially a part of this world."
+    show monika at t21
+    show kotonoha 1e at f22 
+    k "..."
+    k "....."
+    show kotonoha at t22
+    show monika at f21
+    m "Do we have a deal Kotonoha?"
+    show monika at t21
+    show kotonoha 1q at f22
+    k "... Okay. Fine. Deal."
+    show kotonoha 1p at f22
+    k "Just... give me a minute to add some files for everyone."
+    show kotonoha at thide
+    hide kotonoha
+    show monika at thide
+    hide monika
+    window hide
+    show bg clubdayg
+    pause(3.0)
+    return
 
-
-
-
-    #scene 4
+label ch1_p2:
+    #scene 3
+    scene bg club_day
     stop music fadeout .5
     play music wn6
+    show monika forward happ om ce at t11
+    m "Hello again, [player]!"
+    m "It's great to see you-{nw}"
+    show monika forward neut cm oe at t21
+    show kotonoha 1u at t22
+    "I hear someone clear their throat from across the room."
+    "Kotonoha is giving Monika a disappointed look. Did something happen after I left the club yesterday?"
+    "Wait... Now that I think about it, I can't even remember leaving the-{nw}"
+    show monika forward happ cm ce at f21
+    m "My apologies, Koto! Just wanted [player] to feel welcome."
+    show monika at t21
+    show kotonoha 1h at f22
+    k "Ah, I see..."
+    show kotonoha 1a at f22
+    k "In any case, we should let him get to whatever it is he had planned for today."
+    show kotonoha at t22
+    show monika at f21
+    m "Right. I'll be talking with our resident vice president and senior member if you need anything, [player]~"
+    show kotonoha at thide
+    hide kotonoha 
+    if poemwinner[0] != "monika":
+        show monika forward anno cm oe at t11
+        m "Enjoy yourself."
+    show monika at thide
+    hide monika
+    "I guess that means I should take my seat now."
+    "I look around the club room as I set my stuff down at my desk."
+    "Monika, Sayori, and Kotonoha are having a lively discussion in the corner of the room."
+    "Rikka seems to already be getting started on some sort of homework."
+    "Yuri is intensely reading a book, as if she was waiting all day for the opportunity."
+    "Meanwhile, Natsuki is rummaging around in the closet-{nw}"
+
+    #scene 4
     "The door opens."
     "Everyone looks up to see who just entered the room."
     scene bg qgclubday
@@ -178,12 +302,12 @@ label ch1:
     $ style.say_dialogue = style.edited
     stop music fadeout 0.5
     pause .5
-    play music td
+    play music wn8
     scene bg club_night
     show vignette
     show s_kill_zoom zorder 3
     s "Please, [player]."
-    s "you'll have the chance to save me this time."
+    s "You'll have the chance to save me this time."
     s "You're my salvation... remember?"
     s "Please..."
     s "I can't get out of the rain..."
@@ -218,3 +342,92 @@ label ch1:
     with dissolve_scene_half
     play music wn9
     "After we all greet [w_name], everyone returns to their regular activities."
+
+    #scene 5
+    "I figure it might be nice to properly introduce myself to him since he's new here."
+    "I begin walking up to him when I suddenly get a strong sense of deja vu."
+    "Don't I know this guy from somewhere...?"
+    "I can't even remember meeting him, though."
+    "So how come he looks so familiar?"
+    scene bg club_day
+    with dissolve_scene_half
+    show mc 1b at t11
+    mc "Mind if I talk to you for a second?"
+    w "..."
+    w "Fine. But please make it quick."
+    "The sooner this guy leaves me alone."
+    mc 1e "Do we know each other from somewhere?"
+    "I definitely wasn't expecting that."
+    "But if he's going to casually bring it up..."
+    w "What was your name again?"
+    mc "[player]."
+    w "Well, [player], do you mind if I answer with my own question?"
+    mc 1j "Oh, uh... sure?"
+    w "Why did you ask if you know me?"
+    mc 1a "I just... thought you looked familiar."
+    stop music fadeout 1.0
+    w "I probably do."
+    "He's already confused. Figures."
+    #play music wn3
+    w "Let me... change that a bit so you can understand."
+    w "Have you noticed anything different about this school lately? We can start with that."
+    mc 1j "... Yeah, like how we supposedly have ties with schools outside of Japan."
+    w "I can tell you {i}for a fact{/i} that we don't have foreign relations of any kind."
+    w "Or, we {i}didn't{/i} until very recently."
+    w "If I'm not mistaken, Kuribayashi only showed signs of having them starting mere days ago."
+    w "Sayori tells me that Rikka joined this club a few days ago and mentioned that an administrator was discussing exchange students."
+    mc 1f "Wait... You mean that the day Rikka joined-?"
+    w "-was the first sign. Yep."
+    w "As a matter of fact... Did you ever see Rikka around before your first day?"
+    mc 1a "No, but she just seemed familiar... the same way you do now..."
+    w "Exactly."
+    w "Because- if I'm not mistaken- she wasn't here until then."
+    mc 1j "What do you mean?"
+    w "The best way I know how to describe it is through a parable."
+    w "Sound waves move all the time, right in front of us."
+    w "But we are physically incapable of seeing them under natural circumstances."
+    mc 1a "Okay..."
+    w "Imagine someone has a tool to let them see sound waves."
+    w "They want to see new things around them, so they spend time observing individual waves."
+    w "Now... what if each time they look at a new wave, they forget about the previous one they looked at?"
+    w "They'd eventually have seen lots of different waves but not remember them."
+    w "Suddenly, they're given an opportunity to revisit all of the different waves they've seen over time."
+    w "Now that they're looking at them all at once, everything seems familiar to them."
+    show mc 1f at t11
+    w "Lately you've seen things that give you deja vu."
+    w "But what if you've seen them before and don't remember it?"
+    show mc at thide
+    hide mc
+    show monika forward happ om ce lpoint n2 at t11
+    m "{cps=30}Okay, every-{nw}{/cps}"
+    w "Just a moment, Monika."
+    k "{cps=30}Sorry, but it's time for every-{nw}{/cps}"
+    w "I'm aware. Please give us a moment."
+    m "{cps=30}I-I'm sure whatever conversation you two are having is... important-{nw}{/cps}"
+    w "Yes, so please {i}give us a moment.{/i}"
+    w "Or did you have something to add?"
+    "{cps=30}Monika opens her mouth to speak-{nw}{/cps}"
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    "-but Kotonoha cuts her off."
+    k "{cps=30}I think it's time for this oh-so-happy-{nw}{/cps}"
+    "[w_name] stands up abruptly."
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    w "Excuse me... Koto, right?"
+    k "That's what my friends and cousin call me, but most-{nw}"
+    w "Didn't really ask for details of your life story, but thank you."
+    w "Anyway, if [player] and I are having an important conversation..."
+    w "I think we have a right to finish it, no?"
+    "I turn to face [player] again."
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    stop music
+    "Kotonoha looks absolutely pissed."
+    k "[player]..."
+    k "You might want to step away for a moment."
+    m "I don't get along with Koto much, but she's right."
+    m "It would be best for you to not listen in."

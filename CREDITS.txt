@@ -18,3 +18,4 @@ Special thanks to the following for contributing to the mod template
 - RS/6000 (New Mod Template Logo (4.2.1+))
 - Tulkas (Android Gestures)
 - Alex[ORG]#9077 (Clubroom Night Variant BG)
+- u/StormBlazed76 or Storm Blaze#7530 for the Canon MC sprites, and Satchely for the sketch design.

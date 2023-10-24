@@ -165,6 +165,7 @@ define audio.t3m = "<loop 4.618>bgm/3.ogg"
 define audio.t4 = "<loop 19.451>bgm/4.ogg" # Dreams of Love and Literature - Poem Game Theme
 define audio.t4g = "<loop 1.000>bgm/4g.ogg"
 define audio.t5 = "<loop 4.444>bgm/5.ogg" # Okay Everyone! - Sharing Poems Theme
+#define audio.wn3 = "mod_assets/bgm/warpednewthree.ogg"
 define audio.tb = "mod_assets/bgm/warpednewfour.ogg" # The Break
 define audio.wn6 = "mod_assets/bgm/warpednewsix.ogg" # 
 define audio.wn7 = "mod_assets/bgm/warpednewseven.ogg" # Her Theme (Variant)
@@ -256,6 +257,7 @@ image bg clubdayg1 = "mod_assets/bg/clubdayg1.png"
 image bg clubdayg2 = "mod_assets/bg/clubdayg2.png"
 image bg clubdayg3 = "mod_assets/bg/clubdayg3.png"
 image bg clubdayg4 = "mod_assets/bg/clubdayg4.png"
+image bg clubdaypause = "mod_assets/bg/clubdaypause.png"
 image bg qgclubday:
     "mod_assets/bg/clubdayg4.png"
     pause 0.12
@@ -276,14 +278,14 @@ image bg clubdayg:
     function ran
     pause 0.1
     repeat
-#image bg residential_dayg1 = "mod_assets/bg/residentialg1.png"
-#image bg residential_dayg1 = "mod_assets/bg/residentialg2.png"
-#image bg qgresidential_day:
-    #"mod_assets/bg/residentialg1.png"
-    #pause 0.12
-    #"mod_assets/bg/residentialg2.png"
-    #pause 0.12
-    #"bg/residential.png"
+image bg residential_dayg1 = "mod_assets/bg/residentialg1.png"
+image bg residential_dayg2 = "mod_assets/bg/residentialg2.png"
+image bg qgresidential_day:
+    "mod_assets/bg/residentialg1.png"
+    pause 0.12
+    "mod_assets/bg/residentialg2.png"
+    pause 0.12
+    "bg/residential.png"
 
 # This image shows a glitched screen during Act 2 poem sharing with Yuri.
 image bg glitch = LiveTile("bg/glitch.jpg")
@@ -1794,6 +1796,178 @@ image monika g2:
             pause 0.2
     repeat
 
+#Canon MC arms down 
+image mc 1a = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/a.png")
+image mc 1a1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/a1.png")
+image mc 1b = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/b.png")
+image mc 1b1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/b1.png")
+image mc 1c = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/c.png")
+image mc 1c1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/c1.png")
+image mc 1d = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/d.png")
+image mc 1d1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/d1.png")
+image mc 1e = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/e.png")
+image mc 1e1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/e1.png")
+image mc 1f = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/f.png")
+image mc 1f1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/f1.png")
+image mc 1g = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/g.png")
+image mc 1g1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/g1.png")
+image mc 1h = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/h.png")
+image mc 1h1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/h1.png")
+image mc 1i = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/i.png")
+image mc 1i1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/i1.png")
+image mc 1i5 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/i5.png")
+image mc 1i6 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/i6.png")
+image mc 1i7 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/i7.png")
+image mc 1j = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/j.png")
+image mc 1j1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/j1.png")
+image mc 1k = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/k.png")
+image mc 1k1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/k1.png")
+image mc 1l = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/l.png")
+image mc 1l1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/l1.png")
+image mc 1m = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/m.png")
+image mc 1n = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/n.png")
+image mc 1o = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/o.png")
+image mc 1p = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/p.png")
+image mc 1q = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/q.png")
+image mc 1r = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/r.png")
+image mc 1s = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/s.png")
+image mc 1t = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/t.png")
+image mc 1u = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/u.png")
+image mc 1v = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/v.png")
+image mc 1w = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/w.png")
+image mc 1x = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/x.png")
+image mc 1y = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/y.png")
+image mc 1z = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/1.png", (0, 0), "mod_assets/canonmc_assets/z.png")
+
+#Canon MC arms crossed 
+image mc 2a = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/a.png")
+image mc 2a1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/a1.png")
+image mc 2b = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/b.png")
+image mc 2b1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/b1.png")
+image mc 2c = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/c.png")
+image mc 2c1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/c1.png")
+image mc 2d = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/d.png")
+image mc 2d1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/d1.png")
+image mc 2e = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/e.png")
+image mc 2e1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/e1.png")
+image mc 2f = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/f.png")
+image mc 2f1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/f1.png")
+image mc 2g = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/g.png")
+image mc 2g1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/g1.png")
+image mc 2h = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/h.png")
+image mc 2h1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/h1.png")
+image mc 2i = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/i.png")
+image mc 2i1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/i1.png")
+image mc 2i5 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/i5.png")
+image mc 2i6 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/i6.png")
+image mc 2i7 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/i7.png")
+image mc 2j = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/j.png")
+image mc 2j1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/j1.png")
+image mc 2k = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/k.png")
+image mc 2k1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/k1.png")
+image mc 2l = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/l.png")
+image mc 2l1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/l1.png")
+image mc 2m = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/m.png")
+image mc 2n = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/n.png")
+image mc 2o = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/o.png")
+image mc 2p = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/p.png")
+image mc 2q = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/q.png")
+image mc 2r = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/r.png")
+image mc 2s = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/s.png")
+image mc 2t = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/t.png")
+image mc 2u = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/u.png")
+image mc 2v = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/v.png")
+image mc 2w = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/w.png")
+image mc 2x = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/x.png")
+image mc 2y = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/y.png")
+image mc 2z = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/2.png", (0, 0), "mod_assets/canonmc_assets/z.png")
+
+#Canon MC arms down casual
+image mc 3a = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/a.png")
+image mc 3a1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/a1.png")
+image mc 3b = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/b.png")
+image mc 3b1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/b1.png")
+image mc 3c = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/c.png")
+image mc 3c1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/c1.png")
+image mc 3d = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/d.png")
+image mc 3d1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/d1.png")
+image mc 3e = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/e.png")
+image mc 3e1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/e1.png")
+image mc 3f = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/f.png")
+image mc 3f1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/f1.png")
+image mc 3g = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/g.png")
+image mc 3g1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/g1.png")
+image mc 3h = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/h.png")
+image mc 3h1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/h1.png")
+image mc 3i = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/i.png")
+image mc 3i1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/i1.png")
+image mc 3i5 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/i5.png")
+image mc 3i6 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/i6.png")
+image mc 3i7 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/i7.png")
+image mc 3j = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/j.png")
+image mc 3j1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/j1.png")
+image mc 3k = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/k.png")
+image mc 3k1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/k1.png")
+image mc 3l = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/l.png")
+image mc 3l1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/l1.png")
+image mc 3m = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/m.png")
+image mc 3n = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/n.png")
+image mc 3o = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/o.png")
+image mc 3p = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/p.png")
+image mc 3q = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/q.png")
+image mc 3r = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/r.png")
+image mc 3s = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/s.png")
+image mc 3t = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/t.png")
+image mc 3u = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/u.png")
+image mc 3v = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/v.png")
+image mc 3w = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/w.png")
+image mc 3x = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/x.png")
+image mc 3y = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/y.png")
+image mc 3z = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/3.png", (0, 0), "mod_assets/canonmc_assets/z.png")
+
+#Canon MC arms crossed casual 
+image mc 4a = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/a.png")
+image mc 4a1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/a1.png")
+image mc 4b = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/b.png")
+image mc 4b1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/b1.png")
+image mc 4c = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/c.png")
+image mc 4c1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/c1.png")
+image mc 4d = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/d.png")
+image mc 4d1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/d1.png")
+image mc 4e = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/e.png")
+image mc 4e1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/e1.png")
+image mc 4f = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/f.png")
+image mc 4f1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/f1.png")
+image mc 4g = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/g.png")
+image mc 4g1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/g1.png")
+image mc 4h = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/h.png")
+image mc 4h1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/h1.png")
+image mc 4i = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/i.png")
+image mc 4i1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/i1.png")
+image mc 4i5 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/i5.png")
+image mc 4i6 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/i6.png")
+image mc 4i7 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/i7.png")
+image mc 4j = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/j.png")
+image mc 4j1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/j1.png")
+image mc 4k = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/k.png")
+image mc 4k1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/k1.png")
+image mc 4l = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/l.png")
+image mc 4l1 = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/l1.png")
+image mc 4m = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/m.png")
+image mc 4n = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/n.png")
+image mc 4o = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/o.png")
+image mc 4p = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/p.png")
+image mc 4q = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/q.png")
+image mc 4r = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/r.png")
+image mc 4s = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/s.png")
+image mc 4t = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/t.png")
+image mc 4u = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/u.png")
+image mc 4v = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/v.png")
+image mc 4w = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/w.png")
+image mc 4x = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/x.png")
+image mc 4y = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/y.png")
+image mc 4z = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png", (0, 0), "mod_assets/canonmc_assets/z.png")
+
 ## Character Variables
 # This is where the characters are declared in the mod.
 # To define a new character with assets, declare a character variable like in this example:
@@ -1802,7 +1976,7 @@ image monika g2:
 #   define en = Character('Eileen & Nat', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 define narrator = Character(ctc="ctc", ctc_position="fixed")
-define mc = DynamicCharacter('player', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define mc = DynamicCharacter('player', image='mc', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
