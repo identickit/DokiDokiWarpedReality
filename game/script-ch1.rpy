@@ -192,7 +192,7 @@ label ch1_p2:
     show monika at thide
     hide monika
     "I guess that means I should take my seat now."
-    "I look around the club room as I set my stuff down at my desk."
+    "I look around the clubroom as I set my stuff down at my desk."
     "Monika, Sayori, and Kotonoha are having a lively discussion in the corner of the room."
     "Rikka seems to already be getting started on some sort of homework."
     "Yuri is intensely reading a book, as if she was waiting all day for the opportunity."
@@ -411,14 +411,17 @@ label ch1_p2:
     pause .25
     with dissolve_scene_half
     "-but Kotonoha cuts her off."
+    show kotonoha 1u at t11
     k "{cps=30}I think it's time for this oh-so-happy-{nw}{/cps}"
     "[w_name] stands up abruptly."
     scene bg qgclubday
     pause .25
     with dissolve_scene_half
     w "Excuse me... Koto, right?"
+    show kotonoha 1a at t11
     k "That's what my friends and cousin call me, but most-{nw}"
     w "Didn't really ask for details of your life story, but thank you."
+    show kotonoha 1u at t11
     w "Anyway, if [player] and I are having an important conversation..."
     w "I think we have a right to finish it, no?"
     "I turn to face [player] again."
@@ -426,8 +429,180 @@ label ch1_p2:
     pause .25
     with dissolve_scene_half
     stop music
+    show kotonoha 1u at t21
+    show monika forward angr cm oe at t22
     "Kotonoha looks absolutely pissed."
+    show kotonoha at f21
     k "[player]..."
     k "You might want to step away for a moment."
+    show kotonoha at t21
+    show monika mi at f22
     m "I don't get along with Koto much, but she's right."
     m "It would be best for you to not listen in."
+    show monika cm at t22
+    menu:
+        "Listen to Monika and Koto.":
+            call ch1_mk_1
+        "Listen to Monika and Koto.":
+            call ch1_mk_2
+
+    show bg clubdaypause
+    pause 0.5
+    show bg clubdayg4
+    with Dissolve(1.0)
+    #play music wn12
+    show monika forward angr om oe at f22
+    show kotonoha at t21
+    m "You wanna talk 'mature', Kotonoha?!"
+    $ timeleft = 1.0 - get_pos()
+    show noise at noisefade(25 + timeleft) zorder 3
+    show vignette as flicker at vignetteflicker(timeleft) zorder 4
+    show vignette at vignettefade(timeleft) zorder 4
+    show layer master at layerflicker(timeleft)
+    m "I'm not the one who forced herself into the story!"
+    show monika cm ce at f22
+    m "I might have done some unjustified things in the actual game..."
+    show monika oe at f22
+    m "{b}But none of them are as absolutely uncalled for as your existence in this story.{/b}"
+    show monika at t22
+    show kotonoha 1u3 at f21
+    k "You've had your shot with him!"
+    k "And he chose to not be with you!"
+    k "He even went so far as {i}deleting you{/i}, Monika!"
+    k "{b}Goes to show how much he cares about you.{/b}"
+    k "{b}He deleted you but added me.{/b}"
+    k "{b}He doesn't care about you.{/b}"
+    k "{b}How does that feel?"
+    k "{b}He doesn't want 'Just Monika'.{/b}"
+    k "{b}He wants me.{/b}"
+    k "{b}Just me.{/b}"
+    k "{b}{cps=20} J u s t  K o t o n o h a.{/b}{/cps}"
+    menu:
+        "Just Kotonoha.":
+            call ch1_mk_end
+
+    return
+
+label ch1_mk_end:
+    $ ch1_mk = True
+    call screen dialog("Just Kotonoha.", ok_action=Return())
+    call screen confirmyes("You have unlocked a special poem.\nWould you like to read it?", Return(True))
+    call poem_special(12)
+    scene bg club_day
+    call splashscreen
+    scene bg club_day 
+    with dissolve
+    show kotonoha 1s at t11
+    k "W... What?"
+    scene bg qgclubday
+    $ ch1_mk = False
+    return
+    
+
+label ch1_mk_1:
+    mc "If you have something to say regarding our conversation, I think I should hear it."
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    show mc 1a at t22
+    show kotonoha 1u3 at t21
+    w "I agree."
+    show kotonoha at f21
+    k "Fine."
+    k "Have it your way."
+    show kotonoha 1i at t21
+    "Kotonoha takes a deep breath before continuing."
+    #play music wn11
+    show kotonoha 1u at f21
+    k "Do you genuinely believe you're better than everyone else here?"
+    k "Because you're sure acting like it."
+    k "This club will not tolerate the sort of behavior that you've shown in the past few moments."
+    show mc at thide
+    hide mc
+    show monika forward angr cm e1a at t22
+    m "Koto, that's not your call to-"
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    show kotonoha 1u3 at f21
+    show monika forward angr cm e1a at t22
+    k "Were {i}you{/i} going to do anything about it, Miss President?"
+    k "If so, I would {i}love{/i} to hear what {i}your{/i} take on this situation is!"
+    show kotonoha 1u2 at t21
+    show monika forward angr cm oe at f22
+    m "Okay, Koto. First of all-{nw}"
+    show monika at t22
+    show kotonoha 1u3 at f21
+    k "And another thing: Did you ever even {i}hear{/i} the conversation they were having?!"
+    show monika ce at t22
+    k "Because {i}I{/i} did, and I found the topic to be-{nw}"
+    show monika oe at f22
+    show kotonoha 1u2 at t21
+    m "{cps=20}{i}That's enough, Kotonoha.{/i}{/cps}"
+    #stop music fadeout 1.0
+    show kotonoha 1a at f21
+    show monika at t22
+    k "Ohhh, {i}somebody{/i} is stepping out of her shell, I see~"
+    k "Are you finally ready to be mature enough to properly handle the-{nw}"
+    return
+
+label ch1_mk_2:
+    mc "Okay, I'll just go hang out with-"
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    show mc 1a at t22
+    show kotonoha 1u at t21
+    w "No, I think it's best that you stay and listen."
+    show kotonoha 1u3 at f21
+    k "FINE!"
+    show kotonoha at f31
+    show mc 1f at t32
+    show monika forward neut om oe at t33
+    k "Have it your way."
+    #show kotonoha custom at f31
+    k "{b}He'll just see that everyone was right about how horrible you are, [w_name]{/b}"
+    #play music wn11
+    show kotonoha 1u3 at f31
+    k "Do you genuinely believe you're better than everyone else here?"
+    k "{b}You wish your life meant nearly as much as that of somebody like [player]{/b}"
+    k "This club will not tolerate the behavior that you've shown {b}all of your life, you fu-{/b}{nw}"
+    show kotonoha 1u at t31
+    show monika forward angr cm e1a at f33
+    m "Koto..."
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    #stop music fadeout 1.0
+    show kotonoha 1u at t21
+    show monika forward angr cm oe at f22
+    m "{b}You should leave this room. Now.{/b}"
+    show kotonoha 1a at f21
+    show monika at t22
+    k "Ohhh, {i}somebody{/i} is stepping out of her shell, I see~"
+    k "Are you finally ready to be mature enough to properly handle the-{nw}"
+    return
+
+label ch1_p3:
+    scene black
+    with dissolve_scene_full
+    call screen confirm("You have unlocked a real special poem.\nWould you like to read it?", Return(), Return())
+    call poem_special(13)
+    scene bg club_day
+    with dissolve_scene_full
+    #play music
+    "I enter the clubroom and put my stuff down at a desk."
+    "I nod in greeting towards [player], who is sitting at a nearby desk."
+    "I look around the rest of the clubroom:"
+    "Sayori seems to be deep in thought at the back of the room."
+    "The pink-haired girl is rummaging around in the closet, seemingly looking for something."
+    "The purple-haired girl gives me a look that I can't entirely make out."
+    "I take it to mean some sort of resentment and move on."
+    "The brown-haired girl is working on what looks like algebra homework."
+    "Monika and Kotonoha are both at the front of the room, talking quietly."
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    "I guess I should let Monika and Kotonoha be for now, especially after what happened yesterday."
+
+    call poemresponse_start

@@ -1889,6 +1889,32 @@ screen confirm(message, yes_action, no_action):
     ## Right-click and escape answer "no".
     #key "game_menu" action no_action
 
+screen confirmyes(message, yes_action):
+
+    modal True
+
+    zorder 200
+
+    style_prefix "confirm"
+
+    add "gui/overlay/confirm.png"
+
+    frame:
+
+        vbox:
+            xalign .5
+            yalign .5
+            spacing 30
+
+            label _(message):
+                style "confirm_prompt"
+                xalign 0.5
+
+            hbox:
+                xalign 0.5
+                spacing 100
+
+                textbutton _("Yes") action yes_action
 
 style confirm_frame is gui_frame
 style confirm_prompt is gui_prompt

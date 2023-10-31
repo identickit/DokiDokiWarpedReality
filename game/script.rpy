@@ -49,4 +49,10 @@ label start:
 
         call ch1_p2
 
+        call poem
+
+        call ch1_p3
+
+        
+
     

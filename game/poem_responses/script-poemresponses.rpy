@@ -38,69 +38,121 @@ label poemresponse_start:
         
         # This if/else statement checks if we are in Act 2 to show Act 2 specific
         # poems.
-        if persistent.playthrough == 2:
+        if persistent.playthrough == 10:
             $ pt = "2"
         else:
             $ pt = ""
 
         # This if/else statement determines what MC will say in the poem selection
         # menu depending on how many poems you have read.
-        if poemsread == 0:
-            $ menutext = "Who should I show my poem to first?"
-        else:
-            $ menutext = "Who should I show my poem to next?"
+        if chapter == 0:
+            if poemsread == 0:
+                $ menutext = "Who should I show my poem to first?"
+            else:
+                $ menutext = "Who should I show my poem to next?"
+        elif chapter == 1:
+            if poemsread == 0:
+                $ menutext = "Who should I spend the meeting?"
+            else:
+                $ menutext = "Who should I spend the rest of the meeting with?"
 
         ## Main Menu of the Poem Responses
-        menu:
-            "[menutext]"
+        if persistent.playthrough == 0:
+            menu:
+                "[menutext]"
 
-            # These statements will show each character as a option to share your
-            # poem with unless their conditions are met.
+                # These statements will show each character as a option to share your
+                # poem with unless their conditions are met.
 
-            # This will show Sayori as a menu option IF you haven't shared your
-            # poem to her and you are in Act 1.
-            "Sayori" if not s_readpoem and persistent.playthrough == 0:
-                # This variable sets that you have read Sayori's poem.
-                $ s_readpoem = True
-                if chapter == 0 and poemsread == 0:
-                    "I'm definitely most comfortable sharing it with Sayori first."
-                    "She's my good friend, after all."
-                # This call statement calls Sayori's poem response script.
-                call poemresponse_sayori from _call_poemresponse_sayori
+                # This will show Sayori as a menu option IF you haven't shared your
+                # poem to her and you are in Act 1.
+                "Sayori" if not s_readpoem and persistent.playthrough == 0:
+                    # This variable sets that you have read Sayori's poem.
+                    $ s_readpoem = True
+                    if chapter == 0 and poemsread == 0:
+                        "I'm definitely most comfortable sharing it with Sayori first."
+                        "She's my good friend, after all."
+                    elif chapter == 1:
+                        call poemresponse_sayori
+                    # This call statement calls Sayori's poem response script.
+                    call poemresponse_sayori from _call_poemresponse_sayori
 
-            # This will show Natsuki as a menu option IF you haven't shared your
-            # poem to her.
-            "Natsuki" if not n_readpoem:
-                $ n_readpoem = True
-                if chapter == 0 and poemsread == 0:
-                    "I told Natsuki I was interested in her poems yesterday."
-                    "It's probably only fair if I shared mine with her first."
-                call poemresponse_natsuki from _call_poemresponse_natsuki
+                # This will show Natsuki as a menu option IF you haven't shared your
+                # poem to her.
+                "Natsuki" if not n_readpoem:
+                    $ n_readpoem = True
+                    if chapter == 0 and poemsread == 0:
+                        "I told Natsuki I was interested in her poems yesterday."
+                        "It's probably only fair if I shared mine with her first."
+                    elif chapter == 1:
+                        call poemresponse_natsuki
+                    call poemresponse_natsuki from _call_poemresponse_natsuki
 
-            # This will show Yuri as a menu option IF you haven't shared your
-            # poem to her and she didn't run away from you in Act 2.
-            "Yuri" if not y_readpoem and not y_ranaway:
-                $ y_readpoem = True
-                if chapter == 0 and poemsread == 0:
-                    "Yuri seems the most experienced, so I should start with her."
-                    "I can trust her opinion to be fair."
-                call poemresponse_yuri from _call_poemresponse_yuri
+                # This will show Yuri as a menu option IF you haven't shared your
+                # poem to her and she didn't run away from you in Act 2.
+                "Yuri" if not y_readpoem and not y_ranaway:
+                    $ y_readpoem = True
+                    if chapter == 0 and poemsread == 0:
+                        "Yuri seems the most experienced, so I should start with her."
+                        "I can trust her opinion to be fair."
+                    elif chapter == 1:
+                        call poemresponse_yuri
+                    call poemresponse_yuri from _call_poemresponse_yuri
 
-            "Monika" if not m_readpoem:
-                $ m_readpoem = True
-                if chapter == 0 and poemsread == 0:
-                    "I should start with Monika."
-                    "Yesterday she seemed eager to read my poem, and I want her to know I'm putting in effort."
-                call poemresponse_monika from _call_poemresponse_monika
+                "Monika" if not m_readpoem:
+                    $ m_readpoem = True
+                    if chapter == 0 and poemsread == 0:
+                        "I should start with Monika."
+                        "Yesterday she seemed eager to read my poem, and I want her to know I'm putting in effort."
+                    elif chapter == 1:
+                        call poemresponse_monika
+                    call poemresponse_monika from _call_poemresponse_monika
 
-            "Rikka" if not r_readpoem:
-                $ r_readpoem = True
-                if chapter == 0 and poemsread == 0:
-                    if poemwinner[0] == "rikka":
-                        "I think starting with Rikka might be the best option, especially after the talk we just had."
-                    else:
-                        "I think starting with Rikka might be the best option."
-                call poemresponse_rikka from _call_poemresponse_rikka
+                "Rikka" if not r_readpoem:
+                    $ r_readpoem = True
+                    if chapter == 0 and poemsread == 0:
+                        if poemwinner[0] == "rikka":
+                            "I think starting with Rikka might be the best option, especially after the talk we just had."
+                        else:
+                            "I think starting with Rikka might be the best option."
+                    elif chapter == 1:
+                        call poemresponse_rikka
+                    call poemresponse_rikka from _call_poemresponse_rikka
+            
+        if persistent.playthrough == 1:
+            menu:
+                "[menutext]"
+
+                "Sayori" if not s_readpoem and persistent.playthrough == 1:
+                    $ s_readpoem = True
+                    if chapter == 1 and poemsread == 0:
+                        call poemresponse_sayori
+
+                "Natsuki" if not n_readpoem:
+                    $ n_readpoem = True
+                    if chapter == 1 and poemsread == 0:
+                        call poemresponse_natsuki
+
+                "Yuri" if not y_readpoem and not y_ranaway:
+                    $ y_readpoem = True
+                    if chapter == 1 and poemsread == 0:
+                        call poemresponse_yuri
+
+                "Monika" if not m_readpoem:
+                    $ m_readpoem = True
+                    if chapter == 1 and poemsread == 0:
+                        call poemresponse_monika
+
+                "Rikka" if not r_readpoem:
+                    $ r_readpoem = True
+                    if chapter == 1 and poemsread == 0:
+                        call poemresponse_rikka
+
+                "[w_name]" if not w_readpoem:
+                    $ w_readpoem = True
+                    if chapter == 1 and poemsread == 0:
+                        call poemresponse_w_name
+
         # This variable increases the poems read by 1.
         $ poemsread += 1
         
@@ -115,6 +167,7 @@ label poemresponse_start:
     $ y_readpoem = False
     $ m_readpoem = False
     $ r_readpoem = False
+    $ w_readpoem = False
     $ poemsread = 0
     return
 
@@ -196,6 +249,31 @@ label poemresponse_rikka:
     if not skip_poem:
         $ nextscene = "ch" + pt + str(chapter) + "_r_end_" + poemopinion
         call expression nextscene from _call_expression_5
+    return
+
+label poemresponse_w_name:
+    scene bg club_day
+    with wipeleft_scene
+    # This variable sets the default opinion to OK.
+    $ poemopinion = "med"
+    
+    # This if/elif statement checks if white's opinion of your poem was bad
+    # or good.
+    if w_poemappeal[chapter] < 0:
+        $ poemopinion = "bad"
+    elif w_poemappeal[chapter] > 0:
+        $ poemopinion = "good"
+
+    # These variables sets the next scene chapter to be called based off the
+    # chapter and poem opinion and calls it.
+    $ nextscene = "ch" + pt + str(chapter) + "_w_" + poemopinion
+    call expression nextscene from _call_expression_14
+
+    # This if statement checks if we are not skipping the poems to call the
+    # end of the poem responses for white depending on the chapter.
+    if not skip_poem:
+        $ nextscene = "ch" + pt + str(chapter) + "_w_end_" + poemopinion
+        call expression nextscene from _call_expression_15
     return
 
 label poemresponse_yuri:
@@ -2892,3 +2970,11 @@ label ch0_r_end_bad:
     "I give Rikka a small grin and hand the poem back."
     mc "Yeah. We will."
     return
+
+label ch1_w_good:
+    jump ch1_w_med
+
+label ch1_w_bad:
+    jump ch1_w_med
+
+label ch1_w_med:
