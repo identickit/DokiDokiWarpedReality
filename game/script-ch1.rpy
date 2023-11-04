@@ -6,7 +6,7 @@ label ch1_p1:
     with dissolve_scene_full
     play music t2
     k "Hey there, [player]!"
-    show kotonoha kg at chromatic_offset
+    show kotonoha kg at t11
     k 1a "Glad to see you finally decided to get up."
     "I just sigh to myself. Kotonoha always nags me for small things like this."
     "Anytime I take a while to get ready for school, for instance, she'll start joking like this."
