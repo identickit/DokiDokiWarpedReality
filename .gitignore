@@ -11,3 +11,7 @@ traceback.txt
 *.save
 game/.vscode/launch.json
 game/.vscode/launch.json
+game/.vscode/launch.json
+game/cache/bytecode-27.rpyb
+game/cache/pyanalysis.rpyb
+game/cache/screens.rpyb

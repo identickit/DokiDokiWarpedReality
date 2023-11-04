@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/fatma/Downloads",
-      "program": "c:/Users/fatma/Downloads/build/Debug/outDebug",
+      "cwd": "c:/Users/fatma/Documents/COP 2700/fitnessprogram",
+      "program": "c:/Users/fatma/Documents/COP 2700/fitnessprogram/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

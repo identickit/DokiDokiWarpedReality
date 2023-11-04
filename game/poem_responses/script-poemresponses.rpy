@@ -8,6 +8,7 @@ label poemresponse_start:
     # the skip transition.
     $ poemsread = 0
     $ skip_transition = False
+    $ wtry = 0
     
     # This label loops the poem music and applies the screen transition of
     # the poem responses.
@@ -23,6 +24,8 @@ label poemresponse_start:
         # This if/else statement determines the wipeleft effect is applied to the
         # screen transition or not.
         if skip_transition:
+            scene bg club_day
+        elif wtry < 7:
             scene bg club_day
         else:
             scene bg club_day
@@ -52,7 +55,7 @@ label poemresponse_start:
                 $ menutext = "Who should I show my poem to next?"
         elif chapter == 1:
             if poemsread == 0:
-                $ menutext = "Who should I spend the meeting?"
+                $ menutext = "Who should I spend the meeting with?"
             else:
                 $ menutext = "Who should I spend the rest of the meeting with?"
 
@@ -125,40 +128,54 @@ label poemresponse_start:
 
                 "Sayori" if not s_readpoem and persistent.playthrough == 1:
                     $ s_readpoem = True
-                    if chapter == 1 and poemsread == 0:
+                    if chapter == 1:
                         call poemresponse_sayori
 
                 "Natsuki" if not n_readpoem:
                     $ n_readpoem = True
-                    if chapter == 1 and poemsread == 0:
+                    if chapter == 1:
                         call poemresponse_natsuki
 
                 "Yuri" if not y_readpoem and not y_ranaway:
                     $ y_readpoem = True
-                    if chapter == 1 and poemsread == 0:
+                    if chapter == 1:
                         call poemresponse_yuri
-
-                "Monika" if not m_readpoem:
-                    $ m_readpoem = True
-                    if chapter == 1 and poemsread == 0:
-                        call poemresponse_monika
 
                 "Rikka" if not r_readpoem:
                     $ r_readpoem = True
-                    if chapter == 1 and poemsread == 0:
-                        call poemresponse_rikka
+                    if chapter == 1:
+                        "Rikka looks busy right now. Maybe I should wait to hang out with her."
 
                 "[w_name]" if not w_readpoem:
-                    $ w_readpoem = True
-                    if chapter == 1 and poemsread == 0:
+                    if chapter == 1 and wtry == 0:
+                        "That might not be the best idea after what went down yesterday."
+                        $ wtry += 1
+                    elif chapter == 1 and wtry == 1:
+                        "That might not be a great idea after what went down yesterday."
+                        $ wtry += 1
+                    elif chapter == 1 and wtry == 2:
+                        "That might not be a good idea after what went down yesterday."
+                        $ wtry += 1
+                    elif chapter == 1 and wtry == 3:
+                        "That really isn't a good idea."
+                        $ wtry += 1
+                    elif chapter == 1 and wtry == 4:
+                        "That wouldn't be smart."
+                        $ wtry += 1
+                    elif chapter == 1 and wtry == 5:
+                        "I really think I should pick someone else."
+                        $ wtry += 1
+                    elif chapter == 1 and wtry == 6:
+                        $ w_readpoem = True
                         call poemresponse_w_name
+                    
 
         # This variable increases the poems read by 1.
         $ poemsread += 1
         
         # This if/else statement checks if we have not yet read 3 poems for Act 2 
         # or if we are in Act 1 and haven't read 5 poems.
-        if poemsread < 3 or (persistent.playthrough == 0 and poemsread < 5):
+        if persistent.playthrough == 0 and poemsread < 5 or (persistent.playthrough == 1 and poemsread < 9 and wtry <= 6 and y_readpoem == False and s_readpoem == False and n_readpoem == False):
             jump poemresponse_loop
 
     # These variables resets the read poem variables back to normal.
@@ -272,7 +289,7 @@ label poemresponse_w_name:
     # This if statement checks if we are not skipping the poems to call the
     # end of the poem responses for white depending on the chapter.
     if not skip_poem:
-        $ nextscene = "ch" + pt + str(chapter) + "_w_end_" + poemopinion
+        $ nextscene = "ch" + pt + str(chapter) + "_w_end"
         call expression nextscene from _call_expression_15
     return
 
@@ -2971,6 +2988,7 @@ label ch0_r_end_bad:
     mc "Yeah. We will."
     return
 
+#white ch1
 label ch1_w_good:
     jump ch1_w_med
 
@@ -2978,3 +2996,220 @@ label ch1_w_bad:
     jump ch1_w_med
 
 label ch1_w_med:
+    "..."
+    "I force myself to stand up and walk over to [w_name]."
+    "He looks at me like he can tell how reluctant my decision was."
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    w "Fancy another conversation, eh?"
+    mc "I... guess our talk from yesterday just hasn't really sunk in yet."
+    w "That's understandable."
+    w "The things that I brought up were probably a lot to take in."
+    "[player] nods."
+    w "Look, I'm perfectly fine talking about this again some other time..."
+    w "But after yesterday, I don't think it's safe to do that during any meetings."
+    w "Here, give me your phone. I'll add my number."
+    mc "Oh, okay."
+    "He hands me his phone."
+    "I quickly add my contact information and then return the phone."
+    w "Text me when you get home."
+    w "Now, go spend the rest of the meeting with someone else."
+    w "If Monika or Koto asks why we were talking again, the cover is that you wanted to apologize to me for yesterday."
+    mc "Alright..."
+    "He walks away as I see Monika in the corner of my eye."
+    return
+
+label ch1_w_end:
+    return
+
+#rikka ch1
+label ch1_r_good:
+    "She looks over it for a moment before smiling."
+    return
+
+label ch1_r_bad:
+    "She looks over it for a moment before putting it down."
+    return
+
+label ch1_r_med:
+    "She looks over it for a moment."
+    return
+
+label ch1_r_end_good:
+    jump ch1_r_end_med
+
+label ch1_r_end_bad:
+    jump ch1_r_end_med
+
+label ch1_r_end_med:
+    mc "You seem to already know what you're doing pretty well."
+    return
+
+#yuri ch1
+label ch1_y_good:
+    jump ch1_y_med
+
+label ch1_y_bad:
+    jump ch1_y_med
+
+label ch1_y_med:
+    "I approach Yuri's desk quietly since she's focusing hard on her book."
+    return
+
+label ch1_y_end:
+    call poemresponse_rikka
+    return
+
+#sayori ch1
+label ch1_s_good:
+    jump ch1_s_med
+
+label ch1_s_bad:
+    jump ch1_s_med
+
+label ch1_s_med:
+    "I walk up to Sayori and notice that she's spacing out."
+    mc "Sayori?"
+    "She doesn't react at all."
+    "Did she even hear me just now?"
+    "I try again."
+    mc "Sayori?"
+    "Nothing."
+    "For the relatively short time I've known her, I've never seen her this deep in thought."
+    "I'm actually starting to worry a little bit."
+    mc "Sayori."
+    "I wave my hand in front of her face a couple of times."
+    "I tap her shoulder."
+    "Nothing."
+    "Okay, this {i}definitely{/i} isn't normal, even for how easy it is for her to space out."
+    "The only other thing I can think of doing is-{nw}"
+    s "Don't mess up my bow!"
+    "I jump back."
+    "{i}That{/i} brought her back to reality?"
+    mc "A-Are you okay?"
+    s "What do you mean?"
+    mc "Sayori, I've been trying to get your attention for several minutes."
+    mc "I was seriously getting worried..."
+    "Sayori now has an apologetic look."
+    mc "I-I wasn't trying to make you feel bad or anything..."
+    mc "I just-"
+    s "It's okay, [player]. I know you weren't."
+    s "But I deserve to feel bad."
+    s "I wasn't paying attention to anything around me, even when you tried to talk to me."
+    s "And n-now you're just worried about me..."
+    mc "Sayori...?"
+    s "Don't worry about me, [player]. Please."
+    s "I'm not worth your time or energy."
+    s "You can go play with the others."
+    s "I'm fi... I'm f-f-"
+    "Everything around me seems to freeze in place as Sayori puts her face in her hands and screams as loud as she can."
+    "I'm entirely caught off guard by this sort of behavior coming from her."
+    "Sayori gives me another apologetic look before running out of the room."
+    mc "Wait, Sayori!"
+    "She doesn't even stop or even acknowledge that I called out to her."
+    "I look around the room with a tight feeling in my chest."
+    "Wait... {i}no one else noticed anything??{/i}"
+    "Everyone is in the exact same position as they were seconds before Sayori's screaming."
+    "I start feeling a little lightheaded as I take a seat back at my desk."
+    "I can hear someone walk up to me, but it feels as if they're not even close to me."
+    "I shake my head in an effort to rid myself of the feeling that's flooding over me."
+    r "[player]...?"
+    mc "H-Hmm?..."
+    r "A-Are you okay?"
+    mc "What do you mean?"
+    "My attempt at playing my unwell appearance off does nothing."
+    r "[player], I've been trying to get your attention for several minutes."
+    "Wait… isn't this exactly what I just said to…?"
+    "Am I seriously starting to lose my mind?"
+    r "I-I wasn't trying to make you feel bad or anything…"
+    r "I just-"
+    mc "Rikka, please stop..."
+    mc "I know you're trying... to help, but everything you're saying right now is seriously making my... head spin..."
+    r "Do you want me to let you relax until we have to share poems?"
+    m "Okay, everyone!"
+    m "It's time to share poems!"
+    m "[player], are you feeling okay?"
+    
+    
+label s_yes:
+    $ time = 10
+    $ timer_jump = 's_yesno'
+    show screen countdown
+    menu:
+        "Yes":
+            mc "Yeah, I'm fine."
+            "I have to literally force the words out."
+            "Monika gives me the most concerned look I've ever seen on anyone's face."
+            m "A-Are you sure there's nothing-"
+            k "Geez, Monika, if he says he's fine, can't you just drop it?"
+            m "..."
+            m "Please let me know if anything is wrong."
+            "Monika walks back to the teacher's desk at the front of the room"
+            "Kotonoha gives me a quick wink before returning to her own desk."
+            r "Well, do you want to show me your poem since I'm already here?"
+            mc "Sure."
+            return
+    return
+
+label s_yesno:
+    menu:
+        "Yes":
+            mc "Yeah, I'm fine."
+            "I have to literally force the words out."
+            "Monika gives me the most concerned look I've ever seen on anyone's face."
+            m "A-Are you sure there's nothing-"
+            k "Geez, Monika, if he says he's fine, can't you just drop it?"
+            m "..."
+            m "Please let me know if anything is wrong."
+            "Monika walks back to the teacher's desk at the front of the room"
+            "Kotonoha gives me a quick wink before returning to her own desk."
+            r "Well, do you want to show me your poem since I'm already here?"
+            mc "Sure."
+            return
+        "No":
+            mc "N-NO!"
+            "I literally have to force the word out, making Monika and Rikka jump a little in surprise."
+            "I didn't mean to yell, but at least I got the truth out..."
+            mc "I... genuinely feel like I'm going insane..."
+            mc "I talked to Sayori... a few moments ago, and she-"
+            m "I know, [player]. I heard her."
+            m "You don't have to relive it."
+            mc "Then why didn't you react at all?"
+            k "What are we talking about~?"
+            m "[player] doesn't feel well, so I was trying to cheer him up a bit."
+            k "Oh, is that so?"
+            k "We can fix that!"
+            scene bg qgclubday
+            k "What are we talking about~?"
+            m "[player] was just telling us about a time when Sayori almost set her house on fire while cooking."
+            k "Ah, I remember telling him about that."
+            k "But I'm sure [player]'s ready to share his poem with everyone now."
+            k "Have fun, [player]~"
+            "Kotonoha winks at me before returning to her desk."
+            "Monika goes back to the teacher's desk and pulls out her notebook."
+            r "Wanna show me your poem since I'm already here?"
+            mc "Oh, sure!"
+            return
+    return
+    
+
+label ch1_s_end:
+    call poemresponse_rikka
+    return
+
+#natsuki ch1
+label ch1_n_good:
+    jump ch1_n_med
+
+label ch1_n_bad:
+    jump ch1_n_med
+
+label ch1_n_med:
+    "I walk up to the closet in the back of the room."
+    "Natsuki seems to be trying to reach a box that's on the top shelf."
+    return
+
+label ch1_n_end:
+    call poemresponse_rikka
+    return

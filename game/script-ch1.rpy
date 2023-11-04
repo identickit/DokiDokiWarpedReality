@@ -6,7 +6,7 @@ label ch1_p1:
     with dissolve_scene_full
     play music t2
     k "Hey there, [player]!"
-    show kotonoha kg zorder 2 at t11
+    show kotonoha kg at chromatic_offset
     k 1a "Glad to see you finally decided to get up."
     "I just sigh to myself. Kotonoha always nags me for small things like this."
     "Anytime I take a while to get ready for school, for instance, she'll start joking like this."
@@ -450,7 +450,7 @@ label ch1_p2:
     pause 0.5
     show bg clubdayg4
     with Dissolve(1.0)
-    #play music wn12
+    play music wn12
     show monika forward angr om oe at f22
     show kotonoha at t21
     m "You wanna talk 'mature', Kotonoha?!"
@@ -512,7 +512,7 @@ label ch1_mk_1:
     k "Have it your way."
     show kotonoha 1i at t21
     "Kotonoha takes a deep breath before continuing."
-    #play music wn11
+    play music wn11
     show kotonoha 1u at f21
     k "Do you genuinely believe you're better than everyone else here?"
     k "Because you're sure acting like it."
@@ -539,7 +539,7 @@ label ch1_mk_1:
     show monika oe at f22
     show kotonoha 1u2 at t21
     m "{cps=20}{i}That's enough, Kotonoha.{/i}{/cps}"
-    #stop music fadeout 1.0
+    stop music fadeout 1.0
     show kotonoha 1a at f21
     show monika at t22
     k "Ohhh, {i}somebody{/i} is stepping out of her shell, I see~"
@@ -560,9 +560,9 @@ label ch1_mk_2:
     show mc 1f at t32
     show monika forward neut om oe at t33
     k "Have it your way."
-    #show kotonoha custom at f31
+    show kotonoha 1x at f31
     k "{b}He'll just see that everyone was right about how horrible you are, [w_name]{/b}"
-    #play music wn11
+    play music wn11
     show kotonoha 1u3 at f31
     k "Do you genuinely believe you're better than everyone else here?"
     k "{b}You wish your life meant nearly as much as that of somebody like [player]{/b}"
@@ -573,7 +573,7 @@ label ch1_mk_2:
     scene bg qgclubday
     pause .25
     with dissolve_scene_half
-    #stop music fadeout 1.0
+    stop music fadeout 1.0
     show kotonoha 1u at t21
     show monika forward angr cm oe at f22
     m "{b}You should leave this room. Now.{/b}"
@@ -606,3 +606,5 @@ label ch1_p3:
     "I guess I should let Monika and Kotonoha be for now, especially after what happened yesterday."
 
     call poemresponse_start
+
+    "back to p3"

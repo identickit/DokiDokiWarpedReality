@@ -171,6 +171,10 @@ define audio.wn6 = "mod_assets/bgm/warpednewsix.ogg" #
 define audio.wn7 = "mod_assets/bgm/warpednewseven.ogg" # Her Theme (Variant)
 define audio.wn8 = "mod_assets/bgm/warpedneweight.ogg" #
 define audio.wn9 = "mod_assets/bgm/warpednewnine.ogg" # 
+define audio.wn10 = "mod_assets/bgm/warpednewten.ogg" # 
+define audio.wn11 = "mod_assets/bgm/warpedneweleven.ogg" # 
+define audio.wn12 = "mod_assets/bgm/warpednewtwelve.ogg" # 
+
 
 define audio.tmonika = "<loop 4.444>bgm/5_monika.ogg" # Okay Everyone! (Monika)
 define audio.tsayori = "<loop 4.444>bgm/5_sayori.ogg" # Okay Everyone! (Sayori)
@@ -1427,6 +1431,7 @@ image kotonoha 1v = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets
 image kotonoha 1v1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/v1.png")
 image kotonoha 1w = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/w.png")
 image kotonoha 1w1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/w1.png")
+image kotonoha 1x = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/x.png")
 
 #koto arm up
 image kotonoha 2a = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/a.png")
@@ -1458,6 +1463,7 @@ image kotonoha 2v = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets
 image kotonoha 2v1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/v1.png")
 image kotonoha 2w = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/w.png")
 image kotonoha 2w1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/w1.png")
+image kotonoha 2x = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/x.png")
 
 #koto arm on chest
 image kotonoha 3a = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/a.png")
@@ -1489,6 +1495,7 @@ image kotonoha 3v = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets
 image kotonoha 3v1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/v1.png")
 image kotonoha 3w = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/w.png")
 image kotonoha 3w1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/w1.png")
+image kotonoha 3x = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/x.png")
 
 image kotonoha kg:
     block:
