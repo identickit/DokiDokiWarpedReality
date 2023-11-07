@@ -50,7 +50,7 @@ label ch1_p1:
     #scene 2
     $ m_name = "Monika"
     scene bg club_day
-    show monika lean happ om oe zorder 2 at t11
+    show monika lean happ om oe at t11
     m "Then that makes it official!"
     m "Welcome to the Literature Club!"
     show monika forward happ oe cm at t11
@@ -368,7 +368,7 @@ label ch1_p2:
     stop music fadeout 1.0
     w "I probably do."
     "He's already confused. Figures."
-    #play music wn3
+    play music wn3
     w "Let me... change that a bit so you can understand."
     w "Have you noticed anything different about this school lately? We can start with that."
     mc 1j "... Yeah, like how we supposedly have ties with schools outside of Japan."
@@ -584,6 +584,7 @@ label ch1_mk_2:
     return
 
 label ch1_p3:
+    #scene 6
     scene black
     with dissolve_scene_full
     call screen confirm("You have unlocked a real special poem.\nWould you like to read it?", Return(), Return())
@@ -607,4 +608,13 @@ label ch1_p3:
 
     call poemresponse_start
 
-    "back to p3"
+    mc "You seem to already know what you're doing pretty well."
+    r 1v "It took a while, to be honest."
+    r 1h "You could probably imagine that a member of the track team struggled a lot on her first few attempts at writing poems."
+    r "But someone told me that it's all about being brave enough to take that first step."
+    r "So I listened to them and... well, I didn't write anything great, but I took the first step."
+    r "Just keep practicing, [player]. You'll get the hang of it in no time!"
+    mc "Thanks, I really-"
+    hide rikka
+    show monika forward happ om oe lpoint at t11
+    m "Okay, everyone!"

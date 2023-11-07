@@ -192,7 +192,10 @@ label poemresponse_start:
 # liked your poem.
 label poemresponse_sayori:
     scene bg club_day
-    show sayori 1a zorder 2 at t11
+    if persistent.playthrough == 1 and chapter == 1:
+        show sayori turned dist cm oe zorder 2 at t11
+    else:
+        show sayori 1a zorder 2 at t11
     with wipeleft_scene
     # This variable sets the default opinion to OK.
     $ poemopinion = "med"
@@ -218,7 +221,10 @@ label poemresponse_sayori:
 
 label poemresponse_natsuki:
     scene bg club_day
-    show natsuki 1c zorder 2 at t11
+    if persistent.playthrough == 1 and chapter == 1:
+        show natsuki cross dist me oe n2 zorder 2 at t11
+    else:
+        show natsuki 1c zorder 2 at t11
     with wipeleft_scene
     # This variable sets the default opinion to OK.
     $ poemopinion = "med"
@@ -295,7 +301,10 @@ label poemresponse_w_name:
 
 label poemresponse_yuri:
     scene bg club_day
-    show yuri 1a zorder 2 at t11
+    if persistent.playthrough == 1 and chapter == 1:
+        show yuri turned dist om oe zorder 2 at t11
+    else:
+        show yuri 1a zorder 2 at t11
     with wipeleft_scene
 
     $ poemopinion = "med"
@@ -3026,14 +3035,46 @@ label ch1_w_end:
 #rikka ch1
 label ch1_r_good:
     "She looks over it for a moment before smiling."
+    r 1f "This turned out great, [player]!"
+    r 1a "I'm impressed by how quickly you're getting the hang of this!"
+    mc "Oh, thanks… I didn't think it was anything special."
+    r 1c "[player], I promise it's good."
+    r "You'll become more confident in your writing over time, but until then..."
+    r 1a "I'll help provide positivity and encouragement!"
+    r "It'll definitely help to have those things while you're finding what sort of writing styles feel best and what sort of emotions you wanna convey and other things like those."
+    mc "I appreciate it, Rikka."
+    r 1u "Anyway, ready to see mine?"
+    mc "Yep."
+    "Rikka hands me her poem."
     return
 
 label ch1_r_bad:
     "She looks over it for a moment before putting it down."
+    r 1a "I sort of expected you to write something like this."
+    r 1c "It isn't bad by any means! I don't think there's really such a thing as a 'bad poem'."
+    r "All it takes is some practice, [player]!"
+    r 1a "You can even start by just jotting down feelings or thoughts on a piece of scrap paper and see where it takes you."
+    r "I'm looking forward to seeing how your poems turn out!"
+    mc "I appreciate it, Rikka."
+    r 1v "It's no problem!"
+    r "Anyway, you wanna read my poem?"
+    mc "Sure."
+    "Rikka hands me her poem."
     return
 
 label ch1_r_med:
     "She looks over it for a moment."
+    r 1a "Not bad!"
+    r "I can tell you're going to write some pretty great poems."
+    mc "Ah, thanks."
+    mc "I didn't really think it was that good."
+    r 1c "[player], nobody starts at the top."
+    r "All it takes is practice, and with how this one turned out, I don't think you'll have too much trouble finding what all feels best for you."
+    r 1a "If you ever need any encouragement, I'll be here!"
+    mc "I appreciate it, Rikka."
+    r 1u "Anyway, wanna read mine now?"
+    mc "Sure."
+    "Rikka hands me her poem."
     return
 
 label ch1_r_end_good:
@@ -3043,7 +3084,7 @@ label ch1_r_end_bad:
     jump ch1_r_end_med
 
 label ch1_r_end_med:
-    mc "You seem to already know what you're doing pretty well."
+    $ show_poem (poem_r2)
     return
 
 #yuri ch1
@@ -3055,9 +3096,151 @@ label ch1_y_bad:
 
 label ch1_y_med:
     "I approach Yuri's desk quietly since she's focusing hard on her book."
+    "I wait for a moment or two to see if she notices me, but she never looks up."
+    "After she turns a third page, I decide to tap her desk to-"
+    show yuri turned lsur om oe at h11
+    y "GAH-"
+    "I jump back a little."
+    show yuri turned flus cm ce at t11
+    mc "Sorry, I wasn't trying to scare you or anything."
+    y "N-No, it's okay..."
+    y "I should've been more attentive..."
+    show yuri e1a at t11
+    y "Wait... how long were you trying to get my attention?"
+    mc "Oh, not very long."
+    "I try to give her a reassuring smile so that she doesn't feel bad."
+    "To my relief, she simply sighs to herself and nods."
+    show yuri turned lsur om ce at t11
+    y "I see. I'm glad I didn't keep you waiting for too long, then."
+    show yuri turned neut om oe at t11
+    y "What did you need, [player]?"
+    mc "I guess I just wanted to spend part of the meeting with you, if that's okay?"
+    show yuri turned happ cm oe n3 at t11
+    y "Is that so?"
+    y "Well, I don't see why that would be an issue."
+    y "Please, feel free to take a seat."
+    "She gestures toward the seat to her left."
+    "I sit down and glance at the cover of Yuri's book."
+    mc "{i}Portrait of Markov{/i}, eh?"
+    show yuri e1b at t11
+    y "Y-Yeah... it's a book that I enjoy very much."
+    y "Basically, it's about-"
+    mc "Oh, I think I remember hearing about the book before."
+    show yuri turned neut me oe nb at t11
+    mc "Well, I don't remember {i}much{/i} about where I heard, but isn't it about some sort of experiment where-"
+    stop music
+    show yuri turned neut mh e2a at t11
+    y "{b}Do not speak of the details.{/b}"
+    y "{b}You think you can just freely speak about it as if you're worthy enough to know of its existence?{/b}"
+    y "{b}As a matter of fact...{/b}"
+    y "{b}You shouldn't even know about it in the first place.{/b}"
+    y "{b}So tell me, [player], how exactly did you learn of the experiment?{/b}"
+    y "{b}Where did you hear of it from?{/b}"
+
+    menu:
+        "I overheard a conversation.":
+            call y_normal
+        "I remember from another timeline.":
+            call y_normal
+        "Weren't you just going to tell me about it like two seconds ago?":
+            call y_normal
+        "{b}L i b i t i n a.{/b}":
+            call y_libitina
     return
 
+label y_normal:
+    $ y_splash1 = True
+    show yuri turned yand mb ce at t11
+    y "Ahahaha..."
+    show yuri e1d at t11
+    y "Ahahaha!"
+    show yuri mc e2a at t11
+    y "{b}{cps=18}AHAHAHAHA-{/cps}{/b}{nw}"
+    hide yuri
+    show monika forward happ cm oe b1b at t11
+    m "Don't worry, we won't get into all of that nasty stuff, [player]."
+    show monika lean happ cm oe at t11
+    m "In fact, let me just help you forget about all of this..."
+    hide yuri
+    call splashscreen
+    scene bg club_day
+    with dissolve
+    jump ch1_y_end
+
+label y_libitina: 
+    $ y_splash2 = True
+    play music wnw
+    scene bg bsod
+    pause 3.0
+    show monika forward happ cm oe b1b at t11
+    m "Hey, [player]?"
+    m "Maybe don't bring that up?"
+    m "Like... ever again?"
+    show monika lean happ cm oe at t11
+    m "{b}We'll know if you do.{/b}"
+    m "{b}Even if I hate her, I'll ask her for help to make sure you don't speak that name again if I must.{/b}"
+    m "{b}So don't.{/b}"
+    m "{b}Just don't{/b}"
+    call splashscreen
+    scene bg club_day
+    with dissolve
+    jump ch1_y_end
+
 label ch1_y_end:
+    $ y_splash1 = False
+    $ y_splash2 = False
+    show yuri 1 at t11
+    y "Yep, Koto's my cousin."
+    y "I'm really glad she started this club."
+    show yuri turned happ cm ce at t11
+    y "Not only do I have a place to properly enjoy literature now..."
+    y "I get to meet new people who are into literature as well."
+    show yuri turned laug cm oe n3 at t11
+    y "Even if I can't properly socialize for the life of me."
+    mc "I mean, you're socializing with me right now, right?"
+    mc "You aren't that bad at it from what I've seen."
+    show yuri turned flus cm e1d at t11
+    y "Y-You think so?"
+    show yuri turned flus cm oe n2 at t22
+    show kotonoha 1h at f21
+    k "Hello, [player]."
+    "Yuri jumps a little as Kotonoha seemingly appears out of thin air."
+    show kotonoha at t21
+    mc "Ah, hello, Kotonoha."
+    show kotonoha at f21
+    k "Nice to see you've met my cousin~"
+    show kotonoha 1a at f21
+    k "{b}But why don't you just spend the meeting with me next time?{/b}"
+    k "Anyway, I just wanted to let you two know that we'll be sharing poems soon."
+    show kotonoha at t21
+    mc "Okay, thanks Kotonoha."
+    show kotonoha at thide
+    hide kotonoha
+    show yuri turned dist cm oe n2 b2b at t11
+    "Kotonoha waves at us before walking off."
+    "I turn to look at Yuri, who looks slightly disappointed."
+    show yuri mg at t11
+    y "Well... it's been nice speaking with you, [player]."
+    show yuri ma at t11
+    y "I look forward to reading your poem."
+    mc "Ditto. See you then!"
+    show yuri at thide
+    hide yuri
+    "I walk back to my desk, where Rikka is standing."
+    show rikka 1a at t11
+    r "Hello, [player]!"
+    r "How's your time in the club treating you so far?"
+    mc "Not too badly, everyone seems pretty nice for the most part."
+    show rikka 1b at t11
+    r "That's great to hear."
+    show rikka 1h at t11
+    r "If anyone gives you a hard time, you're always free to tell me about it."
+    show rikka 1a at t11
+    r "I can help sort things out for you!"
+    "She gives me a warm smile after saying this... slightly concerning statement."
+    "Before I can think much of it, however, Rikka starts speaking again."
+    r "So, you wanna go ahead and share poems since we're already here?"
+    mc "Oh, sure."
     call poemresponse_rikka
     return
 
@@ -3084,28 +3267,38 @@ label ch1_s_med:
     "Nothing."
     "Okay, this {i}definitely{/i} isn't normal, even for how easy it is for her to space out."
     "The only other thing I can think of doing is-{nw}"
+    show sayori turned lsur cm oe at t11
     s "Don't mess up my bow!"
     "I jump back."
     "{i}That{/i} brought her back to reality?"
     mc "A-Are you okay?"
+    show sayori turned curi cm e1a at t11
     s "What do you mean?"
     mc "Sayori, I've been trying to get your attention for several minutes."
     mc "I was seriously getting worried..."
+    show sayori turned nerv cm ce at t11
     "Sayori now has an apologetic look."
     mc "I-I wasn't trying to make you feel bad or anything..."
     mc "I just-"
+    show sayori turned laug oe ma at t11
     s "It's okay, [player]. I know you weren't."
     s "But I deserve to feel bad."
     s "I wasn't paying attention to anything around me, even when you tried to talk to me."
+    show sayori mj e1g at t11
     s "And n-now you're just worried about me..."
     mc "Sayori...?"
     s "Don't worry about me, [player]. Please."
     s "I'm not worth your time or energy."
     s "You can go play with the others."
+    show sayori e1h at t11
     s "I'm fi... I'm f-f-"
+    show sayori turned cry om e4e lup rup at t11
     "Everything around me seems to freeze in place as Sayori puts her face in her hands and screams as loud as she can."
     "I'm entirely caught off guard by this sort of behavior coming from her."
+    show sayori mj e1h ldown rdown at t11
     "Sayori gives me another apologetic look before running out of the room."
+    show sayori at lhide
+    hide sayori
     mc "Wait, Sayori!"
     "She doesn't even stop or even acknowledge that I called out to her."
     "I look around the room with a tight feeling in my chest."
@@ -3114,21 +3307,25 @@ label ch1_s_med:
     "I start feeling a little lightheaded as I take a seat back at my desk."
     "I can hear someone walk up to me, but it feels as if they're not even close to me."
     "I shake my head in an effort to rid myself of the feeling that's flooding over me."
+    show rikka 1p zorder 2 at t11
     r "[player]...?"
     mc "H-Hmm?..."
     r "A-Are you okay?"
     mc "What do you mean?"
     "My attempt at playing my unwell appearance off does nothing."
-    r "[player], I've been trying to get your attention for several minutes."
+    r 1c "[player], I've been trying to get your attention for several minutes."
     "Wait… isn't this exactly what I just said to…?"
     "Am I seriously starting to lose my mind?"
-    r "I-I wasn't trying to make you feel bad or anything…"
+    r 1i "I-I wasn't trying to make you feel bad or anything…"
     r "I just-"
     mc "Rikka, please stop..."
     mc "I know you're trying... to help, but everything you're saying right now is seriously making my... head spin..."
-    r "Do you want me to let you relax until we have to share poems?"
+    r 1c "Do you want me to let you relax until we have to share poems?"
+    show rikka at t22
+    show monika forward happ om oe lpoint at f21
     m "Okay, everyone!"
     m "It's time to share poems!"
+    show monika forward curi cm oe ldown at f21
     m "[player], are you feeling okay?"
     
     
@@ -3138,16 +3335,34 @@ label s_yes:
     show screen countdown
     menu:
         "Yes":
+            hide screen countdown
+            show monika at t21
             mc "Yeah, I'm fine."
             "I have to literally force the words out."
+            show monika forward e2a at t21
             "Monika gives me the most concerned look I've ever seen on anyone's face."
+            show monika at f21
             m "A-Are you sure there's nothing-"
+            show rikka at t33
+            show monika at t32
+            show kotonoha 1e at f31
             k "Geez, Monika, if he says he's fine, can't you just drop it?"
+            show kotonoha at t31
+            show monika forward neut om ce at f32
             m "..."
+            show monika oe at f32
             m "Please let me know if anything is wrong."
+            show monika at thide
+            hide monika
+            show kotonoha at t21
+            show rikka at t22
             "Monika walks back to the teacher's desk at the front of the room"
+            show kotonoha 1aa at t21
             "Kotonoha gives me a quick wink before returning to her own desk."
-            r "Well, do you want to show me your poem since I'm already here?"
+            show kotonoha at thide
+            hide kotonoha
+            show rikka at t11
+            r 1i "Well, do you want to show me your poem since I'm already here?"
             mc "Sure."
             return
     return
@@ -3155,39 +3370,84 @@ label s_yes:
 label s_yesno:
     menu:
         "Yes":
+            hide screen countdown
+            show monika at t21
             mc "Yeah, I'm fine."
             "I have to literally force the words out."
+            show monika forward e2a at t21
             "Monika gives me the most concerned look I've ever seen on anyone's face."
+            show monika at f21
             m "A-Are you sure there's nothing-"
+            show rikka at t33
+            show monika at t32
+            show kotonoha 1e at f31
             k "Geez, Monika, if he says he's fine, can't you just drop it?"
+            show kotonoha at t31
+            show monika forward neut om ce at f32
             m "..."
+            show monika oe at f32
             m "Please let me know if anything is wrong."
+            show monika at thide
+            hide monika
+            show kotonoha at t21
+            show rikka at t22
             "Monika walks back to the teacher's desk at the front of the room"
+            show kotonoha 1aa at t21
             "Kotonoha gives me a quick wink before returning to her own desk."
-            r "Well, do you want to show me your poem since I'm already here?"
+            show kotonoha at thide
+            hide kotonoha
+            show rikka at t11
+            r 1i "Well, do you want to show me your poem since I'm already here?"
             mc "Sure."
             return
         "No":
+            show monika forward lsur cm oe at h21
+            show rikka 1aa at h22
             mc "N-NO!"
             "I literally have to force the word out, making Monika and Rikka jump a little in surprise."
             "I didn't mean to yell, but at least I got the truth out..."
+            show monika forward curi cm oe at t21
+            show rikka 1c at t22
             mc "I... genuinely feel like I'm going insane..."
             mc "I talked to Sayori... a few moments ago, and she-"
+            show monika forward happ cm oe b2b at f21
             m "I know, [player]. I heard her."
             m "You don't have to relive it."
             mc "Then why didn't you react at all?"
+            show monika at t32
+            show rikka at t33
+            show kotonoha 1a at f31
             k "What are we talking about~?"
+            show kotonoha at t31
+            show monika forward neut cm oe at f32
             m "[player] doesn't feel well, so I was trying to cheer him up a bit."
+            hide rikka
+            show monika at t22
+            show kotonoha 1e at f21
             k "Oh, is that so?"
-            k "We can fix that!"
+            k 1h "We can fix that!"
             scene bg qgclubday
+            pause 0.25
+            scene bg qgclubday
+            show kotonoha 1h at f21
+            show monika forward happ cm oe at t22
             k "What are we talking about~?"
+            show kotonoha at t21
+            show monika at f22
             m "[player] was just telling us about a time when Sayori almost set her house on fire while cooking."
+            show monika at t22
+            show kotonoha 1j at f21
             k "Ah, I remember telling him about that."
-            k "But I'm sure [player]'s ready to share his poem with everyone now."
+            k 1a "But I'm sure [player]'s ready to share his poem with everyone now."
+            show kotonoha 1aa at f21
             k "Have fun, [player]~"
+            show kotonoha at thide
+            hide kotonoha
+            show monika at thide
+            hide monika
             "Kotonoha winks at me before returning to her desk."
             "Monika goes back to the teacher's desk and pulls out her notebook."
+            show rikka 1a at t11
             r "Wanna show me your poem since I'm already here?"
             mc "Oh, sure!"
             return
@@ -3208,8 +3468,146 @@ label ch1_n_bad:
 label ch1_n_med:
     "I walk up to the closet in the back of the room."
     "Natsuki seems to be trying to reach a box that's on the top shelf."
+    mc "Need some help with that?"
+    "I can practically see her soul leave her body as she spins around."
+    show natsuki turned lsur om oe at h11
+    n "Y-You idiot! Don't scare me like that!"
+    n "Are you {i}trying{/i} to get smacked in the face?"
+    mc "S-Sorry, I wasn't trying to scare you..."
+    show natsuki turned worr om ce at t11
+    "Natsuki takes a moment to breathe. I'm still not quite sure how I scared her so easily..."
+    "Heck, I feel like this is a bit much for just-"
+    show natsuki turned neut om oe at t11
+    n "Okay, what did you want?"
+    mc "Oh- I just asked if you needed any help reaching-"
+    show natsuki turned angr om oe at t11
+    n "No!"
+    n "I don't need help!"
+    show natsuki cm at t11
+    "I hold up my hands in a sort of surrender at her outburst."
+    "I definitely didn't expect this sort of behavior from someone like Natsuki."
+    "(How incredibly wrong my expectations were.)"
+    show natsuki turned flus cm ce at t11
+    n "I... didn't mean to yell. I'm just..."
+    show natsuki cross flus cm oe at t11
+    "Natsuki crosses her arms in frustration."
+    n "... I'm having a kinda bad day today."
+    mc "Did something happen?"
+    show natsuki turned angr om e1a b1a at t11
+    n "Er- you don't have to get into it if you don't want to!"
+    "Natsuki calms herself down again."
+    show natsuki turned curi cm oe b1b at t11
+    n "No... I'm... I really shouldn't be getting this upset over a couple of questions."
+    n "I just had an argument with my dad this morning, and then as soon as I got to school, my teacher started snapping at me about a quiz we did recently."
+    n "It's been stuff like that all day."
+    show natsuki turned angr om ce b3b at t11
+    n "It sucks."
+    n "I just want a break!"
+    show natsuki cm at t11
+    "Natsuki stamps her foot on the ground as she says this."
+    "She takes a moment to try and calm down once again."
+    "I can tell that this time isn't as successful as the other two."
+    show natsuki turned sad cm e1g b1b at t11
+    n "I... I need a moment, [player]."
+    show natsuki e4d at t11
+    n "Please just leave me alone for now."
+
+    menu:
+        "Okay, I'll check on you later.":
+            mc "Okay, I'll check on you later..."
+            "Natsuki nods as I begin to walk away."
+            "I only take a few steps before I feel a hand grab my sleeve."
+            "I turn back towards the closet..."
+            show natsuki turned fs sad cm ce at t11
+            "Natsuki suddenly looks like she's about to break down entirely."
+            "I feel like this isn't normal at all for her, but I don't fight it."
+            mc "You want me to stay?"
+            show natsuki oe at t11
+            n "Mhm..."
+        "...":
+            mc "..."
+            show natsuki turned fs sad cm oe at t11
+            n "What are you waiting for?"
+            mc "I want to try to help you."
+            mc "If you'll let me, that is."
+            "Natsuki opens her mouth as if to argue."
+            "But she doesn't say anything. She just closes her mouth and looks down at the ground."
+            "She looks like she's genuinely about to break down."
+            "Even though I barely know her, I feel like this isn't normal at all for her."
+    
+    "Natsuki takes a long, deep breath before speaking in a shaky voice."
+    $ nref()
+    show natsuki turned sad cm e4d at t11
+    n "Don't tell anyone that I'm being this... vulnerable right now."
+    show natsuki e1g at t11
+    n "You're not gonna be happy about it if you do."
+    mc "Okay?"
+    show n_rects_ghost1 zorder 4
+    show n_rects_ghost2 zorder 4
+    show n_rects_ghost3 zorder 4
+    stop music fadeout 1.0 
+    "She takes another breath-"
+    play music wnf fadein 1.0
+    $ style.say_dialogue = style.edited
+    n "My dad hates me."
+    n "And he has every right to."
+    n "I'm nothing but a burden and a mess."
+    n "Kotonoha is perfect."
+    n "You should just be spending your time with her instead."
+    n "I could be in a different club and you wouldn't even miss me."
+    n "Just hang out with her-{nw}"
+    $ style.say_dialogue = style.normal
+    hide n_rects_ghost1
+    hide n_rects_ghost2
+    hide n_rects_ghost3
+    scene bg qgclubday
+    show monika forward neut om oe at t21
+    show natsuki turned fs neut e5 at t22
+    "Monika is standing next to us with an unreadable look on her face."
+    show monika cm at f21
+    m "Here, Natsuki."
+    show monika at t21
+    "She hands her some sort of energy bar, which Natsuki immediately snatches up."
+    show natsuki turned fs neut b1 e1 at f22
+    n "I told you not to give mphh."
+    show natsuki turned fs neut b2 e4 at t22
+    "She cuts herself off by taking a huge bite out of the bar."
+    "I give Monika a concerned look."
+    show monika at f21
+    n "Her dad doesn't feed her nearly as often as he should."
+    show monika at t21
+    mc "O-Oh…"
+    show monika at f21
+    m "Yeah, it's pretty bad."
+    m "(But I know that's not what made her act like that.)"
+    show monika at t21
+    mc "What was that last bit?"
+    show monika at f21
+    m "Don't worry about it, [player]."
+    m "I think Rikka was wanting to talk to you a few minutes ago."    
+    m "Why don't you go see what she wanted?"
+    show monika at thide
+    show natsuki at thide
+    hide monika
+    hide natsuki
+    mc "S-Sure."
+    "I slowly head back to my seat as Monika begins whispering something to Natsuki."
+    "I reach my desk and find Rikka waiting."
+    show rikka 1a at t11
+    r "Hello, [player]!"
+    r "How's your time in the club treating you so far?"
+    mc "Not too badly, everyone seems nice for the most part."
+    show rikka 1b at t11
+    r "That's great to hear."
+    show rikka 1h at t11
+    r "If anyone ever gives you a hard time, you're always free to tell me about it."
+    show rikka 1a at t11
+    r "I can help sort things out for you!"
+    "She gives me a warm smile after saying this… slightly concerning statement."
+    "Before I can think much of it, however, Rikka starts speaking again."
+    r "So, you wanna go ahead and share poems since we're already here?"
+    mc "Oh, sure."
     return
 
 label ch1_n_end:
-    call poemresponse_rikka
-    return
+    jump poemresponse_rikka

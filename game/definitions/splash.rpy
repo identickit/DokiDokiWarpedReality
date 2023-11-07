@@ -31,7 +31,9 @@ init python:
     splash_messages = [
         "Please support Doki Doki Literature Club.",
         "Monika is watching you code.",
-        "Enjoying your venting session?"
+        "Enjoying your venting session?",
+        "oblivia- wait, i'm not allowed to make that reference?",
+        "You IDIOT."
     ]
 
     ### New in 3.0.0
@@ -534,6 +536,10 @@ label splashscreen:
         $ splash_message = renpy.random.choice(splash_messages)
     if ch1_mk == True:
         $ splash_message = splash_messages[2]
+    if y_splash1 == True:
+        $ splash_message = splash_messages[3]
+    if y_splash2 == True:
+        $ splash_message = splash_messages[4]
     show splash_warning "[splash_message]" with Dissolve(0.5, alpha=True)
     $ pause(1.5)
     hide splash_warning with Dissolve(0.5, alpha=True)

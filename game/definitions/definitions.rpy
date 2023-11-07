@@ -165,7 +165,7 @@ define audio.t3m = "<loop 4.618>bgm/3.ogg"
 define audio.t4 = "<loop 19.451>bgm/4.ogg" # Dreams of Love and Literature - Poem Game Theme
 define audio.t4g = "<loop 1.000>bgm/4g.ogg"
 define audio.t5 = "<loop 4.444>bgm/5.ogg" # Okay Everyone! - Sharing Poems Theme
-#define audio.wn3 = "mod_assets/bgm/warpednewthree.ogg"
+define audio.wn3 = "mod_assets/bgm/warpedaltthree.ogg"
 define audio.tb = "mod_assets/bgm/warpednewfour.ogg" # The Break
 define audio.wn6 = "mod_assets/bgm/warpednewsix.ogg" # 
 define audio.wn7 = "mod_assets/bgm/warpednewseven.ogg" # Her Theme (Variant)
@@ -174,7 +174,8 @@ define audio.wn9 = "mod_assets/bgm/warpednewnine.ogg" #
 define audio.wn10 = "mod_assets/bgm/warpednewten.ogg" # 
 define audio.wn11 = "mod_assets/bgm/warpedneweleven.ogg" # 
 define audio.wn12 = "mod_assets/bgm/warpednewtwelve.ogg" # 
-
+define audio.wnw = "mod_assets/bgm/yuri-wrongopt.ogg" # Yuri-WrongOPT
+define audio.wnf = "mod_assets/bgm/nat-silverforce.ogg" # Natsuki
 
 define audio.tmonika = "<loop 4.444>bgm/5_monika.ogg" # Okay Everyone! (Monika)
 define audio.tsayori = "<loop 4.444>bgm/5_sayori.ogg" # Okay Everyone! (Sayori)
@@ -290,6 +291,7 @@ image bg qgresidential_day:
     "mod_assets/bg/residentialg2.png"
     pause 0.12
     "bg/residential.png"
+image bg bsod = "mod_assets/bg/bsod.png"
 
 # This image shows a glitched screen during Act 2 poem sharing with Yuri.
 image bg glitch = LiveTile("bg/glitch.jpg")
@@ -1403,6 +1405,7 @@ image rikka 5z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png
 
 #kotonoha arms down
 image kotonoha 1a = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/a.png")
+image kotonoha 1aa = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/aa.png")
 image kotonoha 1b = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/b.png")
 image kotonoha 1c = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/c.png")
 image kotonoha 1d = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/d.png")
@@ -1435,6 +1438,7 @@ image kotonoha 1x = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets
 
 #koto arm up
 image kotonoha 2a = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/a.png")
+image kotonoha 2aa = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/aa.png")
 image kotonoha 2b = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/b.png")
 image kotonoha 2c = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/c.png")
 image kotonoha 2d = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/d.png")
@@ -1467,6 +1471,7 @@ image kotonoha 2x = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets
 
 #koto arm on chest
 image kotonoha 3a = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/a.png")
+image kotonoha 3aa = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/aa.png")
 image kotonoha 3b = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/b.png")
 image kotonoha 3c = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/c.png")
 image kotonoha 3d = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/d.png")
@@ -2060,6 +2065,8 @@ default chapter = 0
 default currentpos = 0
 default faint_effect = None
 default ch1_mk = False
+default y_splash1 = False
+default y_splash2 = False
 
 # Default Name Variables
 # To define a default name make a character name variable like in this example:

@@ -737,6 +737,28 @@ So start slow, then pick up the pace.
 
 You'll ease into it before long."""))
 
+    poem_r2 = Poem(
+        author_r, title=_("Marathon"),
+        text=_("""\
+A blow of a whistle.
+I'm off, running straight forward.
+The other competitors are nowhere near me.
+
+Suddenly, one catches up to me.
+They say hurtful things to distract me.
+I'm thrown off but I quickly push the statement aside.
+
+I'm in the lead again.
+A second person catches up.
+They say even more things.
+This time, I trip and nearly fall.
+They pass me.
+I try to regain my lead when all the other competitors reach me.
+
+A chorus of hurtful comments floods my ears.
+I fall behind everyone else.
+I don't finish the race."""))
+
 screen poem(poem):
     style_prefix "poem"
 
