@@ -591,7 +591,7 @@ label ch1_p3:
     call poem_special(13)
     scene bg club_day
     with dissolve_scene_full
-    #play music
+    play music wn9
     "I enter the clubroom and put my stuff down at a desk."
     "I nod in greeting towards [player], who is sitting at a nearby desk."
     "I look around the rest of the clubroom:"
@@ -618,3 +618,149 @@ label ch1_p3:
     hide rikka
     show monika forward happ om oe lpoint at t11
     m "Okay, everyone!"
+    m "I know I'm cutting you all a bit short on the poem-sharing, but I'd like to make an announcement!"
+    "Despite our conversation being interrupted, Rikka happily turns her attention to Monika."
+    "Everyone else does the same, including [w_name]-"
+    stop music fadeout 0.5
+    scene bg qgclubday
+    pause .25
+    play music wn6 fadein 0.5
+    with dissolve_scene_half
+    "I look over at Monika, who's standing in the front of the room."
+    show monika forward happ cm oe at t11
+    m "As you may know..."
+    m "... our end-of-term exams are rapidly approaching!"
+    show monika at t21
+    show natsuki turned pani om ce at f22
+    n "Don't remind me!"
+    show monika at t31
+    show natsuki cm at t32
+    show yuri turned nerv cm ce n2 at f33
+    y "Ah- I still have so much studying to do..."
+    show monika at t41 zorder 3
+    show natsuki at t42 zorder 2
+    show yuri at t43 zorder 2
+    show rikka 1g at f44 zorder 3
+    r "I totally forgot about them."
+    show rikka at thide
+    hide rikka 
+    show mc 1j at f44 zorder 3
+    mc "I'm not {i}too{/i} worried, to be honest."
+    show mc at t44 zorder 2
+    show yuri at thide
+    hide yuri
+    show kotonoha 1a at f43 zorder 3
+    k "Neither am I. These exams shouldn't be too difficult for me."
+    show kotonoha at t43 zorder 2
+    show natsuki at f42 zorder 3
+    n "Maybe for a nerd like you! What about me and..."
+    show natsuki turned neut om e1b b1d n2 at f42
+    n "W-Well, I can see Yuri doing fine, too..."
+    show natsuki at t42
+    "Natsuki desperately glances at everyone, as if trying to find someone she can make a point out of."
+    show natsuki e1a at t42
+    "She looks at me for less than a second before turning back to Monika."
+    show natsuki cross anno cm ce at f42
+    n "Nevermind..."
+    show natsuki at thide
+    hide natsuki
+    show monika at t31
+    show kotonoha at t32
+    show mc 1a at f33
+    mc "Does Sayori remember that exams are coming up?"
+    show mc at t33
+    show monika forward nerv cm ce n2 at f31
+    m "Don't worry, [player]. She was gonna make the upcoming announcement with me, so she remembers."
+    show monika at t31
+    w "Speaking of her, where {i}is{/i} Sayori?"
+    show kotonoha at f32
+    k "I think she went home early."
+    show kotonoha at t32
+    show monika at f31
+    m "Yeah... She wasn't feeling well."
+    show monika at t31
+    w "Should..."
+    "I'm about to hate myself for asking this question, aren't I?"
+    w "... should someone go check on her?"
+    show monika e1a at f31
+    m "Actually, that would be nice..."
+    m "Would you mind doing that, [w_name]? She'd probably be less freaked out if either you or Koto went to see how she's doing."
+    show monika at t31
+    show kotonoha at f32
+    k "I can go check on-"
+    show kotonoha at t32
+    stop music
+    w "No. I'll go check on her."
+    w "Kotonoha, can you send me her address?"
+    show monika forward happ cm ce n1 at f31
+    m "Already done!"
+    show monika at t31
+    w "Thanks, Monika. I'll see you all tomorrow."
+    show monika at thide
+    show kotonoha at thide
+    show mc at thide
+    hide monika
+    hide kotonoha
+    hide mc
+    scene bg corridor with wipeleft
+    "I immediately leave the room and start walking towards the front of the school."
+    "I'm about to walk through the front doors-"
+    show mc 1t at t11
+    mc "Hey... can you uh..."
+    mc "... keep me updated on how she is?"
+    mc "I don't know her very well, but she seems like a really great person."
+    mc "So hearing that she isn't well makes me..."
+    w "Sort of concerned?"
+    "[player] just nods in response."
+    "Usually, I wouldn't feel very bad for someone like him... {i}let alone Sayori...{/i}"
+    "But for some reason..."
+    w "Sure. You still have my number?"
+    mc "Yeah."
+    w "Okay, then. You can text me here in a few minutes and I'll respond when I come back from her place."
+    show mc 1i at t11
+    mc "Okay... Thanks, [w_name]."
+    w "No problem."
+    "I say goodbye to [player] and leave the building."
+    
+    #scene 7
+    scene bg residential_day with dissolve_scene_full
+    "I reach the address that Monika sent me."
+    "As I approach the front door, I find myself thinking about how quick Kotonoha was to try and come here."
+    "She almost seemed like she had... something she was set on doing."
+    scene bg house with wipeleft_scene
+    "Even if I was the one who suggested someone visiting her, she acted like she had {i}planned{/i} on coming here."
+    "I decide to keep this thought in the back of my mind for now."
+    "I knock on the front door a few times."
+    "There's no response."
+    "I reach for the door handle and turn it."
+    "{i}This girl keeps her front door unlocked??{/i}"
+    "I make a mental note to talk about this with Sayori before opening the door."
+    scene black with dissolve_scene_half
+    "I walk inside... and all the lights are out."
+    "I cautiously feel my way around the bottom floor until I find some stairs."
+    "I climb them and find a light peeking out from the bottom of the nearest door."
+    "I reach the door and knock."
+    w "Sayori? It's me."
+    w "You in there?"
+    "No response."
+    "My instincts tell me to open the door."
+    "But isn't that sort of an invasion of her privacy if she's in there?"
+    "..."
+    "I wouldn't even care if this was anyone else."
+    "I would just barge through the door like it was my own house."
+    "So why do I feel guilty for even considering it now?"
+    menu:
+        "Barge in.":
+            pass
+    "Even so... I can't help but feel like something is telling me to enter."
+    menu:
+        "Barge in.":
+            pass
+    "If this was anyone else... I would just..."
+    menu:
+        "Barge in.":
+            pass
+    "I close my eyes and take a deep breath."
+    "I speak under my breath."
+    w "Sorry, Sayori..."
+    "I gently open the door."

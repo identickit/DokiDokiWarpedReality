@@ -3034,6 +3034,8 @@ label ch1_w_end:
 
 #rikka ch1
 label ch1_r_good:
+    stop music fadeout 1.0
+    play music t5
     "She looks over it for a moment before smiling."
     r 1f "This turned out great, [player]!"
     r 1a "I'm impressed by how quickly you're getting the hang of this!"
@@ -3049,6 +3051,8 @@ label ch1_r_good:
     return
 
 label ch1_r_bad:
+    stop music fadeout 1.0
+    play music t5
     "She looks over it for a moment before putting it down."
     r 1a "I sort of expected you to write something like this."
     r 1c "It isn't bad by any means! I don't think there's really such a thing as a 'bad poem'."
@@ -3063,6 +3067,8 @@ label ch1_r_bad:
     return
 
 label ch1_r_med:
+    stop music fadeout 1.0
+    play music t5
     "She looks over it for a moment."
     r 1a "Not bad!"
     r "I can tell you're going to write some pretty great poems."
@@ -3165,7 +3171,7 @@ label y_normal:
     call splashscreen
     scene bg club_day
     with dissolve
-    jump ch1_y_end
+    return
 
 label y_libitina: 
     $ y_splash2 = True
@@ -3182,13 +3188,15 @@ label y_libitina:
     m "{b}So don't.{/b}"
     m "{b}Just don't{/b}"
     call splashscreen
+    stop music fadeout 0.5
     scene bg club_day
     with dissolve
-    jump ch1_y_end
+    return
 
 label ch1_y_end:
     $ y_splash1 = False
     $ y_splash2 = False
+    play music wn9 fadein 0.5
     show yuri 1 at t11
     y "Yep, Koto's my cousin."
     y "I'm really glad she started this club."
@@ -3561,6 +3569,8 @@ label ch1_n_med:
     hide n_rects_ghost2
     hide n_rects_ghost3
     scene bg qgclubday
+    stop music
+    play music wn9
     show monika forward neut om oe at t21
     show natsuki turned fs neut e5 at t22
     "Monika is standing next to us with an unreadable look on her face."
