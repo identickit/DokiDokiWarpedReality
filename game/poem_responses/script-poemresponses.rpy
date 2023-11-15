@@ -3199,7 +3199,7 @@ label ch1_y_end:
     play music wn9 fadein 0.5
     show yuri 1 at t11
     y "Yep, Koto's my cousin."
-    y "I'm really glad she started this club."
+    y "I'm really glad she helped Monika start this club."
     show yuri turned happ cm ce at t11
     y "Not only do I have a place to properly enjoy literature now..."
     y "I get to meet new people who are into literature as well."
