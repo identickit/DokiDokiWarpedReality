@@ -368,7 +368,7 @@ label ch1_p2:
     stop music fadeout 1.0
     w "I probably do."
     "He's already confused. Figures."
-    play music wn3
+    play music wn10
     w "Let me... change that a bit so you can understand."
     w "Have you noticed anything different about this school lately? We can start with that."
     mc 1j "... Yeah, like how we supposedly have ties with schools outside of Japan."
@@ -507,12 +507,12 @@ label ch1_mk_1:
     show mc 1a at t22
     show kotonoha 1u3 at t21
     w "I agree."
+    play music wn11
     show kotonoha at f21
     k "Fine."
     k "Have it your way."
     show kotonoha 1i at t21
     "Kotonoha takes a deep breath before continuing."
-    play music wn11
     show kotonoha 1u at f21
     k "Do you genuinely believe you're better than everyone else here?"
     k "Because you're sure acting like it."
@@ -560,13 +560,13 @@ label ch1_mk_2:
     show mc 1f at t32
     show monika forward neut om oe at t33
     k "Have it your way."
+    play music wn11
     show kotonoha 1x at f31
     k "{b}He'll just see that everyone was right about how horrible you are, [w_name]{/b}"
-    play music wn11
     show kotonoha 1u3 at f31
     k "Do you genuinely believe you're better than everyone else here?"
     k "{b}You wish your life meant nearly as much as that of somebody like [player]{/b}"
-    k "This club will not tolerate the behavior that you've shown {b}all of your life, you fu-{/b}{nw}"
+    k "This club will not tolerate the behavior that you've shown {b}all of your life, you fuc-{/b}{nw}"
     show kotonoha 1u at t31
     show monika forward angr cm e1a at f33
     m "Koto..."
