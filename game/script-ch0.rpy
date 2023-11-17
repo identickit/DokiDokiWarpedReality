@@ -4,6 +4,7 @@
 show screen name_input("Please enter a name.", "<player>")
 
 label ch0_p1:
+    $ kgmode = False
     $ mgmode = True
     $ style.say_window = style.window_mg2
     $ style.namebox = style.namebox_mg2

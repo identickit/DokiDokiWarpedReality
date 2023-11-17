@@ -15,6 +15,7 @@ label start:
     $ n_name = "Girl 2"
     $ y_name = "Girl 1"
     $ r_name = "???"
+    $ k_name = "???"
 
     # This variable controls whether the quick menu in the textbox is enabled.
     $ quick_menu = True
@@ -40,7 +41,7 @@ label start:
         call ch0_p2
         call poemresponse_start
         call ch0_end
-        
+
     if persistent.playthrough == 1:
         $ chapter = 1 
         call ch1_p1
@@ -48,11 +49,11 @@ label start:
         call poem
 
         call ch1_p2
-
+        
         call poem
 
         call ch1_p3
-
         
+        call poem
 
-    
+        call ch1_p4

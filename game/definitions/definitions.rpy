@@ -103,16 +103,30 @@ init python:
                 try: renpy.file(os.environ['ANDROID_PUBLIC'] + "/characters/" + x + ".chr")
                 except: open(os.environ['ANDROID_PUBLIC'] + "/characters/" + x + ".chr", "wb").write(renpy.file("chrs/" + x + ".chr").read())
             else:
-                try: renpy.file(config.basedir + "/characters/" + x + ".chr")
-                except: open(config.basedir + "/characters/" + x + ".chr", "wb").write(renpy.file("chrs/" + x + ".chr").read())
+                try: renpy.file(config.basedir + "/characters/monika.chr")
+                except: open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("chrs/monika.chr").read())
+                try: renpy.file(config.basedir + "/characters/sayori.chr")
+                except: open(config.basedir + "/characters/sayori.chr", "wb").write(renpy.file("chrs/sayori.chr").read())
+                try: renpy.file(config.basedir + "/characters/natsuki.chr")
+                except: open(config.basedir + "/characters/natsuki.chr", "wb").write(renpy.file("chrs/natsuki.chr").read())
+                try: renpy.file(config.basedir + "/characters/yuri.chr")
+                except: open(config.basedir + "/characters/yuri.chr", "wb").write(renpy.file("chrs/yuri.chr").read())
+                try: renpy.file(config.basedir + "/characters/kotonoha.chr")
+                except: open(config.basedir + "/characters/kotonoha.chr", "wb").write(renpy.file("mod_assets/kotonoha.chr").read())
+                try: renpy.file(config.basedir + "/characters/rikka.chr")
+                except: open(config.basedir + "/characters/rikka.chr", "wb").write(renpy.file("mod_assets/rikka.chr").read())
+                try: renpy.file(config.basedir + "/characters/white.chr")
+                except: open(config.basedir + "/characters/white.chr", "wb").write(renpy.file("mod_assets/white.chr").read())
 
     def restore_all_characters():
         if persistent.playthrough == 0:
-            restore_character(["monika", "sayori", "natsuki", "yuri"])
-        elif persistent.playthrough == 1 or persistent.playthrough == 2:
-            restore_character(["monika", "natsuki", "yuri"])
-        elif persistent.playthrough == 3:
-            restore_character(["monika"])
+            restore_character(["monika", "sayori", "natsuki", "yuri", "kotonoha", "rikka"])
+        elif persistent.playthrough == 1:
+            restore_character(["monika", "sayori", "natsuki", "yuri", "kotonoha", "rikka", "white"])
+        elif persistent.playthrough == 2:
+            restore_character(["monika", "natsuki", "yuri", "kotonoha", "rikka", "white"])
+        elif persistent.playthrough == 20:
+            restore_character(["monika", "sayori", "natsuki", "yuri", "kotonoha", "rikka"])
         else:
             restore_character(["sayori", "natsuki", "yuri"])
     
@@ -143,15 +157,6 @@ init python:
             return 0
 
 ## Music
-# This section declares the music available to be played in the mod.
-# Syntax:
-#   audio. - This tells Ren'Py this is a audio variable.
-#   t1 - This tells Ren'Py the label of the music/sound file being declared.
-#   <loop 22.073> - This tells Ren'Py to loop the music/sound to this position when the song completes.
-#   "bgm/1.ogg" - This tells Ren'Py the path of the music/sound file to use.
-# Example: 
-#   define audio.t2 = "bgm/2.ogg"
-
 define audio.t1 = "<loop 22.073>bgm/1.ogg" # Doki Doki Literature Club! - Main Theme
 define audio.t2 = "<loop 4.499>bgm/2.ogg" # Ohayou Sayori! - Sayori Theme
 define audio.t2g = "bgm/2g.ogg"
@@ -174,6 +179,7 @@ define audio.wn9 = "mod_assets/bgm/warpednewnine.ogg" # Broken Club!
 define audio.wn10 = "mod_assets/bgm/warpednewten.ogg" # Major Deja Vu
 define audio.wn11 = "mod_assets/bgm/warpedneweleven.ogg" # Emerald & Silver
 define audio.wn12 = "mod_assets/bgm/warpednewtwelve.ogg" # Silver & Emerald
+define audio.wn13 = "mod_assets/bgm/warpednewthirteen.ogg" # White Salvation
 define audio.wnw = "mod_assets/bgm/yuri-wrongopt.ogg" # Yuri-WrongOPT
 define audio.wnf = "mod_assets/bgm/nat-silverforce.ogg" # Natsuki
 
@@ -213,14 +219,15 @@ define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
 define audio.do1 = "mod_assets/sfx/do1.mp3"
+define audio.wa1 = "mod_assets/sfx/warpedaltone.ogg"
+define audio.wa2 = "mod_assets/sfx/warpedalttwo.ogg"
+define audio.wlf = "mod_assets/sfx/leftstep.ogg"
+define audio.wrf = "mod_assets/sfx/rightstep.ogg"
+define audio.wsl = "mod_assets/sfx/slam.ogg"
+define audio.wsn = "mod_assets/sfx/snap.ogg"
+define audio.wsc = "mod_assets/sfx/scrape.ogg"
 
-## Backgrounds
-# This section declares the backgrounds available to be shown in the mod.
-# To define a new color background, declare a new image statement like in this example:
-#     image blue = "X" where X is your color hex i.e. '#158353'
-# To define a new background, declare a new image statement like this instead:
-#     image bg bathroom = "mod_assets/bathroom.png" 
-
+## Backgrounds 
 image black = "#000000"
 image dark = "#000000e4"
 image darkred = "#110000c8"
@@ -254,6 +261,14 @@ image bg bedroom = "bg/bedroom.png" # MC's Room BG
 image bg sayori_bedroom = "bg/sayori_bedroom.png" # Sayori's Room BG
 image bg house = "bg/house.png" # Sayori's House BG
 image bg kitchen = "bg/kitchen.png" # MC's Kitchen BG
+image bg qgsayori_bedroom:
+    "mod_assets/bg/sayori_bedroomg1.png"
+    pause 0.08
+    "mod_assets/bg/sayori_bedroomg2.png"
+    pause 0.12
+    "mod_assets/bg/sayori_bedroomg3.png"
+    pause 0.12
+    "bg/sayori_bedroom.png"
 
 image bg notebook = "bg/notebook.png" # Poem Game Notebook Scene
 image bg notebook-glitch = "bg/notebook-glitch.png" # Glitched Poem Game BG
@@ -272,16 +287,16 @@ image bg qgclubday:
 image bg clubdayg:
     "mod_assets/bg/clubdayg1.png"
     function ran
-    pause 0.1
+    pause 0.05
     "mod_assets/bg/clubdayg2.png"
     function ran
-    pause 0.1
+    pause 0.05
     "mod_assets/bg/clubdayg3.png"
     function ran
-    pause 0.1
+    pause 0.05
     "mod_assets/bg/clubdayg4.png"
     function ran
-    pause 0.1
+    pause 0.05
     repeat
 image bg residential_dayg1 = "mod_assets/bg/residentialg1.png"
 image bg residential_dayg2 = "mod_assets/bg/residentialg2.png"
@@ -292,6 +307,30 @@ image bg qgresidential_day:
     pause 0.12
     "bg/residential.png"
 image bg bsod = "mod_assets/bg/bsod.png"
+label kotog:
+    show m_rectstatic
+    show layer master:
+        truecenter
+        parallel:
+            zoom 1.5
+            easeout 0.35 zoom 1.0
+        parallel:
+            xpos 0
+            easein_elastic 0.35 xpos 640
+    show layer screens:
+        truecenter
+        parallel:
+            zoom 1.5
+            easeout 0.35 zoom 1.0
+        parallel:
+            xpos 0
+            easein_elastic 0.35 xpos 640
+        parallel:
+            xpos 0
+            easein_elastic 0.35 xpos 640
+    show noise onlayer front:
+        alpha 0.3
+        easeout 0.35 alpha 0
 
 # This image shows a glitched screen during Act 2 poem sharing with Yuri.
 image bg glitch = LiveTile("bg/glitch.jpg")
@@ -1242,12 +1281,14 @@ image rikka 4 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png
 #neither arm up
 image rikka 1a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/a.png")
 image rikka 1aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
+image rikka 1aa2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/aa2.png")
 image rikka 1b = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/b.png")
 image rikka 1c = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/c.png")
 image rikka 1d = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/d.png")
 image rikka 1e = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/e.png")
 image rikka 1f = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/f.png")
 image rikka 1g = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/g.png")
+image rikka 1g2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/g2.png")
 image rikka 1h = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/h.png")
 image rikka 1i = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/i.png")
 image rikka 1j = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/j.png")
@@ -1271,12 +1312,14 @@ image rikka 1z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.pn
 #right arm up
 image rikka 2a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/a.png")
 image rikka 2aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
+image rikka 2aa2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/aa2.png")
 image rikka 2b = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/b.png")
 image rikka 2c = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/c.png")
 image rikka 2d = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/d.png")
 image rikka 2e = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/e.png")
 image rikka 2f = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/f.png")
 image rikka 2g = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/g.png")
+image rikka 2g2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/g2.png")
 image rikka 2h = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/h.png")
 image rikka 2i = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/i.png")
 image rikka 2j = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/j.png")
@@ -1300,12 +1343,14 @@ image rikka 2z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/1l.pn
 #left arm up
 image rikka 3a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/a.png")
 image rikka 3aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
+image rikka 3aa2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/aa2.png")
 image rikka 3b = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/b.png")
 image rikka 3c = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/c.png")
 image rikka 3d = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/d.png")
 image rikka 3e = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/e.png")
 image rikka 3f = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/f.png")
 image rikka 3g = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/g.png")
+image rikka 3g2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/g2.png")
 image rikka 3h = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/h.png")
 image rikka 3i = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/i.png")
 image rikka 3j = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/1r.png", (0, 0), "mod_assets/rikka_assets/j.png")
@@ -1329,12 +1374,14 @@ image rikka 3z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.pn
 #both arms up
 image rikka 4a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/a.png")
 image rikka 4aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/aa.png")
+image rikka 4aa2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/aa2.png")
 image rikka 4b = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/b.png")
 image rikka 4c = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/c.png")
 image rikka 4d = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/d.png")
 image rikka 4e = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/e.png")
 image rikka 4f = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/f.png")
 image rikka 4g = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/g.png")
+image rikka 4g2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/g2.png")
 image rikka 4h = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/h.png")
 image rikka 4i = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/i.png")
 image rikka 4j = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.png", (0, 0), "mod_assets/rikka_assets/2r.png", (0, 0), "mod_assets/rikka_assets/j.png")
@@ -1358,12 +1405,14 @@ image rikka 4z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/2l.pn
 #arms crossed
 image rikka 5a = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/a.png")
 image rikka 5aa = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png", (0, 0), "mod_assets/rikka_assets/aa.png")
+image rikka 5aa2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png", (0, 0), "mod_assets/rikka_assets/aa2.png")
 image rikka 5b = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/b.png")
 image rikka 5c = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/c.png")
 image rikka 5d = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/d.png")
 image rikka 5e = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/e.png")
 image rikka 5f = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/f.png")
 image rikka 5g = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/g.png")
+image rikka 5g2 = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/g2.png")
 image rikka 5h = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/h.png")
 image rikka 5i = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/i.png")
 image rikka 5j = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/j.png")
@@ -1383,6 +1432,13 @@ image rikka 5w = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png
 image rikka 5x = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/x.png")
 image rikka 5y = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/y.png")
 image rikka 5z = im.Composite((960, 960), (0, 0), "mod_assets/rikka_assets/3.png",  (0, 0), "mod_assets/rikka_assets/z.png")
+
+image rikka 1a qg:
+    Glitch("rikka 1a")
+
+image rikka 1h qg:
+    Glitch("rikka 1h")
+
 
 #image rikka rg:
 #    block:
@@ -1410,6 +1466,7 @@ image kotonoha 1b = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets
 image kotonoha 1c = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/c.png")
 image kotonoha 1d = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/d.png")
 image kotonoha 1e = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/e.png")
+image kotonoha 1e1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/e1.png")
 image kotonoha 1f = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/f.png")
 image kotonoha 1g = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/g.png")
 image kotonoha 1h = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/h.png")
@@ -1443,6 +1500,7 @@ image kotonoha 2b = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets
 image kotonoha 2c = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/c.png")
 image kotonoha 2d = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/d.png")
 image kotonoha 2e = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/e.png")
+image kotonoha 2e1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/e1.png")
 image kotonoha 2f = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/f.png")
 image kotonoha 2g = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/g.png")
 image kotonoha 2h = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/2.png", (0, 0), "mod_assets/kotonoha_assets/h.png")
@@ -1476,6 +1534,7 @@ image kotonoha 3b = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets
 image kotonoha 3c = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/c.png")
 image kotonoha 3d = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/d.png")
 image kotonoha 3e = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/e.png")
+image kotonoha 3e1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/e1.png")
 image kotonoha 3f = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/f.png")
 image kotonoha 3g = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/g.png")
 image kotonoha 3h = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/h.png")
@@ -1503,42 +1562,11 @@ image kotonoha 3w1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_asset
 image kotonoha 3x = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/3.png", (0, 0), "mod_assets/kotonoha_assets/x.png")
 
 image kotonoha kg:
-    block:
-        choice:
-            "mod_assets/kotonoha_assets/kg1.png"
-        choice:
-            "mod_assets/kotonoha_assets/kg2.png"
-        choice:
-            "mod_assets/kotonoha_assets/kg3.png"
-    block:
-        choice:
-            pause 0.05
-        choice:
-            pause 0.1
-        choice:
-            pause 0.15
-        choice:
-            pause 0.2
-    repeat
+    Glitch("kotonoha 1a")
 
 image kotonoha kg2:
-    block:
-        choice:
-            "mod_assets/kotonoha_assets/kg1.png"
-        choice:
-            "mod_assets/kotonoha_assets/kg2.png"
-        choice:
-            "mod_assets/kotonoha_assets/kg3.png"
-    block:
-        choice:
-            pause 0.05
-        choice:
-            pause 0.1
-        choice:
-            pause 0.15
-        choice:
-            pause 0.2
-
+    Glitch("kotonoha 1a")
+    pause 0.25
 image kotonoha kmg:
     block:
         choice:
@@ -1557,6 +1585,9 @@ image kotonoha kmg:
         choice:
             pause 0.2
     repeat
+
+image kotonoha 1xg:
+    Glitch("kotonoha 1x")
 
 # This image shows the looping Yuri glitched head in Act 2.
 image y_glitch_head:
@@ -2054,6 +2085,7 @@ default persistent.first_load = None
 default persistent.first_poem = None
 default persistent.seen_colors_poem = None
 default persistent.monika_back = None
+default persistent.CONDITION = 0
 
 default in_sayori_kill = None
 default in_yuri_kill = None
@@ -2152,3 +2184,5 @@ default sayori_confess = True
 
 # This variable tracks whether we read Natsuki's 3rd poem in Act 2.
 default natsuki_23 = None
+
+default kgmode = False

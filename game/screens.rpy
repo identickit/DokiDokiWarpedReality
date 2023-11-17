@@ -225,6 +225,14 @@ style window:
 
     background Transform("gui/textbox.png", xalign=0.5, yalign=1.0)
 
+style windowqg:
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+
+    background Transform(Glitch("gui/textbox.png"), xalign=0.5, yalign=1.0)
+
 style window_mg:
     xalign 0.5
     xfill True
@@ -770,7 +778,7 @@ screen game_menu(title, scroll=None):
 
     use navigation
 
-    if not main_menu and persistent.playthrough == 2 and not persistent.menu_bg_m and renpy.random.randint(0, 49) == 0:
+    if not main_menu and persistent.playthrough == 10 and not persistent.menu_bg_m and renpy.random.randint(0, 49) == 0:
         on "show" action Show("game_menu_m")
 
     textbutton _("Return"):

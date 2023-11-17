@@ -139,7 +139,16 @@ label poemresponse_start:
                 "Yuri" if not y_readpoem and not y_ranaway:
                     $ y_readpoem = True
                     if chapter == 1:
-                        call poemresponse_yuri
+                        if persistent.CONDITION == 1:
+                            $ persistent.CONDITION = 2
+                            play sound wa1
+                            call poemresponse_yuri
+                        elif persistent.CONDITION == 0:
+                            call poemresponse_yuri
+                        else:
+                            $ persistent.CONDITION = 0
+                            play sound wa1
+                            call poemresponse_yuri
 
                 "Rikka" if not r_readpoem:
                     $ r_readpoem = True
@@ -167,6 +176,8 @@ label poemresponse_start:
                         $ wtry += 1
                     elif chapter == 1 and wtry == 6:
                         $ w_readpoem = True
+                        $ persistent.CONDITION = 1
+                        play sound wa1
                         call poemresponse_w_name
                     
 
@@ -269,10 +280,13 @@ label poemresponse_rikka:
 
     # This if statement checks if we are not skipping the poems to call the
     # end of the poem responses for Rikka depending on the chapter.
-    if not skip_poem:
-        $ nextscene = "ch" + pt + str(chapter) + "_r_end_" + poemopinion
-        call expression nextscene from _call_expression_5
-    return
+    if persistent.CONDITION != 4:
+        if not skip_poem:
+            $ nextscene = "ch" + pt + str(chapter) + "_r_end_" + poemopinion
+            call expression nextscene from _call_expression_5
+            return
+    elif persistent.CONDITION == 4:
+        return
 
 label poemresponse_w_name:
     scene bg club_day
@@ -3038,6 +3052,26 @@ label ch1_r_good:
     play music t5
     "She looks over it for a moment before smiling."
     r 1f "This turned out great, [player]!"
+    if persistent.CONDITION == 3:
+        menu:
+            "Oh, thanks...":
+                $ persistent.CONDITION = 0
+                $ renpy.sound.play ("mod_assets/sfx/warpedalttwo.ogg")
+                pass
+            "...":
+                r 1c "Uh... [player]? Did you hear me just now?"
+                menu:
+                    "Sorry, I got lost in thought.":
+                        $ persistent.CONDITION = 0
+                        $ renpy.sound.play ("mod_assets/sfx/warpedalttwo.ogg")
+                        mc "Sorry, I got lost in thought."
+                        r 1a "No worries, [player]. I get it. Anyway!"
+                        pass
+                    "...":
+                        $ persistent.CONDITION = 4
+                        play sound wa1
+                        jump ch1_r_alt
+                        return
     r 1a "I'm impressed by how quickly you're getting the hang of this!"
     mc "Oh, thanks… I didn't think it was anything special."
     r 1c "[player], I promise it's good."
@@ -3059,7 +3093,26 @@ label ch1_r_bad:
     r "All it takes is some practice, [player]!"
     r 1a "You can even start by just jotting down feelings or thoughts on a piece of scrap paper and see where it takes you."
     r "I'm looking forward to seeing how your poems turn out!"
-    mc "I appreciate it, Rikka."
+    if persistent.CONDITION == 3:
+        menu:
+            "Oh, thanks...":
+                $ persistent.CONDITION = 0
+                $ renpy.sound.play ("mod_assets/sfx/warpedalttwo.ogg")
+                pass
+            "...":
+                r 1c "Uh... [player]? Did you hear me just now?"
+                menu:
+                    "Sorry, I got lost in thought.":
+                        $ persistent.CONDITION = 0
+                        $ renpy.sound.play ("mod_assets/sfx/warpedalttwo.ogg")
+                        mc "Sorry, I got lost in thought."
+                        r 1a "No worries, [player]. I get it. Anyway!"
+                        pass
+                    "...":
+                        $ persistent.CONDITION = 4
+                        play sound wa1
+                        jump ch1_r_alt
+                        return
     r 1v "It's no problem!"
     r "Anyway, you wanna read my poem?"
     mc "Sure."
@@ -3072,7 +3125,26 @@ label ch1_r_med:
     "She looks over it for a moment."
     r 1a "Not bad!"
     r "I can tell you're going to write some pretty great poems."
-    mc "Ah, thanks."
+    if persistent.CONDITION == 3:
+        menu:
+            "Oh, thanks...":
+                $ persistent.CONDITION = 0
+                $ renpy.sound.play ("mod_assets/sfx/warpedalttwo.ogg")
+                pass
+            "...":
+                r 1c "Uh... [player]? Did you hear me just now?"
+                menu:
+                    "Sorry, I got lost in thought.":
+                        $ persistent.CONDITION = 0
+                        $ renpy.sound.play ("mod_assets/sfx/warpedalttwo.ogg")
+                        mc "Sorry, I got lost in thought."
+                        r 1a "No worries, [player]. I get it. Anyway!"
+                        pass
+                    "...":
+                        $ persistent.CONDITION = 4
+                        play sound wa1
+                        jump ch1_r_alt
+                        return
     mc "I didn't really think it was that good."
     r 1c "[player], nobody starts at the top."
     r "All it takes is practice, and with how this one turned out, I don't think you'll have too much trouble finding what all feels best for you."
@@ -3090,7 +3162,8 @@ label ch1_r_end_bad:
     jump ch1_r_end_med
 
 label ch1_r_end_med:
-    $ show_poem (poem_r2)
+    if persistent.playthrough == 1:
+        $ show_poem (poem_r2)
     return
 
 #yuri ch1
@@ -3155,6 +3228,9 @@ label ch1_y_med:
     return
 
 label y_normal:
+    if persistent.CONDITION != 2:
+        $ persistent.CONDITION = 0
+        $ renpy.sound.play ("mod_assets/sfx/warpedalttwo.ogg")
     $ y_splash1 = True
     show yuri turned yand mb ce at t11
     y "Ahahaha..."
@@ -3173,7 +3249,10 @@ label y_normal:
     with dissolve
     return
 
-label y_libitina: 
+label y_libitina:
+    if persistent.CONDITION == 2:
+        $ persistent.CONDITION = 3
+        play sound wa1
     $ y_splash2 = True
     play music wnw
     scene bg bsod
@@ -3621,3 +3700,69 @@ label ch1_n_med:
 
 label ch1_n_end:
     jump poemresponse_rikka
+
+label ch1_r_alt:
+    r "[player]? Is something... on your mind?"
+    r "You have a strange look on your face right now, so I..."
+    menu:
+        "...":
+            pass
+    r "If you don't... wanna talk about it, that's okay, too."
+    r "But... can you at least tell me if you're feeling okay right now?"
+    menu:
+        "...":
+            pass
+    r "..."
+    r "{cps=8}... [player]-{/cps}{nw}"
+    stop music
+    play sound wsc volume 2.0
+    show rikka at h11
+    r "Uh... [player]..."
+    r "D-Did you need something?"
+    play sound wlf volume 1.0
+    r 1g "H-Hey, if you have something you w-want to tell me privately..."
+    r "You c-could've just asked me to... uh..."
+    play sound wrf volume 2.0
+    r 1aa2 "[player], I... r-really don't feel comfortable... w-with how close you're..."
+    r "..."
+    play sound wlf volume 3.0
+    r 1g2 "[player]..."
+    show rikka at t22
+    show monika forward happ oe cm lpoint at f21
+    m "Okay, everyone."
+    m "I know I'm cutting you all a bit short on the poem-sharing, but I'd like to make an announcement!"
+    show monika forward curi cm oe at f21
+    m "... Rikka, are you feeling okay?"
+    m "Your... face is really pale."
+    show monika at t21
+    show rikka at f22
+    r 1i "O-Oh, yeah! I'll be f-fine!"
+    r "I just..."
+    r "... I think I'm gonna go home."
+    show rikka at thide
+    hide rikka
+    show monika at t11
+    m "..."
+    show monika forward neut cm oe ldown at t11
+    m "Did... something happen just now?"
+    show monika at t21
+    show kotonoha 1e at f22
+    k "Yeah, I've never seen Rikka look so..."
+    k 1e1 "... Er..."
+    k 1e "... I-I'm sure I'm just overreacting a little."
+    show kotonoha at t22
+    show monika forward curi cm oe at f21
+    m "[player]... if something {i}did{/i} happen just now..."
+    m "... you can talk to us about it, right?"
+    m "I know I don't get along with Kotonoha much, but I'm sure we can both agree that if anything happens..."
+    m "... then helping our members should be the top priority."
+    show monika at t21
+    show kotonoha at f22
+    k "Yeah. I... I agree."
+    k "Let us know if we can help, okay [player]?"
+    show kotonoha at t22
+    "..."
+    "....."
+    show monika forward neut cm oe at f21
+    m "Well... I guess we'll get to the point now?"
+    return

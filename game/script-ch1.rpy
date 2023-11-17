@@ -1,27 +1,36 @@
 label ch1_p1:
     #scene 1
     $ mgmode = False
+    $ kgmode = False
     stop music fadeout .5
     scene bg residential_day
     with dissolve_scene_full
     play music t2
+    $ k_name = "???"
     k "Hey there, [player]!"
     show kotonoha kg at t11
-    k 1a "Glad to see you finally decided to get up."
+    $ k_name = "Kotonoha"
+    k 1a"Glad to see you finally decided to get up."
     "I just sigh to myself. Kotonoha always nags me for small things like this."
     "Anytime I take a while to get ready for school, for instance, she'll start joking like this."
     "But I know she doesn't mean any harm in doing stuff like that."
     show bg qgresidential_day
+    $ renpy.sound.play ("sfx/glitch3.ogg")
     "The two of us begin our daily commute to school."
     k "Anyway, have you considered joining any clubs yet?"
     mc "Huh? I thought I already said I'm not interested in joining-{nw}"
+    $ _history_list.pop()
+    $ style.say_window = style.windowqg
+    pause 0.25
+    $ style.say_window = style.window
     mc "Huh? I thought I already said I'm interested in possibly joining your club?"
     k 1h "Ah, how could I forget?"
     show kotonoha 1a at t11
     "Kotonoha smiles and doesn't say anything else the rest of the way to school."
     "We've always walked to school together like this..."
     show bg qgresidential_day
-    "...But she's usually not this silent."
+    $ renpy.sound.play ("sfx/glitch3.ogg")
+    "... But she's usually not this silent."
     "My train of thought is broken by an overly-energetic girl approaching us."
     show kotonoha 1e zorder 2 at t21
     show sayori turned happ om oe zorder 2 at f22
@@ -29,6 +38,7 @@ label ch1_p1:
     show sayori cm at t22
     show kotonoha at f21
     k 1d "Good morning, Sayori."
+    $ s_name = "Sayori"
     k 1a "How's the Literature Club's very own Vice President holding up this morning?"
     show kotonoha at t21
     show sayori laug om ce at f22
@@ -43,12 +53,13 @@ label ch1_p1:
     "I haven't known Sayori very long, but she always seems to be full of positivity."
     "Being entirely honest with myself, I wouldn't have imagined being friends with someone like her had she not been friends with Kotonoha."
     "But when you get to know her, Sayori is a pretty fun person to be around."
-    "We reach the front door of the school-{nw}"
+    "{cps=30}We reach the front door of the school-{/cps}{nw}"
     stop music
     show bg qgresidential_day
 
     #scene 2
     $ m_name = "Monika"
+    play music t3
     scene bg club_day
     show monika lean happ om oe at t11
     m "Then that makes it official!"
@@ -133,7 +144,7 @@ label ch1_p1:
     m "... Then I guess it's fine."
     show monika at t21
     show kotonoha 1a at f22
-    k "Funny how you think-{nw}"
+    k "{cps=30}Funny how you think-{nw}{/cps}"
     show kotonoha at t22
     show monika oe at f21
     m "I'm not finished."
@@ -165,10 +176,10 @@ label ch1_p2:
     #scene 3
     scene bg club_day
     stop music fadeout .5
-    play music wn6
+    play music wn6 fadein 1.0
     show monika forward happ om ce at t11
     m "Hello again, [player]!"
-    m "It's great to see you-{nw}"
+    m "{cps=30}It's great to see you-{nw}{/cps}"
     show monika forward neut cm oe at t21
     show kotonoha 1u at t22
     "I hear someone clear their throat from across the room."
@@ -215,12 +226,12 @@ label ch1_p2:
     "As soon as I enter the room, all eyes fall on me."
     "Instantly, I recognize Sayori, who looks genuinely ecstatic."
     $ s_name = "Sayori"
-    "I glance at-{nw}"
+    "{cps=24}I glance at-{nw}{/cps}"
     show sayori turned lsur om oe zorder 2 at t11
     s "Oh my gosh!"
     show sayori turned happ om ce lup rup zorder 2 at h11
     s "Oh my gosh!!!"
-    w "Wait-"
+    w "{cps=12}Wait-{nw}{/cps}"
     show sayori cm ce at t11
     "Before I can stop her, Sayori wraps her arms around me and jumps up and down a few times."
     show sayori at t21
@@ -243,7 +254,7 @@ label ch1_p2:
     hide sayori
     hide monika
     "I sigh to myself as I take a look around the room."
-    "I recognize-"
+    "{cps=12}I recognize-{nw}{/cps}"
     show natsuki turned angr om ce zorder 2 at f11
     n "Oh, no!"
     n "This guy isn't sticking around!"
@@ -259,11 +270,13 @@ label ch1_p2:
     show rikka 1c zorder 2 at f32
     r "No, I don't, actually."
     $ renpy.sound.play ("mod_assets/sfx/glitch2.ogg")
+    show rikka 1a qg at f32
+    pause 0.25
     show rikka 1a at f32
     r "But it's nice to meet you! I'm Rikka."
     show rikka at t32
     "The girl named Rikka holds her hand out as if she wants to shake mine."
-    "After contemplating my life choices for a moment, I reach out to shake-"
+    "{cps=30}After contemplating my life choices for a moment, I reach out to shake-{nw}{/cps}"
     show rikka 1c at t32
     show natsuki om lhip rhip at f31
     n "What did I just say? This guy can't stay here!"
@@ -273,7 +286,8 @@ label ch1_p2:
     show yuri at t32
     show kotonoha 1e zorder 2 at f33
     k "Natsuki, I think you're overreacting a little."
-    show kotonoha kg2 at t33
+    show kotonoha kg at t33
+    pause 0.25
     show kotonoha 1e at t33
     show yuri turned flus me oe rup n2 at f32
     y "Koto..."
@@ -284,7 +298,7 @@ label ch1_p2:
     $ style.say_dialogue = style.normal
     show yuri at t32
     show natsuki cross sad om oe n2 at f31
-    n "Um, Yuri... I know he isn't great, but-"
+    n "{cps=30}Um, Yuri... I know he isn't great, but-{nw}{/cps}"
     $ y_name = "Yuri"
     show natsuki md at t31
     $ style.say_dialogue = style.edited
@@ -309,9 +323,15 @@ label ch1_p2:
     s "Please, [player]."
     s "You'll have the chance to save me this time."
     s "You're my salvation... remember?"
+    show s_kill_zoom qg
+    pause 0.25
+    show s_kill_zoom zorder 3
     s "Please..."
     s "I can't get out of the rain..."
     s "... Get out of my head."
+    show s_kill_zoom qg
+    pause 0.25
+    show s_kill_zoom zorder 3
     s "Get out of my head."
     $ style.say_dialogue = style.normal
     hide s_kill_zoom
@@ -520,7 +540,7 @@ label ch1_mk_1:
     show mc at thide
     hide mc
     show monika forward angr cm e1a at t22
-    m "Koto, that's not your call to-"
+    m "{cps=24}Koto, that's not your call to-{nw}{/cps}"
     scene bg qgclubday
     pause .25
     with dissolve_scene_half
@@ -530,7 +550,7 @@ label ch1_mk_1:
     k "If so, I would {i}love{/i} to hear what {i}your{/i} take on this situation is!"
     show kotonoha 1u2 at t21
     show monika forward angr cm oe at f22
-    m "Okay, Koto. First of all-{nw}"
+    m "{cps=24}Okay, Koto. First of all-{nw}{/cps}"
     show monika at t22
     show kotonoha 1u3 at f21
     k "And another thing: Did you ever even {i}hear{/i} the conversation they were having?!"
@@ -547,7 +567,7 @@ label ch1_mk_1:
     return
 
 label ch1_mk_2:
-    mc "Okay, I'll just go hang out with-"
+    mc "{cps=24}Okay, I'll just go hang out with-{nw}{/cps}"
     scene bg qgclubday
     pause .25
     with dissolve_scene_half
@@ -566,7 +586,7 @@ label ch1_mk_2:
     show kotonoha 1u3 at f31
     k "Do you genuinely believe you're better than everyone else here?"
     k "{b}You wish your life meant nearly as much as that of somebody like [player]{/b}"
-    k "This club will not tolerate the behavior that you've shown {b}all of your life, you fu-{/b}{nw}"
+    k "{cps=30}This club will not tolerate the behavior that you've shown {b}all of your life, you fu-{/b}{nw}{/cps}"
     show kotonoha 1u at t31
     show monika forward angr cm e1a at f33
     m "Koto..."
@@ -608,19 +628,32 @@ label ch1_p3:
 
     call poemresponse_start
 
+    if persistent.CONDITION >= 4:
+        call poem
+        if persistent.playthrough == 20 and persistent.CONDITION == 5:
+            jump a1
+        else:
+            $ persistent.playthrough = 1
+            $ persistent.CONDITION = 0
+            play sound wa2
+            jump ch1_p4
+
     mc "You seem to already know what you're doing pretty well."
     r 1v "It took a while, to be honest."
     r 1h "You could probably imagine that a member of the track team struggled a lot on her first few attempts at writing poems."
+    show rikka 1h qg at t11
+    pause 0.25
+    show rikka 1h at t11
     r "But someone told me that it's all about being brave enough to take that first step."
     r "So I listened to them and... well, I didn't write anything great, but I took the first step."
     r "Just keep practicing, [player]. You'll get the hang of it in no time!"
-    mc "Thanks, I really-"
+    mc "{cps=24}Thanks, I really-{nw}{/cps}"
     hide rikka
     show monika forward happ om oe lpoint at t11
     m "Okay, everyone!"
     m "I know I'm cutting you all a bit short on the poem-sharing, but I'd like to make an announcement!"
     "Despite our conversation being interrupted, Rikka happily turns her attention to Monika."
-    "Everyone else does the same, including [w_name]-"
+    "{cps=30}Everyone else does the same, including [w_name]-{nw}{/cps}"
     stop music fadeout 0.5
     scene bg qgclubday
     pause .25
@@ -687,7 +720,7 @@ label ch1_p3:
     m "Would you mind doing that, [w_name]? She'd probably be less freaked out if either you or Koto went to see how she's doing."
     show monika at t31
     show kotonoha at f32
-    k "I can go check on-"
+    k "{cps=24}I can go check on-{nw}{/cps}"
     show kotonoha at t32
     stop music
     w "No. I'll go check on her."
@@ -704,7 +737,7 @@ label ch1_p3:
     hide mc
     scene bg corridor with wipeleft
     "I immediately leave the room and start walking towards the front of the school."
-    "I'm about to walk through the front doors-"
+    "{cps=30}I'm about to walk through the front doors-{nw}{/cps}"
     show mc 1t at t11
     mc "Hey... can you uh..."
     mc "... keep me updated on how she is?"
@@ -735,7 +768,7 @@ label ch1_p3:
     "I reach for the door handle and turn it."
     "{i}This girl keeps her front door unlocked??{/i}"
     "I make a mental note to talk about this with Sayori before opening the door."
-    scene black with dissolve_scene_half
+    scene black with dissolve_scene_full
     "I walk inside... and all the lights are out."
     "I cautiously feel my way around the bottom floor until I find some stairs."
     "I climb them and find a light peeking out from the bottom of the nearest door."
@@ -764,3 +797,485 @@ label ch1_p3:
     "I speak under my breath."
     w "Sorry, Sayori..."
     "I gently open the door."
+    w "Sayori-{nw}"
+    play sound closet_open
+    scene bg sayori_bedroom
+    show sayori casual turned shoc ml e1a at t11
+    s "WHA-"
+    "It takes me several seconds for what I'm seeing to properly register in my mind."
+    "Sayori seems to have been in the middle of moving a chair into the center of her room..."
+    "Directly below her ceiling fan."
+    "{i}Directly{/i} below it."
+    "I can't even bring myself to speak for another several seconds."
+    show sayori casual turned worr om e1a at t11
+    s "[w_name]..."
+    s "W-Why are you here...?"
+    "Not even a 'This isn't what it looks like.'"
+    "Just a 'Why are you here.'"
+    "She knows that I understand what would've happened had I not just entered..."
+    "I take a couple of deep breaths before speaking in a shaky voice {i}much{/i} unlike my own."
+    w "Sayori..."
+    w "... Why are you..."
+    w "... What made you want..."
+    show sayori casual turned cry e1g ma at t11
+    s "It's... okay..."
+    s "You don't have to put up with me anymore."
+    w "Yes, I do."
+    "I don't care how rude that sounded right now."
+    "{cps=24}I make to move the chair away from-{nw}{/cps}"
+    show sayori casual turned worr e1g ml at t11
+    s "DON'T!"
+    show sayori mm at t11
+    "She tries to stand on the chair to prevent me from moving it."
+    "I say a silent prayer in my head..."
+    "... Before kicking it out from under her foot that's already resting on it."
+    show sayori casual turned cry om ce lup rup at t11
+    s "GAH!"
+    "I manage to catch her so she doesn't fall."
+    "I'm geniunely surprised that my reflexes are still on-point in this moment."
+    "I let go of her, but she suddenly hugs me tightly."
+    show sayori mj e4e at t11
+    w "H-Hey..."
+    play music wn13
+    "I stop myself from arguing. She doesn't need me starting anything like that right now."
+    "Instead, I do something I've never done for anyone..."
+    "I carefully wrap my arms around her as she breaks down."
+    "I don't say anything for several minutes."
+    "I just let her cry..."
+    "{i}I've never felt compelled to do anything like this for anyone...{/i}"
+    "This is entirely out of character for me."
+    "So why does it feel like someone is telling me to do this?"
+    "Well, that's kind of a stupid question."
+    "I know {i}exactly{/i} why I'm feeling this way right now."
+    "After realizing this, I return my focus to Sayori, determined to try and calm her-{nw}"
+    hide sayori
+    show bg qgsayori_bedroom
+    pause 0.32
+    return
+
+label a1:
+    scene bg club_day with dissolve_scene_full
+    show monika forward neut cm oe at t11
+    m "Hey, [player]..."
+    m "Did you notice anything strange about Sayori yesterday?"
+    m "I realized that she left early once we all started to pick up."
+    menu:
+        "...":
+            pass
+    show monika at t21
+    show kotonoha 1w at f22
+    k "... Sayori still won't pick up, Monika."
+    show kotonoha at t22
+    show monika at f21
+    m "Still...?"
+    show monika forward curi cm oe at f21
+    m "You haven't heard from her at all since yesterday?"
+    show monika at t21
+    show kotonoha at f22
+    k "No..."
+    k "I'm... starting to feel really worried."
+    show kotonoha at t32
+    show yuri turned worr cm e1a at f33
+    show monika at t31
+    y "Still nothing from Sayori?"
+    show yuri at t33
+    show monika forward neut cm ce at f31
+    m "No."
+    show monika at t41
+    show rikka 1g at f42
+    show kotonoha at t43
+    show yuri at t44
+    r "I really hope she's okay."
+    show rikka at thide
+    hide rikka
+    show natsuki turned doub cm ce at f42
+    n "..."
+    show natsuki turned flus mj ce at f42
+    n "What if... something happened to her?"
+    n "I... I can't imagine what could've..."
+    show natsuki at t42
+    show kotonoha at t44
+    show yuri turned sad cm ce at f43
+    y "It's okay, Natsuki. We'll..."
+    y "..."
+    show yuri at t43
+    w "Hey, what did I miss?"
+    show kotonoha 1b at f44
+    k "[w_name]!"
+    k "Have you seen or heard from Sayori at all today?"
+    show kotonoha at t44
+    w "I thought you'd tell me she's sick or something when I got here...?"
+    show kotonoha 1p at f44
+    k "..."
+    show natsuki at thide
+    hide natsuki
+    show yuri at thide
+    hide yuri
+    show rikka 1g at f32
+    show kotonoha at t33
+    show monika at t31
+    r "Would she be at her place right now...?"
+    show rikka at t32
+    show monika forward neut om oe at f31
+    m "..."
+    show monika cm at f31
+    m "... Quite possibly..."
+    m "But school {i}just{/i} ended, won't it take a while to try to get to her house through all of the students heading home?"
+    show monika at t31
+    w "If you want, I can go to her place."
+    w "{cps=30}If people see me walking by, I'm pretty sure they'll get out of my-{nw}{/cps}"
+    mc "I'll go."
+    w "... Dude."
+    w "Bud."
+    w "Pal."
+    w "You are not about to make that trip over to her house without getting crushed by everyone out there right now."
+    w "{cps=24}I've had-{nw}{/cps}"
+    mc "I'll go."
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    show mc 1a at t11
+    w "[player], listen to me."
+    w "You're really nice to want to do this to make sure she's okay."
+    w "But you'd probably get hurt trying to get over there with how many people are heading home."
+    w "As much as I hate using this as my justification for volunteering to check on her..."
+    w "... almost nobody in this school likes me. They'll steer away from me at just about any cost."
+    w "{cps=24}So please, just let me-{/cps}{nw}"
+    mc "I'll go."
+    $ timeleft = 1.0 - get_pos()
+    show noise at noisefade(25 + timeleft) zorder 3
+    show vignette as flicker at vignetteflicker(timeleft) zorder 4
+    show vignette at vignettefade(timeleft) zorder 4
+    show layer master at layerflicker(timeleft)
+    w "You're not listening to me at all, are you?"
+    w "Don't bother responding, I know the answer is no."
+    w "{i}You need to stay here.{/i}"
+    w "{cps=12}I am not-{nw}{/cps}"
+    mc "I will go."
+    w "No, you will not."
+    mc "I will go."
+    w "[player], just SHUT UP AND SIT THE F-{nw}"
+    jump a2
+
+label a2:
+    scene black
+    pause 2.0
+    w "What..."
+    w "... What happened to..."
+    w "... Why is everything just... black?"
+    play sound wlf volume 0.3
+    w "[player]..."
+    w "{i}What did you do?{/i}"
+    play sound wrf volume 0.7
+    w "Where is everyone?"
+    w "Where's the club room?"
+    play sound wlf volume 1.0
+    w "Hey."
+    w "I'm warning you right now."
+    play sound wrf volume 1.3
+    w "If you come any closer without explaining what the hell is going on..."
+    w "I {i}will{/i} defend myself however I feel necessary."
+    play sound wlf volume 1.7
+    w "Well... I guess you're set on making this difficult, aren't you?"
+    play sound wrf volume 2.0
+    w "Sucks, really. I was genuinely starting to take a liking to you."
+    play sound wlf volume 2.3
+    w "But I guess you just really don't care, do you?"
+    w "Not about me, not about Sayori..."
+    w "Not about anybody."
+    play sound wrf volume 2.7
+    w "{cps=24}[player]-{nw}{/cps}"
+    pause 3.0
+    play sound wsl volume 2.0
+    pause 1.0
+    w "H-Hey- get your- hand- off of- me-"
+    w "{cps=12}G- g- g- get-{nw}{/cps}"
+    pause 0.5
+    play sound wsn volume 5.0
+    pause 3.0
+    if persistent.playthrough == 20 and persistent.CONDITION == 5:
+        $ persistent.autoload = "a2_end"
+    $ delete_character("white")
+    "white.chr deleted successfully."
+    "3 left."
+    $ renpy.quit()
+
+label a2_end:
+    $ renpy.quit()
+
+label ch1_p4:
+    #scene 8
+    scene bg club_day with dissolve_scene_full
+    "I walk into the room."
+    "Everyone is silent."
+    "The atmosphere filling the room feels {i}very{/i} wrong."
+    "I walk up to Monika, who looks to be texting someone."
+    show monika forward neut cm oe at t11
+    mc "Monika?"
+    m "Hello, [player]."
+    mc "Why is everyone so quiet...?"
+    mc "Did I miss something?"
+    "Monika's expression doesn't change as she takes a deep breath."
+    m "He really didn't tell you?"
+    mc "Who... [w_name]?"
+    mc "Was he {i}supposed{/i} to tell me something?"
+    "I thought it was strange that he never responded to my texts last night."
+    "But I just figured he was busy talking to Sayori or something."
+    "I suddenly feel incredibly stupid for not thinking anything more of it until right now."
+    m "Y-Yes, he was supposed to..."
+    show monika om ce at t11
+    pause 2.0
+    show monika cm oe at t11
+    m "Sayori's missing."
+    "My heart drops."
+    "But my mind refuses to understand what was just said."
+    mc "What do you mean?"
+    m "Sit down, [player]. We need to talk."
+    "I hesitantly pull up a desk since the chairs are attached to them."
+    "I take a seat, and everything around me seems to freeze in place."
+    show monika b1c e1b me at t11
+    m "Okay. Where should I start..."
+    m "..."
+    show monika e1a md at t11
+    m "... Sayori has had depression for most of her life."
+    m "Her main trigger is people worrying too much about her..."
+    m "... Even if she really needs the attention that she's being offered."
+    m "Yesterday, [w_name] went to see if she was feeling okay since she went home early."
+    m "When he found her... she was..."
+    m "... Well, I won't go into those details."
+    m "But he was lucky to arrive when he did."
+    m "Or..."
+    m "{i}He would've been.{/i}"
+    m "It took several hours, but [w_name] stayed with Sayori until she finally calmed down."
+    mc "Wait... if he managed to talk her down... then how'd she...?"
+    m "... This is the part I hate thinking about the most."
+    mc "{cps=24}Y-You don't have to if-{nw}{/cps}"
+    m "Yes, I do."
+    m "Please just listen, [player]."
+    m "Around the same time that Sayori was calming down..."
+    m "... exactly {i}three minutes{/i} before [w_name] was able to calm her, in fact..."
+    m "... Kotonoha evidently texted Yuri."
+    m "She said she was going to check on Sayori and [w_name]."
+    m "Yuri told me as soon as she got the message."
+    m "Even she knew that Kotonoha wouldn't have naturally decided to do something like that."
+    m "The moment I read the message, I rushed over to Sayori's place."
+    m "I got to her room..."
+    m "{i}But no one was home.{/i}"
+    m "Not [w_name], not Sayori, not Kotonoha..."
+    m "... The only thing I could tell from the state of her room was that there was some sort of fight."
+    m "Most of the things in Sayori's room were broken."
+    m "The only things that went virtually untouched were her bed and her giant cow plush."
+    m "After I looked around the entire house for at least an hour, [w_name] texted me."
+    m "He... wasn't like himself at all."
+    m "He wouldn't stop apologizing."
+    m "It took several minutes to get him to elaborate, but..."
+    m "... my theory that there had been a fight turned out to be true."
+    m "The first thing he said was that he was going to beat the crap out of Kotonoha if he ever found her."
+    m "He went on to explain that Kotonoha had barged into Sayori's room not even ten seconds after Sayori had finally calmed down."
+    m "A funny coincidence, right?"
+    m "Wrong."
+    m "Kotonoha knew exactly what she was doing."
+    m "She rushed into the room and..."
+    m "... said {i}a lot{/i} of horrible things."
+    m "[w_name] actually started fighting her to try and keep her from doing what she was about to do."
+    m "And while I {i}never{/i} thought I'd have to say this in any mod..."
+    m "... [w_name] lost the fight."
+    m "Kotonoha knocked him out cold and took Sayori."
+    m "When [w_name] woke up, he traced Kotonoha's path as far as he could."
+    m "The place he lost her trail at was both relieving and heartbreaking to hear."
+    m "He followed signs of Kotonoha's path until well after the sun had started coming back up."
+    m "Taking all other timestamps into account, that means he was at it for at least five hours."
+    m "He took several pictures of the places he passed as he went, but eventually, there was nothing left to even resemble anyone passing through before."
+    m "I was partially relieved because he managed to get as far as he did, but at the same time..."
+    m "... if he went as far as he did, how far did Kotonoha go?"
+    m "..."
+    m "... [w_name]'s on his way here now."
+    m "He just said he should be here in about 30 minutes when you came up to me."
+    $ delete_character("sayori")
+    mc "..."
+    mc "....."
+    "I try to take in everything she just said."
+    "But it's all so much to try and understand."
+    mc "That's..."
+    mc "... I can't even think of anything beyond 'horrible' right now, but that's not saying nearly enough..."
+    mc "... Wait... what did you mean when you said you never thought you'd have to say [w_name] lost a fight 'in any mod?'"
+    show monika ce at t11
+    m "[player]..."
+    m "I need you to take everything I'm about to tell you with total seriousness."
+    m "It's going to be hard to believe, but you need to trust me."
+    mc "Okay..."
+    show monika e1a at t11
+    m "This is a game."
+    m "The world we're in right now is all a game."
+    m "But the game is broken."
+    m "Remember that conversation you had with [w_name] about the déjà vu you were having?"
+    m "Well, he was entirely correct."
+    m "This version of the game is overflowing with mods that people have created over the span of a few years."
+    m "Rikka is from a mod called {i}SNAFU{/i}."
+    m "... L-Like the anime?"
+    show monika ce at t11
+    m "{cps=8}{i}sigh{/cps}{/i} Yes, like the anime."
+    show monika e1a at t11
+    m "[w_name] is a character from a mod called {i}The Rising Night{/i}."
+    m "Everyone hated him in his original mod, and when he made his way into the game recently, that was nearly the case again."
+    m "I had to manually change a few files in order to prevent everyone from hating him."
+    m "Obviously, this didn't work once or twice, but I did what I could."
+    m "Kotonoha is from a mod called {i}Tainted Love{/i}."
+    m "She's also had the same level of access over the files of this game for a few days now."
+    m "I tried to disable all mods but put her in a folder with code granting a mod character elevated access."
+    m "She used this to her advantage and enabled every mod available."
+    m "The game ended up breaking in some way, and now different mods have been making the game run {i}much{/i} differently."
+    m "... This is why I was so scared about Kotonoha possibly becoming a prominent part of this game."
+    m "She might be a rational individual who loves her cousin outside of normal gameplay..."
+    m "... But as soon as you're in the picture, she seems to be drawn to you, and not in a good way."
+    m "She would do literally anything to be with you."
+    m "Including hurting her friends and family."
+    "{cps=8}{i}creeeeeek{/cps}{/i}"
+    w "I'm... back..."
+    scene bg qgclubday
+    pause .25
+    with dissolve_scene_half
+    show monika forward neut b1c e1a me at f21
+    show mc 1e1 at t22
+    m "You're back a little earlier than expected."
+    show monika at t21
+    w "I...{w=0.5} sprinted the rest of...{w=0.5} the way here..."
+    "Deep breaths...{w=1.0} deep breaths..."
+    show bg qgclubday
+    show monika forward neut cm oe at f21
+    m "{cps=30}Why? There's not much you can do by getting here any-{nw}{/cps}"
+    show monika at t21
+    w "She's gone."
+    show bg qgclubday
+    w "Kotonoha killed her."
+    show monika forward shoc cm oe at t21
+    w "I saw evidence of it coming back up here."
+    w "She somehow had an entire fake trail in place to throw us off."
+    show bg qgclubday
+    m "I..."
+    show monika at t21
+    w "You don't believe me? Check the files."
+    window hide
+    $ consolehistory = []
+    $ run_input("/locate @blue", "/locate @blue")
+    $ pause(2.0)
+    $ run_input("", "Sayori.chr could not be found.")
+    $ pause(2.0)
+    hide screen console_screen
+    show monika at f21
+    m "H-How did you find out..."
+    show monika at t21
+    show bg qgclubday
+    show bg qgclubday
+    w "Here... I... t-took a picture..."
+    show monika mj at f21
+    m "..."
+    show monika at t21
+    show mc 1a1 at f22
+    mc "N-No..."
+    show mc at t22
+    show layer master
+    show layer screens
+    show kotonoha 1x at i11 onlayer front
+    $ style.say_dialogue = style.edited
+    k "Y E S ."
+    scene bg qgclubday
+    pause .25
+    scene black
+    hide kotonoha onlayer front
+    show kotonoha 1x at t11
+    $ kgmode = True
+    $ style.say_window = style.window_mg2
+    $ style.namebox = style.namebox_mg2
+    k "ALL I WANTED WAS TO SPEND TIME WITH YOU, [player]."
+    k "BUT MONIKA AND THAT WHITE-HAIRED PIECE OF SH-{nw}"
+    call kotog
+    $ renpy.sound.play ("mod_assets/sfx/monikapound1.ogg")
+    k "THEY RUIN EVERYTHING."
+    k "SO NEXT TIME, DON'T LET THEM."
+    k "I'LL MAKE SURE YOU CAN CHOOSE TO SPEND TIME WITH ME INSTEAD."
+    show m_rectstatic
+    show m_rectstatic2
+    show m_rectstatic3
+    play sound "sfx/monikapound.ogg"
+    show layer master:
+        truecenter
+        parallel:
+            zoom 1.5
+            easeout 0.35 zoom 1.0
+            zoom 1.5
+            easeout 0.35 zoom 1.0
+            zoom 1.5
+            easeout 0.35 zoom 1.0
+        parallel:
+            xpos 0
+            easein_elastic 0.35 xpos 640
+            xpos 1280
+            easein_elastic 0.35 xpos 640
+            xpos 0
+            easein_elastic 0.35 xpos 640
+    show layer screens:
+        truecenter
+        parallel:
+            zoom 1.5
+            easeout 0.35 zoom 1.0
+            zoom 1.5
+            easeout 0.35 zoom 1.0
+            zoom 1.5
+            easeout 0.35 zoom 1.0
+        parallel:
+            xpos 0
+            easein_elastic 0.35 xpos 640
+            xpos 1280
+            easein_elastic 0.35 xpos 640
+            xpos 0
+            easein_elastic 0.35 xpos 640
+    show noise onlayer front:
+        alpha 0.3
+        easeout 0.35 alpha 0
+        alpha 0.3
+        easeout 0.35 alpha 0
+        alpha 0.3
+        1.35
+        linear 1.0 alpha 0.0
+    show glitch_color onlayer front
+    $ gtext = glitchtext(7)
+    $ k_name = "K[gtext]"
+    k "IN FACT..."
+    k "... I'LL SEE HOW MUCH YOU REALLY WANT TO BE WITH ME."
+    k "I SAVED SOME MODS FROM BEING ENABLED SO THAT YOU COULD FOCUS ON WHAT'S IMPORTANT..."
+    k "... BUT IF YOU TRULY CARE ABOUT ME, I KNOW YOU'LL MAKE THE RIGHT DECISIONS..."
+    k "EVEN IF EVERY MOD I CAN THINK OF WERE ACTIVATED."
+    k "NOT JUST SIMPLE 'FEATURES' OF MODS LIKE YOU'VE BEEN SEEING..."
+    k "RIKKA FROM SNAFU WILL BE HERE? I'LL MAKE SURE THE STATS FROM {i}SNAFU{/i} ARE HERE, TOO."
+    k "SIMPLE DIALOGUE REFERENCES TO {i}FOREIGN RELATIONS{/i}? I'LL GO AHEAD AND BRING {i}HIM{/i} HERE, TOO."
+    k "AND I WON'T JUST BRING MORE FROM THOSE MODS..."
+    k "... WHEN THERE'S SO MUCH MORE POTENTIAL OUT THERE."
+    k "THERE'S BIG ONES LIKE {i}EXIT MUSIC{/i}, NEWER ONES LIKE {i}BRANCHING PATHS{/i}, LESSER-KNOWN ONES LIKE {i}MY BEST FRIEND IS A GHOST{/i}..."
+    k "OH, AND I CAN'T FORGET THE MOST POPULAR ONE OF ALL..."
+    call kotog
+    $ renpy.sound.play ("mod_assets/sfx/monikapound1.ogg")
+    k "BUT I'LL ONLY BRING THAT ONE IN AS A LAST RESORT."
+    k "I DON'T THINK THIS GAME WILL NEED AN AFTER STORY."
+    show kotonoha 1xg at t11
+    k "WELL... I WON'T KEEP YOU WAITING ANY LONGER."
+    python:
+        try: renpy.file(config.basedir + "/txt.txt")
+        except: open(config.basedir + "/txt.txt", "wb").write(renpy.file("mod_assets/txt.txt").read())
+    k "ENJOY ACT II, [player]~"
+    call kotog
+    $ renpy.sound.play ("mod_assets/sfx/monikapound1.ogg")
+    $ style.say_window = style.window
+    $ style.namebox = style.nameboxd
+    $ kgmode = False
+    scene black
+    $ show_poem (poem_k1, music=False, paper_sound=None)
+    python:
+        os.remove(config.basedir + "/txt.txt")
+    $ gtext = glitchtext(24)
+    "[gtext]. Read broken.txt for more details."
+    python:
+        try: renpy.file(config.basedir + "/broken.txt")
+        except: open(config.basedir + "/broken.txt", "wb").write(renpy.file("mod_assets/broken.txt").read())
+    $ persistent.playthrough = 2
+    $ renpy.quit()

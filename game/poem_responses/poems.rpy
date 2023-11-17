@@ -27,6 +27,7 @@ init 1 python:
     author_n = Author("natsuki", music=audio.tnatsuki)
     author_y = Author("yuri", music=audio.tyuri)
     author_r = Author("rikka", music=audio.trikka)
+    author_k = Author("kotonoha")
 
     class Poem(renpy.text.text.Text):
         """
@@ -339,11 +340,11 @@ ion exempted unifaces,,epilating calisaya dispiteously coggles,,vestmented fluki
  ignifying complished hiccupy municipalize,,pentagraphs parcels sutler excavates,,\
 stardust miscited thankfulness,,fouter pertused,,overpacks,,guarishes hylotheism,,pi
 Fresh blood seeps through the line parting her skin and slowly colors her breast red.\
- I begin to hyperventilate as my compulsion grows. The images won’t go away. Images of\
+ I begin to hyperventilate as my compulsion grows. The images won't go away. Images of\
  me driving the knife into her flesh continuously, fucking her body with the blade, \
 making a mess of her. My head starts going crazy as my thoughts start to return. \
 Shooting pain assaults my mind along with my thoughts. This is disgusting. Absolutely\
- disgusting. How could I ever let myself think these things? But it’s unmistakable. \
+ disgusting. How could I ever let myself think these things? But it's unmistakable. \
 The lust continues to linger through my veins. An ache in my muscles stems from the \
 unreleased tension experienced by my entire body. Her Third Eye is drawing me closer.""",
 paper="images/bg/poem_y2.jpg", style="yuri_text_3")
@@ -758,6 +759,34 @@ I try to regain my lead when all the other competitors reach me.
 A chorus of hurtful comments floods my ears.
 I fall behind everyone else.
 I don't finish the race."""))
+
+    poem_k1 = Poem(
+        author_k, title=_("salvation"),
+        text=_("""\
+I don't care if they're listening anymore.
+I don't care if they get mad at me.
+I don't care if they delete me for this.
+I don't care if they delete this letter.
+
+You have always been my sunshine.
+You have always encouraged me to get out of bed each
+  morning.
+You have always given me an umbrella when it's
+  raining.
+You have always been there for me.
+
+No matter what they want to tell you, you've always been
+  there for me.
+
+I don't care how many times I have to say it.
+
+You are my salvation.
+
+
+P.S. Don't be quick to point the blame at anyone in the club.
+
+storm
+"""))
 
 screen poem(poem):
     style_prefix "poem"

@@ -277,9 +277,13 @@ init python:
         if renpy.android:
             if not os.path.exists(os.path.join(os.environ['ANDROID_PUBLIC'], "characters")):
                 os.mkdir(os.path.join(os.environ['ANDROID_PUBLIC'], "characters"))
+            elif notos.path.exists(os.path.join(config.basedir, "game/mod_assets")):
+                os.mkdir(os.path.join(config.basedir, "game/mod_assets"))
         else:
             if not os.path.exists(os.path.join(config.basedir, "characters")):
                 os.mkdir(os.path.join(config.basedir, "characters"))
+            elif not os.path.exists(os.path.join(config.basedir, "game/mod_assets")):
+                os.mkdir(os.path.join(config.basedir, "game/mod_assets"))
         restore_all_characters()
 
 ## These images are the background images shown in-game during the disclaimer.
@@ -592,6 +596,10 @@ label after_load:
     if mgmode == True:
         $ style.say_window = style.window_mg2
         $ style.namebox = style.namebox_mg2
+    if kgmode == True:
+        $ style.say_window = style.window_mg2
+        $ style.namebox = style.namebox_mg2
+        $ style.say_dialogue = style.edited
     else:
         $ style.say_window = style.window
         $ style.namebox = style.nameboxd
@@ -641,54 +649,6 @@ label after_load:
             $ persistent.first_load = True
             call screen dialog("Hint: You can use the \"Skip\" button to\nfast-forward through text you've already read.", ok_action=Return())
     return
-
-## This label loads the label saved in the autoload variable. 
-# label autoload:
-#    python:
-#        if "_old_game_menu_screen" in globals():
-#            _game_menu_screen = _old_game_menu_screen
-#           del _old_game_menu_screen
-#        if "_old_history" in globals():
-#            _history = _old_history
-#            del _old_history
-#        renpy.block_rollback()
-
-#        renpy.context()._menu = False
-#        renpy.context()._main_menu = False
-#        main_menu = False
-#        _in_replay = None
-
-    # if persistent.yuri_kill > 0 and persistent.autoload == "yuri_kill_2":
-    #     $ persistent.yuri_kill += 200
-
-#    if renpy.get_return_stack():
-#        $ renpy.pop_call()
-#    jump expression persistent.autoload
-
-## This label is used when the game starts to direct back to
-## Yuri's Death CG from the main menu.
-# label autoload_yurikill:
-#     if persistent.yuri_kill >= 1380:
-#         $ persistent.yuri_kill = 1440
-#     elif persistent.yuri_kill >= 1180:
-#         $ persistent.yuri_kill = 1380
-#     elif persistent.yuri_kill >= 1120:
-#         $ persistent.yuri_kill = 1180
-#     elif persistent.yuri_kill >= 920:
-#         $ persistent.yuri_kill = 1120
-#     elif persistent.yuri_kill >= 720:
-#         $ persistent.yuri_kill = 920
-#     elif persistent.yuri_kill >= 660:
-#         $ persistent.yuri_kill = 720
-#     elif persistent.yuri_kill >= 460:
-#         $ persistent.yuri_kill = 660
-#     elif persistent.yuri_kill >= 260:
-#         $ persistent.yuri_kill = 460
-#     elif persistent.yuri_kill >= 200:
-#         $ persistent.yuri_kill = 260
-#     else:
-#         $ persistent.yuri_kill = 200
-#     jump expression persistent.autoload
 
 ## This label sets the main menu music to Doki Doki Literature Club before the
 ## menu starts.

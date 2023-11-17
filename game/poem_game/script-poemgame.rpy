@@ -30,7 +30,8 @@ init python:
             full_wordlist[x[0]] = PoemWord(int(x[1]), int(x[2]), int(x[3]), int(x[4]), int(x[5]))
 
     # For use with Act 2-3 words
-                
+    glitch_word = PoemWord(0, 0, 0, 0, 0, True)
+
     # This class handles Chibi Movement in a better way
     class ChibiTrans(object):
         def __init__(self):
@@ -143,7 +144,7 @@ init python:
             if poemword in full_wordlist:
                 t = full_wordlist[poemword]
             else:
-                if persistent.playthrough == 10:
+                if persistent.CONDITION >= 4:
                     t = glitch_word
                 else:
                     t = monika_word
@@ -151,10 +152,7 @@ init python:
             # If we are not in a bugged poem game state, do normal stuff, else do buggy stuff
             if not poemgame_glitch:
                 if t.glitch: #This conditional controls what happens when the glitch word is selected.
-                    poemgame_glitch = False
-                    renpy.music.play(audio.t4g)
-                    renpy.show("white")
-                    renpy.show("y_sticker glitch", at_list=[sticker_glitch], zorder=10)
+                    poemgame_glitch = True
                 elif persistent.playthrough != 3:
                     renpy.play(gui.activate_sound)
                     # Act 1
@@ -169,12 +167,20 @@ init python:
                     if t.mPoint >= 3:
                         renpy.show("m_sticker hop")
             else:
-                r = random.randint(0, 10) #1/10 chance to hear "baa", one time.
-                if r == 0 and not played_baa:
-                    renpy.play("gui/sfx/baa.ogg")
-                    played_baa = True
-                elif r <= 5: renpy.play(gui.activate_sound_glitch)
-
+                persistent.CONDITION = 5
+                persistent.playthrough = 20
+                renpy.play(gui.activate_sound)
+                # Act 1
+                if t.sPoint >= 3:
+                    renpy.show("s_sticker hop")
+                if t.nPoint >= 3:
+                    renpy.show("n_sticker hop")
+                if t.yPoint >= 3:
+                    renpy.show("y_sticker hop")
+                if t.rPoint >= 3:
+                    renpy.show("r_sticker hop")
+                if t.mPoint >= 3:
+                    renpy.show("m_sticker hop")
             # Adds points to the characters and progress by 1.
             chibi_s.charPointTotal += t.sPoint
             chibi_n.charPointTotal += t.nPoint
@@ -239,9 +245,9 @@ screen poem_test(words, progress, poemgame_glitch):
                                 elif random.randint(0, 4) == 0:
                                     s[k] = random.choice(nonunicode)
                             wordString = "".join(s)
-                    elif persistent.playthrough == 2 and not poemgame_glitch and chapter >= 1 and progress < numWords and random.randint(0, 400) == 0:
+                    elif persistent.playthrough == 1 and not poemgame_glitch and chapter == 1 and progress < numWords and persistent.CONDITION == 4 and random.randint(0, 50) == 0:
                         python:
-                            wordString = glitchtext(80) # This gives a chance for a random word in Act 2 to be the glitched word.
+                            wordString = "delete" # This gives a chance for a random word in Act 2 to be the glitched word.
                     else:
                         python:
                             wordString = words[i]
@@ -268,9 +274,9 @@ screen poem_test(words, progress, poemgame_glitch):
                                 elif random.randint(0, 4) == 0:
                                     s[k] = random.choice(nonunicode)
                             wordString = "".join(s)
-                    elif persistent.playthrough == 2 and not poemgame_glitch and chapter >= 1 and progress < numWords and random.randint(0, 400) == 0:
+                    elif persistent.playthrough == 1 and not poemgame_glitch and chapter == 1 and progress < numWords and persistent.CONDITION == 4 and random.randint(0, 50) == 0:
                         python:
-                            wordString = glitchtext(80) # This gives a chance for a random word in Act 2 to be the glitched word.
+                            wordString = "delete" # This gives a chance for a random word in Act 2 to be the glitched word.
                     else:
                         python:
                             wordString = words[5+i]

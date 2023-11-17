@@ -366,6 +366,14 @@ image s_kill_zoom:
         zoom 1.5 xalign 0.5 yalign 0.1
     dizzy(1, 1.0)
 
+image s_kill_zoom qg:
+    contains:
+        Glitch("s_kill")
+        truecenter
+        zoom 1.5 xalign 0.5 yalign 0.1
+    dizzy(1, 1.0)
+
+
 # This image transform zooms in on the glitched background in Sayori's hanging
 # CG.
 image s_kill_bg2_zoom:
