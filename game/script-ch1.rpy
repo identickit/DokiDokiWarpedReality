@@ -462,9 +462,9 @@ label ch1_p2:
     show monika cm at t22
     menu:
         "Listen to Monika and Koto.":
-            call ch1_mk_1
+            call ch1_mk_1 from _call_ch1_mk_1
         "Listen to Monika and Koto.":
-            call ch1_mk_2
+            call ch1_mk_2 from _call_ch1_mk_2
 
     show bg clubdaypause
     pause 0.5
@@ -499,7 +499,7 @@ label ch1_p2:
     k "{b}{cps=20} J u s t  K o t o n o h a.{/b}{/cps}"
     menu:
         "Just Kotonoha.":
-            call ch1_mk_end
+            call ch1_mk_end from _call_ch1_mk_end
 
     return
 
@@ -507,9 +507,9 @@ label ch1_mk_end:
     $ ch1_mk = True
     call screen dialog("Just Kotonoha.", ok_action=Return())
     call screen confirmyes("You have unlocked a special poem.\nWould you like to read it?", Return(True))
-    call poem_special(12)
+    call poem_special(12) from _call_poem_special_11
     scene bg club_day
-    call splashscreen
+    call splashscreen from _call_splashscreen_3
     scene bg club_day 
     with dissolve
     show kotonoha 1s at t11
@@ -608,7 +608,7 @@ label ch1_p3:
     scene black
     with dissolve_scene_full
     call screen confirm("You have unlocked a real special poem.\nWould you like to read it?", Return(), Return())
-    call poem_special(13)
+    call poem_special(13) from _call_poem_special_12
     scene bg club_day
     with dissolve_scene_full
     play music wn9
@@ -626,10 +626,10 @@ label ch1_p3:
     with dissolve_scene_half
     "I guess I should let Monika and Kotonoha be for now, especially after what happened yesterday."
 
-    call poemresponse_start
+    call poemresponse_start from _call_poemresponse_start_1
 
     if persistent.CONDITION >= 4:
-        call poem
+        call poem from _call_poem_4
         if persistent.playthrough == 20 and persistent.CONDITION == 5:
             jump a1
         else:
@@ -993,8 +993,6 @@ label a2:
     pause 0.5
     play sound wsn volume 5.0
     pause 3.0
-    if persistent.playthrough == 20 and persistent.CONDITION == 5:
-        $ persistent.autoload = "a2_end"
     $ delete_character("white")
     "white.chr deleted successfully."
     "3 left."
@@ -1189,7 +1187,7 @@ label ch1_p4:
     $ style.namebox = style.namebox_mg2
     k "ALL I WANTED WAS TO SPEND TIME WITH YOU, [player]."
     k "BUT MONIKA AND THAT WHITE-HAIRED PIECE OF SH-{nw}"
-    call kotog
+    call kotog from _call_kotog
     $ renpy.sound.play ("mod_assets/sfx/monikapound1.ogg")
     k "THEY RUIN EVERYTHING."
     k "SO NEXT TIME, DON'T LET THEM."
@@ -1253,7 +1251,7 @@ label ch1_p4:
     k "... WHEN THERE'S SO MUCH MORE POTENTIAL OUT THERE."
     k "THERE'S BIG ONES LIKE {i}EXIT MUSIC{/i}, NEWER ONES LIKE {i}BRANCHING PATHS{/i}, LESSER-KNOWN ONES LIKE {i}MY BEST FRIEND IS A GHOST{/i}..."
     k "OH, AND I CAN'T FORGET THE MOST POPULAR ONE OF ALL..."
-    call kotog
+    call kotog from _call_kotog_1
     $ renpy.sound.play ("mod_assets/sfx/monikapound1.ogg")
     k "BUT I'LL ONLY BRING THAT ONE IN AS A LAST RESORT."
     k "I DON'T THINK THIS GAME WILL NEED AN AFTER STORY."
@@ -1263,7 +1261,7 @@ label ch1_p4:
         try: renpy.file(config.basedir + "/txt.txt")
         except: open(config.basedir + "/txt.txt", "wb").write(renpy.file("mod_assets/txt.txt").read())
     k "ENJOY ACT II, [player]~"
-    call kotog
+    call kotog from _call_kotog_2
     $ renpy.sound.play ("mod_assets/sfx/monikapound1.ogg")
     $ style.say_window = style.window
     $ style.namebox = style.nameboxd

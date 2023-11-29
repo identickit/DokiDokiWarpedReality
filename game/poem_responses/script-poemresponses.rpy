@@ -76,7 +76,7 @@ label poemresponse_start:
                         "I'm definitely most comfortable sharing it with Sayori first."
                         "She's my good friend, after all."
                     elif chapter == 1:
-                        call poemresponse_sayori
+                        call poemresponse_sayori from _call_poemresponse_sayori_1
                     # This call statement calls Sayori's poem response script.
                     call poemresponse_sayori from _call_poemresponse_sayori
 
@@ -88,7 +88,7 @@ label poemresponse_start:
                         "I told Natsuki I was interested in her poems yesterday."
                         "It's probably only fair if I shared mine with her first."
                     elif chapter == 1:
-                        call poemresponse_natsuki
+                        call poemresponse_natsuki from _call_poemresponse_natsuki_1
                     call poemresponse_natsuki from _call_poemresponse_natsuki
 
                 # This will show Yuri as a menu option IF you haven't shared your
@@ -99,7 +99,7 @@ label poemresponse_start:
                         "Yuri seems the most experienced, so I should start with her."
                         "I can trust her opinion to be fair."
                     elif chapter == 1:
-                        call poemresponse_yuri
+                        call poemresponse_yuri from _call_poemresponse_yuri_1
                     call poemresponse_yuri from _call_poemresponse_yuri
 
                 "Monika" if not m_readpoem:
@@ -108,7 +108,7 @@ label poemresponse_start:
                         "I should start with Monika."
                         "Yesterday she seemed eager to read my poem, and I want her to know I'm putting in effort."
                     elif chapter == 1:
-                        call poemresponse_monika
+                        call poemresponse_monika from _call_poemresponse_monika_1
                     call poemresponse_monika from _call_poemresponse_monika
 
                 "Rikka" if not r_readpoem:
@@ -119,7 +119,7 @@ label poemresponse_start:
                         else:
                             "I think starting with Rikka might be the best option."
                     elif chapter == 1:
-                        call poemresponse_rikka
+                        call poemresponse_rikka from _call_poemresponse_rikka_1
                     call poemresponse_rikka from _call_poemresponse_rikka
             
         if persistent.playthrough == 1:
@@ -129,12 +129,12 @@ label poemresponse_start:
                 "Sayori" if not s_readpoem and persistent.playthrough == 1:
                     $ s_readpoem = True
                     if chapter == 1:
-                        call poemresponse_sayori
+                        call poemresponse_sayori from _call_poemresponse_sayori_2
 
                 "Natsuki" if not n_readpoem:
                     $ n_readpoem = True
                     if chapter == 1:
-                        call poemresponse_natsuki
+                        call poemresponse_natsuki from _call_poemresponse_natsuki_2
 
                 "Yuri" if not y_readpoem and not y_ranaway:
                     $ y_readpoem = True
@@ -142,13 +142,13 @@ label poemresponse_start:
                         if persistent.CONDITION == 1:
                             $ persistent.CONDITION = 2
                             play sound wa1
-                            call poemresponse_yuri
+                            call poemresponse_yuri from _call_poemresponse_yuri_2
                         elif persistent.CONDITION == 0:
-                            call poemresponse_yuri
+                            call poemresponse_yuri from _call_poemresponse_yuri_3
                         else:
                             $ persistent.CONDITION = 0
                             play sound wa1
-                            call poemresponse_yuri
+                            call poemresponse_yuri from _call_poemresponse_yuri_4
 
                 "Rikka" if not r_readpoem:
                     $ r_readpoem = True
@@ -178,7 +178,7 @@ label poemresponse_start:
                         $ w_readpoem = True
                         $ persistent.CONDITION = 1
                         play sound wa1
-                        call poemresponse_w_name
+                        call poemresponse_w_name from _call_poemresponse_w_name
                     
 
         # This variable increases the poems read by 1.
@@ -3205,7 +3205,7 @@ label ch1_y_med:
     y "Y-Yeah... it's a book that I enjoy very much."
     y "Basically, it's about-"
     mc "Oh, I think I remember hearing about the book before."
-    show yuri turned neut me oe nb at t11
+    show yuri turned neut me oe n1 at t11
     mc "Well, I don't remember {i}much{/i} about where I heard, but isn't it about some sort of experiment where-"
     stop music
     show yuri turned neut mh e2a at t11
@@ -3218,13 +3218,13 @@ label ch1_y_med:
 
     menu:
         "I overheard a conversation.":
-            call y_normal
+            call y_normal from _call_y_normal
         "I remember from another timeline.":
-            call y_normal
+            call y_normal from _call_y_normal_1
         "Weren't you just going to tell me about it like two seconds ago?":
-            call y_normal
+            call y_normal from _call_y_normal_2
         "{b}L i b i t i n a.{/b}":
-            call y_libitina
+            call y_libitina from _call_y_libitina
     return
 
 label y_normal:
@@ -3244,7 +3244,7 @@ label y_normal:
     show monika lean happ cm oe at t11
     m "In fact, let me just help you forget about all of this..."
     hide yuri
-    call splashscreen
+    call splashscreen from _call_splashscreen
     scene bg club_day
     with dissolve
     return
@@ -3266,7 +3266,7 @@ label y_libitina:
     m "{b}Even if I hate her, I'll ask her for help to make sure you don't speak that name again if I must.{/b}"
     m "{b}So don't.{/b}"
     m "{b}Just don't{/b}"
-    call splashscreen
+    call splashscreen from _call_splashscreen_2
     stop music fadeout 0.5
     scene bg club_day
     with dissolve
@@ -3328,7 +3328,7 @@ label ch1_y_end:
     "Before I can think much of it, however, Rikka starts speaking again."
     r "So, you wanna go ahead and share poems since we're already here?"
     mc "Oh, sure."
-    call poemresponse_rikka
+    call poemresponse_rikka from _call_poemresponse_rikka_2
     return
 
 #sayori ch1
@@ -3542,7 +3542,7 @@ label s_yesno:
     
 
 label ch1_s_end:
-    call poemresponse_rikka
+    call poemresponse_rikka from _call_poemresponse_rikka_3
     return
 
 #natsuki ch1

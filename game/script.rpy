@@ -34,26 +34,26 @@ label start:
 
     if persistent.playthrough == 0:
 
-        call ch0_p1
+        call ch0_p1 from _call_ch0_p1
 
-        call poem
+        call poem from _call_poem
 
-        call ch0_p2
-        call poemresponse_start
-        call ch0_end
+        call ch0_p2 from _call_ch0_p2
+        call poemresponse_start from _call_poemresponse_start
+        call ch0_end from _call_ch0_end
 
     if persistent.playthrough == 1:
         $ chapter = 1 
-        call ch1_p1
+        call ch1_p1 from _call_ch1_p1
 
-        call poem
+        call poem from _call_poem_1
 
-        call ch1_p2
+        call ch1_p2 from _call_ch1_p2
         
-        call poem
+        call poem from _call_poem_2
 
-        call ch1_p3
+        call ch1_p3 from _call_ch1_p3
         
-        call poem
+        call poem from _call_poem_3
 
-        call ch1_p4
+        call ch1_p4 from _call_ch1_p4
