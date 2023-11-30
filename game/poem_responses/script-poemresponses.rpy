@@ -3580,8 +3580,8 @@ label ch1_n_med:
     "Natsuki crosses her arms in frustration."
     n "... I'm having a kinda bad day today."
     mc "Did something happen?"
-    show natsuki turned angr om e1a b1a at t11
-    n "Er- you don't have to get into it if you don't want to!"
+    show natsuki turned angr cm e1a b1a at t11
+    mc "Er- you don't have to get into it if you don't want to!"
     "Natsuki calms herself down again."
     show natsuki turned curi cm oe b1b at t11
     n "No... I'm... I really shouldn't be getting this upset over a couple of questions."
@@ -3663,7 +3663,7 @@ label ch1_n_med:
     "She cuts herself off by taking a huge bite out of the bar."
     "I give Monika a concerned look."
     show monika at f21
-    n "Her dad doesn't feed her nearly as often as he should."
+    m "Her dad doesn't feed her nearly as often as he should."
     show monika at t21
     mc "O-Oh…"
     show monika at f21
