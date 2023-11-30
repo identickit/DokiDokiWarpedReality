@@ -858,7 +858,7 @@ label a1:
     show monika forward neut cm oe at t11
     m "Hey, [player]..."
     m "Did you notice anything strange about Sayori yesterday?"
-    m "I realized that she left early once we all started to pick up."
+    m "I realized that she left early once we all started to pack up."
     menu:
         "...":
             pass
@@ -871,7 +871,7 @@ label a1:
     show monika forward curi cm oe at f21
     m "You haven't heard from her at all since yesterday?"
     show monika at t21
-    show kotonoha at f22
+    show kotonoha 1p at f22
     k "No..."
     k "I'm... starting to feel really worried."
     show kotonoha at t32
