@@ -1,19 +1,17 @@
-Thank you all for your patience as the next part of the DDMC Celebration! project has been in development. It’s been incredibly fun working on this mod so far, and I’m so excited that it’s already come this far. Being able to feature some of the great mods from all across the DDLC modding community is a great honor that I don’t deserve to have, but I’m glad that I have that honor.
-Hopefully this first act has given you a pretty good idea of what’s in store for the remaining acts of Broken Reality! If you have any questions regarding the mod, feel free to reach out to me and I’ll answer however I can. ^-^
+Thank you all for your patience as the next part of the DDMC Celebration! project has been in {b}dev{/b}elopment. It’s been incredibly fun working on this mod so far, and I’m so excited that it’s already come this far. Being able to feature some of the great mods from all across the DDLC modding community is a great honor that I don’t deserve to have, but I’m {b}gl{/b}ad that I have that honor.
+Hopefully these first two acts have given you a pretty good idea of what’s in store for the remaining acts of this mod! If you have any questions regarding the mod, feel free to reach out to me and I’ll {b}an{/b}swer however I can. ^-^
 With that being said, thank you so much to the programmer of this mod, Chino, for all of their hard work! I’m still eternally grateful for their contributions.
 Thanks as well to the new members of our development team: SuperSandwich, nikicha, and w3ryfrate. They've been helping a lot with making the development process go a little faster and just enjoyable overall to have on the Tiny Waffle Studios team.
+(We also had some help from Cleb to fix a bug with save files, so thanks Cleb for your help as well!)
 Thank you to everyone who plays this mod and/or watches a playthrough of it! I hope you all are having a good day.
 Finally, thank you to the respective creators of all of the mods featured in Celebration! thus far! Your work is amazing and this mod wouldn’t exist without the great stories they tell.
 
-Mods featured/referenced (Warped + Broken Act I):
+Mods featured/referenced (Acts 0 & I):
 My Doki Doki SNAFU
 Tainted Love
 Foreign Relations
 Salvation
 The Rising Night
-Emerald Affection
-An Old Friend
-Encore!
 Sound Waves
 The Yuri Parable
 Lost Ascension
@@ -23,3 +21,4 @@ Shattered Worlds
 Branching Paths
 Exit Music
 My Best Friend Is A Ghost
+Storm
