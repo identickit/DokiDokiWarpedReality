@@ -996,6 +996,7 @@ label a2:
     $ delete_character("white")
     "white.chr deleted successfully."
     "3 left."
+    $ delete_all_saves()
     $ renpy.quit()
 
 label a2_end:
