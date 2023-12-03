@@ -19,7 +19,7 @@ image poem_special9 = "poem_special/poem_special9.png" # Things I Like About Pap
 image poem_special10 = "poem_special/poem_special10.png" # Go to Therapy
 image poem_special11 = "poem_special/poem_special11.png" # A Dream 2
 
-image poem_special12 = "poem_special/poem_special1.png" #Just Kotonoha
+image poem_special12 = "mod_assets/mod_extra_images/poem_special12.png" #Just Kotonoha
 image poem_special13 = "poem_special/poem_special1.png" #new poem
 
 # This image defines the ending poem where we can either get Monika's or Dan's
