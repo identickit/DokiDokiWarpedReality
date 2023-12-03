@@ -3,6 +3,8 @@
 # This is where the Doki's respond to how much they like your poem.
 # Act 2 uses script-poemresponses2 which is in 'original_scripts'.
 
+default persistent.poemsecond = True
+
 label poemresponse_start:
     # These variables set the amount of poems read by the player and disables
     # the skip transition.
@@ -54,6 +56,7 @@ label poemresponse_start:
             else:
                 $ menutext = "Who should I show my poem to next?"
         elif chapter == 1:
+            $ persistent.poemsecond = True
             if poemsread == 0:
                 $ menutext = "Who should I spend the meeting with?"
             else:
@@ -128,18 +131,20 @@ label poemresponse_start:
 
                 "Sayori" if not s_readpoem and persistent.playthrough == 1:
                     $ s_readpoem = True
+                    $ persistent.poemsecond = False
                     if chapter == 1:
                         call poemresponse_sayori from _call_poemresponse_sayori_2
 
                 "Natsuki" if not n_readpoem:
                     $ n_readpoem = True
+                    $ persistent.poemsecond = False
                     if chapter == 1:
                         call poemresponse_natsuki from _call_poemresponse_natsuki_2
 
                 "Yuri" if not y_readpoem and not y_ranaway:
                     $ y_readpoem = True
                     if chapter == 1:
-                        if persistent.CONDITION == 1:
+                        if persistent.CONDITION == 1 and persistent.poemsecond == True:
                             $ persistent.CONDITION = 2
                             play sound wa1
                             call poemresponse_yuri from _call_poemresponse_yuri_2
