@@ -1276,4 +1276,5 @@ label ch1_p4:
         try: renpy.file(config.basedir + "/broken.txt")
         except: open(config.basedir + "/broken.txt", "wb").write(renpy.file("mod_assets/broken.txt").read())
     $ persistent.playthrough = 2
+    $ delete_all_saves()
     $ renpy.quit()
