@@ -3,7 +3,8 @@
 # This is where the Doki's respond to how much they like your poem.
 # Act 2 uses script-poemresponses2 which is in 'original_scripts'.
 
-default persistent.poemsecond = True
+default persistent.poemsecond = False
+default persistent.deletionroute = False
 
 label poemresponse_start:
     # These variables set the amount of poems read by the player and disables
@@ -3024,6 +3025,7 @@ label ch1_w_bad:
     jump ch1_w_med
 
 label ch1_w_med:
+    $ persistent.whereami = 8
     "..."
     "I force myself to stand up and walk over to [w_name]."
     "He looks at me like he can tell how reluctant my decision was."
@@ -3074,6 +3076,7 @@ label ch1_r_good:
                         pass
                     "...":
                         $ persistent.CONDITION = 4
+                        $ persistent.deletionroute = True
                         play sound wa1
                         jump ch1_r_alt
                         return
@@ -3115,6 +3118,7 @@ label ch1_r_bad:
                         pass
                     "...":
                         $ persistent.CONDITION = 4
+                        $ persistent.deletionroute = True
                         play sound wa1
                         jump ch1_r_alt
                         return
@@ -3147,6 +3151,7 @@ label ch1_r_med:
                         pass
                     "...":
                         $ persistent.CONDITION = 4
+                        $ persistent.deletionroute = True
                         play sound wa1
                         jump ch1_r_alt
                         return
@@ -3179,6 +3184,7 @@ label ch1_y_bad:
     jump ch1_y_med
 
 label ch1_y_med:
+    $ persistent.whereami = 9
     "I approach Yuri's desk quietly since she's focusing hard on her book."
     "I wait for a moment or two to see if she notices me, but she never looks up."
     "After she turns a third page, I decide to tap her desk to-"
@@ -3278,6 +3284,7 @@ label y_libitina:
     return
 
 label ch1_y_end:
+    $ persistent.whereami = 10
     $ y_splash1 = False
     $ y_splash2 = False
     play music wn9 fadein 0.5
@@ -3344,6 +3351,7 @@ label ch1_s_bad:
     jump ch1_s_med
 
 label ch1_s_med:
+    $ persistent.whereami = 11
     "I walk up to Sayori and notice that she's spacing out."
     mc "Sayori?"
     "She doesn't react at all."
@@ -3558,6 +3566,7 @@ label ch1_n_bad:
     jump ch1_n_med
 
 label ch1_n_med:
+    $ persistent.whereami = 12
     "I walk up to the closet in the back of the room."
     "Natsuki seems to be trying to reach a box that's on the top shelf."
     mc "Need some help with that?"
@@ -3707,7 +3716,12 @@ label ch1_n_end:
     jump poemresponse_rikka
 
 label ch1_r_alt:
-    r "[player]? Is something... on your mind?"
+    scene bg qgclubday
+    stop music fadeout 1.0
+    play music t5
+    show rikka 1g at t11
+    $ persistent.whereami = 13
+    r 1c "[player]? Is something... on your mind?"
     r "You have a strange look on your face right now, so I..."
     menu:
         "...":
@@ -3770,4 +3784,7 @@ label ch1_r_alt:
     "....."
     show monika forward neut cm oe at f21
     m "Well... I guess we'll get to the point now?"
+    if persistent.deletionload == 1:
+        m "We'll skip the poem game since you're too impatient for that."
+        jump a1
     return
