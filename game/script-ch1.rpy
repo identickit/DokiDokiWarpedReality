@@ -672,8 +672,8 @@ label ch1_p3:
     scene bg qgclubday
     pause .25
     with dissolve_scene_half
-    "I guess I should let Monika and Kotonoha be for now, especially after what happened yesterday."
     $ persistent.CONDITION = 0
+    "I guess I should let Monika and Kotonoha be for now, especially after what happened yesterday."
 
     call poemresponse_start from _call_poemresponse_start_1
 
