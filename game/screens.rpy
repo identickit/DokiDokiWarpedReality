@@ -945,6 +945,8 @@ init python:
                 ok_action=Show(screen="dialog", message="The save file is corrupt. Starting a new game.", ok_action=Function(renpy.full_restart, label="start")))
         elif persistent.playthrough == 10 and renpy.current_screen().screen_name[0] == "save":
             return Show(screen="dialog", message="There's no point in saving anymore.\nDon't worry, I'm not going anywhere.", ok_action=Hide("dialog"))
+        elif persistent.playthrough == 10 and persistent.deletionroute == True and not persistent.deleted_saves and renpy.current_screen().screen_name[0] == "load" and FileLoadable(name):
+            return Show(screen="dialog", message="You wanted this route so badly,\nthis is the route you get.", ok_action=Function(renpy.full_restart, label="ch1_r_alt"))
         else:
             return FileAction(name)
 
@@ -1017,8 +1019,8 @@ screen file_slots(title):
                 #textbutton _("{#quick_page}Q") action FilePage("quick")
 
                 # range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
+                # for page in range(1, 10):
+                #     textbutton "[page]" action FilePage(page)
 
                 #textbutton _(">") action FilePageNext(max=9, wrap=True)
 

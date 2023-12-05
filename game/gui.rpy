@@ -199,24 +199,24 @@ define gui.choice_button_text_hover_color = "#fa9"
 ## File Slot Buttons 
 # This controls the file slot buttons in the save/load menu. 
 
-define gui.slot_button_width = 276
-define gui.slot_button_height = 206
+define gui.slot_button_width = 538
+define gui.slot_button_height = 402
 
 define gui.slot_button_borders = Borders(10, 10, 10, 10)
 
-define gui.slot_button_text_size = 14
+define gui.slot_button_text_size = 18
 define gui.slot_button_text_xalign = 0.5
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_hover_color = gui.hover_color
 
 # This controls the width and height of the thumbnails screenshots of
 # the saves.
-define config.thumbnail_width = 256
-define config.thumbnail_height = 144
+define config.thumbnail_width = 512
+define config.thumbnail_height = 288
 
 # This controls the number of columns and rows in the save slot page.
-define gui.file_slot_cols = 3
-define gui.file_slot_rows = 2
+define gui.file_slot_cols = 1
+define gui.file_slot_rows = 1
 
 ## Positioning and Spacing
 # These variables control the positioning and spacing of various user interface
@@ -397,8 +397,8 @@ init python:
         gui.history_text_width = 740
 
         ## Save/Load File Slots
-        gui.file_slot_cols = 3
-        gui.file_slot_rows = 2
+        gui.file_slot_cols = 1
+        gui.file_slot_rows = 1
 
         ## NVL
         gui.nvl_height = 115

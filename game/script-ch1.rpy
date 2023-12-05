@@ -1,3 +1,6 @@
+default persistent.whereami = 0
+default persistent.deletionload = 0
+
 label ch1_p1:
     #scene 1
     $ mgmode = False
@@ -6,6 +9,9 @@ label ch1_p1:
     scene bg residential_day
     with dissolve_scene_full
     play music t2
+    $ persistent.whereami = 1
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     $ k_name = "???"
     k "Hey there, [player]!"
     show kotonoha kg at t11
@@ -26,7 +32,7 @@ label ch1_p1:
     mc "Huh? I thought I already said I'm interested in possibly joining your club?"
     k 1h "Ah, how could I forget?"
     show kotonoha 1a at t11
-    "Kotonoha smiles and doesn't say anything else the rest of the way to school."
+    "Kotonoha smiles and doesn't say much else to me the rest of the way to school."
     "We've always walked to school together like this..."
     show bg qgresidential_day
     $ renpy.sound.play ("sfx/glitch3.ogg")
@@ -58,6 +64,9 @@ label ch1_p1:
     show bg qgresidential_day
 
     #scene 2
+    $ persistent.whereami = 2
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     $ m_name = "Monika"
     play music t3
     scene bg club_day
@@ -163,6 +172,8 @@ label ch1_p1:
     k "... Okay. Fine. Deal."
     show kotonoha 1p at f22
     k "Just... give me a minute to add some files for everyone."
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     show kotonoha at thide
     hide kotonoha
     show monika at thide
@@ -174,6 +185,9 @@ label ch1_p1:
 
 label ch1_p2:
     #scene 3
+    $ persistent.whereami = 3
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     scene bg club_day
     stop music fadeout .5
     play music wn6 fadein 1.0
@@ -210,6 +224,9 @@ label ch1_p2:
     "Meanwhile, Natsuki is rummaging around in the closet-{nw}"
 
     #scene 4
+    $ persistent.whereami = 4
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     "The door opens."
     "Everyone looks up to see who just entered the room."
     scene bg qgclubday
@@ -350,8 +367,10 @@ label ch1_p2:
     show kotonoha kmg at t11
     $ renpy.sound.play ("mod_assets/sfx/glitch2.ogg")
     $ style.say_dialogue = style.edited
-    "{cps=24}S t o p  r u i n i n g  t h e  g a m e .{/cps}"
-    "{cps=24}S t o p  t a i n t i n g  e v e r y t h i n g .{/cps}"
+    "{cps=24}S t o p  \nr u i n i n g  \nt h e  g a m e .{/cps}"
+    "{cps=24}S t o p  \nt a i n t i n g  \ne v e r y t h i n g .{/cps}"
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     $ style.say_dialogue = style.normal
     hide kotonoha
     hide vignette
@@ -364,6 +383,9 @@ label ch1_p2:
     "After we all greet [w_name], everyone returns to their regular activities."
 
     #scene 5
+    $ persistent.whereami = 5
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     "I figure it might be nice to properly introduce myself to him since he's new here."
     "I begin walking up to him when I suddenly get a strong sense of deja vu."
     "Don't I know this guy from somewhere...?"
@@ -439,7 +461,7 @@ label ch1_p2:
     with dissolve_scene_half
     w "Excuse me... Koto, right?"
     show kotonoha 1a at t11
-    k "That's what my friends and cousin call me, but most-{nw}"
+    k "{cps=30}That's what my friends and cousin call me, but most-{nw}"
     w "Didn't really ask for details of your life story, but thank you."
     show kotonoha 1u at t11
     w "Anyway, if [player] and I are having an important conversation..."
@@ -497,6 +519,8 @@ label ch1_p2:
     k "{b}He wants me.{/b}"
     k "{b}Just me.{/b}"
     k "{b}{cps=20} J u s t  K o t o n o h a.{/b}{/cps}"
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     menu:
         "Just Kotonoha.":
             call ch1_mk_end from _call_ch1_mk_end
@@ -512,14 +536,20 @@ label ch1_mk_end:
     call splashscreen from _call_splashscreen_3
     scene bg club_day 
     with dissolve
+    stop music
     show kotonoha 1s at t11
     k "W... What?"
     scene bg qgclubday
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     $ ch1_mk = False
     return
     
 
 label ch1_mk_1:
+    $ persistent.whereami = 6
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     mc "If you have something to say regarding our conversation, I think I should hear it."
     scene bg qgclubday
     pause .25
@@ -567,6 +597,9 @@ label ch1_mk_1:
     return
 
 label ch1_mk_2:
+    $ persistent.whereami = 6
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     mc "{cps=24}Okay, I'll just go hang out with-{nw}{/cps}"
     scene bg qgclubday
     pause .25
@@ -605,6 +638,9 @@ label ch1_mk_2:
 
 label ch1_p3:
     #scene 6
+    $ persistent.whereami = 7
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     scene black
     with dissolve_scene_full
     call screen confirm("You have unlocked a real special poem.\nWould you like to read it?", Return(), Return())
@@ -625,6 +661,7 @@ label ch1_p3:
     pause .25
     with dissolve_scene_half
     "I guess I should let Monika and Kotonoha be for now, especially after what happened yesterday."
+    $ persistent.CONDITION = 0
 
     call poemresponse_start from _call_poemresponse_start_1
 
@@ -650,6 +687,7 @@ label ch1_p3:
     mc "{cps=24}Thanks, I really-{nw}{/cps}"
     hide rikka
     show monika forward happ om oe lpoint at t11
+    $ persistent.whereami = 14
     m "Okay, everyone!"
     m "I know I'm cutting you all a bit short on the poem-sharing, but I'd like to make an announcement!"
     "Despite our conversation being interrupted, Rikka happily turns her attention to Monika."
@@ -756,6 +794,7 @@ label ch1_p3:
     "I say goodbye to [player] and leave the building."
     
     #scene 7
+    $ persistent.whereami = 15
     scene bg residential_day with dissolve_scene_full
     "I reach the address that Monika sent me."
     "As I approach the front door, I find myself thinking about how quick Kotonoha was to try and come here."
@@ -996,6 +1035,8 @@ label a2:
     $ delete_character("white")
     "white.chr deleted successfully."
     "3 left."
+    $ persistent.deletionroute = False
+    $ persistent.CONDITION = 0
     $ delete_all_saves()
     $ renpy.quit()
 
@@ -1250,7 +1291,7 @@ label ch1_p4:
     k "SIMPLE DIALOGUE REFERENCES TO {i}FOREIGN RELATIONS{/i}? I'LL GO AHEAD AND BRING {i}HIM{/i} HERE, TOO."
     k "AND I WON'T JUST BRING MORE FROM THOSE MODS..."
     k "... WHEN THERE'S SO MUCH MORE POTENTIAL OUT THERE."
-    k "THERE'S BIG ONES LIKE {i}EXIT MUSIC{/i}, NEWER ONES LIKE {i}BRANCHING PATHS{/i}, LESSER-KNOWN ONES LIKE {i}MY BEST FRIEND IS A GHOST{/i}..."
+    k "THERE'S BIG ONES LIKE {i}EXIT MUSIC{/i} AND {i}BRANCHING PATHS{/i}, LESSER-KNOWN ONES LIKE {i}MY BEST FRIEND IS A GHOST{/i}..."
     k "OH, AND I CAN'T FORGET THE MOST POPULAR ONE OF ALL..."
     call kotog from _call_kotog_1
     $ renpy.sound.play ("mod_assets/sfx/monikapound1.ogg")

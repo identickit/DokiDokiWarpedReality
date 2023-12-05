@@ -7,7 +7,7 @@
 # This file customizes what your mod is and and how it starts and builds!
 
 # This controls what your mod is called.
-define config.name = "DDMC Celebration!"
+define config.name = "DDMC Celebration! (Acts 0 & I)"
 
 # This controls whether you want your mod name to show in the main menu.
 # If your mod name is big, it is suggested to turn this off.
