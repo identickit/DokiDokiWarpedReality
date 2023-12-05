@@ -10,8 +10,9 @@ label ch1_p1:
     with dissolve_scene_full
     play music t2
     $ persistent.whereami = 1
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     $ k_name = "???"
     k "Hey there, [player]!"
     show kotonoha kg at t11
@@ -65,8 +66,9 @@ label ch1_p1:
 
     #scene 2
     $ persistent.whereami = 2
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     $ m_name = "Monika"
     play music t3
     scene bg club_day
@@ -172,8 +174,9 @@ label ch1_p1:
     k "... Okay. Fine. Deal."
     show kotonoha 1p at f22
     k "Just... give me a minute to add some files for everyone."
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     show kotonoha at thide
     hide kotonoha
     show monika at thide
@@ -186,8 +189,9 @@ label ch1_p1:
 label ch1_p2:
     #scene 3
     $ persistent.whereami = 3
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     scene bg club_day
     stop music fadeout .5
     play music wn6 fadein 1.0
@@ -225,8 +229,9 @@ label ch1_p2:
 
     #scene 4
     $ persistent.whereami = 4
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     "The door opens."
     "Everyone looks up to see who just entered the room."
     scene bg qgclubday
@@ -369,8 +374,9 @@ label ch1_p2:
     $ style.say_dialogue = style.edited
     "{cps=24}S t o p  \nr u i n i n g  \nt h e  g a m e .{/cps}"
     "{cps=24}S t o p  \nt a i n t i n g  \ne v e r y t h i n g .{/cps}"
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     $ style.say_dialogue = style.normal
     hide kotonoha
     hide vignette
@@ -384,8 +390,9 @@ label ch1_p2:
 
     #scene 5
     $ persistent.whereami = 5
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     "I figure it might be nice to properly introduce myself to him since he's new here."
     "I begin walking up to him when I suddenly get a strong sense of deja vu."
     "Don't I know this guy from somewhere...?"
@@ -519,8 +526,9 @@ label ch1_p2:
     k "{b}He wants me.{/b}"
     k "{b}Just me.{/b}"
     k "{b}{cps=20} J u s t  K o t o n o h a.{/b}{/cps}"
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     menu:
         "Just Kotonoha.":
             call ch1_mk_end from _call_ch1_mk_end
@@ -540,16 +548,18 @@ label ch1_mk_end:
     show kotonoha 1s at t11
     k "W... What?"
     scene bg qgclubday
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     $ ch1_mk = False
     return
     
 
 label ch1_mk_1:
     $ persistent.whereami = 6
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     mc "If you have something to say regarding our conversation, I think I should hear it."
     scene bg qgclubday
     pause .25
@@ -598,8 +608,9 @@ label ch1_mk_1:
 
 label ch1_mk_2:
     $ persistent.whereami = 6
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     mc "{cps=24}Okay, I'll just go hang out with-{nw}{/cps}"
     scene bg qgclubday
     pause .25
@@ -639,8 +650,9 @@ label ch1_mk_2:
 label ch1_p3:
     #scene 6
     $ persistent.whereami = 7
-    $ persistent.deletionload = 0
+    $ persistent.deletionroute = False
     $ persistent.poemsecond = False
+    $ persistent.CONDITION = 0
     scene black
     with dissolve_scene_full
     call screen confirm("You have unlocked a real special poem.\nWould you like to read it?", Return(), Return())
@@ -1035,8 +1047,9 @@ label a2:
     $ delete_character("white")
     "white.chr deleted successfully."
     "3 left."
-    $ persistent.deletionroute = False
     $ persistent.CONDITION = 0
+    $ persistent.deletionroute = False
+    $ persistent.poemsecond = False
     $ delete_all_saves()
     $ renpy.quit()
 
@@ -1317,6 +1330,9 @@ label ch1_p4:
     python:
         try: renpy.file(config.basedir + "/broken.txt")
         except: open(config.basedir + "/broken.txt", "wb").write(renpy.file("mod_assets/broken.txt").read())
+    $ persistent.CONDITION = 0
+    $ persistent.deletionroute = False
+    $ persistent.poemsecond = False
     $ persistent.playthrough = 2
     $ delete_all_saves()
     $ renpy.quit()
