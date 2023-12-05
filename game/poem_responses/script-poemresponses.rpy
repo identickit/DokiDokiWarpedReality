@@ -3075,7 +3075,7 @@ label ch1_r_good:
                         r 1a "No worries, [player]. I get it. Anyway!"
                         pass
                     "...":
-                        $ persistent.CONDITION = 4
+                        $ persistent.CONDITION = 5
                         $ persistent.deletionroute = True
                         play sound wa1
                         jump ch1_r_alt
@@ -3117,7 +3117,7 @@ label ch1_r_bad:
                         r 1a "No worries, [player]. I get it. Anyway!"
                         pass
                     "...":
-                        $ persistent.CONDITION = 4
+                        $ persistent.CONDITION = 5
                         $ persistent.deletionroute = True
                         play sound wa1
                         jump ch1_r_alt
@@ -3150,7 +3150,7 @@ label ch1_r_med:
                         r 1a "No worries, [player]. I get it. Anyway!"
                         pass
                     "...":
-                        $ persistent.CONDITION = 4
+                        $ persistent.CONDITION = 5
                         $ persistent.deletionroute = True
                         play sound wa1
                         jump ch1_r_alt
