@@ -593,16 +593,16 @@ label after_load:
     $ _dismiss_pause = config.developer
     $ persistent.ghost_menu = False
     $ style.say_dialogue = style.normal
-    if mgmode == True:
-        $ style.say_window = style.window_mg2
-        $ style.namebox = style.namebox_mg2
-    if kgmode == True:
-        $ style.say_window = style.window_mg2
-        $ style.namebox = style.namebox_mg2
-        $ style.say_dialogue = style.edited
-    else:
-        $ style.say_window = style.window
-        $ style.namebox = style.nameboxd
+    # if mgmode == True:
+    #     $ style.say_window = style.window_mg2
+    #     $ style.namebox = style.namebox_mg2
+    # if kgmode == True:
+    #     $ style.say_window = style.window_mg2
+    #     $ style.namebox = style.namebox_mg2
+    #     $ style.say_dialogue = style.edited
+    # else:
+    #     $ style.say_window = style.window
+    #     $ style.namebox = style.nameboxd
 
     ## This 'if' statement makes sure if we are in Yuri's death CG in
     ## Act 2 to bring us back to the scene at a given time.
@@ -644,6 +644,9 @@ label after_load:
         else:
             m "You're so funny, [persistent.playername]."
         $ renpy.utter_restart()
+    elif persistent.deletionroute == True:
+        $ persistent.deletionload = 1
+        call screen dialog("You wanted this route so badly.\nThis is the route you get.", ok_action=Function(renpy.full_restart, label="ch1_r_alt"))
     else:
         if persistent.playthrough == 0 and not persistent.first_load and not config.developer:
             $ persistent.first_load = True
