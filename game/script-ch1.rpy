@@ -5,6 +5,9 @@ label ch1_p1:
     #scene 1
     $ mgmode = False
     $ kgmode = False
+    $ persistent.whereami = 1
+    $ persistent.deletionload = 0
+    $ persistent.poemsecond = False
     stop music fadeout .5
     scene bg residential_day
     with dissolve_scene_full
@@ -674,6 +677,7 @@ label ch1_p3:
     with dissolve_scene_half
     $ persistent.CONDITION = 0
     "I guess I should let Monika and Kotonoha be for now, especially after what happened yesterday."
+    $ persistent.CONDITION = 0
 
     call poemresponse_start from _call_poemresponse_start_1
 
@@ -1051,6 +1055,7 @@ label a2:
     $ persistent.deletionroute = False
     $ persistent.poemsecond = False
     $ delete_all_saves()
+    $ persistent._clear(progress=True)
     $ renpy.quit()
 
 label a2_end:
@@ -1335,4 +1340,5 @@ label ch1_p4:
     $ persistent.poemsecond = False
     $ persistent.playthrough = 2
     $ delete_all_saves()
+    $ persistent._clear(progress=True)
     $ renpy.quit()
