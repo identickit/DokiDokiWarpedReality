@@ -234,5 +234,5 @@ word_18_orange_placeholder,1,1,1,5,1
 tainted,1,1,1,2,1
 
 ## Monika’s favorite words
-just,1,1,1,1,46
-monika,1,1,1,1,46
+just,1,1,1,1,3
+monika,1,1,1,1,3
