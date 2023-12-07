@@ -16,18 +16,31 @@ init python:
             self.rPoint = r
             self.mPoint = m
             self.glitch = glitch
+    if persistent.playthrough == 0:
+        with renpy.file("mod_assets/poemwords/poemwords0.txt") as pf:
+            for line in pf:
+                line = line.decode("utf-8").strip()
+
+                # Ignore lines beginning with '#' and empty lines
+                if line == '' or '#' in line: continue
+
+                # File format: word,sPoint,nPoint,yPoint,rPoint,mPoint
+                x = line.split(',')
+
+                full_wordlist[x[0]] = PoemWord(int(x[1]), int(x[2]), int(x[3]), int(x[4]), int(x[5]))
     
-    with renpy.file("poem_game/poemwords.txt") as pf:
-        for line in pf:
-            line = line.decode("utf-8").strip()
+    if persistent.playthrough == 1:
+        with renpy.file("mod_assets/poemwords/poemwords1.txt") as pf:
+            for line in pf:
+                line = line.decode("utf-8").strip()
 
-            # Ignore lines beginning with '#' and empty lines
-            if line == '' or '#' in line: continue
+                # Ignore lines beginning with '#' and empty lines
+                if line == '' or '#' in line: continue
 
-            # File format: word,sPoint,nPoint,yPoint,rPoint,mPoint
-            x = line.split(',')
+                # File format: word,sPoint,nPoint,yPoint,rPoint,mPoint
+                x = line.split(',')
 
-            full_wordlist[x[0]] = PoemWord(int(x[1]), int(x[2]), int(x[3]), int(x[4]), int(x[5]))
+                full_wordlist[x[0]] = PoemWord(int(x[1]), int(x[2]), int(x[3]), int(x[4]), int(x[5]))
 
     # For use with Act 2-3 words
     glitch_word = PoemWord(0, 0, 0, 0, 0, True)
