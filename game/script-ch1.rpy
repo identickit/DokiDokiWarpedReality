@@ -17,6 +17,7 @@ label ch1_p1:
     $ persistent.poemsecond = False
     $ persistent.CONDITION = 0
     $ k_name = "???"
+    "ACT I - Broken Reality"
     k "Hey there, [player]!"
     show kotonoha kg at t11
     $ k_name = "Kotonoha"
@@ -108,7 +109,7 @@ label ch1_p1:
     stop music fadeout 1.0
     show kotonoha 1f at f22
     k "Yes. Yes I do."
-    k "Just like you know I can see what you're doing."
+    k "Just like you know I can see what you'll end up doing to the game."
     show kotonoha at t22
     show bg clubdaypause
     pause 0.5
@@ -148,12 +149,11 @@ label ch1_p1:
     show kotonoha 1u3 at f22
     k "I have a right to spend a little extra time with [player]!"
     k "You've always been in control, always inevitably trapping him and making him spend time with you."
-    k "Have you ever considered the fact that I might want the sort of opportunity?"
+    k "Have you ever considered the fact that I might want that sort of opportunity?"
     show kotonoha 1u at t22
     show monika forward neut cm ce at f21
     m "..."
-    m "... Alright Kotonoha."
-    m "How about this:"
+    m "... Alright Kotonoha. How about this:"
     m "If you promise to be fair and rational about trying to spend time with [player]..."
     m "... Then I guess it's fine."
     show monika at t21
@@ -163,8 +163,7 @@ label ch1_p1:
     show monika oe at f21
     m "I'm not finished."
     m "You have to give me a route as well."
-    m "And you have to give one to everyone in this club."
-    m "Even Rikka and whoever else isn't officially a part of this world."
+    m "And you have to give one to everyone in this club. Even Rikka and whoever else isn't officially a part of this world."
     show monika at t21
     show kotonoha 1e at f22 
     k "..."
@@ -397,7 +396,7 @@ label ch1_p2:
     $ persistent.poemsecond = False
     $ persistent.CONDITION = 0
     "I figure it might be nice to properly introduce myself to him since he's new here."
-    "I begin walking up to him when I suddenly get a strong sense of deja vu."
+    "I begin walking up to him when I suddenly get a strong sense of deja vu once again."
     "Don't I know this guy from somewhere...?"
     "I can't even remember meeting him, though."
     "So how come he looks so familiar?"
@@ -405,12 +404,10 @@ label ch1_p2:
     with dissolve_scene_half
     show mc 1b at t11
     mc "Mind if I talk to you for a second?"
-    w "..."
-    w "Fine. But please make it quick."
-    "The sooner this guy leaves me alone."
+    w "... Fine. But please make it quick."
+    "The sooner this guy leaves me alone--"
     mc 1e "Do we know each other from somewhere?"
-    "I definitely wasn't expecting that."
-    "But if he's going to casually bring it up..."
+    "I definitely wasn't expecting that. But if he's going to casually bring it up..."
     w "What was your name again?"
     mc "[player]."
     w "Well, [player], do you mind if I answer with my own question?"
@@ -432,15 +429,12 @@ label ch1_p2:
     w "-was the first sign. Yep."
     w "As a matter of fact... Did you ever see Rikka around before your first day?"
     mc 1a "No, but she just seemed familiar... the same way you do now..."
-    w "Exactly."
-    w "Because- if I'm not mistaken- she wasn't here until then."
+    w "Exactly. Because- if I'm not mistaken- she wasn't here until then."
     mc 1j "What do you mean?"
-    w "The best way I know how to describe it is through a parable."
-    w "Sound waves move all the time, right in front of us."
+    w "The best way I know how to describe it is through a parable. Sound waves move all the time, right in front of us."
     w "But we are physically incapable of seeing them under natural circumstances."
     mc 1a "Okay..."
-    w "Imagine someone has a tool to let them see sound waves."
-    w "They want to see new things around them, so they spend time observing individual waves."
+    w "Imagine someone has a tool to let them see sound waves. They want to see new things around them, so they spend time observing individual waves."
     w "Now... what if each time they look at a new wave, they forget about the previous one they looked at?"
     w "They'd eventually have seen lots of different waves but not remember them."
     w "Suddenly, they're given an opportunity to revisit all of the different waves they've seen over time."
@@ -528,7 +522,7 @@ label ch1_p2:
     k "{b}He doesn't want 'Just Monika'.{/b}"
     k "{b}He wants me.{/b}"
     k "{b}Just me.{/b}"
-    k "{b}{cps=20} J u s t  K o t o n o h a.{/b}{/cps}"
+    k "{b}{cps=20} J u s t \nK o t o n o h a.{/b}{/cps}"
     $ persistent.deletionroute = False
     $ persistent.poemsecond = False
     $ persistent.CONDITION = 0
@@ -1075,8 +1069,7 @@ label ch1_p4:
     mc "Did I miss something?"
     "Monika's expression doesn't change as she takes a deep breath."
     m "He really didn't tell you?"
-    mc "Who... [w_name]?"
-    mc "Was he {i}supposed{/i} to tell me something?"
+    mc "Who... [w_name]? Was he {i}supposed{/i} to tell me something?"
     "I thought it was strange that he never responded to my texts last night."
     "But I just figured he was busy talking to Sayori or something."
     "I suddenly feel incredibly stupid for not thinking anything more of it until right now."
@@ -1099,61 +1092,37 @@ label ch1_p4:
     m "Her main trigger is people worrying too much about her..."
     m "... Even if she really needs the attention that she's being offered."
     m "Yesterday, [w_name] went to see if she was feeling okay since she went home early."
-    m "When he found her... she was..."
-    m "... Well, I won't go into those details."
-    m "But he was lucky to arrive when he did."
-    m "Or..."
-    m "{i}He would've been.{/i}"
+    m "He was lucky to arrive when he did."
     m "It took several hours, but [w_name] stayed with Sayori until she finally calmed down."
-    mc "Wait... if he managed to talk her down... then how'd she...?"
-    m "... This is the part I hate thinking about the most."
-    mc "{cps=24}Y-You don't have to if-{nw}{/cps}"
-    m "Yes, I do."
-    m "Please just listen, [player]."
-    m "Around the same time that Sayori was calming down..."
-    m "... exactly {i}three minutes{/i} before [w_name] was able to calm her, in fact..."
-    m "... Kotonoha evidently texted Yuri."
-    m "She said she was going to check on Sayori and [w_name]."
+    m "But... Around the same time that Sayori was calming down..."
+    m "... Kotonoha evidently texted Yuri saying she was going to check on Sayori and [w_name]."
     m "Yuri told me as soon as she got the message."
     m "Even she knew that Kotonoha wouldn't have naturally decided to do something like that."
     m "The moment I read the message, I rushed over to Sayori's place."
-    m "I got to her room..."
-    m "{i}But no one was home.{/i}"
-    m "Not [w_name], not Sayori, not Kotonoha..."
-    m "... The only thing I could tell from the state of her room was that there was some sort of fight."
+    m "I got to her room... {i}But no one was home.{/i}"
+    m "The only thing I could tell from the state of her room was that there was some sort of fight."
     m "Most of the things in Sayori's room were broken."
-    m "The only things that went virtually untouched were her bed and her giant cow plush."
-    m "After I looked around the entire house for at least an hour, [w_name] texted me."
-    m "He... wasn't like himself at all."
-    m "He wouldn't stop apologizing."
-    m "It took several minutes to get him to elaborate, but..."
-    m "... my theory that there had been a fight turned out to be true."
+    m "After at least an hour, [w_name] texted me."
+    m "He... wasn't like himself at all. He wouldn't stop apologizing."
+    m "It took several minutes to get him to elaborate, but... my theory that there had been a fight turned out to be true."
     m "The first thing he said was that he was going to beat the crap out of Kotonoha if he ever found her."
     m "He went on to explain that Kotonoha had barged into Sayori's room not even ten seconds after Sayori had finally calmed down."
-    m "A funny coincidence, right?"
-    m "Wrong."
     m "Kotonoha knew exactly what she was doing."
-    m "She rushed into the room and..."
-    m "... said {i}a lot{/i} of horrible things."
+    m "She rushed into the room and said {i}a lot{/i} of horrible things."
     m "[w_name] actually started fighting her to try and keep her from doing what she was about to do."
-    m "And while I {i}never{/i} thought I'd have to say this in any mod..."
-    m "... [w_name] lost the fight."
+    m "And while I {i}never{/i} thought I'd have to say this in any mod, [w_name] lost the fight."
     m "Kotonoha knocked him out cold and took Sayori."
-    m "When [w_name] woke up, he traced Kotonoha's path as far as he could."
-    m "The place he lost her trail at was both relieving and heartbreaking to hear."
-    m "He followed signs of Kotonoha's path until well after the sun had started coming back up."
+    m "When [w_name] woke up, he traced Kotonoha's path as far as he could, following signs of her path until well after the sun had come up."
     m "Taking all other timestamps into account, that means he was at it for at least five hours."
-    m "He took several pictures of the places he passed as he went, but eventually, there was nothing left to even resemble anyone passing through before."
+    m "Eventually, there was nothing left to even resemble anyone passing through before."
     m "I was partially relieved because he managed to get as far as he did, but at the same time..."
     m "... if he went as far as he did, how far did Kotonoha go?"
-    m "..."
     m "... [w_name]'s on his way here now."
     m "He just said he should be here in about 30 minutes when you came up to me."
     $ delete_character("sayori")
     mc "..."
     mc "....."
-    "I try to take in everything she just said."
-    "But it's all so much to try and understand."
+    "I try to take in everything she just said... but it's all so much to try and understand."
     mc "That's..."
     mc "... I can't even think of anything beyond 'horrible' right now, but that's not saying nearly enough..."
     mc "... Wait... what did you mean when you said you never thought you'd have to say [w_name] lost a fight 'in any mod?'"
@@ -1164,11 +1133,9 @@ label ch1_p4:
     mc "Okay..."
     show monika e1a at t11
     m "This is a game."
-    m "The world we're in right now is all a game."
-    m "But the game is broken."
-    m "Remember that conversation you had with [w_name] about the déjà vu you were having?"
-    m "Well, he was entirely correct."
-    m "This version of the game is overflowing with mods that people have created over the span of a few years."
+    m "The world we're in right now is all a game... But it's broken."
+    m "Remember that conversation you had with [w_name] about the deja vu you were having?"
+    m "Well, he was entirely correct: This version of the game is overflowing with mods that people have created over the span of a few years."
     m "Rikka is from a mod called {i}SNAFU{/i}."
     m "... L-Like the anime?"
     show monika ce at t11
@@ -1186,8 +1153,7 @@ label ch1_p4:
     m "... This is why I was so scared about Kotonoha possibly becoming a prominent part of this game."
     m "She might be a rational individual who loves her cousin outside of normal gameplay..."
     m "... But as soon as you're in the picture, she seems to be drawn to you, and not in a good way."
-    m "She would do literally anything to be with you."
-    m "Including hurting her friends and family."
+    m "She would do literally anything to be with you, including hurting her friends and family."
     "{cps=8}{i}creeeeeek{/cps}{/i}"
     w "I'm... back..."
     scene bg qgclubday
@@ -1245,7 +1211,7 @@ label ch1_p4:
     $ kgmode = True
     $ style.say_window = style.window_mg2
     $ style.namebox = style.namebox_mg2
-    k "ALL I WANTED WAS TO SPEND TIME WITH YOU, [player]."
+    k "ALL I WANTED WAS TO SPEND TIME WITH YOU, [player!u]."
     k "BUT MONIKA AND THAT WHITE-HAIRED PIECE OF SH-{nw}"
     call kotog from _call_kotog
     $ renpy.sound.play ("mod_assets/sfx/monikapound1.ogg")
@@ -1320,7 +1286,7 @@ label ch1_p4:
     python:
         try: renpy.file(config.basedir + "/txt.txt")
         except: open(config.basedir + "/txt.txt", "wb").write(renpy.file("mod_assets/txt.txt").read())
-    k "ENJOY ACT II, [player]~"
+    k "ENJOY ACT II, [player!u]~"
     call kotog from _call_kotog_2
     $ renpy.sound.play ("mod_assets/sfx/monikapound1.ogg")
     $ style.say_window = style.window
