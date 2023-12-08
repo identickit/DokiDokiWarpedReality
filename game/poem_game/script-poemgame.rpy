@@ -16,6 +16,7 @@ init python:
             self.rPoint = r
             self.mPoint = m
             self.glitch = glitch
+
     if persistent.playthrough == 0:
         with renpy.file("mod_assets/poemwords/poemwords0.txt") as pf:
             for line in pf:
@@ -258,9 +259,9 @@ screen poem_test(words, progress, poemgame_glitch):
                                 elif random.randint(0, 4) == 0:
                                     s[k] = random.choice(nonunicode)
                             wordString = "".join(s)
-                    elif persistent.playthrough == 1 and not poemgame_glitch and chapter == 1 and progress < numWords and persistent.CONDITION == 4 and random.randint(0, 50) == 0:
+                    elif persistent.playthrough == 1 and not poemgame_glitch and chapter == 1 and progress < numWords and persistent.CONDITION == 5 and random.randint(0, 50) == 0:
                         python:
-                            wordString = "delete" # This gives a chance for a random word in Act 2 to be the glitched word.
+                            wordString = "D E L E T E" # This gives a chance for a random word in Act 2 to be the glitched word.
                     else:
                         python:
                             wordString = words[i]
@@ -287,9 +288,9 @@ screen poem_test(words, progress, poemgame_glitch):
                                 elif random.randint(0, 4) == 0:
                                     s[k] = random.choice(nonunicode)
                             wordString = "".join(s)
-                    elif persistent.playthrough == 1 and not poemgame_glitch and chapter == 1 and progress < numWords and persistent.CONDITION == 4 and random.randint(0, 50) == 0:
+                    elif persistent.playthrough == 1 and not poemgame_glitch and chapter == 1 and progress < numWords and persistent.CONDITION == 5 and random.randint(0, 50) == 0:
                         python:
-                            wordString = "delete" # This gives a chance for a random word in Act 2 to be the glitched word.
+                            wordString = "D E L E T E" # This gives a chance for a random word in Act 2 to be the glitched word.
                     else:
                         python:
                             wordString = words[5+i]
