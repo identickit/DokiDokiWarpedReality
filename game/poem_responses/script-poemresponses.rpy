@@ -390,32 +390,16 @@ label ch0_y_end:
     y "But remember that poets often express their own thoughts, feelings, and experiences in their work."
     y 1a "They usually do more than tell a simple story, or paint a picture."
     y "In this case--{nw}"
-    m "Hello, [player]~" #cute leaning pose, smiling
+    show yuri at thide
+    hide yuri
+    show monika lean at t11
+    m "Hello, [player]~"
     m "I know you don't wanna hear Yuri rant about her fancy writing style again."
     m "I'll let you share with somebody else now."
-    m "(... Why did it have to end up like this?)" #standing straight, disappointed face
-    # if poemopinion == "good":
-    #     y 2f "Eh?"
-    #     y 3v "I-It's nothing, really!"
-    #     y "Yours was impressive too, so..."
-    #     mc "Nah..."
-    #     mc "If anything, I could probably learn a thing or two from you."
-    #     y 4a "...You think so?"
-    #     mc "Yeah, of course."
-    #     y "Ah..."
-    #     y 2s "You know..."
-    #     y "I was really nervous about doing all this."
-    #     y "But in the end, I enjoyed it."
-    #     y "I'm going to keep doing my best for you, [player]."
-    #     mc "Ah..."
-    #     mc "Me too."
-    # else:
-    #     y 1u "It's nothing, really..."
-    #     y "Well...it makes me happy that you think that."
-    #     y 1a "Just remember that it won't be long before you pick up on these things, too."
-    #     mc "Yeah, maybe you're right."
-    #     mc "I guess I'll have to keep trying."
-    #     y "I'm counting on you."
+    show monika forward anno cm ce at t11
+    m "(... Why did it have to end up like this?)"
+    show monika at thide
+    hide monika
     return
 
 label ch2_y_end:
@@ -607,23 +591,16 @@ label ch0_n_end:
     n "I like when it's easy to read, but it hits you hard."
     n 1c "Like in this poem."
     n "Seeing everyone around you do great things--{nw}"
-    m "Hello, [player]~" #cute leaning pose, smiling
+    show natsuki at thide
+    hide natsuki
+    show monika lean at t11
+    m "Hello, [player]~"
     m "I know you don't wanna hear Natsuki ramble about her cute writing style again."
     m "I'll let you share with somebody else now."
-    m "(... Why did it have to end up like this?)" #standing straight, disappointed face
-    # n "So I decided to write about it."
-    # mc "Yeah, I understand."
-    # n 2a "But the other nice thing about simple writing is that it puts more weight on the wordplay."
-    # n "Like I set up for a rhyme at the end, but then made it fall flat on purpose."
-    # n "It helps bring out the feeling in the last line."
-    # mc "So you did..."
-    # mc "I guess more went into it than I realized."
-    # n 4y "That's what it means to be a pro!"
-    # n "I'm glad you learned something."
-    # n "Didn't expect that from the youngest one here, did you?"
-    # mc "Yeah...guess not."
-    # "I decide to humor her with that last comment."
-    # "I don't really care how old everyone is, but if Natsuki is feeling proud then I won't take that away from her."
+    show monika forward anno cm ce at t11
+    m "(... Why did it have to end up like this?)"
+    show monika at thide
+    hide monika
     return
 
 label ch2_n_end:
@@ -807,25 +784,16 @@ label ch0_s_end:
     mc "It came out nice...or, how should I put it..."
     mc "It sounds just like you."
     s 1d "Really?"
-    m "Hello, [player]~" #cute leaning pose, smiling
+    show sayori at thide
+    hide sayori
+    show monika lean at t11
+    m "Hello, [player]~"
     m "I know you don't want Sayori to bore you with her happiness again."
     m "I'll let you share with somebody else now."
-    m "(... Why did it have to end up like this?)" #standing straight, disappointed face
-    # mc "Yeah."
-    # mc "Especially that last line..."
-    # s 4r "I made eggs and toast!"
-    # mc "Even though you were late to school...?"
-    # s 5d "It's bad to skip breakfast!"
-    # s "I get all cranky..."
-    # mc "Well, I guess there's no point in arguing..."
-    # mc "Anyway, thanks for showing me."
-    # s 1q "Ehehe~"
-    # s "This was so much fun."
-    # s "Monika's the best!"
-    # mc "Ah...yeah."
-    # s "But next time, I won't forget."
-    # s 4x "And I'm gonna write the best poem ever!"
-    # mc "Well, I guess I look forward to it."
+    show monika forward anno cm ce at t11
+    m "(... Why did it have to end up like this?)"
+    show monika at thide
+    hide monika
     return
 
 label ch2_s_end:
