@@ -1322,8 +1322,8 @@ screen template_preferences():
             else:
                 text "[player]" xalign 0.5
             
-            textbutton _("Change Name") action Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName, launchGame=False)):
-                text_style "navigation_button_text"
+            # textbutton _("Change Name") action Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName, launchGame=False)):
+            #     text_style "navigation_button_text"
 
         null height (4 * gui.pref_spacing)
 

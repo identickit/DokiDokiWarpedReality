@@ -1137,7 +1137,7 @@ label ch1_p4:
     m "Remember that conversation you had with [w_name] about the deja vu you were having?"
     m "Well, he was entirely correct: This version of the game is overflowing with mods that people have created over the span of a few years."
     m "Rikka is from a mod called {i}SNAFU{/i}."
-    m "... L-Like the anime?"
+    mc "... L-Like the anime?"
     show monika ce at t11
     m "{cps=8}{i}sigh{/cps}{/i} Yes, like the anime."
     show monika e1a at t11
