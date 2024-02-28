@@ -31,12 +31,13 @@ label rikka_exclusive_0:
     r "But honestly, the curriculum itself isn't so bad."
     r 1d "Or, it wouldn't be if this school had enough common sense to hire a new teacher."
     show rikka 1d at t11
-    "My chest tightens a little. I know exactly what teacher she's speaking of from previous experience."
+    "My chest tightens a little. I know exactly what teacher she's speaking of from personal experience."
     mc "Mr. Lee?"
     show rikka 1y at f11
     r "The one and only."
     show rikka 1y at t11
-    mc "Wow, I feel sorry for you."
+    mc "Huh. Didn't know you were taking any third year courses."
+    mc "But that aside, I feel sorry for you."
     show rikka 1e at f11
     r "So do I."
     r "You'd think of all places, Kuribayashi High would know what they're doing when recruiting teachers."
@@ -51,8 +52,8 @@ label rikka_exclusive_0:
     mc "Anyways, what part of the work are you struggling with?"
     show rikka 1b at f11
     r "Oh, right!"
-    r 1g "We just went over the quadratic formula today and he's already expecting us to have it memorized."
-    r "Now I'm trying to remember how to do it for my homework."
+    r 1g "He's already expecting us to have the quadratic formula memorized for our homework."
+    r "Now I'm trying to remember how to do it."
     show rikka 1g at t11
     mc "Couldn't you always look at your notes?"
     show rikka 1g at f11
@@ -77,7 +78,7 @@ label rikka_exclusive_0:
     r "Wha-- Huh??"
     r "Y-You didn't even have to stop to think when writing that!"
     show rikka 1i at t11
-    mc "Trust me, after his class, this thing is practically engraved into my mind."
+    mc "Trust me, after slacking off in his class earlier this year, that thing is practically engraved into my mind."
     "Rikka doesn't respond for a few seconds."
     show rikka 1j at t11
     "To my surprise, she then chuckles to herself."
@@ -110,7 +111,7 @@ label rikka_exclusive_0:
     r "You could tell just by what I said just now?"
     show rikka 1p at t11
     mc "Kinda. But I still think it would help to hear from you what it feels like."
-    mc "If you're comfortable with that, of course. I know we just met yesterday."
+    mc "If you're comfortable with that, of course. I know we haven't talked in a while until yesterday."
     show rikka 1x at f11
     r "It's okay, [player]. I wouldn't even be bringing this up if I weren't okay with talking about it."
     r 1q "Whenever I have to do something for the first time... I always worry messing up will somehow be detrimental."
@@ -118,12 +119,13 @@ label rikka_exclusive_0:
     r 1p "What if I can't figure out how to do something in class when it first comes up?"
     r "Am I going to fail and end up having to retake the course next term?"
     r "What if I can't even write a simple poem??"
-    r 1s "What if I mess up when I'm talking to someone new who--"
+    r 1s "What if I mess up when I'm talking to someone I really care--"
     show rikka 1r at t11
     "Rikka cuts herself off."
     "At this point, she sounds as if she's on the verge of tears."
-    "For some reason, I get the feeling this isn't normal at all for her."
-    "Yet she manages to continue with a shaky voice."
+    "I know this isn't normal at all for her."
+    "She usually tries to hold herself the same way everyone else on the track team does."
+    "Yet she continues with a shaky voice."
     show rikka 1r at f11
     r "Why do I have to be so scared of anything new...?"
     r "Why can't I just be normal?"
