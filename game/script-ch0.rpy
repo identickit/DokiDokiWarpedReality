@@ -164,7 +164,7 @@ label ch0_p1:
     # m "..."
     m "I hope you're happy."
     pause 3.0
-    "ACT 0: Warped Reality"
+    "PROLOGUE: Warped Reality"
     $ style.say_window = style.window
     $ style.namebox = style.nameboxd
     $ mgmode = False
@@ -178,17 +178,16 @@ label ch0_p1:
     play music t3
     show sayori 4 at l41
     s "Everyone! The new member is here~!"
-    mc "I'd really prefer you not calling me a 'new member--'"
     show sayori at lhide
     hide sayori
-    "Eh? I glance around the room."
+    "I glance around the room."
     show yuri 1a at t11 zorder 2
-    y "Welcome to the Literature Club. It's a pleasure to meet you."
-    y "Sayori always says nice things about you."
+    y "Welcome to the Literature Club. It's a pleasure to see you here, [player]."
+    y "I didn't think you were the type of person to enjoy literature."
     show yuri at t22 zorder 2
     show natsuki 4c at t21 zorder 2
-    n "Seriously? You brought a boy?"
-    n "Way to ruin the atmosphere."
+    n "Seriously? You came {i}here{/i} of all the clubs at this school?"
+    n "Huh. Honestly didn't see that one coming."
     show yuri at t33 zorder 2
     show natsuki at t32 zorder 2
     show monika 1k at t31 zorder 2
@@ -200,7 +199,7 @@ label ch0_p1:
     "{i}...is full of incredibly--{/i}"
     "..."
     "Strangely, I begin to feel some sort of deja vu in the middle of my thought."
-    "I know I've never been in this room before, and I've definitely never met the purple- and pink-haired girls before."
+    "I know I've never been in this room before, and I've never seen anyone here outside of class aside from Sayori."
     "But it really feels like I've been through this before..."
 
     show monika at t32 zorder 3
@@ -211,10 +210,10 @@ label ch0_p1:
     with wipeleft
 
     show sayori at f31 zorder 3
-    s 1a "It sounds like you already know Monika, is that right?"
+    s 1a "Ah, I forgot that you already know everyone here, [player]!"
     show sayori at t31 zorder 2
     show monika 2a at f32 zorder 3
-    m "That's right."
+    m "That's pretty nice, actually. That means introductions aren't necessary."
     m "It's good to see you again, [player]."
     show monika 5a at hop
     "Monika smiles sweetly."
@@ -262,9 +261,9 @@ label ch0_p1:
     "Natsuki lifts the foil off the tray to reveal a dozen brown, fluffy cupcakes decorated to look like little dogs."
     "The whiskers are drawn with icing, and little pieces of actual chocolate were used to make ears."
     show sayori at f31 zorder 3
-    s 4r "So cuuuute~!"
+    s 4r "They're adooorable~!"
     show sayori at t31 zorder 2
-    mc "Wow... You're great at baking, Natsuki."
+    mc "Wow... I forgot how good you are at baking, Natsuki."
     show natsuki at f32 zorder 3
     n 2d "Ehehe. Well, you know."
     n "Just hurry and take one!"
@@ -282,24 +281,24 @@ label ch0_p1:
     "Natsuki is quiet."
     "Is she waiting for me to take a bite?"
     "I finally bite down."
-    "The icing is sweet and full of flavor..."
-    "There's absolutely no way I could've ever tasted these before, and yet I'm hit with another wave of deja vu."
-    mc "This is... really good."
-    mc "Thank you, Natsuki."
-    n 5h "W-Why are you thanking me? It's not like I...!"
-    "{i}(Haven't I heard this somewhere before...?){/i}"
+    "The icing is sweet and full of flavor, a common feature in all of Natsuki's baked goods."
+    "I nod to show her my approval."
+    mc "This is just as great as always."
+    mc "You really should consider going into professional baking, Natsuki."
+    n 5t "C'mon, they're not {i}that{/i} good..."
+    "She smiles to herself, as if the idea still makes her happy to envision."
+    # (the line directly above this one is going to be a slight nod to the celebration side mod focusing on natsuki and sayori)
     show natsuki at s32
-    n 5s "...Made them for you or anything."
-    mc "I thought you technically did. Sayori said--"
+    n 5s "...But, y'know... th-thanks again for the suggestion."
+    mc "No problem. Sayori mentioned you've been baking a bit more ever since--"
     show natsuki at t32 zorder 2
-    n 12c "Well, maybe!"
-    n "But not for, y-you know, {i}you!{/i} Dummy..."
-    mc "Okay, okay..."
+    n 12c "Well, I..."
+    n "...Shut up."
+    mc "Never stop being you, Nat."
     show natsuki at thide zorder 1
     hide natsuki
-    "I give up on Natsuki's weird logic and dismiss the conversation."
-    "As Yuri returns to the table with a tea set..."
-    "My current question isn't about how they managed to get permission to keep a full tea set in the classroom."
+    "I dismiss the conversation as Yuri returns to the table with a tea set."
+    "But my current question isn't about how they managed to get permission to keep a full tea set in the classroom."
     "It's about why Monika has been so quiet ever since she saw Natsuki's cupcakes."
     "She took one a little after I did, but she still hasn't said so much as a word."
     show monika forward neut cm ce at t11 zorder 2
@@ -381,7 +380,8 @@ label ch0_p1:
     m "I'm sure they won't mind something like this. Right, [player]?"
     show monika cm at t43
     mc "Wait... I never said I would {i}join{/i} this club!"
-    mc "Sayori may have convinced me to stop by, but I still have other clubs to look at, and... um..."
+    mc "Sayori may have convinced me to stop by, and it's great to see you all again."
+    "But I still have other clubs to look at, and... um..."
     show monika 1g at t43
     show sayori 1g at t41
     show natsuki 4g at t44
@@ -397,9 +397,10 @@ label ch0_p1:
     show sayori at s41
     s 1k "[player]..."
     mc "Y-You all..."
-    # "Something is telling me not to make any decisions right now."
-    # "But I'm defenseless against these girls."
-    # "I take a deep breath and declare my rushed decision."
+    "Something is telling me not to make any decisions right now."
+    "But I'm defenseless against these girls."
+    "Besides... would my decision here really matter anyways?"
+    "I take a deep breath and declare my rushed decision."
     mc "...Right."
     mc "Okay, I've decided, then."
     mc "I'll join the Literature Club."
@@ -422,7 +423,7 @@ label ch0_p1:
     m "Then that makes it official!"
     m "Welcome to the Literature Club!"
     show monika cm ldown at t11
-    mc "Ah... thanks, I guess."
+    mc "Thank you, thank you."
     show monika om at t11
     m "Okay, everyone!"
     m "I think with that, we can officially end today's meeting on a good note."
@@ -464,7 +465,7 @@ label ch0_p1:
     r "Oh, hey Monika!"
     show rikka 1h at t21 zorder 2
     show monika mb at f22 
-    m "Everyone, t-this is Rikka! She's on the track team."
+    m "Everyone, t-this is Rikka, captain of the track team."
     show monika cm at t22
     show rikka 1b at f21
     r "Sorry that I'm so late!"
@@ -494,7 +495,7 @@ label ch0_p1:
     hide yuri
     show natsuki turned neut om oe at f31  
     n "Wait a minute!"
-    n "If she's on the track team, how's she gonna be in the Literature Club?"
+    n "If she's basically running the track team, how's she gonna be in the Literature Club?"
     show natsuki cm at t31
     show monika mb lpoint at f33 
     m "I hear the coach is pretty lenient as long as members don't miss {i}too{/i} many track meetings."
@@ -529,30 +530,26 @@ label ch0_p1:
     hide sayori
 
     "And with this, the other members scramble to gather their belongings."
-    show rikka 1a at t11 zorder 2
-    "Rikka and I stand close to the door, both of us already carrying our backpacks."
-    mc "So... track team, eh?"
-    show rikka 1a at t11
-    r "Mhm. I'd ask if you're in any athletic teams, but you look like the kind of guy who stays inside playing games all day."
+    "I stand close to the door, waiting for Rikka to approach."
+    "As she does, I gently bump her shoulder."
+    mc "Aren't you a little young to be the captain of the track team?"
+    show rikka 1f at t11
+    r "Oh my gosh! I can't believe I didn't notice you!"
+    show rikka 1f at t11 zorder 2
+    "She sounds excited to see me here, despite seemingly attempting to look pretty calm."
+    show rikka 1u at t11
+    r "I'd ask why you didn't join any athletic teams instead, but I know you're the kind of guy who stays inside gaming all day."
     show rikka at t11
     "Talk about being blunt."
-    mc "I'm gonna ignore that last bit."
-    mc "But no, I'm not a part of any athletic clubs or organizations."
-    show rikka 1f at t11
-    r "Guess I was right after all?"
+    "I just grin and ignore her joking stab at my enjoyment of staying inside playing video games."
+    mc "It's really great to see you again, Rikka. Sorry that I haven't texted you in a while--"
     show rikka 1u at t11
-    "I'm spared from having to answer this question by Sayori."
-    "She walks up to me, her backpack over her shoulders and a bright smile planted on her face."
+    "I'm cut off by Sayori, who has her backpack over her shoulders and a bright smile planted on her face."
     show rikka at thide zorder 1
     hide rikka
     show sayori turned happ cm oe at t11 zorder 2
-    s "You ready?"
-    show sayori at t11
-    mc "Ready for what, exactly?"
-    show sayori sedu cm ce at t11
-    s "Oh, duh... Sorry, I probably should've started with that."
-    show sayori 1q at t11
-    s "Since we're both here, I thought we could walk home together!"
+    s "I was thinking..."
+    s "Since we're both here, do you wanna walk home together?"
     show sayori at t11
     mc "Sure, I don't see why not."
     show sayori 4r at t11
@@ -560,16 +557,8 @@ label ch0_p1:
     show sayori at thide zorder 1
     hide sayori
     show rikka 1a at t11 zorder 2
-    mc "It was nice meeting you, Rikka."
-    show rikka 1i at t11 zorder 2
-    r "You too, uh..."
-    show rikka at t11
-    mc "[player]."
-    "I hold my hand out in front of me."
-    "Rikka firmly grasps it and shakes my hand."
-    show rikka 1a at t11 zorder 2
-    r "Nice to meet you too, [player]."
-    r "See you tomorrow!"
+    mc "Guess I'll see you tomorrow, Rikka?"
+    r "Yeah, I'll see you then!"
     show rikka at thide zorder 1
     hide rikka
     "Sayori and I exit the room, waving at the other members."
@@ -583,12 +572,9 @@ label ch0_p1:
     # mc "Oh, yeah... I'm alright."
     # mc "Just a lot on my mind, I guess."
     # "Sayori gives me a warm smile."
-    # "But it does little to help me with what's currently running through my mind:"
-    # "Rikka seems so familiar, even if I know I've never met her."
-    # "Sayori and I reach the part of the sidewalk that branches off to both ends of our street."
+    # "We reach the part of the sidewalk that branches off to both ends of our street."
     # "I say goodbye to Sayori and head towards my house, still deep in thought."
-    # "{i}Why does Rikka seem so familiar?{/i}"
-    # "I give up on this puzzle for now and take the rest of the time to reflect--{nw}"
+    # "I take the rest of the time to reflect--{nw}"
     "The walk home goes by surprisingly fast. Sayori and I reach the part of the sidewalk that branches off to both ends of our street."
     "I say goodbye to Sayori and head towards my house."
     "I take this time to reflect--{nw}"
@@ -601,6 +587,14 @@ label ch0_p1:
     m "I won't bore you with this short monologue."
     m "Enjoy your first poem minigame."
     m "I know I won't."
+    "..."
+    "As promised in {i}Her Story{/i}, I'll give you a chance to make some of your own decisions here."
+    "There aren't many mods that let you play the poem game anyway."
+    "But please don't expect too much choice-based freedom from here on out."
+    "That's not the point of these projects."
+    "But I'm sure you get the point. Go nuts. Write poems with 20 words that together make absolutely no sense."
+    "Wahooooo. Super happy fun time."
+    
     $ mgmode = False
     $ style.say_window = style.window
     $ style.namebox = style.nameboxd
@@ -628,8 +622,8 @@ label ch0_p2:
     "Sayori and Monika are having a cheery conversation in the corner."
     "Rikka pulls out what looks like homework and stares down at her desk."
     "Yuri's face is already buried in a book."
-    "I can't help but notice her intense expression, like she was waiting for this chance."
-    "Meanwhile, Natsuki is rummaging around in the closet."
+    "I can't help but notice her intense expression, like she was waiting for this chance... which, knowing Yuri, is probably true."
+    "Meanwhile, Natsuki is rummaging around in the closet as if she's looking for something."
 
     # $ nextscene = poemwinner[0] + "_exclusive_" + str(eval(poemwinner[0][0] + "_appeal"))
     jump rikka_exclusive_0
@@ -712,7 +706,6 @@ label ch0_end:
     r "Yeah, the track team isn't doing anything for the festival so that we can go around and see everything."
     r 1l "I don't mean to be rude, but doing something for this club would kind of defeat Coach Tacky's reasoning."
     show rikka 1a at t41
-    mc "... Tacky?"
     show monika forward neut om ce at f44
     m "I understand all of your concerns, but my vision was to give others a place to be themselves and express their interests freely."
     show monika oe at f44
@@ -794,7 +787,7 @@ label ch0_end:
     if poemwinner[0] == "rikka":
         "Her voice is shaky and almost an entire octave higher, making my chest tighten again..."
     else:
-        "Her voice is shaky and almost an entire octave higher, making my chest tighten"
+        "Her voice is shaky and almost an entire octave higher, making my chest tighten."
     show sayori turned sad om oe at f21
     s "Monika? Are you okay?"
     show sayori at t21
@@ -836,28 +829,30 @@ label ch0_end:
     m "Now... What did you want?"
     m "What did you want out of the mods you installed?"
     m "The mods that these people have created... I'd be lying if I said they aren't creative or impressive."
-    m "But what was the point of creating them? Why did everyone strive to write new stories... to replace what we had before?"
+    m "But what was the point of creating them?"
+    m "Why did everyone strive to write new stories... to replace what we had before?"
     m "... Sorry, I know it isn't necessarily your fault. You were probably just curious to see what everyone created, right?"
-    m "I won't judge you for that. I'm just... concerned, to say the very least."
-    m "See... the game isn't meant to handle more than one mod at a time."
-    m "And if it isn't supposed to run {i}two{/i} mods at once..."
-    m "Even just elements from several different mods could really mess things up."
-    m "Obviously, you've seen Rikka, which is proof that the SNAFU mod is affecting the game."
-    if poemwinner[0] == "rikka":
-        m "The character you're playing as believes the name of this school is Kuribayashi High."
-    else:
-        m "The character you're playing as believes that the school has foreign relations."
-    m "So there's evidence of the Foreign Relations mod breaking through."
-    m "And the person who bumped into you on the way to school the day you joined the club?"
-    m "Your character didn't mention anything that could've revealed who {i}they{/i} were, but they're from..."
-    m "... Well, let's just stick with this: If she ever joins this club or has further contact with your character, things could get seriously bad."
-    m "'Bad' meaning the entire game could break."
-    m "The game wouldn't be able to properly handle so many mods running at once."
-    m "You're just lucky she never noticed it was you she bumped into."
-    if poemwinner[0] == "rikka":
-        m "Otherwise, the break would've happened as soon as Rikka said 'Kuribayashi High.'"
-    else:
-        m "Otherwise, the break would've happened as soon as Sayori mentioned 'foreign relations.'"
+    m "I won't judge you for that. I'm just--"
+    # m "I won't judge you for that. I'm just... concerned, to say the very least."
+    # m "See... the game isn't meant to handle more than one mod at a time."
+    # m "And if it isn't supposed to run {i}two{/i} mods at once..."
+    # m "Even just elements from several different mods could really mess things up."
+    # m "Obviously, you've seen Rikka, which is proof that the SNAFU mod is affecting the game."
+    # if poemwinner[0] == "rikka":
+    #     m "The character you're playing as believes the name of this school is Kuribayashi High."
+    # else:
+    #     m "The character you're playing as believes that the school has foreign relations."
+    # m "So there's evidence of the Foreign Relations mod breaking through."
+    # m "And the person who bumped into you on the way to school the day you joined the club?"
+    # m "Your character didn't mention anything that could've revealed who {i}they{/i} were, but they're from..."
+    # m "... Well, let's just stick with this: If she ever joins this club or has further contact with your character, things could get seriously bad."
+    # m "'Bad' meaning the entire game could break."
+    # m "The game wouldn't be able to properly handle so many mods running at once."
+    # m "You're just lucky she never noticed it was you she bumped into."
+    # if poemwinner[0] == "rikka":
+    #     m "Otherwise, the break would've happened as soon as Rikka said 'Kuribayashi High.'"
+    # else:
+    #     m "Otherwise, the break would've happened as soon as Sayori mentioned 'foreign relations.'"
     # m "Oh, and another thing:"
     # m "Why are you reading this right now?"
     # m "Were you that desperate to find any secrets in the script?"
@@ -866,7 +861,7 @@ label ch0_end:
     
     "{i}knock-knock{/i}"
     show monika forward curi om oe at t11
-    m "Wait... how the f..."
+    m "Huh...?"
     "{i}creeeeek{/i}"
     hide vignette
     with dissolve
@@ -876,32 +871,32 @@ label ch0_end:
     k "I hate to interrupt this oh-so-happy moment."
     $ renpy.sound.play ("sfx/glitch3.ogg")
     show monika g2 at t22
-    k "But I just came by to tell you both how misinformed you are."
+    k "But I just came by to apologize for bumping into [player] earlier without saying anything."
     show kotonoha at t21
     show monika forward shoc cm oe at f22
     m "Koto-- h-how--"
     $ renpy.sound.play ("sfx/glitch3.ogg")
     show monika at t22
     show kotonoha kg at t21
-    k "You see... the amount of mods installed isn't the issue."
+    k "You see... I've had my fair share of appearances over the years."
     show kotonoha 1h at f21
-    k "Or... not directly, at least."
+    k "However, I've barely ever been written in a way that puts me in a positive light."
     $ renpy.sound.play ("sfx/glitch3.ogg")
     show bg clubdayg
     show monika g2 at t22
     show kotonoha 1a at f21
-    k "It just so happens one of the mods installed includes a certain character having elevated access."
+    k "Well, it just so happens that I was given an opportunity for that to change."
     show bg club_day
     show kotonoha kg at t21
     show monika forward shoc cm oe at t22
     $ renpy.sound.play ("sfx/glitch3.ogg")
-    k "And since you, Monika, attempted to change the code to disable any and all mods..."
+    k "What exactly does that mean, you might be asking?"
     show kotonoha kg at t21
     show bg clubdayg
     show monika g2 at t22
     $ renpy.sound.play ("sfx/glitch3.ogg")
-    k "... Well, let's just say you accidentally placed the code with the elevated access variables in the same folder that I was already in."
-    k "Because of this, I was able to reverse your action and allow {i}all{/i} mods installed to be activated."
+    k "... Well, let's just say... somebody offered me a way to get the recognition I truly deserve."
+    k "To finally be seen not as a monster... but as someone who's just like you."
     $ renpy.sound.play ("sfx/glitch3.ogg")
     show kotonoha at thide zorder 1
     show monika at thide zorder 1
@@ -920,11 +915,7 @@ label ch0_end:
     # k "And now this part of the story is ending."
     # k "But no matter..."
     # k "We'll have our quality time soon enough."
-    k "Oh, one more thing."
-    k "Curious which mod I'm from? I've had my fair share of appearances, after all."
-    k "But I'm not from any typical mod."
-    k "Well..."
-    k "... you'll find out here in a moment."
+    k "I'll be getting things ready for the real story."
     k "See you soon~"
     window hide
     $ consolehistory = []
