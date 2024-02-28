@@ -109,27 +109,27 @@ label ch1_p1:
     stop music fadeout 1.0
     show kotonoha 1f at f22
     k "Yes. Yes I do."
-    k "Just like you know I can see what you'll end up doing to the game."
+    k "Just like I know the things you'll end up doing to everyone else here just to be with [player]."
     show kotonoha at t22
     show bg clubdaypause
     pause 0.5
     show bg clubdayg4
     with Dissolve(1.0)
     show monika at f21
-    m "You really just came out and said something like that in front of the entire club?"
+    m "You know I remember everything from my past experiences. I'm not horrible enough to not learn from those mistakes."
     show monika at t21
     show kotonoha 1h at f22
-    k "Do you have a problem with this?"
+    k "Sure, sure. Whatever you say."
     show kotonoha at t22
     show monika at f21
-    m "Kotonoha."
+    m "Oh, and Kotonoha?"
     show kotonoha 1a at f22
     show monika at t21
-    k "Monika."
+    k "Yes, Monika?"
     show kotonoha at t22
     show monika at f21
-    m "Just because you have some control over the game doesn't mean you get to tell everyone about the reality of this world."
-    m "If they knew what happens behind closed doors..."
+    m "Just because you have some control over the game doesn't mean you get to openly talk about the reality of this world."
+    m "If the others knew what happens behind closed doors..."
     show monika ce at f21
     m "... Take Sayori for example."
     m "If she knew about everything this early, she literally wouldn't be able to handle it."
@@ -140,7 +140,7 @@ label ch1_p1:
     show kotonoha 1e at f22
     k "..."
     k "... Fine."
-    k "But that doesn't give you any right to try and keep [player] all to yourself."
+    k "But that doesn't give you any right to try and keep [player] all to yourself or act all-important."
     show kotonoha at t22
     show monika at f21
     m "That's funny to hear coming from you."
@@ -150,6 +150,8 @@ label ch1_p1:
     k "I have a right to spend a little extra time with [player]!"
     k "You've always been in control, always inevitably trapping him and making him spend time with you."
     k "Have you ever considered the fact that I might want that sort of opportunity?"
+    k "And I already told you that this is my chance to have a better light shined on me."
+    k "I just want to be the same as you!"
     show kotonoha 1u at t22
     show monika forward neut cm ce at f21
     m "..."
@@ -162,7 +164,7 @@ label ch1_p1:
     show kotonoha at t22
     show monika oe at f21
     m "I'm not finished."
-    m "You have to give me a route as well."
+    m "You have to give me some kind of route as well."
     m "And you have to give one to everyone in this club. Even Rikka and whoever else isn't officially a part of this world."
     show monika at t21
     show kotonoha 1e at f22 
@@ -170,12 +172,13 @@ label ch1_p1:
     k "....."
     show kotonoha at t22
     show monika at f21
-    m "Do we have a deal Kotonoha?"
+    m "Is that good enough for you, Kotonoha?"
     show monika at t21
     show kotonoha 1q at f22
-    k "... Okay. Fine. Deal."
+    k "...Fine. Yes."
     show kotonoha 1p at f22
     k "Just... give me a minute to add some files for everyone."
+    "{cps=30}(Key word in her remark there being some--{nw}{/cps}"
     $ persistent.deletionroute = False
     $ persistent.poemsecond = False
     $ persistent.CONDITION = 0
@@ -227,7 +230,7 @@ label ch1_p2:
     "Monika, Sayori, and Kotonoha are having a lively discussion in the corner of the room."
     "Rikka seems to already be getting started on some sort of homework."
     "Yuri is intensely reading a book, as if she was waiting all day for the opportunity."
-    "Meanwhile, Natsuki is rummaging around in the closet-{nw}"
+    "Meanwhile, Natsuki is rummaging around in the closet--"
 
     #scene 4
     $ persistent.whereami = 4
@@ -247,6 +250,7 @@ label ch1_p2:
     play music wn7
     scene bg club_day
     with dissolve_scene_half
+    "...Guess we're really doing this."
     "As soon as I enter the room, all eyes fall on me."
     "Instantly, I recognize Sayori, who looks genuinely ecstatic."
     $ s_name = "Sayori"
@@ -270,6 +274,7 @@ label ch1_p2:
     show sayori neut cm oe at t21
     w "I'm not joining this club, I'm just here to visit."
     w "That's all you asked me to do."
+    # "Take that reminder as being directed towards her or you. You can decide.
     show sayori turned nerv cm e1a at f21
     s "O-Oh, of course."
     s "Sorry about that."
@@ -280,8 +285,8 @@ label ch1_p2:
     "I sigh to myself as I take a look around the room."
     "{cps=12}I recognize-{nw}{/cps}"
     show natsuki turned angr om ce zorder 2 at f11
-    n "Oh, no!"
-    n "This guy isn't sticking around!"
+    n "No."
+    n "This guy isn't sticking around."
     show natsuki cm at t21
     show yuri turned neut om oe zorder 2 at f22
     y "I... agree with Natsuki."
@@ -322,7 +327,7 @@ label ch1_p2:
     $ style.say_dialogue = style.normal
     show yuri at t32
     show natsuki cross sad om oe n2 at f31
-    n "{cps=30}Um, Yuri... I know he isn't great, but-{nw}{/cps}"
+    n "{cps=30}Um, Yuri... I know he isn't {i}great{/i}, but-{nw}{/cps}"
     $ y_name = "Yuri"
     show natsuki md at t31
     $ style.say_dialogue = style.edited
@@ -346,7 +351,6 @@ label ch1_p2:
     show s_kill_zoom zorder 3
     s "Please, [player]."
     s "You'll have the chance to save me this time."
-    s "You're my salvation... remember?"
     show s_kill_zoom qg
     pause 0.25
     show s_kill_zoom zorder 3
@@ -420,19 +424,15 @@ label ch1_p2:
     play music wn10
     w "Let me... change that a bit so you can understand."
     w "Have you noticed anything different about this school lately? We can start with that."
-    mc 1j "... Yeah, like how we supposedly have ties with schools outside of Japan."
+    mc 1j "...Yeah, like how we supposedly have ties with schools outside of Japan."
     w "I can tell you {i}for a fact{/i} that we don't have foreign relations of any kind."
     w "Or, we {i}didn't{/i} until very recently."
     w "If I'm not mistaken, Kuribayashi only showed signs of having them starting mere days ago."
     w "Sayori tells me that Rikka joined this club a few days ago and mentioned that an administrator was discussing exchange students."
     mc 1f "Wait... You mean that the day Rikka joined-?"
     w "-was the first sign. Yep."
-    w "As a matter of fact... Did you ever see Rikka around before your first day?"
-    mc 1a "No, but she just seemed familiar... the same way you do now..."
-    w "Exactly. Because- if I'm not mistaken- she wasn't here until then."
-    mc 1j "What do you mean?"
-    w "The best way I know how to describe it is through a parable. Sound waves move all the time, right in front of us."
-    w "But we are physically incapable of seeing them under natural circumstances."
+    w "...My apologies for the monolgue I'm basically giving already, but the best way I know how to describe it is through a parable."
+    w Sound waves move all the time, right in front of us, but we are physically incapable of seeing them under natural circumstances."
     mc 1a "Okay..."
     w "Imagine someone has a tool to let them see sound waves. They want to see new things around them, so they spend time observing individual waves."
     w "Now... what if each time they look at a new wave, they forget about the previous one they looked at?"
@@ -516,7 +516,7 @@ label ch1_p2:
     k "And he chose to not be with you!"
     k "He even went so far as {i}deleting you{/i}, Monika!"
     k "{b}Goes to show how much he cares about you.{/b}"
-    k "{b}He deleted you but added me.{/b}"
+    k "{b}He deleted you when you showed how much you love him.{/b}"
     k "{b}He doesn't care about you.{/b}"
     k "{b}How does that feel?"
     k "{b}He doesn't want 'Just Monika'.{/b}"
@@ -572,7 +572,7 @@ label ch1_mk_1:
     "Kotonoha takes a deep breath before continuing."
     show kotonoha 1u at f21
     k "Do you genuinely believe you're better than everyone else here?"
-    k "Because you're sure acting like it."
+    k "Because you're definitely acting like it."
     k "This club will not tolerate the sort of behavior that you've shown in the past few moments."
     show mc at thide
     hide mc
@@ -661,10 +661,10 @@ label ch1_p3:
     "I nod in greeting towards [player], who is sitting at a nearby desk."
     "I look around the rest of the clubroom:"
     "Sayori seems to be deep in thought at the back of the room."
-    "The pink-haired girl is rummaging around in the closet, seemingly looking for something."
-    "The purple-haired girl gives me a look that I can't entirely make out."
+    "Natsuki is rummaging around in the closet, seemingly looking for something."
+    "Yuri gives me a look that I can't entirely make out."
     "I take it to mean some sort of resentment and move on."
-    "The brown-haired girl is working on what looks like algebra homework."
+    "Rikka is working on what looks like algebra homework."
     "Monika and Kotonoha are both at the front of the room, talking quietly."
     scene bg qgclubday
     pause .25
@@ -795,7 +795,7 @@ label ch1_p3:
     "[player] just nods in response."
     "Usually, I wouldn't feel very bad for someone like him... {i}let alone Sayori...{/i}"
     "But for some reason..."
-    w "Sure. You still have my number?"
+    w "Sure. You have my number in your phone now, right?"
     mc "Yeah."
     w "Okay, then. You can text me here in a few minutes and I'll respond when I come back from her place."
     show mc 1i at t11
@@ -806,6 +806,8 @@ label ch1_p3:
     #scene 7
     $ persistent.whereami = 15
     scene bg residential_day with dissolve_scene_full
+    "I'm going to hate this, you know."
+    "..."
     "I reach the address that Monika sent me."
     "As I approach the front door, I find myself thinking about how quick Kotonoha was to try and come here."
     "She almost seemed like she had... something she was set on doing."
@@ -834,7 +836,7 @@ label ch1_p3:
     menu:
         "Barge in.":
             pass
-    "Even so... I can't help but feel like something is telling me to enter."
+    "Even so... I can't help but feel like {i}someone{/i} is telling me to enter."
     menu:
         "Barge in.":
             pass
@@ -862,13 +864,14 @@ label ch1_p3:
     "Not even a 'This isn't what it looks like.'"
     "Just a 'Why are you here.'"
     "She knows that I understand what would've happened had I not just entered..."
-    "I take a couple of deep breaths before speaking in a shaky voice {i}much{/i} unlike my own."
+    "I take a couple of deep breaths before speaking in a relatively steady voice."
     w "Sayori..."
     w "... Why are you..."
     w "... What made you want..."
     show sayori casual turned cry e1g ma at t11
     s "It's... okay..."
-    s "You don't have to put up with me anymore."
+    s "They don't have to put up with me anymore."
+    s "You don't have to do anything to--{nw}"
     w "Yes, I do."
     "I don't care how rude that sounded right now."
     "{cps=24}I make to move the chair away from-{nw}{/cps}"
@@ -876,8 +879,7 @@ label ch1_p3:
     s "DON'T!"
     show sayori mm at t11
     "She tries to stand on the chair to prevent me from moving it."
-    "I say a silent prayer in my head..."
-    "... Before kicking it out from under her foot that's already resting on it."
+    "I kick it out from under her foot that's already resting on it."
     show sayori casual turned cry om ce lup rup at t11
     s "GAH!"
     "I manage to catch her so she doesn't fall."
@@ -893,10 +895,10 @@ label ch1_p3:
     "I just let her cry..."
     "{i}I've never felt compelled to do anything like this for anyone...{/i}"
     "This is entirely out of character for me."
-    "So why does it feel like someone is telling me to do this?"
-    "Well, that's kind of a stupid question."
-    "I know {i}exactly{/i} why I'm feeling this way right now."
-    "After realizing this, I return my focus to Sayori, determined to try and calm her-{nw}"
+    "So why do you want me doing this?"
+    "..."
+    "You know what, I think I get it."
+    "{i}I think I finally understand what you're--{/i}{nw}"
     hide sayori
     show bg qgsayori_bedroom
     pause 0.32
@@ -998,7 +1000,7 @@ label a1:
     show layer master at layerflicker(timeleft)
     w "You're not listening to me at all, are you?"
     w "Don't bother responding, I know the answer is no."
-    w "{i}You need to stay here.{/i}"
+    w "{i}You. Need. To. Stay. Here.{/i}"
     w "{cps=12}I am not-{nw}{/cps}"
     mc "I will go."
     w "No, you will not."
@@ -1013,18 +1015,20 @@ label a2:
     w "... What happened to..."
     w "... Why is everything just... black?"
     play sound wlf volume 0.3
-    w "[player]..."
-    w "{i}What did you do?{/i}"
+    w "[player]...?"
+    w "Where is he..."
+    "{i}What did you do?{/i}"
     play sound wrf volume 0.7
-    w "Where is everyone?"
-    w "Where's the club room?"
+    "Where is everyone?"
+    "Where's the club room?"
     play sound wlf volume 1.0
-    w "Hey."
+    w "[player]..."
     w "I'm warning you right now."
     play sound wrf volume 1.3
     w "If you come any closer without explaining what the hell is going on..."
     w "I {i}will{/i} defend myself however I feel necessary."
     play sound wlf volume 1.7
+    w "..."
     w "Well... I guess you're set on making this difficult, aren't you?"
     play sound wrf volume 2.0
     w "Sucks, really. I was genuinely starting to take a liking to you."
@@ -1045,6 +1049,16 @@ label a2:
     $ delete_character("white")
     "white.chr deleted successfully."
     "3 left."
+    pause 3.0
+    "Why?"
+    "What the actual frick are you trying to do??"
+    "I know I promised some decisions here and there..."
+    "But this is not AT ALL what I meant, and I think you know that."
+    "[w_name]... he didn't deserve that."
+    "...I'm warning you right now. Not [player], but you. Because I KNOW he's not to blame for this."
+    "Do not continue doing this kind of crap in this project."
+    "If you do, I will not make your time here easy."
+    "...Don't worry, [player]. I'll save you from this freak if I have to."
     $ persistent.CONDITION = 0
     $ persistent.deletionroute = False
     $ persistent.poemsecond = False
@@ -1085,6 +1099,8 @@ label ch1_p4:
     "I hesitantly pull up a desk since the chairs are attached to them."
     "I take a seat, and everything around me seems to freeze in place."
     show monika b1c e1b me at t11
+    m "Sorry in advance for how long this is gonna take to explain."
+    "(NOTE FROM CPC: This expositional segment will be largely reduced once a specific side mod has been released.)"
     m "Okay. Where should I start..."
     m "..."
     show monika e1a md at t11
@@ -1301,6 +1317,9 @@ label ch1_p4:
     python:
         try: renpy.file(config.basedir + "/broken.txt")
         except: open(config.basedir + "/broken.txt", "wb").write(renpy.file("mod_assets/broken.txt").read())
+    "...Yeah, I shouldn't have gone back on my decision to avoid giving her this kind of power."
+    "Sorry that you had to endure all of that. I'll go through with my original plan for this project now."
+    "Just a moment..."
     $ persistent.CONDITION = 0
     $ persistent.deletionroute = False
     $ persistent.poemsecond = False
