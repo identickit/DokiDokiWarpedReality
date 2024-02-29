@@ -432,7 +432,7 @@ label ch1_p2:
     mc 1f "Wait... You mean that the day Rikka joined-?"
     w "-was the first sign. Yep."
     w "...My apologies for the monolgue I'm basically giving already, but the best way I know how to describe it is through a parable."
-    w Sound waves move all the time, right in front of us, but we are physically incapable of seeing them under natural circumstances."
+    w "Sound waves move all the time, right in front of us, but we are physically incapable of seeing them under natural circumstances."
     mc 1a "Okay..."
     w "Imagine someone has a tool to let them see sound waves. They want to see new things around them, so they spend time observing individual waves."
     w "Now... what if each time they look at a new wave, they forget about the previous one they looked at?"

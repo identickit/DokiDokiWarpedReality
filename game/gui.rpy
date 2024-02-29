@@ -238,7 +238,7 @@ define gui.pref_spacing = 10
 define gui.pref_button_spacing = 0
 
 # This controls the spacing between each page option in the page screen.
-define gui.page_spacing = 0
+define gui.page_spacing = 10
 
 # This controls the spacing between each save/load slot option in the save/load screen.
 define gui.slot_spacing = 10

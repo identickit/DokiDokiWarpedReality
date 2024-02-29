@@ -91,13 +91,15 @@ define config.window_icon = "gui/window_icon.png"
 define config.allow_skipping = True
 
 # This controls whether your mod saves automatically.
-define config.has_autosave = False
+define config.has_autosave = True
 
 # This controls whether you mod saves automatically when quitting the game.
-define config.autosave_on_quit = False
+define config.autosave_on_quit = True
 
 # This controls the number of slots auto-save can use for saving the game.
-define config.autosave_slots = 0
+define config.autosave_slots = 1
+
+define config.autosave_frequency = 1
 
 # This controls whether the player can rollback to the previous dialogue in-game.
 define config.rollback_enabled = config.developer

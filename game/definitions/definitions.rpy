@@ -4,13 +4,13 @@
 
 # This variable declares if the mod is a demo or not.
 # Leftover from DDLC.
-define persistent.demo = False
+define persistent.demo = True
 
 # This variable declares whether the mod is in the 'steamapps' folder.
 define persistent.steam = ("steamapps" in config.basedir.lower())
 
 # This variable declares whether Developer Mode is on or off in the mod.
-define config.developer = False
+define config.developer = True
 
 # This python statement starts singleton to make sure only one copy of the mod
 # is running.

@@ -2,8 +2,10 @@
     # spending too much time with everyone else. I deserve a shot too, after all.
 
 show screen name_input("Please enter a name.", "<player>")
+default persistent.autosave = False
 
 label ch0_p1:
+    $ persistent.autosave = True
     $ kgmode = False
     $ mgmode = True
     $ style.say_window = style.window_mg2

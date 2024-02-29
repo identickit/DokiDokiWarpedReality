@@ -495,8 +495,8 @@ screen quick_menu():
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Load") action ShowMenu('load')
+            #textbutton _("Save") action ShowMenu('save')
+            #textbutton _("Load") action ShowMenu('load')
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
             textbutton _("Settings") action ShowMenu('preferences')
@@ -563,13 +563,15 @@ screen navigation():
                     textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
                 else:
                     textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
+            
             else:
 
                 textbutton _("History") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
 
-                textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
+                #textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
-            textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            if main_menu and persistent.autosave is True:
+                textbutton _("Continue") action FileLoad("1", page="auto")
 
             if enable_extras_menu:
                 textbutton _("Extras") action [ShowMenu("extras"), SensitiveIf(renpy.get_screen("extras") == None)]
@@ -870,7 +872,7 @@ screen about():
                 yfit True
 
             vbox:
-                add Transform("mod_assets/DDWRLogo.png", size=(200,200)) xalign .5
+                add Transform("mod_assets/DDMCCelebLogo.png", size=(200,200)) xalign .5
 
                 null height 5
                 
