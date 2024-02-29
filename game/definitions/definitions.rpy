@@ -180,6 +180,8 @@ define audio.wn10 = "mod_assets/bgm/warpednewten.ogg" # Major Deja Vu
 define audio.wn11 = "mod_assets/bgm/warpedneweleven.ogg" # Emerald & Silver
 define audio.wn12 = "mod_assets/bgm/warpednewtwelve.ogg" # Silver & Emerald
 define audio.wn13 = "mod_assets/bgm/warpednewthirteen.ogg" # White Salvation
+define audio.wn14 = "mod_assets/bgm/warpednewfourteen.ogg" # Ohayou, Rikka!
+#define audio.wn15 = "mod_assets/bgm/warpednewfifteen.ogg" # Broken Ascension
 define audio.wnw = "mod_assets/bgm/yuri-wrongopt.ogg" # Yuri-WrongOPT
 define audio.wnf = "mod_assets/bgm/nat-silverforce.ogg" # Natsuki
 
@@ -306,6 +308,12 @@ image bg qgresidential_day:
     "mod_assets/bg/residentialg2.png"
     pause 0.12
     "bg/residential.png"
+image bg gresidential_day:
+    "mod_assets/bg/residentialg1.png"
+    pause 0.12
+    "mod_assets/bg/residentialg2.png"
+    pause 0.12
+    repeat
 image bg bsod = "mod_assets/bg/bsod.png"
 label kotog:
     show m_rectstatic
@@ -2028,6 +2036,8 @@ define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc",
 define r = DynamicCharacter('r_name', image='rikka', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define k = DynamicCharacter('k_name', image='kotonoha', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define w = DynamicCharacter('w_name', image='white', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define w = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define u = Character('?????', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 # This variable determines whether to allow the player to dismiss pauses.
 # By default this is set by config.developer which is normally set to false

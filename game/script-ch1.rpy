@@ -1324,6 +1324,4 @@ label ch1_p4:
     $ persistent.deletionroute = False
     $ persistent.poemsecond = False
     $ persistent.playthrough = 2
-    $ delete_all_saves()
-    $ persistent._clear(progress=True)
     $ renpy.quit()

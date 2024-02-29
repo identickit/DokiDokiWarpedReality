@@ -57,3 +57,7 @@ label start:
         call poem from _call_poem_3
 
         call ch1_p4 from _call_ch1_p4
+
+    if persistent.playthrough == 2:
+        $ chapter = 2
+        call ch2_p1
