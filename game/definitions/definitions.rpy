@@ -2036,7 +2036,7 @@ define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc",
 define r = DynamicCharacter('r_name', image='rikka', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define k = DynamicCharacter('k_name', image='kotonoha', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define w = DynamicCharacter('w_name', image='white', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define w = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+# define d = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define u = Character('?????', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 # This variable determines whether to allow the player to dismiss pauses.
