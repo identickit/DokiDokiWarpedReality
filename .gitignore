@@ -15,4 +15,9 @@ game/.vscode/launch.json
 game/cache/bytecode-27.rpyb
 game/cache/pyanalysis.rpyb
 game/cache/screens.rpyb
+<<<<<<< Updated upstream
 *.rpyc
+=======
+*.rpyb
+*.rpyb
+>>>>>>> Stashed changes
