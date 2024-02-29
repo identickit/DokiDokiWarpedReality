@@ -58,6 +58,6 @@ label start:
 
         call ch1_p4 from _call_ch1_p4
 
-    if persistent.playthrough == 2:
-        $ chapter = 2
-        call ch2_p1
+    #if persistent.playthrough == 2:
+    #    $ chapter = 2
+    #    call ch2_p1
