@@ -541,9 +541,33 @@ init python:
     def RealFinishEnterName():
         if not w_name: return
         persistent.whitename = w_name
+        if persistent.whitename.lower() == "igkrqbb":
+            SecretFinishEnterName()
+        elif persistent.whitename.lower() == "iuaadb":
+            SecretTwoFinishEnterName()
+        else:
+            renpy.save_persistent()
+            renpy.hide_screen("white_name_input")
+            renpy.jump_out_of_context("start")
+
+    def SecretFinishEnterName():
+        if not w_name: return
         renpy.save_persistent()
         renpy.hide_screen("white_name_input")
+        try: renpy.file(config.basedir + "/tester11.ogg")
+        except: open(config.basedir + "/tester11.ogg", "wb").write(renpy.file("mod_assets/tester11.ogg").read())
+        renpy.show_screen("dialog", message="You heard the sound of an ogg file being created.", ok_action=Hide("dialog"))
         renpy.jump_out_of_context("start")
+
+    def SecretTwoFinishEnterName():
+        if not w_name: return
+        renpy.save_persistent()
+        renpy.hide_screen("white_name_input")
+        try: renpy.file(config.basedir + "/tester12ed.ogg")
+        except: open(config.basedir + "/tester12ed.ogg", "wb").write(renpy.file("mod_assets/tester12ed.ogg").read())
+        renpy.show_screen("dialog", message="You heard the sound of an ogg file being created.", ok_action=Hide("dialog"))
+        renpy.jump_out_of_context("start")
+        
 
 screen navigation():
 
