@@ -534,9 +534,112 @@ init python:
     def FinishEnterName():
         if not player: return
         persistent.playername = player
-        renpy.save_persistent()
-        renpy.hide_screen("name_input")
-        renpy.show_screen("white_name_input", message="... Y'know what, enter a second name.", ok_action=Function(RealFinishEnterName))
+        if persistent.playername() == "sayori":
+            SayoriFinishEnterName()
+        elif persistent.playername() == "yuri":
+            YuriFinishEnterName()
+        elif persistent.playername() == "natsuki":
+            NatsukiFinishEnterName()
+        elif persistent.playername() == "monika":
+            MonikaFinishEnterName()
+        elif persistent.playername() == "rikka":
+            RikkaFinishEnterName()
+        elif persistent.playername() == "kotonoha":
+            KotonohaFinishEnterName()
+        elif persistent.playername() == "naomi":
+            NaomiFinishEnterName()
+        elif persistent.playername() == "kokhenbawls":
+            KbFinishEnterName()
+        elif persistent.playername() == "bima":
+            BimaFinishEnterName()
+        elif persistent.playername() == "justart":
+            JaFinishEnterName()
+        elif persistent.playername() == "frisk":
+            FriskFinishEnterName()
+        elif persistent.playername() == "kanemonger":
+            KmFinishEnterName()
+        elif persistent.playername() == "tbishy":
+            TbFinishEnterName()
+        elif persistent.playername() == "headlocker":
+            HlFinishEnterName()
+        elif persistent.playername() == "mgt":
+            MgtFinishEnterName()
+        elif persistent.playername() == "finntdk":
+            FtdkFinishEnterName()
+        elif persistent.playername() == "brenirk":
+            BnFinishEnterName()
+        else:
+            renpy.save_persistent()
+            renpy.hide_screen("name_input")
+            renpy.show_screen("white_name_input", message="... Y'know what, enter a second name.", ok_action=Function(RealFinishEnterName))
+
+    def SayoriFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("name_input", message="That's my name, silly!", ok_action=Function(FinishEnterName))
+
+    def YuriFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("name_input", message="M-Maybe pick a different name?", ok_action=Function(FinishEnterName))
+
+    def NatsukiFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("name_input", message="Try again, dummy.", ok_action=Function(FinishEnterName))
+
+    def MonikaFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("name_input", message="You're so funny!", ok_action=Function(FinishEnterName))
+
+    def RikkaFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("name_input", message="Uh... No?", ok_action=Function(FinishEnterName))
+
+    def KotonohaFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("name_input", message="Don't worry. I'm already here~", ok_action=Function(FinishEnterName))
+
+    def NaomiFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("name_input", message="(She's on her way!)", ok_action=Function(FinishEnterName))
+
+    def KbFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("white_name_input", message="HOLY SHIT IS THAT KOKHENBAWLS?? oh and also enter a second name pls", ok_action=Function(RealFinishEnterName))
+
+    def BimaFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("name_input", message="You are not invincible here. Pick a new name.", ok_action=Function(FinishEnterName))
+
+    def JaFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("white_name_input", message="Enter a second name. (also please keep that doll away from here)", ok_action=Function(RealFinishEnterName))
+
+    def FriskFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("name_input", message="i remember you're MONIKA AFTER STORYS. (choose a different name, kid.)", ok_action=Function(FinishEnterName))
+
+    def KmFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("white_name_input", message="Is that the real KaneMonger??? (Enter a second name, too.)", ok_action=Function(RealFinishEnterName))
+
+    def TbFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("white_name_input", message="Is that the real Tbishy??? (Enter a second name, too.)", ok_action=Function(RealFinishEnterName))
+
+    def HlFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("name_input", message="Everything and everybody is real. Try again.", ok_action=Function(FinishEnterName))
+
+    def MgtFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("white_name_input", message="Anyways, enter a second name, too.", ok_action=Function(RealFinishEnterName))
+
+    def FtdkFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("white_name_input", message="The true king of the Sayorians has arrived. (Enter a 2nd name, too.)", ok_action=Function(RealFinishEnterName))
+
+    def BnFinishEnterName():
+        persistent.playername = player
+        renpy.show_screen("white_name_input", message="The Dokituber Awards overlord himself. (Enter a 2nd name, too.)", ok_action=Function(RealFinishEnterName))
 
     def RealFinishEnterName():
         if not w_name: return
