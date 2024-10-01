@@ -21,3 +21,6 @@ game/cache/screens.rpyb
 *.rpyb
 *.rpyb
 >>>>>>> Stashed changes
+game/cache/screens.rpyb
+game/cache/pyanalysis.rpyb
+game/cache/bytecode-27.rpyb

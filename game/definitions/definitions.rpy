@@ -263,6 +263,7 @@ image bg bedroom = "bg/bedroom.png" # MC's Room BG
 image bg sayori_bedroom = "bg/sayori_bedroom.png" # Sayori's Room BG
 image bg house = "bg/house.png" # Sayori's House BG
 image bg kitchen = "bg/kitchen.png" # MC's Kitchen BG
+image bg sayori_bedroom_dark = "mod_assets/bg/sayori_bedroom_dark.png"
 image bg qgsayori_bedroom:
     "mod_assets/bg/sayori_bedroomg1.png"
     pause 0.08
@@ -2037,6 +2038,7 @@ define r = DynamicCharacter('r_name', image='rikka', what_prefix='"', what_suffi
 define k = DynamicCharacter('k_name', image='kotonoha', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define w = DynamicCharacter('w_name', image='white', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 # define d = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define d = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define u = Character('?????', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 # This variable determines whether to allow the player to dismiss pauses.
