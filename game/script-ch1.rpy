@@ -268,7 +268,7 @@ label ch1_p2:
     show monika at t22
     "Sayori lets go but doesn't look very sorry."
     show sayori happ om oe ldown rdown at f21
-    s "I knew you would join, [w_name]!"
+    s "I knew you would join, [white]!"
     show sayori at t21
     w "Hey, wait a minute!"
     show sayori neut cm oe at t21
@@ -392,7 +392,7 @@ label ch1_p2:
     scene bg club_day
     with dissolve_scene_half
     play music wn9
-    "After we all greet [w_name], everyone returns to their regular activities."
+    "After we all greet [white], everyone returns to their regular activities."
 
     #scene 5
     $ persistent.whereami = 5
@@ -459,7 +459,7 @@ label ch1_p2:
     "-but Kotonoha cuts her off."
     show kotonoha 1u at t11
     k "{cps=30}I think it's time for this oh-so-happy-{nw}{/cps}"
-    "[w_name] stands up abruptly."
+    "[white] stands up abruptly."
     scene bg qgclubday
     pause .25
     with dissolve_scene_half
@@ -623,7 +623,7 @@ label ch1_mk_2:
     k "Have it your way."
     play music wn11
     show kotonoha 1x at f31
-    k "{b}He'll just see that everyone was right about how horrible you are, [w_name]{/b}"
+    k "{b}He'll just see that everyone was right about how horrible you are, [white]{/b}"
     show kotonoha 1u3 at f31
     k "Do you genuinely believe you're better than everyone else here?"
     k "{b}You wish your life meant nearly as much as that of somebody like [player]{/b}"
@@ -701,7 +701,7 @@ label ch1_p3:
     m "Okay, everyone!"
     m "I know I'm cutting you all a bit short on the poem-sharing, but I'd like to make an announcement!"
     "Despite our conversation being interrupted, Rikka happily turns her attention to Monika."
-    "{cps=30}Everyone else does the same, including [w_name]-{nw}{/cps}"
+    "{cps=30}Everyone else does the same, including [white]-{nw}{/cps}"
     stop music fadeout 0.5
     scene bg qgclubday
     pause .25
@@ -765,7 +765,7 @@ label ch1_p3:
     w "... should someone go check on her?"
     show monika e1a at f31
     m "Actually, that would be nice..."
-    m "Would you mind doing that, [w_name]? She'd probably be less freaked out if either you or Koto went to see how she's doing."
+    m "Would you mind doing that, [white]? She'd probably be less freaked out if either you or Koto went to see how she's doing."
     show monika at t31
     show kotonoha at f32
     k "{cps=24}I can go check on-{nw}{/cps}"
@@ -799,7 +799,7 @@ label ch1_p3:
     mc "Yeah."
     w "Okay, then. You can text me here in a few minutes and I'll respond when I come back from her place."
     show mc 1i at t11
-    mc "Okay... Thanks, [w_name]."
+    mc "Okay... Thanks, [white]."
     w "No problem."
     "I say goodbye to [player] and leave the building."
     
@@ -859,7 +859,7 @@ label ch1_p3:
     "{i}Directly{/i} below it."
     "I can't even bring myself to speak for another several seconds."
     show sayori casual turned worr om e1a at t11
-    s "[w_name]..."
+    s "[white]..."
     s "W-Why are you here...?"
     "Not even a 'This isn't what it looks like.'"
     "Just a 'Why are you here.'"
@@ -952,7 +952,7 @@ label a1:
     show yuri at t43
     w "Hey, what did I miss?"
     show kotonoha 1b at f44
-    k "[w_name]!"
+    k "[white]!"
     k "Have you seen or heard from Sayori at all today?"
     show kotonoha at t44
     w "I thought you'd tell me she's sick or something when I got here...?"
@@ -1054,7 +1054,7 @@ label a2:
     "What the actual frick are you trying to do??"
     "I know I promised some decisions here and there..."
     "But this is not AT ALL what I meant, and I think you know that."
-    "[w_name]... he didn't deserve that."
+    "[white]... he didn't deserve that."
     "...I'm warning you right now. Not [player], but you. Because I KNOW he's not to blame for this."
     "Do not continue doing this kind of crap in this project."
     "If you do, I will not make your time here easy."
@@ -1083,7 +1083,7 @@ label ch1_p4:
     mc "Did I miss something?"
     "Monika's expression doesn't change as she takes a deep breath."
     m "He really didn't tell you?"
-    mc "Who... [w_name]? Was he {i}supposed{/i} to tell me something?"
+    mc "Who... [white]? Was he {i}supposed{/i} to tell me something?"
     "I thought it was strange that he never responded to my texts last night."
     "But I just figured he was busy talking to Sayori or something."
     "I suddenly feel incredibly stupid for not thinking anything more of it until right now."
@@ -1107,33 +1107,33 @@ label ch1_p4:
     m "... Sayori has had depression for most of her life."
     m "Her main trigger is people worrying too much about her..."
     m "... Even if she really needs the attention that she's being offered."
-    m "Yesterday, [w_name] went to see if she was feeling okay since she went home early."
+    m "Yesterday, [white] went to see if she was feeling okay since she went home early."
     m "He was lucky to arrive when he did."
-    m "It took several hours, but [w_name] stayed with Sayori until she finally calmed down."
+    m "It took several hours, but [white] stayed with Sayori until she finally calmed down."
     m "But... Around the same time that Sayori was calming down..."
-    m "... Kotonoha evidently texted Yuri saying she was going to check on Sayori and [w_name]."
+    m "... Kotonoha evidently texted Yuri saying she was going to check on Sayori and [white]."
     m "Yuri told me as soon as she got the message."
     m "Even she knew that Kotonoha wouldn't have naturally decided to do something like that."
     m "The moment I read the message, I rushed over to Sayori's place."
     m "I got to her room... {i}But no one was home.{/i}"
     m "The only thing I could tell from the state of her room was that there was some sort of fight."
     m "Most of the things in Sayori's room were broken."
-    m "After at least an hour, [w_name] texted me."
+    m "After at least an hour, [white] texted me."
     m "He... wasn't like himself at all. He wouldn't stop apologizing."
     m "It took several minutes to get him to elaborate, but... my theory that there had been a fight turned out to be true."
     m "The first thing he said was that he was going to beat the crap out of Kotonoha if he ever found her."
     m "He went on to explain that Kotonoha had barged into Sayori's room not even ten seconds after Sayori had finally calmed down."
     m "Kotonoha knew exactly what she was doing."
     m "She rushed into the room and said {i}a lot{/i} of horrible things."
-    m "[w_name] actually started fighting her to try and keep her from doing what she was about to do."
-    m "And while I {i}never{/i} thought I'd have to say this in any mod, [w_name] lost the fight."
+    m "[white] actually started fighting her to try and keep her from doing what she was about to do."
+    m "And while I {i}never{/i} thought I'd have to say this in any mod, [white] lost the fight."
     m "Kotonoha knocked him out cold and took Sayori."
-    m "When [w_name] woke up, he traced Kotonoha's path as far as he could, following signs of her path until well after the sun had come up."
+    m "When [white] woke up, he traced Kotonoha's path as far as he could, following signs of her path until well after the sun had come up."
     m "Taking all other timestamps into account, that means he was at it for at least five hours."
     m "Eventually, there was nothing left to even resemble anyone passing through before."
     m "I was partially relieved because he managed to get as far as he did, but at the same time..."
     m "... if he went as far as he did, how far did Kotonoha go?"
-    m "... [w_name]'s on his way here now."
+    m "... [white]'s on his way here now."
     m "He just said he should be here in about 30 minutes when you came up to me."
     $ delete_character("sayori")
     mc "..."
@@ -1141,7 +1141,7 @@ label ch1_p4:
     "I try to take in everything she just said... but it's all so much to try and understand."
     mc "That's..."
     mc "... I can't even think of anything beyond 'horrible' right now, but that's not saying nearly enough..."
-    mc "... Wait... what did you mean when you said you never thought you'd have to say [w_name] lost a fight 'in any mod?'"
+    mc "... Wait... what did you mean when you said you never thought you'd have to say [white] lost a fight 'in any mod?'"
     show monika ce at t11
     m "[player]..."
     m "I need you to take everything I'm about to tell you with total seriousness."
@@ -1150,14 +1150,14 @@ label ch1_p4:
     show monika e1a at t11
     m "This is a game."
     m "The world we're in right now is all a game... But it's broken."
-    m "Remember that conversation you had with [w_name] about the deja vu you were having?"
+    m "Remember that conversation you had with [white] about the deja vu you were having?"
     m "Well, he was entirely correct: This version of the game is overflowing with mods that people have created over the span of a few years."
     m "Rikka is from a mod called {i}SNAFU{/i}."
     mc "... L-Like the anime?"
     show monika ce at t11
     m "{cps=8}{i}sigh{/cps}{/i} Yes, like the anime."
     show monika e1a at t11
-    m "[w_name] is a character from a mod called {i}The Rising Night{/i}."
+    m "[white] is a character from a mod called {i}The Rising Night{/i}."
     m "Everyone hated him in his original mod, and when he made his way into the game recently, that was nearly the case again."
     m "I had to manually change a few files in order to prevent everyone from hating him."
     m "Obviously, this didn't work once or twice, but I did what I could."
