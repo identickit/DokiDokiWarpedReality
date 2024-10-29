@@ -238,12 +238,15 @@ image splash = "bg/splash.png"
 image end:
     truecenter
     "gui/end.png"
-
+ 
+image bg stairwell = "mod_assets/bg/stairwell.png" #The one from DDLC+
 image bg residential_day = "bg/residential.png" # Start of DDLC BG
 image bg class_day = "bg/class.png" # The classroom BG
 image bg corridor = "bg/corridor.png" # The hallway BG
 image bg club_day = "bg/club.png" # The club BG
 image bg club_night = "mod_assets/bg/clubnight.png"
+image bg club_storm = "mod_assets/bg/club_storm.png"
+image bg corridor_storm = "mod_assets/bg/corridor_storm.png"
 image bg club_day2: # Glitched Club BG
     choice:
         "bg club_day"
@@ -1491,6 +1494,7 @@ image kotonoha 1p = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets
 image kotonoha 1q = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/q.png")
 image kotonoha 1r = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/r.png")
 image kotonoha 1s = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/s.png")
+image kotonoha 1s1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/s1.png")
 image kotonoha 1t = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/t.png")
 image kotonoha 1t1 = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/t1.png")
 image kotonoha 1u = im.Composite((960, 960), (0, 0), "mod_assets/kotonoha_assets/1.png", (0, 0), "mod_assets/kotonoha_assets/u.png")
@@ -2036,7 +2040,7 @@ define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix
 define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define r = DynamicCharacter('r_name', image='rikka', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define k = DynamicCharacter('k_name', image='kotonoha', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define w = DynamicCharacter('w_name', image='white', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define w = DynamicCharacter('white', image='white', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 # define d = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define d = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define u = Character('?????', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
@@ -2080,7 +2084,7 @@ default persistent.lets_play = False
 default persistent.playername = ""
 default player = persistent.playername
 default persistent.whitename = ""
-default w_name = persistent.whitename
+default white = persistent.whitename
 default persistent.playthrough = 0
 default persistent.yuri_kill = 0
 default persistent.seen_eyes = None

@@ -788,6 +788,12 @@ P.S. Don't be quick to point the blame at anyone in the club.
 sec. key: storm
 """))
 
+    poem_t1 = Poem(
+        author_k, title=_(""),
+        text=_("""\
+I know he's likely been permanently scarred by that moment, and I'm deeply sorry for it. My intentions were never and still aren't to be in total control over what happens. Sayori is a sad but important example of this. I couldn't control what she did to take her own life, but I was able to make Monika forget her umbrella just now, because I knew you wanted to talk to me.
+"""))
+
 screen poem(poem):
     style_prefix "poem"
 

@@ -129,7 +129,7 @@ label ch2_p1:
     "Suddenly, Rikka starts frantically trying to turn the door handle."
     mc "Hey, hey, calm down a-"
     "She jabs me in the side with her elbow, instantly shutting me up."
-    mc "I feel like… that was unnecessary..."
+    mc "I feel like... that was unnecessary..."
     r "{i}She has a rope in her room.{/i}"
     mc "Huh? Why would..."
     mc "... Wait, you're not really suggesting-"
@@ -197,3 +197,497 @@ label ch2_p1:
     #stop music fadeout 3.0
     pause 3.0
     "ACT II - Other Reality"
+    #scene 3
+    $ m_name = "Monika"
+    scene bg club_storm with dissolve_scene_full
+    #play music clouds
+    pause 1.0
+    "I feel my phone buzz in my pocket."
+    "I pull it out and check my notifications, seeing a message from [player]."
+    
+    "need to read more emr phone documentation :skull:"
+
+    "As I put my phone back in my pocket, the door slides open."
+    show monika forward happ cm ce at t11
+    m "Good afternoon, [white]."
+    w "Hello, Monika."
+    w "How was your piano... session, or whatever you wanna call it?"
+    show monika oe at t11
+    m "If you're referring to {i}study hall{/i}, it went well."
+    m "I'm getting pretty far along with the song I'm writing."
+    w "Cool."
+    show monika at thide
+    hide monika
+    w "By the way, [player] might be joining us today."
+    w "Not that you'd be {i}interested{/i} in-"
+    show monika forward lsur cm oe at t11
+    m "Wait, really??"
+    w "No, I'm going out of my way to lie to you and get your hopes up for absolutely no reason."
+    show monika ce at t11
+    "Monika seemingly ignores my sarcasm and smiles to herself for a moment."
+    show monika ma at t11
+    m "Sorry, it's just been a while since I've seen him, so uh..."
+    w "Monika, it's perfectly normal to be excited about seeing him."
+    w "Especially after not seeing him at all for this long."
+    show monika e1a at t11
+    m "I know... I just..."
+    w "You don't have to justify everything, remember?"
+    show monika forward nerv cm oe at t11
+    m "Yeah... I'm working on- I mean, I remember."
+    show monika e1a at t11
+    m "Thanks for the reminder."
+    w "No need to thank me. It's my job to look after my club members."
+    show monika at thide 
+    hide monika
+    "The door opens again."
+    $ k_name = "Kotonoha"
+    $ y_name = "Yuri"
+    show kotonoha 1a at t21
+    show yuri turned happ cm oe at f22
+    y "Hello, [white]. How has your day been so far?"
+    show yuri at t22
+    w "Pretty good. How about yourself?"
+    show yuri at f22
+    y "Oh, about the same."
+    show yuri at t22
+    show kotonoha at f21
+    k "Same for me as well."
+    k 1e "Although... [player] still seemed pretty distant during class today."
+    show kotonoha at t21
+    w "Well, he's going to try and come to today's meeting."
+    show kotonoha 1w at f21
+    show yuri turned lsur om oe at t22
+    k "I-Is that so?"
+    show kotonoha at t21
+    show yuri turned happ cm oe at f22
+    y "It will be great to see him again."
+    show yuri turned flus me oe at f22
+    y "I've been worrying about how he's holding up much more as of late."
+    show yuri at t22
+    w "Rikka says he's not... in horrible condition anymore, so there's that at least."
+    w "But whenever he gets here, I'd advise giving him space unless he approaches you first."
+    show kotonoha 1h at t21
+    show yuri turned happ cm ce b1c at f22
+    y "You're probably right. We wouldn't want-"
+    $ n_name = "Natsuki"
+    show kotonoha 1h at t43
+    show yuri at t44
+    show natsuki turned happ ce mo at f41
+    n "Hello, everyone! I heard that {i}somebody{/i} is gonna be making a guest appearance today?"
+    show kotonoha at thide
+    show yuri at thide
+    hide kotonoha
+    hide yuri
+    show natsuki at t11
+    w "And who did you hear that from, exactly?"
+    show natsuki oe at t11
+    n "Rikka told me. She bumped into me during lunch."
+    w "I see."
+    w "You seem very excited about this information."
+    w "I was almost expecting you to go full-on tsundere mode whenever you would've found out."
+    show natsuki turned flus mb oe at t11
+    n "Well... I decided not to."
+    n "..."
+    show natsuki cross flus ma oe blus at t11
+    n "I missed him a lot."
+    "... Huh."
+    "For once, she's actually being vulnerable about this kind of thing."
+    "Not like that's a bad thing, but... isn't that sort of..."
+    "{i}Out of character?{/i}"
+    "... The door opens again, but only enough for Rikka to poke her head through."
+    show natsuki at thide
+    hide natsuki
+    r "[white], can you come here for a minute?"
+    w "Sure?"
+    scene bg corridor_storm with wipeleft_scene
+    show rikka 1a at t21
+    show mc 1a at t22 #REPLACE WITH EYEBAGS
+    w "Hey, [player]. How you feeling?"
+    show mc at f22
+    mc "..."
+    mc "Eh."
+    show mc at t22
+    w "... Well, it's nice to see you again."
+    show mc at f22
+    mc "You too."
+    show mc 1h1 at f22
+    mc "So... Before I go in, could you uh..."
+    show mc 1a at f22
+    mc "Could you ask everyone not to be super loud? My head's been hurting pretty much all day."
+    show mc at t22
+    w "Ah, is that why you were so short earlier?"
+    show mc at f22
+    mc "Mhm."
+    show mc at t22
+    show rikka 1c at f21
+    r "You know we can head home if you want, right [player]?"
+    show rikka at t21
+    show mc 1h1 at f22
+    mc "No. I... I want to be here."
+    mc "I miss everyone."
+    show mc at t22
+    show rikka 1x at t21
+    w "Well hey, feel free to come in whenever you're ready. I'll ask everyone to keep the volume down for you."
+    show mc 1i1 at f22
+    mc "Thanks."
+    show mc at thide
+    show rikka at thide
+    hide mc
+    hide rikka
+    scene bg club_storm with wipeleft_scene
+    #play music brokenclub
+    w "Hey, everyone. [player] is gonna come in here in a minute."
+    w "He has a headache, so can we keep the noise and volume down for him?"
+    "The others nod in acknowledgment."
+    "... Whenever you're ready."
+    "..."
+    "Once more, the door slides open."
+    "Rikka enters, followed by [player]."
+    show mc 1a at t11 #tired smile
+    w "If you need to step out at any time, that's not a problem."
+    show mc at f11
+    mc "I appreciate it, but I should be fine."
+    show mc at thide
+    hide mc
+    "I walk to my seat towards the back of the room and place my things down."
+    "I know everyone probably wants to spend a little time with me today since I haven't been here in a while."
+    "Even if I likely don't have enough energy to talk to everyone today, I at least want to talk to a couple of them."
+    "... I'll hang out with Natsuki first. Besides, I think Kotonoha mentioned wanting to get to know her better once."
+    "Maybe I could make up for my absence by helping her out with that sometime today?"
+    "If I have the energy."
+    mc "Hey, Nat."
+    show natsuki turned shoc ce mc at t11
+    n "[player]!!"
+    show natsuki turned flus md oe blus at t11
+    n "Er- sorry, didn't mean to get loud."
+    mc "No worries."
+    show natsuki turned neut me nobl at t11
+    n "So..."
+    show natsuki turned nerv cm e1a b1f at t11
+    n "... How have you been?"
+    mc "Could be better."
+    show natsuki md at t11
+    n "Well, yeah... I figured."
+    n "I mean like..."
+    show natsuki e1b at t11
+    n "{i}sigh{/i} Sorry, you know I'm not good at this stuff."
+    n "But I'm... I'm trying my best."
+    "She takes a moment before figuring out what to say."
+    show natsuki turned neut cm oe at t11
+    n "How are you handling everything?"
+    mc "..."
+    mc "It still hurts."
+    mc "I know I could've done more..."
+    mc "I... I just let her-"
+    show natsuki turned me b2a at t11
+    n "Hey."
+    n "Don't beat yourself up over it. It wasn't your fault."
+    "Even though it kind of was, to an extent."
+    n "She really cared about you, y'know."
+    n "You were her favorite person in the world."
+    show natsuki turned b2b ma at t11
+    n "Don't forget that."
+    show natsuki mn at t11
+    n "I'll make sure you don't if I need to."
+    mc "Thanks."
+    show natsuki me at t11
+    "She looks at me like she wants to say something else, but I really need to change the subject."
+    mc "Oh, before I forget."
+    mc "Just a second, Nat."
+    show natsuki turned lsur me e1a b1c at t11
+    n "Okay?"
+    show natsuki at thide
+    hide natsuki
+    "I approach Kotonoha's desk and tap on it lightly."
+    "She looks up and smiles brightly at me."
+    show kotonoha 1a at t11
+    k "Hey [player]!"
+    mc "Yo."
+    mc "You wanted to get to know Nat better, right?"
+    show kotonoha 1e at t11
+    k "Oh. Yeah, why do you ask?"
+    mc "Have you gotten to do that yet?"
+    k "Well, no, but you don't have to worry about that."
+    "I do my best to ignore the chill that hits me."
+    mc "I know. But I want to."
+    "Kotonoha just stares for a few seconds, almost like she's looking through me."
+    "I turn for a moment to see what she could be trying to look at."
+    "Yuri is giving her a look I can't read from her desk."
+    show kotonoha 1i at t11
+    "Apparently Kotonoha can understand it, because she nods gently to Yuri before taking a deep breath."
+    show kotonoha 1a at t11
+    k "Alright."
+    mc "Great. C'mon."
+    show kotonoha at thide
+    hide kotonoha
+    "I return to Natsuki's desk with Kotonoha."
+    show kotonoha 1a at t21
+    show natsuki turned neut me at f22
+    n "..."
+    n "You wanted me to see Koto?"
+    n "That's what you didn't want to forget?"
+    show natsuki at t22
+    mc "Well, you two don't really know each other that well yet, right?"
+    show kotonoha 1s1 at t21
+    n "Not really."
+    mc "So..."
+    show kotonoha at thide
+    show natsuki at thide
+    hide kotonoha
+    hide natsuki
+    "..."
+    #pov switch mc to white
+    "I write more ideas down on the paper in front of me."
+    "Well, more of Rikka's ideas."
+    "She's been coming up with things for the club to do beyond writing poems."
+    "Given how slow she can write, I offered to record her ideas."
+    show rikka 1c at t11
+    r "Did I already bring up the cram session thing?"
+    w "Yup."
+    show rikka 1u at t11
+    r "Great!"
+    show rikka 1a at t11
+    r "That's probably the thing I'm set on the most."
+    r "With exams coming up-"
+    w "- 'I want everyone to have a nice shot at getting a high score.'"
+    pause 1.0
+    #nice shot
+    r "How many times did I say it?"
+    w "Today? Once."
+    w "Overall? I think I've counted about six."
+    w "Now seven."
+    show rikka 1v at t11
+    "Rikka laughs before pulling out her phone."
+    show rikka 1c at t11
+    r "Oh, we have a few minutes before we need to leave."
+    r "Should we go ahead and make our announcements?"
+    w "That would probably be best."
+    w "You can go sit with [player], I'll get everyone's attention."
+    show rikka at srhide
+    hide rikka
+    "I quickly look over everything on the paper in front of me."
+    "Cram session... blind book dates..."
+    "... One poem each week (I'm sure that's you making up for that one poem game, though)..."
+    "... Pretty sure those are the three ideas we both agreed are ideal."
+    "{s}... And can you change the music? It's been playing ever since [player] got in here, let's get something new.{/s}"
+    $ run_input("{s}Alright, alright.{/s}","")
+    hide screen console_screen
+    #play music warpednewnew
+    "{s}... That works.{/s}"
+    w "Alright, everyone."
+    "I do my best not to yell for [player], and thankfully everyone hears me."
+    "The room goes quiet in a few seconds."
+    w "I want to make a couple of quick announcements before we dismiss for today."
+    w "First, Rikka and I decided to change how we'll be writing poems for the club."
+    w "Everyone will write one poem each week instead of every day."
+    w "Hopefully, this puts less stress onto you all when writing."
+    show yuri turned neut ma e1b b2a at t11
+    y "It certainly will."
+    show yuri at t21
+    show kotonoha 1a at f22
+    k "Yeah, I feel like some of us here would start to get burnt out if we had to write so many back to back."
+    show natsuki turned neut cm oe at f31
+    show yuri at t32
+    show kotonoha at t33
+    n "Honestly. I get being creative and all that, but one a week definitely sounds easier to manage."
+    show natsuki at t31
+    w "Great."
+    w "The second announcement relates to end-of-term exams, which are coming up in about two weeks."
+    show natsuki turned flus md at t31
+    show kotonoha 1e at t33
+    "Everyone's expressions change immediately upon hearing the word 'exams'."
+    "Well, everyone except Yuri and Monika, which is to be expected."
+    show kotonoha at thide
+    hide kotonoha
+    show monika forward happ cm ce at f33
+    m "C'mon, guys. They're never as bad as you think they are."
+    show natsuki e1a at f31
+    show monika at t33
+    n "So? There's no way I'm gonna be ready, whether it's hard or not!"
+    show natsuki at t31
+    show yuri at f32
+    y "That's what she-"
+    show yuri at thide
+    hide yuri
+    show rikka 1a at f32
+    r "Don't worry, Natsuki. Everyone here will be ready before exams."
+    r "We'll make sure of that."
+    show monika forward neut om oe at f33
+    show rikka at t32
+    m "What do you mean?"
+    show monika at t33
+    show natsuki cross at f31
+    n "Rikka, I swear if you're about to say what I'm thinking you're-"
+    show natsuki at t31
+    show rikka 1u at f32
+    r "We're gonna hold a cram session two nights before exams."
+    show rikka at t32
+    "..."
+    show natsuki turned angr oe cm at f31
+    n "Heck no."
+    show natsuki at t31
+    show monika forward dist cm oe at t33
+    show rikka 1g at f32
+    r "Look, I know that no one here is {i}excited{/i} about exams."
+    r "But the best way I've been able to retain information for a test has been studying quite a bit a day or two before."
+    show rikka at t32
+    w "Plus, this way we can do something as a club outside of a club meeting."
+    n "..."
+    show natsuki turned anno cm ce at f31
+    n "Alright. I guess that makes sense."
+    show natsuki at thide
+    show rikka at thide
+    show monika at thide
+    hide natsuki
+    hide rikka
+    hide monika
+    "Everyone else seems to agree, however reluctant they are to do so."
+    "And with this announcement out of the way, Rikka and I dismiss the other members."
+    show mc 1a at t11 #tired eyes
+    mc "I'm kinda surprised the new guy didn't show up today."
+    w "..."
+    w "What new guy?"
+    show mc 1f at t11
+    mc "Rikka didn't tell you?"
+    w "I'm gonna go with no?"
+    show mc 1a at t11
+    mc "Well, she told me that somebody approached her during one of her classes."
+    mc "They were probably an exchange student, since they were speaking to her in, uh..."
+    mc "... I forget how to pronounce it. That language people in America speak."
+    w "{i}English??{/i}"
+    show mc 1b at t11
+    mc "That one."
+    show mc 1a at t11
+    mc "Am I really the only person here who has trouble saying it?"
+    "... I'm not even going to try understanding the impact this joke has on everything."
+    w "... Anyways, continue."
+    mc "Oh, right."
+    mc "They asked Rikka about the club and apparently seemed interested in joining."
+    w "Huh. Okay then."
+    w "Did Rikka get their name?"
+    show mc 1u at t11
+    mc "... If she told me what it was, I guess I already forgot."
+    w "Eh, it's fine. I can text her later."
+    w "I'm sure you wanna get going."
+    show mc 1h1 at t11
+    mc "Yeah."
+    mc "I probably need to try and get some extra sleep."
+    w "Well, I'm happy you could stop by, [player]."
+    w "Come back whenever you want. No need to force yourself to be here if you want to go home right after school."
+    show mc 1a at t11
+    mc "Don't worry, I won't."
+    mc "See you later, [white]."
+    show mc at thide
+    hide mc
+    "[player] gets his things packed up as Rikka comes up to me."
+    show rikka 1a at t11
+    w "When were you going to tell me about the exchange student?"
+    show rikka 1f at t11
+    r "Oh, right!!"
+    show rikka 1g at t11
+    r "Sorry, I, uh... guess I forgot to bring it up."
+    w "No need to apologize."
+    w "I'll let you and [player] get going. Have a nice rest of your day."
+    show rikka 1v at t11
+    r "You too! See you tomorrow!"
+    show rikka at thide
+    hide rikka
+    #music fades out
+    "Rikka and [player] make their way out, leaving me to-"
+    show monika forward nerv cm ce at t11
+    m "Hey, [white], do you have a minute?"
+    w "Oh, uh... sure."
+    w "What did you need?"
+    #music can i make it a double
+    show monika forward neut e1b at t11
+    m "... There's probably going to be a new member sometime this week."
+    "{i}How many people already knew???{/i}"
+    show monika e1a at t11
+    m "And... we're not exactly on the best terms, to say the least."
+    w "Are they an ex of yours or something?"
+    show monika forward neut om ce at t11
+    m "No, nothing like that."
+    show monika oe cm at t11
+    m "But... It's kind of a long story."
+    w "Alright. Was there something you wanted me to do or say before they eventually join?"
+    show monika e1b at t11
+    m "Not really, I guess."
+    w "You guess?"
+    m "Well..."
+    show monika oe at t11
+    m "I know I often show my appreciation for this club and everyone in it."
+    show monika forward flus ma oe at t11
+    m "So I guess I wanted to give you a heads up that I might act... differently around them."
+    w "Hey-"
+    show monika cm at t11
+    m "I know, I don't have to justify everything."
+    w "... Well yes, but that's not what I was going to say."
+    show monika forward neut om oe at t11
+    w "If anything happens between you and... whoever the new guy is, just let me know."
+    m "Oh..."
+    show monika forward happ cm oe b1b at t11
+    m "I really appreciate the offer..."
+    w "C'mon, we're supposed to be out of here already."
+    scene bg stairwell with wipeleft_scene
+    #music fades out
+    show monika forward neut cm oe at t11
+    w "You brought an umbrella, right?"
+    show monika forward lsur cm oe b1a at t11
+    m "Oh, I left it back in the club room!"
+    m "Is the room still unlocked?"
+    w "Should be. Better hurry, though."
+    show monika at srhide
+    hide monika
+    "Monika runs off towards the club room, leaving me standing by myself."
+    "..."
+    show vignette at vignettefade
+    w "Okay, sorry. Just a moment."
+    w "I don't think I ever had time to ask you something."
+    #play music majorer deja vu
+    w "Why did you let [player] see Sayori like that?"
+    w "If you really wanted her to be gone at the start of this week..."
+    w "You should've just had her hang herself without anyone seeing, like in the real game."
+    w "But you let her use a piece of paper to slice her own neck open in front of [player]?"
+    w "And there's another thing: Why were you so set on having Sayori kill herself right then?"
+    w "You told {i}them{/i} you don't want full control over this project."
+    w "So why are you going against that now?"
+    $ run_input("... Give me a minute to address your questions.","")
+    hide screen console_screen
+    w "Okay, well hurry up. Monika won't take forever to grab her umbrella."
+    w "Oh wait, that's right. You're at the point where you'll make her take as long as you need."
+    "..."
+    "....."
+    w "You almost done?"
+    pause 7.0
+    w "Seriously, what's taking you-"
+    $ show_poem(poem_t1, None,  False)
+    w "... So you're basically just saying 'sorry not sorry?'"
+    w "Fuck you too, I guess."
+    "Please just trust me."
+    "He doesn't want to do any real damage."
+    "{nw}I promise I'll do what I can to make [player] happier."
+    $ _history_list.pop()
+    w "..."
+    w "Get lost. Monika's nearly back."
+    stop music fadeout 2.0
+    pause 2.0
+    show monika forward nerv cm ce n2 at t11
+    m "Got it! Thanks for waiting for me."
+    w "Not a problem."
+    show monika at thide
+    hide monika
+    "Monika walks up to the main entrance and opens her umbrella."
+    "I do the same, bracing myself for the wind and rain that await us."
+    scene black with dissolve_scene_full
+    pause 3.0
+    #scene 4
+    scene bg bedroom
+    #play music okaerinasai
+    "I set my backpack down by my desk."
+    "My head still hurts, but it isn't as bad as it's been all day."
+    "... Oh yeah. I still need to eat dinner."
+    "Whatever, I can probably heat up some leftovers and then take care of my homework."
+    "Then once all of that is taken care of, I can finally get to sleep."
+    "I drag myself back down the stairs and into the kitchen."
+    scene bg kitchen with dissolve_scene_half
+    "I open my fridge-"

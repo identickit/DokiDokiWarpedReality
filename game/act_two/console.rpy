@@ -18,7 +18,7 @@ init -1:
 
     # Not to be changed midgame.
     # Delay after input has finished showing, before output is displayed.
-    define console_delay = 0.5
+    define console_delay = 1.5
 
     define console_cps = 30
 

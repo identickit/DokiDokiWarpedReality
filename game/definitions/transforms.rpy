@@ -98,11 +98,17 @@ transform lhide:
     on hide:
         easeout .25 xcenter -300
 
-# This transform hides the character by moving them to the left.
+# This transform hides the character by moving them to the right.
 transform rhide:
     subpixel True
     on hide:
         easeout .25 xcenter 2000
+
+# This transform hides the character by moving them to the right slowly.
+transform srhide:
+    subpixel True
+    on hide:
+        easeout .7 xcenter 2000
 
 # These transforms have the characters stand still at a given position given
 # how many characters are on screen and which character number they are.
@@ -469,7 +475,7 @@ image vignette:
 transform vignettefade(t=0):
     alpha 0.0
     t
-    linear 25.0 alpha 1.00
+    linear 1.0 alpha 1.00
 
 # This transform has the vignette effect flicker on-screen.
 transform vignetteflicker(t=0):

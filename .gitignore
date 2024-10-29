@@ -24,3 +24,8 @@ game/cache/screens.rpyb
 game/cache/screens.rpyb
 game/cache/pyanalysis.rpyb
 game/cache/bytecode-27.rpyb
+*.rpyb
+game/cache/bytecode-27.rpyb
+game/cache/pyanalysis.rpyb
+game/cache/screens.rpyb
+game/cache/shaders.txt
