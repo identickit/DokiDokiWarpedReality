@@ -77,7 +77,18 @@ screen study_question_screen(question, answers):
 label study_end:
     hide screen study_question_screen
     $ percent = int((float(score) / total) * 100)
-    centered "Grade: [percent]\%"
+    if percent >= 90:
+        centered "Grade: [percent]\%\nWow, incredible!"
+    elif percent >= 60:
+        centered "Grade: [percent]\%\nNice work!"
+    elif percent >= 30:
+        centered "Grade: [percent]\%\nSo close!"
+    elif percent >= 9:
+        centered "Grade: [percent]\%\nMake sure to study hard!"
+    elif percent == 0:
+        centered "Grade: [percent]\%\nWow, you suck!"
+    elif percent < 0:
+        centered "Grade: [percent]\%\n... How did you even do this?"
     $ study = True
     $ config.allow_skipping = True
     $ allow_skipping = True
