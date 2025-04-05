@@ -89,7 +89,6 @@ label study_end:
         centered "Grade: [percent]\%\nWow, you suck!"
     elif percent < 0:
         centered "Grade: [percent]\%\n... How did you even do this?"
-    $ study = True
     $ config.allow_skipping = True
     $ allow_skipping = True
     $ quick_menu = True
