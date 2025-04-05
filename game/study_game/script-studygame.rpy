@@ -76,7 +76,8 @@ screen study_question_screen(question, answers):
 
 label study_end:
     hide screen study_question_screen
-    centered "Grade: [int((float(score) / total) * 100)]\%"
+    $ percent = int((float(score) / total) * 100)
+    centered "Grade: [percent]\%"
     $ study = True
     $ config.allow_skipping = True
     $ allow_skipping = True
