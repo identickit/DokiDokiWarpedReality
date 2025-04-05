@@ -690,4 +690,195 @@ label ch2_p1:
     "Then once all of that is taken care of, I can finally get to sleep."
     "I drag myself back down the stairs and into the kitchen."
     scene bg kitchen with dissolve_scene_half
-    "I open my fridge-"
+    "I open my fridge-{nw}"
+    scene black
+    pause 5.0
+    $ file_path = get_eighteen_path()
+    if os.path.exists(file_path):
+        python:
+            os.remove(file_path)
+    show screen fakeexception
+    pause 3.0
+    hide screen fakeexception
+    #show scary koto lol
+    #play music warped404
+    #pause 7.0
+    #stop music
+    scene black
+    pause 3.0
+
+label eighteenexception:
+    show text "Error: 'eighteen.txt' not found. It may be because you installed a corrupted version of the game. Please reinstall the program or locate 'eighteen.txt', and then try again."
+
+    $ _skipping = False
+    $ quick_menu = False
+    $ preferences.afm_enable = False
+
+    pause
+
+    if os.path.exists(file_path):
+        call ch2_p2
+    else:
+        jump eighteenexception
+
+label ch2_p2:
+    $ gs_name = "????"
+    $ _skipping = True
+    $ quick_menu = True
+    $ preferences.afm_enable = True
+    scene bg kitchen
+    pause 5.0
+    if os.path.exists(file_path):
+        python:
+            os.remove(file_path)
+    "This is where you choose poem or study. WIP"
+    #play sound tester-act2-1
+    #menu:
+    #    "Should I study for my exams, or start writing my poem for the week?"
+    #    "Study":
+    #        "I should probably do some of my homework and study."
+    #        "I can hold off on my poem until tomorrow."
+    #        call study
+    #    "Poem":
+    #        "I can probably get some of my poem written before I turn in for the night."
+    #        "I'll have time to get all my work done tomorrow, anyways."
+    #        call poem
+    #if study == true:
+    #   "That's probably enough studying for tonight."
+    #elif:
+    #   "I can probably stop here for tonight."
+    scene bg bedroom
+    "I really need to get some sleep now."
+    "I throw myself down onto my bed and almost immediately fall asleep."
+    "..."
+    show tint at vignettefade
+    "..."
+    gs "[player]?"
+    "..."
+    gs "[player][player[-1] * 3]..."
+    "..."
+    gs "[player]!"
+    "I quickly sit up in my bed."
+    "... Did somebody just say my name...?"
+    $ gs_name = "Sayori"
+    show sayori turned lup rup happ om ce at h11
+    gs "Yay! You're awake!"
+    "I nearly jump out of my skin."
+    "Sayori is standing at the foot of my bed... somehow..."
+    show sayori turned oe at t11
+    gs "I've missed you sooooo much!"
+    show sayori turned sad oe ma ldown rdown at t11
+    gs "I tried so many times to make myself visible to you, but it never worked."
+    show sayori turned cm e1b at t11
+    gs "... I almost gave up and accepted that I just... couldn't be a ghost."
+    "..."
+    "I have finally lost it."
+    mc "How... how am I seeing..."
+    mc "How are you even..."
+    show sayori turned oe ma at t11
+    mc "You've been gone for weeks now..."
+    mc "I saw you..."
+    mc "..."
+    gs "I'm so sorry you had to see me like that, [player]."
+    show sayori turned cm at t11
+    gs "I didn't want to die, really. But the rain clouds... that voice in my head..."
+    gs "I couldn't take it anymore."
+    show sayori turned e1b at t11
+    gs "..."
+    gs "I wish I could take it back."
+    gs "I miss talking to everyone."
+    gs "I miss my parents, my family, my friends."
+    show sayori turned e1g at t11
+    gs "And I miss you."
+    gs "I... I've hurt you so many times..."
+    gs "I..."
+    show sayori at thide
+    hide sayori
+    "... Her arms go right through me in what I assume is her attempt at a hug."
+    "I guess she isn't able to physically interact with me, since she's... a ghost? I think?"
+    "As soon as she realizes this, she completely breaks down."
+    "... I barely even believe what's happening right now."
+    "Am I still sleeping? Is this some kind of dream?"
+    "Or is this real?"
+    "And if it is, how am I even supposed to comfort her??"
+    "..."
+    stop music
+    mc "Sayori?"
+    "She looks up at me, her eyes glistening with tears."
+    mc "I really wish I knew what to say to help you feel better..."
+    mc "But all I really know what to say is that you were an amazing friend."
+    gs "No I wasn't."
+    mc "Hey, don't let the voice in your head-"
+    gs "This isn't the voice speaking, [player]."
+    gs "I... I really need to tell you something."
+    mc "You don't have to try and justify any points in time where you thought you hurt me."
+    gs "Please, just listen to me."
+    mc "Sayori-"
+    show sayori turned angr om e1g at t11
+    gs "Just listen to me, [player]!"
+    gs "Every time someone tries to talk to you like this..."
+    gs "You ignore the most obvious signs known to literally anyone!"
+    gs "You're one of the most dense people ever created..."
+    show sayori turned cm at t11
+    gs "I'm sorry if I sound mean, but I need you to listen to what I have to say."
+    mc "..."
+    mc "......"
+    mc "... Go ahead, then."
+    show sayori turned anno cm oe at t11
+    gs "Thank you."
+    show sayori turned ce at t11
+    pause 1.0
+    show sayori turned neut oe at t11
+    gs "This is going to sound really weird, but I need you to trust me."
+    gs "... This isn't the first time we've lived out this point in time."
+    show sayori turned curi cm ce at t11
+    gs "Er, wait. That's not how I wanted to word it..."
+    gs "But it still works, I guess..."
+    mc "What do you mean by-"
+    show sayori turned anno cm oe at t11
+    gs "[player], can you actually {i}think{/i} about what I just said before asking 'what do you mean'?"
+    "I've never seen Sayori act like this before."
+    "But if I've really lost my last bit of sanity, then I guess there's no harm in humoring whatever she's going on about."
+    mc "You mean like... we've lived out the past few weeks... before now?"
+    show sayori turned neut om oe at t11
+    gs "Oh. You actually got it."
+    gs "Good job."
+    show sayori turned cm at t11
+    #play music deeper breaths
+    gs "Yes. This is... one of the many, {i}many{/i} times that we've gone through all of this."
+    gs "The festival, my death, weeks {i}following{/i} the festival..."
+    gs "And there's hundreds of people behind the number of versions of this world."
+    show sayori turned e1b at t11
+    gs "Some versions were created by people named 12gizguy, guybread, SpiritH0F..."
+    gs "And then there's versions that have been designed by entire {i}teams{/i}."
+    gs "The only ones I can remember right now are Team Relations and Perfect Fifth, but I think you get my point."
+    mc "This is... a lot to take in..."
+    "How did the tone change this quickly??"
+    show sayori turned oe at t11
+    gs "I can tell what you're thinking."
+    gs "I was just crying a minute ago, and now I'm dropping information on you that sounds pretty weird."
+    mc "Yeah..."
+    show sayori turned anno cm oe at t11
+    gs "Almost as if someone is writing this moment specifically so that all of this info is properly established."
+    mc "So by your logic, this is yet another version of our world..."
+    mc "Being written by some guy who really wants to focus on this topic?"
+    show sayori turned ce at t11
+    gs "And apparently, they can't write for shit, because everything feels way too rushed."
+    gs "Not to mention, I'd never cuss as randomly as I did just now."
+    show sayori turned angr oe at t11
+    mc "So then... who's in charge of, uh... making this version of our world?"
+    gs "I'd love to tell you, if I could actually tell who it is."
+    gs "Apparently, since this version is still technically being created, I can't see who's making it."
+    mc "... I guess that's convenient for them?"
+    mc "Sorry, I'm still having a really hard time understanding everything."
+    show sayori turned ce at t11
+    gs "Well... I guess it wouldn't hurt to just show you what I'm talking about."
+    gs "Please tell me this isn't the one version of this world where you get motion sick easily."
+    mc "I don't. Never have."
+    show sayori turned e1b at t11
+    gs "Good. Then let's get this over with."
+    "I open my mouth to ask what she means, but I suddenly feel myself being propelled forward."
+    #stop music
+    scene black
+    with dissolve_scene_half
+    "My room disappears instantly, everything being replaced by total darkness."

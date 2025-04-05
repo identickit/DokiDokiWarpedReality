@@ -156,6 +156,10 @@ init python:
         else:
             return 0
 
+    def get_eighteen_path():
+        # Resolve the absolute path of 'eighteen.txt'
+        return os.path.abspath(os.path.join(config.basedir, "eighteen.txt"))
+
 ## Music
 define audio.t1 = "<loop 22.073>bgm/1.ogg" # Doki Doki Literature Club! - Main Theme
 define audio.t2 = "<loop 4.499>bgm/2.ogg" # Ohayou Sayori! - Sayori Theme
@@ -238,6 +242,7 @@ image splash = "bg/splash.png"
 image end:
     truecenter
     "gui/end.png"
+image tint = "#0040ff47"
  
 image bg stairwell = "mod_assets/bg/stairwell.png" #The one from DDLC+
 image bg residential_day = "bg/residential.png" # Start of DDLC BG
@@ -278,6 +283,7 @@ image bg qgsayori_bedroom:
 
 image bg notebook = "bg/notebook.png" # Poem Game Notebook Scene
 image bg notebook-glitch = "bg/notebook-glitch.png" # Glitched Poem Game BG
+image bg studybook = "mod_assets/bg/studybook.png"
 
 image bg clubdayg1 = "mod_assets/bg/clubdayg1.png"
 image bg clubdayg2 = "mod_assets/bg/clubdayg2.png"
@@ -2044,6 +2050,7 @@ define w = DynamicCharacter('white', image='white', what_prefix='"', what_suffix
 # define d = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define d = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define u = Character('?????', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define gs = DynamicCharacter('gs_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 # This variable determines whether to allow the player to dismiss pauses.
 # By default this is set by config.developer which is normally set to false
@@ -2102,6 +2109,7 @@ default persistent.first_poem = None
 default persistent.seen_colors_poem = None
 default persistent.monika_back = None
 default persistent.CONDITION = 0
+default persistent.eighteen = False
 
 default in_sayori_kill = None
 default in_yuri_kill = None
@@ -2126,6 +2134,7 @@ default n_name = "Natsuki"
 default y_name = "Yuri"
 default r_name = "Rikka"
 default k_name = "Kotonoha"
+default gs_name = "Sayori"
 
 # Poem Variables
 # This section records how much each character likes your poem in-game.

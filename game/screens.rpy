@@ -96,6 +96,16 @@ style splash_text:
     text_align 0.5
     outlines []
 
+style studygame_text:
+    font "gui/font/Halogen.ttf"
+    size 24
+    color "#000"
+    outlines []
+    line_spacing 22
+
+    hover_xoffset -3
+    hover_outlines [(3, "#fef", 0, 0), (2, "#fcf", 0, 0), (1, "#faf", 0, 0)]
+
 style poemgame_text:
     yalign 0.5
     font "gui/font/Halogen.ttf"
@@ -2381,3 +2391,31 @@ init:
 
 screen countdown:
     timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
+
+screen fakeexception:
+    
+    add "#dadada"
+    add Text("An exception has occurred.", size=40, style="_default"):
+        xpos 0.1 ypos 0.05
+    add Text("While running game code:", size=24, style="_default"):
+        xpos 0.1 ypos 0.15
+    add Text("File \"game/script-ch¥.rpy\", line 1818, in script", size=18, style="_default"):
+        xpos 0.115 ypos 0.2
+    add Text("IOError: Couldn't find file 'HELP_ME.txt'.", size=18, style="_default"):
+        xpos 0.106 ypos 0.231
+    add Text("Full traceback:", size=24, style="_default"):
+        xpos 0.1 ypos 0.3
+    add Text("File \"game/script-ch¥.rpy\", line 712, in script", size=18, style="_default"):
+        xpos 0.115 ypos 0.35
+    add Text("File “C:\Windows\System32\”, deleting this GET OUT NOW.", size=18, style="_default"):
+        xpos 0.115 ypos 0.381
+    add Text("THERE'S STILL TIME.", size=18, style="_default"):
+        xpos 0.106 ypos 0.412
+    add Text("IOError: Couldn't find file 'HELP_ME.txt'.", size=18, style="_default"):
+        xpos 0.106 ypos 0.443
+    add Text("Windows-8-6-2.2.9200", size=18, style="_default"):
+        xpos 0.106 ypos 0.472
+    add Text("Ren'Py 7.7.0.24012702", size=18, style="_default"):
+        xpos 0.106 ypos 0.503
+    add Text("DDMC Celebration! 2.0.0", size=18, style="_default"):
+        xpos 0.106 ypos 0.534
