@@ -731,23 +731,22 @@ label ch2_p2:
     if os.path.exists(file_path):
         python:
             os.remove(file_path)
-    "This is where you choose poem or study. WIP"
     #play sound tester-act2-1
-    #menu:
-    #    "Should I study for my exams, or start writing my poem for the week?"
-    #    "Study":
-    #        "I should probably do some of my homework and study."
-    #        "I can hold off on my poem until tomorrow."
-    #        call study
-    #    "Poem":
-    #        "I can probably get some of my poem written before I turn in for the night."
-    #        "I'll have time to get all my work done tomorrow, anyways."
-    #        call poem
-    #if study == true:
-    #   "That's probably enough studying for tonight."
-    #elif:
-    #   "I can probably stop here for tonight."
+    menu:
+        "Should I study for my exams, or start writing my poem for the week?"
+        "Study":
+            "I should probably do some of my homework and study."
+            "I can hold off on my poem until tomorrow."
+            call study_game
+        "Poem":
+            "I can probably get some of my poem written before I turn in for the night."
+            "I'll have time to get all my work done tomorrow, anyways."
+            call poem
     scene bg bedroom
+    if study == True:
+        "That's probably enough studying for tonight."
+    else:
+        "I can probably stop here for tonight."
     "I really need to get some sleep now."
     "I throw myself down onto my bed and almost immediately fall asleep."
     "..."
@@ -882,3 +881,139 @@ label ch2_p2:
     scene black
     with dissolve_scene_half
     "My room disappears instantly, everything being replaced by total darkness."
+    scene bg bridge
+    with dissolve_scene_half
+    "After a few seconds of feeling like I'm being hurled across the entire world, I land hard on my back."
+    "Miraculously, nothing feels broken as I stand up."
+    mc "How... did my back not snap in half from that?"
+    show sayori turned doub cm oe b1a at t11
+    gs "The plot doesn't require it."
+    "I brush the hair out of my face, clearing my view of..."
+    show sayori at thide
+    hide sayori
+    "... Me?"
+    "I can just barely make out two figures far ahead of us."
+    "One of them is undoubtedly me, even if it's incredibly weird to see a version of me as small as this guy is."
+    "He's holding onto the railing, looking out onto the ocean."
+    "The other person looks like Monika. Even from here, I can see her shaking."
+    mc "They look like they're arguing about something...?"
+    show sayori turned sad cm e1c at t33
+    gs "Just watch."
+    mc "Why am I-"
+    gs "[player], please, just... watch."
+    "It's hard to hear them from here, but I can sort of hear the sounds of their voices."
+    "Monika sounds desperate, like she's pleading with him."
+    mc "Are we able to... y'know, get a little closer?"
+    mc "It's kind of hard to hear from here."
+    gs "..."
+    show sayori turned e1a at t33
+    gs "If you want."
+    gs "Just not too close. I don't know for sure if they're able to see you."
+    "I nod and get just close enough to be within earshot of them."
+    "The desperation in Monika's voice becomes much more apparent."
+    m "Look at me."
+    "The other version of me looks at Monika."
+    "He looks like he's been crying for hours."
+    #play music his exit
+    m "Please, you can't do this."
+    m "You're not thinking of the bigger picture."
+    m "Sayori? You know what'll happen to her if she loses you?"
+    show sayori turned e1g at t33
+    m "... I know you know. Do you really want that?"
+    "What is she talking about..."
+    m "And Yuri... God only knows what she'd do."
+    $ omc_name = "OMC"
+    omc "Why should I care? She's a good chunk of the reason..."
+    omc "Monika..."
+    m "Let's go back. Please."
+    "Monika takes his hand, slowly guiding him away from the rail."
+    m "We all love you."
+    m "We'll always be here for you, no matter what."
+    "The other me lets go of Monika's hand."
+    omc "N-... No..."
+    "He takes Monika by the shoulders and shoves her away with seemingly all his energy."
+    "My heart drops as I realize what's about to happen."
+    "Monika scrambles to her feet, but there's no way she's going to make it in time."
+    #stop music
+    show sayori at thide
+    hide sayori 
+    "I rush forward before I can even think about what might happen if I do this."
+    gsmc "{i}[player]!!{/i}"
+    #play music an airbag
+    "He looks like he's about to do it before Monika has a chance to stop him."
+    "Even with the week I spent with the track team, there's no way I can reach him in time."
+    "... I have to get to Monika."
+    "He starts running back towards the railing."
+    "I barely manage to reach her, pushing her forward as hard as I can."
+    "I lose my balance and land on my arm, scraping it against the concrete."
+    "Quickly, I get back up, clutching my arm."
+    "I look at Monika again just in time to see her reach the other version of me."
+    "His feet leave the ground as she grips onto the back of his shirt."
+    "For a fraction of a second, it looks like she's going to be able to pull him back."
+    "But then she gets tugged forward with him."
+    "Ignoring my bleeding arm, I rush up to Monika and grab the back of her blazer."
+    "I pull as hard as I can, hoping to God that she still has a hold on the other me."
+    "Using the last of my energy, I somehow manage to pull her back, preventing her from falling over the rail."
+    #stop music
+    "This time, I definitely feel {i}something{/i} as my back hits the ground."
+    "But Monika is also on the ground. Not in the ocean."
+    "And she's got a hold on the other me."
+    "A huge wave of relief washes over me at the sight, even if both of them look horrible."
+    "Monika looks beyond frightened."
+    "And the other [player] seems... relieved?"
+    "It's a little hard to tell because of how red his face is. And because of the tears welling up in my eyes."
+    "My arm is definitely not okay right now."
+    "But I push past the pain and focus on-"
+    gs "{i}What?{/i}"
+    "I jump in sur-"
+    gs "{i}The.{/i}"
+    "I'm pulled back by my good arm-"
+    show sayori turned vang om e1g at t11
+    gs "{i}HELL?!!?{/i}"
+    mc "S-Say-"
+    gs "Do you have {i}any{/i} idea how much you scared me??"
+    mc "How did you pull my-"
+    gs "I thought you were about to be dragged down with them!!"
+    mc "I couldn't just let him-"
+    gs "Yes, you FUCKING COULD HAVE!!!"
+    mc "Okay, you need to calm-"
+    show sayori e1h at t11
+    gs "Don't tell me to calm down when you almost just killed yourself trying to save him!"
+    gs "AND you almost got Monika killed in the process!"
+    mc "But I-"
+    gs "[player], not every version of our world is going to have a good ending, okay?"
+    gs "That was the whole reason I brought you here first."
+    gs "To show you just how broken some of these versions are."
+    mc "..."
+    show sayori mj e4e at t11
+    gs "..."
+    show sayori turned sad cm oe at t11
+    gs "[player]... Please don't try to change any more of these outcomes."
+    show sayori e1b at t11
+    gs "It isn't... worth it."
+    "The last words sound like they're being forced out."
+    "But all I can think to do is nod."
+    "I look back at Monika."
+    "She's hugging the other [player], who looks a lot more relieved now."
+    #play music theres always hope
+    mc "He didn't want to do it."
+    mc "Even though he was so determined to throw himself over..."
+    show sayori oe at t11
+    gs "Neither did I."
+    gs "I really didn't want to... c-cut my neck open."
+    "She shudders in sync with me as she says it."
+    "I still can't think about it without feeling like someone's stabbing me through the chest."
+    gs "But it felt like there was no other way for me to get rid of the thoughts in my head."
+    gs "The voice in my head kept telling me... really mean things."
+    show sayori ce at t11
+    gs "I wanted to silence it for good."
+    gs "And the only way that seemed like it would work was..."
+    "She trails off before straightening herself."
+    "She opens her eyes and pulls us away from where Monika is."
+    gs "Let's just... move on."
+    "I manage to take one more look at Monika before I feel myself being pulled into total darkness again."
+    scene black
+    with dissolve_scene_half
+    stop music fadeout 1.0
+    pause 2.0
+    "I'm somehow able to land on my feet this time."

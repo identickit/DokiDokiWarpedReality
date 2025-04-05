@@ -266,6 +266,8 @@ image bg club_day2: # Glitched Club BG
     choice:
         "bg/club-skill.png"
 
+image bg bridge = "mod_assets/bg/bridge.png"
+
 image bg closet = "bg/closet.png" # The closet BG
 image bg bedroom = "bg/bedroom.png" # MC's Room BG
 image bg sayori_bedroom = "bg/sayori_bedroom.png" # Sayori's Room BG
@@ -2038,19 +2040,22 @@ image mc 4z = im.Composite((960, 960), (0, 0), "mod_assets/canonmc_assets/4.png"
 #   define en = Character('Eileen & Nat', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 define narrator = Character(ctc="ctc", ctc_position="fixed")
+define omc = DynamicCharacter('player', image='mc', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define mc = DynamicCharacter('player', image='mc', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define gsmc = Character('Sayori & [player]', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define r = DynamicCharacter('r_name', image='rikka', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define k = DynamicCharacter('k_name', image='kotonoha', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define w = DynamicCharacter('white', image='white', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 # define d = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define d = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+# define d = DynamicCharacter('d_name', image='double', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define u = Character('?????', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define gs = DynamicCharacter('gs_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+
 
 # This variable determines whether to allow the player to dismiss pauses.
 # By default this is set by config.developer which is normally set to false
